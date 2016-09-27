@@ -1,0 +1,15 @@
+"*":
+  core:
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "792e8bd2-c9a9-8453-9abd-b5849b617f4d"
+  "linter-eslint":
+    useGlobalEslint: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  welcome:
+    showOnStartup: false

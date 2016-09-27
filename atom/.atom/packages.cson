@@ -1,0 +1,15 @@
+packages: [
+  "autocomplete-elixir"
+  "git-plus"
+  "jumpy"
+  "language-diff"
+  "language-elixir"
+  "linter"
+  "linter-elixirc"
+  "linter-eslint"
+  "linter-flow"
+  "package-sync"
+  "react"
+  "vim-mode"
+  "vim-surround"
+]
