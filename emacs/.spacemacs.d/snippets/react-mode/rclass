@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: React Class
+# key: rclass
+# --
+import React from 'react';
+
+class $1 extends React.Component {
+  render() {
+    $0
+  }
+}
+
+export default $1;

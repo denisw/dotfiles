@@ -1,0 +1,47 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Webpack Config
+# key: webpack
+# --
+const config = {
+  context: __dirname,
+
+  entry: [
+    'webpack-dev-server/client?http://0.0.0.0:3000',
+    'webpack/hot/only-dev-server',
+    './src/main'
+  ],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
+  output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
+  },
+
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      }$0
+    ]
+  },
+
+  devServer: {
+    hot: true
+    // proxy: { '*': 'http://localhost:8080' }
+  }
+}
+
+if (['development', 'test'].indexOf(process.env.NODE_ENV) !== -1) {
+  config.devtool = 'cheap-module-source-map'
+};
+
+module.exports = config
