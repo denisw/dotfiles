@@ -1,3 +1,5 @@
 [user]
-name = Denis Washington
-email = denis@denisw.de
+	name = Denis Washington
+	email = denis@denisw.de
+[push]
+	default = simple
