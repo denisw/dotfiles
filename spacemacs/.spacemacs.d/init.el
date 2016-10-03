@@ -77,11 +77,8 @@
   (add-to-list 'auto-mode-alist '("\\.babelrc\\'" . json-mode))
   (add-to-list 'auto-mode-alist '("\\.eslintrc\\'" . json-mode))
 
-  ;; Use web-mode for .js files, to support JSX files without .jsx extension
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (web-mode-set-content-type "jsx")))
+  ;; Use react-mode for .js files
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
 
   ;; Enable and configure Flycheck
   (global-flycheck-mode)
