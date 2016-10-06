@@ -61,7 +61,6 @@
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
-
   ;; Let Projectile ignore node_modules
   (setq projectile-globally-ignored-directories '("node_modules"))
 
