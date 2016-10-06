@@ -45,9 +45,6 @@
 
 (defun dotspacemacs/user-config ()
   (setq-default
-   ;; helm (workaround for https://github.com/syl20bnr/spacemacs/issues/4538)
-   helm-echo-input-in-header-line nil
-
    ;; js-mode and json-mode
    js-indent-level 2
 
