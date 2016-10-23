@@ -7,6 +7,7 @@ packages: [
   "language-diff"
   "language-elixir"
   "language-elm"
+  "language-haml"
   "linter"
   "linter-elixirc"
   "linter-elm-make"
