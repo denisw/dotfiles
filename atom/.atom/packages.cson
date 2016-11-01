@@ -1,6 +1,5 @@
 packages: [
   "autocomplete-elixir"
-  "autocomplete-flow"
   "autocomplete-paths"
   "git-plus"
   "jumpy"
