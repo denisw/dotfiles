@@ -14,6 +14,7 @@ packages: [
   "linter-flow"
   "package-sync"
   "react"
+  "sort-lines"
   "vim-mode"
   "vim-surround"
 ]
