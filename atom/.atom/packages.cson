@@ -1,6 +1,7 @@
 packages: [
   "autocomplete-elixir"
   "autocomplete-paths"
+  "elm-format"
   "git-plus"
   "jumpy"
   "language-diff"
