@@ -3,7 +3,6 @@ packages: [
   "autocomplete-paths"
   "elm-format"
   "git-plus"
-  "jumpy"
   "language-babel"
   "language-diff"
   "language-dotenv"
