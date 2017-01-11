@@ -1,4 +1,6 @@
 "*":
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin/elixir"
   core:
     telemetryConsent: "limited"
     themes: [
