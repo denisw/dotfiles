@@ -1,6 +1,7 @@
 packages: [
   "autocomplete-elixir"
   "autocomplete-paths"
+  "django-templates"
   "elm-format"
   "git-plus"
   "language-babel"
