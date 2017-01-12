@@ -17,6 +17,6 @@ packages: [
   "linter-flow"
   "package-sync"
   "sort-lines"
-  "vim-mode"
+  "vim-mode-plus"
   "vim-surround"
 ]
