@@ -18,5 +18,4 @@ packages: [
   "package-sync"
   "sort-lines"
   "vim-mode-plus"
-  "vim-surround"
 ]
