@@ -18,4 +18,5 @@ packages: [
   "package-sync"
   "sort-lines"
   "vim-mode-plus"
+  "zentabs"
 ]
