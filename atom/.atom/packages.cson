@@ -10,6 +10,7 @@ packages: [
   "language-elixir"
   "language-elm"
   "language-haml"
+  "language-terraform"
   "linter"
   "linter-elixirc"
   "linter-elm-make"
