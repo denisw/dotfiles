@@ -16,5 +16,8 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "vim-mode-plus":
+    incrementalSearch: true
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
