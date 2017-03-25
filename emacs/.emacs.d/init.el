@@ -18,6 +18,7 @@
 (require 'my-core)
 (require 'my-evil)
 (require 'my-helm)
+(require 'my-magit)
 (require 'my-projectile)
 
 ;; Custom
@@ -26,7 +27,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (helm evil-leader projectile evil use-package))))
+ '(package-selected-packages
+   (quote
+    (evil-magit magit helm evil-leader projectile evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
