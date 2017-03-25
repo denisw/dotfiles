@@ -1,12 +1,24 @@
+;;; dw-evil.el --- Use evil-mode for Vim keybindings.
+
 (use-package evil
   :ensure t
 
   :init
-  ;; Load evil on startup.
   (evil-mode 1)
 
   :config
-  ;; Override C-u to scroll up as in Vim.
   (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up))
+
+
+(use-package evil-leader
+  :ensure t
+
+  :init
+  (global-evil-leader-mode 1)
+
+  :config
+  (progn
+    (evil-leader/set-leader "<SPC>")
+    (evil-leader/set-key "f" 'find-file)))
 
 (provide 'my-evil)
