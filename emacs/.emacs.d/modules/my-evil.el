@@ -3,11 +3,10 @@
 (use-package evil
   :ensure t
 
-  :init
-  (evil-mode 1)
-
   :config
-  (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up))
+  (progn
+    (evil-mode 1)
+    (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)))
 
 
 (use-package evil-leader
@@ -19,6 +18,7 @@
   :config
   (progn
     (evil-leader/set-leader "<SPC>")
-    (evil-leader/set-key "f" 'find-file)))
+    (evil-leader/set-key "b" 'switch-to-buffer)
+    (evil-leader/set-key "f" 'helm-find-files)))
 
 (provide 'my-evil)
