@@ -7,3 +7,8 @@ atom/.atom/nohup.out
 atom/.atom/packages
 atom/.atom/recovery
 atom/.atom/storage
+
+# Emacs
+*.elc
+emacs/.emacs.d/elpa
+emacs/.emacs.d/projectile-bookmarks.eld
