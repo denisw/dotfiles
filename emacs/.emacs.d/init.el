@@ -15,6 +15,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/modules")
 
+(when (eq system-type 'darwin)
+  (require 'my-macos))
+
+(require 'my-clojure)
 (require 'my-core)
 (require 'my-evil)
 (require 'my-helm)
@@ -29,7 +33,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (evil-magit magit helm evil-leader projectile evil use-package))))
+    (exec-path-from-shell cider clojure-mode helm-projectile evil-magit magit helm evil-leader projectile evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
