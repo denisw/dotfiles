@@ -18,7 +18,17 @@
   :config
   (progn
     (evil-leader/set-leader "<SPC>")
+
+    ;; Buffers
     (evil-leader/set-key "b" 'switch-to-buffer)
-    (evil-leader/set-key "f" 'helm-find-files)))
+
+    ;; Files
+    (evil-leader/set-key "f" 'helm-find-files)
+
+    ;; Windows
+    (evil-leader/set-key "0" 'delete-window)
+    (evil-leader/set-key "1" 'delete-other-windows)
+    (evil-leader/set-key "3" 'split-window-right)
+    (evil-leader/set-key "w" 'other-window)))
 
 (provide 'my-evil)
