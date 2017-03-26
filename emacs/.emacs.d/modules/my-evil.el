@@ -24,6 +24,7 @@
 
     ;; Files
     (evil-leader/set-key "f" 'helm-find-files)
+    (evil-leader/set-key "k" 'kill-this-buffer)
 
     ;; Windows
     (evil-leader/set-key "0" 'delete-window)
