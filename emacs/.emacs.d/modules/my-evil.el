@@ -26,6 +26,9 @@
     (evil-leader/set-key "f" 'helm-find-files)
     (evil-leader/set-key "k" 'kill-this-buffer)
 
+    ;; M-x
+    (evil-leader/set-key ":" 'execute-extended-command)
+
     ;; Windows
     (evil-leader/set-key "0" 'delete-window)
     (evil-leader/set-key "1" 'delete-other-windows)
