@@ -2,6 +2,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Show column number in mode line.
+(column-number-mode 1)
+
 ;; Use two-space indentation by default.
 (setq indent-tabs-mode nil)
 (setq tab-width 2)
