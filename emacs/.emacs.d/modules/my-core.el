@@ -38,4 +38,7 @@
 ;; Enable electric-pair-mode.
 (electric-pair-mode)
 
+;; Bind comment-line to s-/ (e.g. Cmd-/ on macOS).
+(global-set-key (kbd "s-/") 'comment-line)
+
 (provide 'my-core)
