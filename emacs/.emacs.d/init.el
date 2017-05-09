@@ -20,6 +20,7 @@
 
 (require 'my-clojure)
 (require 'my-core)
+(require 'my-docker)
 (require 'my-evil)
 (require 'my-helm)
 (require 'my-javascript)
