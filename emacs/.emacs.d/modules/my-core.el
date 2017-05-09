@@ -27,6 +27,9 @@
 ;; Only ask "y-or-n" questions, no "yes-or-no" ones.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Use the Source Code Pro font
+(set-default-font "Source Code Pro 13")
+
 ;; Put backup and auto-save files into the system's temp directory.
 ;; http://www.emacswiki.org/emacs/BackupDirectory
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
@@ -40,5 +43,9 @@
 
 ;; Bind comment-line to s-/ (e.g. Cmd-/ on macOS).
 (global-set-key (kbd "s-/") 'comment-line)
+
+;; Install Solarized theme
+(use-package solarized-theme
+  :ensure t)
 
 (provide 'my-core)
