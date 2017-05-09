@@ -4,7 +4,4 @@
   :ensure t
   :mode "Dockerfile\\'")
 
-(use-package cider
-  :ensure t)
-
 (provide 'my-docker)
