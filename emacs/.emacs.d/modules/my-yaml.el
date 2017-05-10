@@ -4,4 +4,4 @@
   :ensure t
   :mode "\\.ya?ml\\'")
 
-(provide 'my-docker)
+(provide 'my-yaml)
