@@ -8,4 +8,6 @@
   "javascript.validate.enable": false,
 
   "vim.scroll": 30,
+
+  "workbench.colorTheme": "Default Light+"
 }
