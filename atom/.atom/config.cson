@@ -13,6 +13,8 @@
     userId: "792e8bd2-c9a9-8453-9abd-b5849b617f4d"
   "linter-eslint":
     useGlobalEslint: true
+  "linter-ui-default":
+    showPanel: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
