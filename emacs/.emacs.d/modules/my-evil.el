@@ -2,10 +2,10 @@
 
 (use-package evil
   :ensure t
-
   :config
   (progn
     (evil-mode 1)
+    (setq-default evil-shift-width 2)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)))
 
 

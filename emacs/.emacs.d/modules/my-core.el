@@ -6,8 +6,8 @@
 (column-number-mode 1)
 
 ;; Use two-space indentation by default.
-(setq indent-tabs-mode nil)
-(setq tab-width 2)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 ;; Highlight trailing whitespace.
 (setq show-trailing-whitespace t)
