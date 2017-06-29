@@ -9,17 +9,8 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-;; Highlight trailing whitespace.
-(setq show-trailing-whitespace t)
-
 ;; Delete trailing whitespace on save.
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
-;; Highlight  characters beyond the 80-characters-per-line limit.
-;; http://www.emacswiki.org/emacs/EightyColumnRule
-(require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
-(global-whitespace-mode t)
 
 ;; Highlight matching parentheses.
 (show-paren-mode 1)
