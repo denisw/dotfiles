@@ -26,6 +26,7 @@
 (require 'my-core)
 (require 'my-docker)
 (require 'my-evil)
+(require 'my-haskell)
 (require 'my-helm)
 (require 'my-javascript)
 (require 'my-magit)
@@ -45,7 +46,7 @@
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (livedown livedown-mode markdown-mode yaml-mode dockerfile-mode rjsx-mode exec-path-from-shell cider clojure-mode helm-projectile evil-magit magit helm evil-leader projectile evil use-package))))
+    (haskell-mode livedown livedown-mode markdown-mode yaml-mode dockerfile-mode rjsx-mode exec-path-from-shell cider clojure-mode helm-projectile evil-magit magit helm evil-leader projectile evil use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
