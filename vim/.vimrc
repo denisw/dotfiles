@@ -9,3 +9,6 @@ syntax on
 
 " Enable search result highlighting
 set hlsearch
+
+" Use two-space indentation
+set tabstop=2 shiftwidth=2 expandtab smarttab
