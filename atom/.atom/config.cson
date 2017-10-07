@@ -1,4 +1,9 @@
 "*":
+  "atom-package-deps":
+    ignored: [
+      "linter-eslint"
+      "linter-elm-make"
+    ]
   "autocomplete-elixir":
     elixirPath: "/usr/local/bin/elixir"
   core:
