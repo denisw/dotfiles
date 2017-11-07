@@ -3,6 +3,7 @@
     ignored: [
       "linter-eslint"
       "linter-elm-make"
+      "linter-elixirc"
     ]
   "autocomplete-elixir":
     elixirPath: "/usr/local/bin/elixir"

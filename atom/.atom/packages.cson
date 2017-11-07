@@ -1,5 +1,6 @@
 packages: [
   "atom-ide-ui"
+  "autocomplete-elixir"
   "elm-format"
   "file-icons"
   "ide-csharp"
@@ -7,7 +8,9 @@ packages: [
   "ide-typescript"
   "language-babel"
   "language-dotenv"
+  "language-elixir"
   "language-elm"
+  "linter-elixirc"
   "linter-elm-make"
   "linter-eslint"
   "package-sync"
