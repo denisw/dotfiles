@@ -6,6 +6,7 @@ packages: [
   "ide-java"
   "ide-typescript"
   "language-babel"
+  "language-dotenv"
   "language-elm"
   "linter-elm-make"
   "linter-eslint"
