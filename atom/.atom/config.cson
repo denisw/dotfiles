@@ -22,6 +22,10 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNotInPackageJson: true
   "vim-mode-plus":
     incrementalSearch: true
     useSmartcaseForSearch: true
