@@ -1,6 +1,10 @@
 {
+  "docker.showExplorer": false,
+
   "editor.rulers": [80],
   "editor.tabSize": 2,
+
+  "explorer.openEditors.visible": 0,
 
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
