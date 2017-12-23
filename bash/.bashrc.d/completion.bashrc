@@ -13,3 +13,9 @@ if [ $(uname -s) == Darwin ]; then
     done
   fi
 fi
+
+# Add completion for Git aliases
+__git_complete ga _git_add
+__git_complete gapa _git_add
+__git_complete gco _git_checkout
+__git_complete gp _git_push
