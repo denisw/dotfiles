@@ -3,6 +3,8 @@ packages: [
   "autocomplete-elixir"
   "elm-format"
   "file-icons"
+  "go-plus"
+  "go-signature-statusbar"
   "ide-csharp"
   "ide-java"
   "ide-typescript"
