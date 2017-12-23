@@ -35,7 +35,6 @@
       isDisabledIfNotInPackageJson: true
   "vim-mode-plus":
     incrementalSearch: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
