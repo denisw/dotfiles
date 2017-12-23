@@ -9,6 +9,10 @@ syntax on
 
 " Enable search result highlighting
 set hlsearch
+set incsearch
+
+" Do case-insensitive search if pattern is lowercase
+set smartcase
 
 " Use two-space indentation
 set tabstop=2 shiftwidth=2 expandtab smarttab
