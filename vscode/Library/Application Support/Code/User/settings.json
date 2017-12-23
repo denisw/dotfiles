@@ -7,9 +7,9 @@
 
   "javascript.validate.enable": false,
 
-  "vim.scroll": 30,
-  "vim.disableAnnoyingNeovimMessage": true,
+  "vim.scroll": 40,
+  "vim.hlsearch": true,
   "vim.incsearch": true,
 
-  "workbench.colorTheme": "Default Light+"
+  "workbench.colorTheme": "Default Dark+"
 }

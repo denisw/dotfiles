@@ -19,3 +19,6 @@ atom/.atom/storage
 *.elc
 emacs/.emacs.d/elpa
 emacs/.emacs.d/projectile-bookmarks.eld
+
+# Visual Studio Code
+/vscode/Library/Application Support/Code/User/workspaceStorage
