@@ -39,6 +39,7 @@
     ;; Windows
     (evil-leader/set-key "0" 'delete-window)
     (evil-leader/set-key "1" 'delete-other-windows)
+    (evil-leader/set-key "2" 'split-window-below)
     (evil-leader/set-key "3" 'split-window-right)
     (evil-leader/set-key "w" 'other-window)))
 
