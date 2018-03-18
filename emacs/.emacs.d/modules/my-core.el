@@ -9,6 +9,9 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
+;; Disable bell sounds
+(setq ring-bell-function 'ignore)
+
 ;; Delete trailing whitespace on save.
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
