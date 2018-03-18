@@ -10,9 +10,6 @@
   "autocomplete-elixir":
     elixirPath: "/usr/local/bin/elixir"
   core:
-    disabledPackages: [
-      "atom-elixir-formatter"
-    ]
     telemetryConsent: "limited"
   editor:
     fontSize: 12
