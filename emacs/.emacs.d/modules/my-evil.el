@@ -2,12 +2,19 @@
 
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq-default evil-shift-width 2)
   :config
   (progn
     (evil-mode 1)
-    (setq-default evil-shift-width 2)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)))
 
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 (use-package evil-leader
   :ensure t
