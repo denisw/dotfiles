@@ -11,4 +11,4 @@
 ;; Live Markdown preview -- https://github.com/shime/emacs-livedown
 (require 'livedown)
 
-(provide 'my-markdown)
+(provide 'my-writing)
