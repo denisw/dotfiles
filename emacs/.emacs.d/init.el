@@ -30,8 +30,8 @@
 (require 'my-helm)
 (require 'my-javascript)
 (require 'my-magit)
-(require 'my-markdown)
 (require 'my-projectile)
+(require 'my-writing)
 (require 'my-yaml)
 
 ;; Custom
