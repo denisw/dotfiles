@@ -1,4 +1,6 @@
 "*":
+  "atom-ide-ui":
+    use: {}
   "atom-package-deps":
     ignored: [
       "linter-eslint"
@@ -8,11 +10,10 @@
   "autocomplete-elixir":
     elixirPath: "/usr/local/bin/elixir"
   core:
-    telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
+    disabledPackages: [
+      "atom-elixir-formatter"
     ]
+    telemetryConsent: "limited"
   editor:
     fontSize: 12
   "exception-reporting":
@@ -32,7 +33,6 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
-      isDisabledIfNotInPackageJson: true
   "vim-mode-plus":
     incrementalSearch: true
     useSmartcaseForSearch: true
