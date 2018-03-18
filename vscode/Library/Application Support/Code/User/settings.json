@@ -5,17 +5,12 @@
     80
   ],
   "editor.tabSize": 2,
-
   "explorer.openEditors.visible": 0,
-
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-
   "javascript.validate.enable": false,
-
   "vim.scroll": 40,
   "vim.hlsearch": true,
   "vim.incsearch": true,
-
   "workbench.colorTheme": "Default Dark+"
 }
