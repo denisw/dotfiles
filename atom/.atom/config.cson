@@ -30,6 +30,8 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
   "vim-mode-plus":
     incrementalSearch: true
     useSmartcaseForSearch: true
