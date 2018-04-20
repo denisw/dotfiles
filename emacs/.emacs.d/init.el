@@ -40,13 +40,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (solarized-light)))
+ '(compilation-message-face (quote default))
+ '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
- '(package-selected-packages
-   (quote
-    (haskell-mode livedown livedown-mode markdown-mode yaml-mode dockerfile-mode rjsx-mode exec-path-from-shell cider clojure-mode helm-projectile evil-magit magit helm evil-leader projectile evil use-package))))
+    ("f0c98535db38af17e81e491a77251e198241346306a90c25eb982b57e687d7c0" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
