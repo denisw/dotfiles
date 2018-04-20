@@ -9,8 +9,12 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "javascript.validate.enable": false,
+  "prettier.requireConfig": true,
   "vim.scroll": 40,
   "vim.hlsearch": true,
   "vim.incsearch": true,
-  "workbench.colorTheme": "Default Dark+"
+  "workbench.colorTheme": "Default Dark+",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
 }
