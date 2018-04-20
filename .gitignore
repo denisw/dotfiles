@@ -20,5 +20,12 @@ atom/.atom/storage
 emacs/.emacs.d/elpa
 emacs/.emacs.d/projectile-bookmarks.eld
 
+# Sublime Text 3
+sublime3/Sublime Text 3/Backup
+sublime3/Sublime Text 3/Cache
+sublime3/Sublime Text 3/Index
+sublime3/Sublime Text 3/Local
+sublime3/Sublime Text 3/Packages
+
 # Visual Studio Code
 /vscode/Library/Application Support/Code/User/workspaceStorage
