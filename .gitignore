@@ -18,6 +18,7 @@ atom/.atom/storage
 *.ec
 *.elc
 emacs/.emacs.d/elpa
+emacs/.emacs.d/network-security.data
 emacs/.emacs.d/projectile-bookmarks.eld
 
 # Sublime Text 3
