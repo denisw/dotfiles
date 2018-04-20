@@ -3,7 +3,7 @@
 (use-package evil
   :ensure t
   :init
-  (setq evil-want-integration t)
+  (setq-default evil-want-integration nil)
   (setq-default evil-shift-width 2)
   :config
   (progn
