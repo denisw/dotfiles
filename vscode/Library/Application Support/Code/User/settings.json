@@ -1,20 +1,39 @@
 {
+  // Docker
   "docker.showExplorer": false,
   "editor.minimap.enabled": false,
+
+  // Editor
   "editor.rulers": [
     80
   ],
   "editor.tabSize": 2,
+
+  // Explorer
   "explorer.openEditors.visible": 0,
+
+  // Files
+  "files.associations": {
+    "*.js.snap": "javascript"
+  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+
+  // JavaScript
   "javascript.validate.enable": false,
+
+
+  // Prettier
   "prettier.requireConfig": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+
+  // Vim
   "vim.scroll": 40,
   "vim.hlsearch": true,
   "vim.incsearch": true,
+
+  // Workbench
   "workbench.colorTheme": "Default Dark+",
-  "[javascript]": {
-    "editor.formatOnSave": true
-  }
 }
