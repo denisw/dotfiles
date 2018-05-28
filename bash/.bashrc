@@ -1,3 +1,3 @@
-for file in ~/.bashrc.d/*.bashrc; do
+for file in ~/.bashrc.d/*.sh; do
   source "$file"
 done
