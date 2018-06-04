@@ -39,6 +39,7 @@
   "vim.scroll": 40,
   "vim.hlsearch": true,
   "vim.incsearch": true,
+  "vim.overrideCopy": false,
 
   // Workbench
   "workbench.colorTheme": "Default Dark+",
