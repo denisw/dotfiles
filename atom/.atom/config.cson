@@ -11,6 +11,10 @@
     elixirPath: "/usr/local/bin/elixir"
   core:
     telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
     fontSize: 12
   "exception-reporting":
