@@ -2,6 +2,7 @@
 .#*
 *#
 *~
+*.swp
 
 # Atom
 atom/.atom/.apm
