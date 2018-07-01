@@ -46,5 +46,7 @@
   "vim.overrideCopy": false,
 
   // Workbench
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default Light+",
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
 }
