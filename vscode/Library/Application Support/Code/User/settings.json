@@ -22,7 +22,6 @@
   // JavaScript
   "javascript.validate.enable": false,
 
-
   // Prettier
   "prettier.requireConfig": true,
   "[javascript]": {
@@ -33,6 +32,11 @@
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true
+  },
+
+  // Python
+  "[python]": {
+    "editor.tabSize": 4
   },
 
   // Vim
