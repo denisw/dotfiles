@@ -10,6 +10,7 @@
   "editor.tabSize": 2,
 
   // Explorer
+  "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
 
   // Files
@@ -21,6 +22,7 @@
 
   // JavaScript
   "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
 
   // Prettier
   "prettier.requireConfig": true,
@@ -45,8 +47,9 @@
   "vim.incsearch": true,
   "vim.overrideCopy": false,
 
+  // Window
+  "window.zoomLevel": 0,
+
   // Workbench
   "workbench.colorTheme": "Default Light+",
-  "explorer.confirmDragAndDrop": false,
-  "window.zoomLevel": 0,
 }
