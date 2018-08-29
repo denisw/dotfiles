@@ -19,12 +19,18 @@ set guioptions-=R
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 
 call plug#end()
+
+""" Color Scheme """
+
+set background=light
+color snow
 
 """ Mappings """
 
