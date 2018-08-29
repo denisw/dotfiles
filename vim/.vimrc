@@ -1,5 +1,6 @@
 """ Basics """
 
+set number
 set hlsearch
 set nocompatible
 set smartcase
