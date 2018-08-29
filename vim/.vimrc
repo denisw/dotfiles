@@ -6,6 +6,14 @@ set nocompatible
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab smarttab
 
+""" GUI """
+
+" Disable all scrollbars
+set guioptions-=l
+set guioptions-=r
+set guioptions-=L
+set guioptions-=R
+
 """ Plugins """
 
 call plug#begin('~/.vim/plugged')
