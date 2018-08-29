@@ -24,6 +24,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -37,6 +38,9 @@ color snow
 map <C-P> :FZF<CR>
 
 """ Plugin Config """
+
+" ALE
+let g:ale_sign_column_always = 1
 
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
