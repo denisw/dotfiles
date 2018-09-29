@@ -6,6 +6,13 @@ set nocompatible
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab smarttab
 
+" Move swapfiles to dedicated folder
+set directory^=$HOME/.vim/tmp//
+
+" Enable persistent undo
+set undodir=$HOME/.vim/undo
+set undofile
+
 """ GUI """
 
 " Disable all scrollbars
