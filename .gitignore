@@ -29,5 +29,8 @@ sublime3/Sublime Text 3/Index
 sublime3/Sublime Text 3/Local
 sublime3/Sublime Text 3/Packages
 
+# Vim
+vim/.vim/plugged
+
 # Visual Studio Code
 /vscode/Library/Application Support/Code/User/workspaceStorage
