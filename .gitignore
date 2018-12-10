@@ -22,6 +22,9 @@ emacs/.emacs.d/elpa
 emacs/.emacs.d/network-security.data
 emacs/.emacs.d/projectile-bookmarks.eld
 
+# Spacemacs
+.spacemacs.env
+
 # Sublime Text 3
 sublime3/Sublime Text 3/Backup
 sublime3/Sublime Text 3/Cache
