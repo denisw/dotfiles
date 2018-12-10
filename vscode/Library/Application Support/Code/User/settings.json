@@ -19,6 +19,9 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
 
+  // Java
+  "java.home": "/Users/denis/.jenv/versions/11",
+
   // JavaScript
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -48,7 +51,6 @@
 
   // Window
   "window.zoomLevel": 0,
-
-  // Workbench
-  "workbench.colorTheme": "Default Light+",
+  "diffEditor.renderSideBySide": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
 }
