@@ -21,6 +21,7 @@
 (require 'init-ivy)
 (require 'init-javascript)
 (require 'init-macos)
+(require 'init-magit)
 (require 'init-projectile)
 (require 'init-theme-molokai)
 (require 'init-writing)
