@@ -24,6 +24,7 @@
 (require 'init-projectile)
 (require 'init-theme-molokai)
 (require 'init-writing)
+(require 'init-yaml)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
