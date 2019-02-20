@@ -31,6 +31,7 @@ set guioptions-=R
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
@@ -47,8 +48,8 @@ call plug#end()
 
 """ Color Scheme """
 
-set background=light
-color snow
+set background=dark
+color dracula
 
 """ Mappings """
 
