@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -65,3 +66,5 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 
+" YouCompleteMe
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
