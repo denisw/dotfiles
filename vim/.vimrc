@@ -21,6 +21,8 @@ set undofile
 
 """ GUI """
 
+set guifont=Source\ Code\ Pro\ for\ Powerline
+
 " Disable all scrollbars
 set guioptions-=l
 set guioptions-=r
@@ -43,6 +45,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -60,6 +64,10 @@ map <C-P> :FZF<CR>
 
 " ALE
 let g:ale_sign_column_always = 1
+
+" Airline
+let g:airline_theme='dracula'
+let g:airline_powerline_fonts=1
 
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
