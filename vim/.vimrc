@@ -76,3 +76,4 @@ let g:strip_whitespace_confirm=0
 
 " YouCompleteMe
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jt :YcmCompleter GetType<CR>
