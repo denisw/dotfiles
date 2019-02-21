@@ -69,6 +69,11 @@ let g:ale_sign_column_always = 1
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts=1
 
+" Prettier
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_async = 1
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx PrettierAsync
+
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
