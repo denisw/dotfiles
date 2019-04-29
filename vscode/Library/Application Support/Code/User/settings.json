@@ -51,6 +51,11 @@
 
   // Window
   "window.zoomLevel": 0,
-  "diffEditor.renderSideBySide": false,
+
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.renderSideBySide": false,
+  "explorer.openEditors.visible": 0,
+  "breadcrumbs.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

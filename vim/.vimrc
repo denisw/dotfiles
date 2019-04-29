@@ -71,8 +71,7 @@ let g:airline_powerline_fonts=1
 
 " Prettier
 let g:prettier#autoformat = 0
-let g:prettier#exec_cmd_async = 1
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx Prettier
 
 " vim-better-whitespace
 let g:better_whitespace_enabled=1
@@ -80,5 +79,6 @@ let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 
 " YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 10
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jt :YcmCompleter GetType<CR>

@@ -11,12 +11,9 @@
     elixirPath: "/usr/local/bin/elixir"
   core:
     telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
-    ]
   editor:
     fontSize: 12
+    showInvisibles: true
   "exception-reporting":
     userId: "792e8bd2-c9a9-8453-9abd-b5849b617f4d"
   "go-plus":
