@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'junegunn/fzf.vim'
 Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -68,6 +69,9 @@ let g:ale_sign_column_always = 1
 " Airline
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts=1
+
+" FZF
+let $FZF_DEFAULT_COMMAND='rg --files --follow'
 
 " Prettier
 let g:prettier#autoformat = 0
