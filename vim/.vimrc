@@ -21,7 +21,7 @@ set undofile
 
 """ GUI """
 
-set guifont=Source\ Code\ Pro\ for\ Powerline
+set guifont=SourceCodeProForPowerline:h12
 
 " Disable all scrollbars
 set guioptions-=l
