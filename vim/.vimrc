@@ -72,6 +72,8 @@ let g:airline_powerline_fonts=1
 
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :History<CR>
 
 " Prettier
 let g:prettier#autoformat = 0
