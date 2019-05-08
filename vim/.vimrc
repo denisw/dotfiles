@@ -9,6 +9,7 @@ set number
 set hidden
 set hlsearch
 set nocompatible
+set ignorecase
 set smartcase
 set tabstop=2 shiftwidth=2 expandtab smarttab
 
