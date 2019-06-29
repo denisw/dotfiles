@@ -1,6 +1,6 @@
 # Prompt
 function fish_prompt
-  set_color $fish_color_cwd
+  set_color --bold $fish_color_param
   printf '%s' (basename (prompt_pwd))
   set_color normal
 
