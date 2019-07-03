@@ -45,6 +45,11 @@ set statusline+=\ %y
 set statusline+=\ %3l:%2c
 set statusline+=\ \ %*
 
+""" Plugin Pre-Configuration """
+
+" ALE
+let g:ale_completion_enabled = 1
+
 """ Plugins """
 
 call plug#begin('~/.vim/plugged')
@@ -60,7 +65,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 Plug 'rakr/vim-one'
 
@@ -85,6 +89,8 @@ map <C-P> :FZF<CR>
 
 " ALE
 let g:ale_sign_column_always = 1
+nnoremap <leader>jd :ALEGoToDefinition<CR>
+nnoremap <leader>jr :ALEFindReferences<CR>
 
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
@@ -99,8 +105,3 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx Prettier
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
-
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 10
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>jt :YcmCompleter GetType<CR>
