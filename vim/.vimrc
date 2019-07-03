@@ -22,7 +22,8 @@ set undofile
 
 """ GUI """
 
-set guifont=SourceCodeProForPowerline:h12
+" Font
+set guifont=SourceCodePro-Regular:h13
 
 " Disable all scrollbars
 set guioptions-=l
@@ -30,11 +31,24 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=R
 
+""" Statusline """
+
+" Left
+set statusline=
+set statusline+=\ \ %f
+set statusline+=\ %m
+
+" Right
+set statusline+=%=
+set statusline+=%{FugitiveStatusline()}
+set statusline+=\ %y
+set statusline+=\ %3l:%2c
+set statusline+=\ \ %*
+
 """ Plugins """
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'nightsense/snow'
@@ -47,16 +61,21 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
 """ Color Scheme """
 
-set background=dark
-color dracula
+" Enable Truecolor in iTerm2
+" (Apple's Terminal.app doesn't support it currently).
+if $TERM_PROGRAM == 'iTerm.app'
+  set termguicolors
+end
+
+set background=light
+colorscheme one
 
 """ Mappings """
 
@@ -66,10 +85,6 @@ map <C-P> :FZF<CR>
 
 " ALE
 let g:ale_sign_column_always = 1
-
-" Airline
-let g:airline_theme='dracula'
-let g:airline_powerline_fonts=1
 
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
