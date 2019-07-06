@@ -36,7 +36,7 @@ setopt prompt_subst
 autoload -Uz vcs_info add-zsh-hook
 add-zsh-hook precmd vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats "(${fg_bold[red]}%b${reset_color}) "
+zstyle ':vcs_info:git:*' formats "(%{$fg_bold[red]%}%b%{$reset_color%}) "
 
 # Prompt definition
 PROMPT='%{$fg_bold[blue]%}%1~%{$reset_color%} ${vcs_info_msg_0_}%# '
