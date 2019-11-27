@@ -23,7 +23,7 @@
 (require 'init-macos)
 (require 'init-magit)
 (require 'init-projectile)
-(require 'init-theme-molokai)
+(require 'init-theme-zenburn)
 (require 'init-writing)
 (require 'init-yaml)
 
@@ -37,7 +37,7 @@
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(package-selected-packages
    (quote
-    (use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package))))
+    (zenburn-theme use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
