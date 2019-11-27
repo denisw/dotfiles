@@ -10,6 +10,9 @@
 ;; Show column number in mode line.
 (column-number-mode 1)
 
+;; Use Source Code Pro font.
+(set-frame-font "Source Code Pro-13" nil t)
+
 ;; Use two-space indentation by default.
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
