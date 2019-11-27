@@ -40,6 +40,9 @@
   ;; Shortcuts -- Magit
   (evil-leader/set-key "g" 'magit-status)
 
+  ;; Shortcuts -- Projectile
+  (evil-leader/set-key "p" 'projectile-find-file)
+
   ;; Shortcuts -- M-x
   (evil-leader/set-key ":" 'execute-extended-command)
 
