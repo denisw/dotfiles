@@ -1,5 +1,8 @@
 ;;; init-basic.el --- Fundamental customizations
 
+;; Don't show the splash screen
+(setq inhibit-splash-screen t)
+
 ;; Reduce UI clutter.
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
