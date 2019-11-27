@@ -2,4 +2,8 @@
 
 (use-package magit)
 
+(use-package evil-magit
+  :ensure t
+  :after (evil magit))
+
 (provide 'init-magit)
