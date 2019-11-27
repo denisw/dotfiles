@@ -2,17 +2,27 @@
 
 ;; evil
 (use-package evil
-  :after evil-leader
+  :ensure t
   :init
   (setq evil-shift-width 2)
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
 
   ;; Bind C-u to scroll-up instead of repeat
   (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up))
 
+(use-package evil-collection
+  :ensure t
+  :after evil
+  :config
+  (evil-collection-init))
+
 ;; Support leader-key commands with evil-leader
 (use-package evil-leader
+  :ensure t
+  :after evil
   :config
   (global-evil-leader-mode)
 
