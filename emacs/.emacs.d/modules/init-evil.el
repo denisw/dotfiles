@@ -19,6 +19,12 @@
   :config
   (evil-collection-init))
 
+(use-package evil-commentary
+  :ensure t
+  :after evil
+  :config
+  (evil-commentary-mode))
+
 ;; Support leader-key commands with evil-leader
 (use-package evil-leader
   :ensure t
