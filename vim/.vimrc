@@ -54,6 +54,7 @@ let g:ale_completion_enabled = 1
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'nightsense/snow'
@@ -66,7 +67,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'w0rp/ale'
 Plug 'rakr/vim-one'
 
 call plug#end()
