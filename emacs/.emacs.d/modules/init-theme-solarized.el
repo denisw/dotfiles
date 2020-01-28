@@ -2,6 +2,6 @@
 
 (use-package solarized-theme
   :config
-  (load-theme 'solarized-dark))
+  (load-theme 'solarized-light))
 
 (provide 'init-theme-solarized)
