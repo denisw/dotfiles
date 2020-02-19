@@ -20,6 +20,9 @@ set directory^=$HOME/.vim/tmp//
 set undodir=$HOME/.vim/undo
 set undofile
 
+" Use the space key as <leader>
+let mapleader = " "
+
 """ GUI """
 
 " Font
