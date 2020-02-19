@@ -89,19 +89,30 @@ colorscheme solarized8
 
 """ Mappings """
 
+" ALE
+nnoremap <leader>jd :ALEGoToDefinition<CR>
+nnoremap <leader>jr :ALEFindReferences<CR>
+
+" fzf
 map <C-P> :FZF<CR>
+map <C-B> :Buffers<CR>
+
+" NERDTree
+map <C-N> :NERDTreeToggle<CR>
+
 
 """ Plugin Config """
 
 " ALE
 let g:ale_sign_column_always = 1
-nnoremap <leader>jd :ALEGoToDefinition<CR>
-nnoremap <leader>jr :ALEFindReferences<CR>
 
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>h :History<CR>
+
+" NERDTree
+let NERDTreeShowHidden=1
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
 " Prettier
 let g:prettier#autoformat = 0
