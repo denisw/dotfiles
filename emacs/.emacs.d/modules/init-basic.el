@@ -1,5 +1,9 @@
 ;;; init-basic.el --- Fundamental customizations
 
+;; Use ~/Project as default directory if it exists
+(setq default-directory
+      (if (file-exists-p "~/Projects") "~/Projects" "~"))
+
 ;; Don't show the splash screen
 (setq inhibit-splash-screen t)
 
