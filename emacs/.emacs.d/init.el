@@ -22,6 +22,7 @@
 (require 'init-ivy)
 (require 'init-javascript)
 (require 'init-lsp)
+(require 'init-python)
 (require 'init-macos)
 (require 'init-magit)
 (require 'init-projectile)
@@ -34,12 +35,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" default)))
  '(package-selected-packages
-   (quote
-    (dockerfile-mode elpy lsp-ui typescript-mode lsp-mode prettier-js add-node-modules-path writeroom-mode monokai-theme evil-commentary evil-magit zenburn-theme use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package))))
+   '(elpy typescript-mode lsp-mode prettier-js add-node-modules-path writeroom-mode monokai-theme evil-commentary evil-magit zenburn-theme use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
