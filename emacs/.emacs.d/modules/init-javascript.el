@@ -19,6 +19,7 @@
 ;; https://github.com/prettier/prettier-emacs
 (use-package prettier-js
   :ensure t
+  :after (add-node-modules-path)
   :commands prettier-js-mode
   :hook ((js-mode . prettier-js-mode)
          (typescript-mode . prettier-js-mode)))
