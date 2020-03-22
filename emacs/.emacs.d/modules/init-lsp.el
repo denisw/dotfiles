@@ -2,9 +2,14 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((js-mode . lsp-deferred)
-         (typescript-mode . lsp-deferred))
+  :hook ((typescript-mode . lsp-deferred))
   :init
-  (setq lsp-signature-render-documentation nil))
+  (setq lsp-signature-render-documentation nil)
+
+  ;; Enable LSP in js-mode, but not for JSON files
+  (add-hook 'js-mode-hook
+            (lambda ()
+              (unless (string-match "\\.json\\'" buffer-file-name)
+                (lsp-deferred)))))
 
 (provide 'init-lsp)
