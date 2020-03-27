@@ -18,8 +18,12 @@
 ;; Show column number in mode line.
 (column-number-mode 1)
 
-;; Use Source Code Pro font.
-(set-frame-font "Source Code Pro-13" nil t)
+;; Use Menlo font if available (i.e., on macOS)
+;; and fall back to Source Code Pro if not.
+(let ((fonts (font-family-list)))
+  (cond
+   ((member "Menlo" fonts) (set-frame-font "Menlo-13" nil t))
+   ((member "Source Code Pro" fonts) (set-frame-font "Source Code Pro-13" nil t))))
 
 ;; Use two-space indentation by default.
 (setq-default tab-width 2)
