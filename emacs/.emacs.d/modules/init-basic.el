@@ -7,6 +7,10 @@
 ;; Don't show the splash screen
 (setq inhibit-splash-screen t)
 
+;; Allow pixelwise resize so that the frame size is not limited to
+;; multiples of character widths / heights on macOS.
+(setq frame-resize-pixelwise t)
+
 ;; Reduce UI clutter.
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
