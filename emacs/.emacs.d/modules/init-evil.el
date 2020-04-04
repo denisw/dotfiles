@@ -50,7 +50,7 @@
   (evil-leader/set-key "p" 'projectile-find-file)
 
   ;; Shortcuts -- M-x
-  (evil-leader/set-key ":" 'execute-extended-command)
+  (evil-leader/set-key "<SPC>" 'execute-extended-command)
 
   ;; Shortcuts -- Windows
   (evil-leader/set-key "0" 'delete-window)
