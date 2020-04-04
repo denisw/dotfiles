@@ -11,7 +11,10 @@
   (evil-mode 1)
 
   ;; Bind C-u to scroll-up instead of repeat
-  (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up))
+  (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+
+  ;; Bind C-p to projectile-find-file
+  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file))
 
 (use-package evil-collection
   :ensure t
