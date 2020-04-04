@@ -27,6 +27,7 @@
 (require 'init-magit)
 (require 'init-projectile)
 (require 'init-theme-zenburn)
+(require 'init-web)
 (require 'init-writing)
 (require 'init-yaml)
 
@@ -36,7 +37,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elpy typescript-mode lsp-mode prettier-js add-node-modules-path writeroom-mode monokai-theme evil-commentary evil-magit zenburn-theme use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package)))
+   (quote
+    (web-mode go-mode elpy typescript-mode lsp-mode prettier-js add-node-modules-path writeroom-mode monokai-theme evil-commentary evil-magit zenburn-theme use-package evil-collection yaml-mode flycheck evil-leader magit molokai-theme solarized-theme markdown-mode projectile ivy evil rjsx-mode req-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
