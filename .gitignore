@@ -18,6 +18,7 @@ atom/.atom/storage
 # Emacs
 *.ec
 *.elc
+emacs/.emacs.d/.cache
 emacs/.emacs.d/.lsp-session-*
 emacs/.emacs.d/elpa
 emacs/.emacs.d/elpy
