@@ -9,7 +9,7 @@
   ;; Enable LSP in js-mode, but not for JSON files
   (add-hook 'js-mode-hook
             (lambda ()
-              (unless (string-match "\\.json\\'" buffer-file-name)
+              (unless (equal major-mode "json-mode")
                 (lsp-deferred)))))
 
 (provide 'init-lsp)

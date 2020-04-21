@@ -2,6 +2,13 @@
 
 (setq-default js-indent-level 2)
 
+;; JSON
+(use-package json-mode
+  :ensure t
+  :mode (("\\.json\\'" . json-mode)
+         ("/\\.eslintrc\\'" . json-mode)
+         ("/\\.prettierrc\\'" . json-mode)))
+
 ;; TypeScript
 ;; https://github.com/emacs-typescript/typescript.el
 (use-package typescript-mode
