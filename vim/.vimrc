@@ -107,6 +107,10 @@ map <C-N> :NERDTreeToggle<CR>
 " ALE
 let g:ale_sign_column_always = 1
 
+" Better Whitespace
+let g:strip_whitespace_on_save = 1
+let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help']
+
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
 
