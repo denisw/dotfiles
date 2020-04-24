@@ -59,7 +59,7 @@ let g:ale_completion_enabled = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-solarized8'
