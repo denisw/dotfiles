@@ -57,3 +57,8 @@ alias gr='git rebase'
 alias gst='git status'
 
 ### Extras ###
+
+# ASDF
+if which brew >/dev/null && brew --prefix asdf >/dev/null 2>&1; then
+  . $(brew --prefix asdf)/asdf.sh
+fi

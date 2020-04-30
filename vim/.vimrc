@@ -85,8 +85,8 @@ if $TERM_PROGRAM == 'iTerm.app'
   set termguicolors
 end
 
-set background=light
-colorscheme solarized8
+set background=dark
+colorscheme zenburn
 
 """ Mappings """
 
