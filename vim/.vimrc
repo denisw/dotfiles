@@ -27,7 +27,7 @@ let mapleader = " "
 """ GUI """
 
 " Font
-set guifont=SourceCodePro-Regular:h13
+set guifont=SourceCodePro-Regular:h15
 
 " Disable all scrollbars
 set guioptions-=l
@@ -85,8 +85,8 @@ if $TERM_PROGRAM == 'iTerm.app'
   set termguicolors
 end
 
-set background=dark
-colorscheme zenburn
+colorscheme one
+set background=light
 
 """ Mappings """
 
