@@ -69,12 +69,12 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
 Plug 'qpkorr/vim-bufkill'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-vinegar'
 Plug 'rakr/vim-one'
 
 call plug#end()
@@ -115,11 +115,6 @@ let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf
 
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
-
-" NERDTree
-let NERDTreeShowHidden=1
-" If more than one window and previous buffer was NERDTree, go back to it.
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
 " Prettier
 let g:prettier#autoformat = 0
