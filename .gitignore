@@ -38,6 +38,10 @@ sublime3/Sublime Text 3/Index
 sublime3/Sublime Text 3/Local
 sublime3/Sublime Text 3/Packages
 
+# Tmux
+/tmux/.tmux/plugins
+!/tmux/.tmux/plugins/tpm
+
 # Vim
 /vim/.vim/plugged
 /vim/.vim/tmp
