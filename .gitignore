@@ -45,6 +45,7 @@ sublime3/Sublime Text 3/Packages
 !/tmux/.tmux/plugins/tpm
 
 # Vim
+/vim/.vim/.netrwhist
 /vim/.vim/plugged
 /vim/.vim/tmp
 /vim/.vim/undo
