@@ -192,43 +192,6 @@ the current line).
     (evil-commentary-mode))
 #+END_SRC
 
-Use ~evil-leader~ to make Space a Vim-style leader key.
-
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-leader
-    :ensure t
-    :after evil
-    :config
-    (global-evil-leader-mode)
-
-    ;; Use space key as leader key (inspired by Spacemacs :))
-    (evil-leader/set-leader "<SPC>")
-
-    ;; Shortcuts -- Buffers
-    (evil-leader/set-key
-      "b" 'switch-to-buffer
-      "k" 'kill-this-buffer)
-
-    ;; Shortcuts -- Files
-    (evil-leader/set-key "f" 'find-file)
-
-    ;; Shortcuts -- Magit
-    (evil-leader/set-key "g" 'magit-status)
-
-    ;; Shortcuts -- Projectile
-    (evil-leader/set-key "p" 'projectile-find-file)
-
-    ;; Shortcuts -- M-x
-    (evil-leader/set-key "<SPC>" 'execute-extended-command)
-
-    ;; Shortcuts -- Windows
-    (evil-leader/set-key "0" 'delete-window)
-    (evil-leader/set-key "1" 'delete-other-windows)
-    (evil-leader/set-key "2" 'split-window-below)
-    (evil-leader/set-key "3" 'split-window-right)
-    (evil-leader/set-key "w" 'other-window))
-#+END_SRC
-
 * Theme
 
 Install the [[Emacs Doom themes][https://github.com/hlissner/emacs-doom-themes]]
@@ -270,6 +233,46 @@ Integrate Magit with Evil keybindings.
   (use-package evil-magit
     :ensure t
     :after (evil magit))
+#+END_SRC
+
+** Hydra
+
+Use ~Hydra~ for setting up key chords initiated by Space, similar to Spacemacs.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package hydra
+    :ensure t)
+
+  (defhydra hydra-space (:color blue :idle 1.0 :hint nil)
+    "
+_:_ → M-x                  _b_ → switch buffer
+_0_ → delete window        _f_ → find file
+_1_ → delete other window  _g_ → magit
+_2_ → split below          _k_ → kill buffer
+_3_ → split right          _p_ → +project
+"
+    ("b" ivy-switch-buffer)
+    ("f" counsel-find-file)
+    ("g" magit)
+    ("p" hydra-project/body)
+    ("k" kill-this-buffer)
+    ("0" delete-window)
+    ("1" delete-other-windows)
+    ("2" split-window-below)
+    ("3" split-window-right)
+    (":" counsel-M-x))
+
+  (defhydra hydra-project (:color blue :idle 0.5 :hint nil)
+    "
++project
+_a_ → ag   _f_ → find file   _r_ → replace  _R_ → replace regexp
+"
+    ("a" projectile-ag)
+    ("f" projectile-find-file)
+    ("r" projectile-replace)
+    ("R" projectile-replace-regexp))
+
+  (define-key evil-normal-state-map (kbd "<SPC>") 'hydra-space/body)
 #+END_SRC
 
 ** Ivy
@@ -446,8 +449,7 @@ Save org-roam files separately in ~Documents/Zettelkasten~.
     :ensure t
     :config
     (setq org-roam-directory "~/Documents/Zettelkasten")
-    (add-hook 'after-init-hook 'org-roam-mode)
-    (evil-leader/set-key "o" 'org-roam-find-file))
+    (add-hook 'after-init-hook 'org-roam-mode))
 
   (define-key org-mode-map (kbd "C-c i") 'org-roam-insert)
 
