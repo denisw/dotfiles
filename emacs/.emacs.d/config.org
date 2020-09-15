@@ -294,7 +294,9 @@ Use Ivy for all things minibuffer completion.
   (use-package ivy
     :ensure t
     :config
-    (ivy-mode 1))
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d/%d) "))
 #+END_SRC
 
 ** LSP
