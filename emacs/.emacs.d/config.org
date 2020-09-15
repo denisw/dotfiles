@@ -241,21 +241,7 @@ and use its "Doom One" theme.
     (load-theme 'doom-one t))
 #+END_SRC
 
-* Platforms
-** MacOS
-
-Use the ~exec-path-from-shell~ package to work around the fact that MacOS
-GUI applications don't inherit environment variables from the login shell.
-
-#+BEGIN_SRC emacs-lisp
-(when (eq system-type 'darwin)
-  (use-package exec-path-from-shell
-    :config
-    (setq exec-path-from-shell-check-startup-files nil)
-    (exec-path-from-shell-initialize)))
-#+END_SRC
-
-* Tools
+* Utilities
 ** Flycheck
 
 Add Flycheck for live syntax checking.
@@ -339,7 +325,25 @@ to use Ivy for all completion prompts.
     (projectile-mode 1))
 #+END_SRC
 
-* Languages
+** Treemacs
+
+Add the Treemacs file explorer and its Evil Mode and Projectile integrations.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package treemacs
+    :ensure t
+    :defer t)
+
+  (use-package treemacs-evil
+    :after treemacs evil
+    :ensure t)
+
+  (use-package treemacs-projectile
+    :after treemacs projectile
+    :ensure t)
+#+END_SRC
+
+* Major Modes
 ** Dockerfile
 
 #+BEGIN_SRC emacs-lisp
@@ -394,6 +398,52 @@ Add ~markdown-mode~ for Markdown syntax highlighting.
   (use-package markdown-mode)
 #+END_SRC
 
+** Org Mode
+
+Use ~Documents/Org~ as the default org-mode directory.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-directory "~/Documents/Org")
+  (setq org-agenda-files (list org-directory))
+#+END_SRC
+
+Allow following links by pressing Enter.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-return-follows-link t)
+#+END_SRC
+
+Don't truncate long lines.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-startup-truncated nil)
+#+END_SRC
+
+Install ~deft~ for easily finding Org files.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package deft
+    :ensure t
+    :config
+    (setq deft-directory org-directory))
+#+END_SRC
+
+Install ~org-roam~ as a personal Zettelkasten archive.
+Save org-roam files separately in ~Documents/Zettelkasten~.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-roam
+    :ensure t
+    :config
+    (setq org-roam-directory "~/Documents/Zettelkasten")
+    (add-hook 'after-init-hook 'org-roam-mode)
+    (evil-leader/set-key "o" 'org-roam-find-file))
+
+  (define-key org-mode-map (kbd "C-c i") 'org-roam-insert)
+
+#+END_SRC
+
+** Programming
 ** Python
 
 Use ~elpy~ for great Python language support.
@@ -437,4 +487,17 @@ Add ~web-mode~ and use it for HTML, CSS and HTML template files.
 #+BEGIN_SRC emacs-lisp
   (use-package yaml-mode
     :ensure t)
+#+END_SRC
+* Platform-Specific
+** MacOS
+
+Use the ~exec-path-from-shell~ package to work around the fact that MacOS
+GUI applications don't inherit environment variables from the login shell.
+
+#+BEGIN_SRC emacs-lisp
+(when (eq system-type 'darwin)
+  (use-package exec-path-from-shell
+    :config
+    (setq exec-path-from-shell-check-startup-files nil)
+    (exec-path-from-shell-initialize)))
 #+END_SRC
