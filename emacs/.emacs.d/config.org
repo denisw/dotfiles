@@ -77,9 +77,9 @@ to Source Code Pro.
   (let ((fonts (font-family-list)))
     (cond
      ((member "Menlo" fonts)
-      (set-frame-font "Menlo-13" nil t))
+      (set-frame-font "Menlo-15" nil t))
      ((member "Source Code Pro" fonts)
-      (set-frame-font "Source Code Pro-13" nil t))))
+      (set-frame-font "Source Code Pro-15" nil t))))
 #+END_SRC
 
 ** Indentation & Whitespace
@@ -198,10 +198,16 @@ Install the [[Emacs Doom themes][https://github.com/hlissner/emacs-doom-themes]]
 and use its "Doom One" theme.
 
 #+BEGIN_SRC emacs-lisp
-  (use-package doom-themes
+  (use-package one-themes
     :ensure t
     :config
-    (load-theme 'doom-one t))
+    (setq emacs-one-use-variable-pitch nil)
+    (setq emacs-one-height-minus-1 1.0)
+    (setq emacs-one-height-plus-1 1.0)
+    (setq emacs-one-height-plus-2 1.0)
+    (setq emacs-one-height-plus-3 1.0)
+    (setq emacs-one-height-plus-4 1.0)
+    (load-theme 'one-dark t))
 #+END_SRC
 
 * Utilities
