@@ -59,11 +59,9 @@ let g:ale_completion_enabled = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'lifepillar/vim-solarized8'
-Plug 'nightsense/snow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -76,6 +74,10 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+
+" Themes
+Plug 'lifepillar/vim-solarized8'
+Plug 'nightsense/snow'
 Plug 'rakr/vim-one'
 
 call plug#end()
@@ -89,7 +91,7 @@ if $TERM_PROGRAM == 'iTerm.app'
 end
 
 colorscheme one
-set background=light
+set background=dark
 
 """ Mappings """
 
