@@ -103,6 +103,10 @@ nnoremap <leader>jr :ALEFindReferences<CR>
 map <C-P> :FZF<CR>
 map <C-B> :Buffers<CR>
 
+" Netrw
+map <leader>d :e %:h<CR>
+map <leader>D :e .<CR>
+
 " NERDTree
 map <C-N> :NERDTreeToggle<CR>
 
