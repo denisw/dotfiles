@@ -53,6 +53,7 @@ alias gd='git diff'
 alias gl='git pull'
 alias glog='git log'
 alias gp='git push'
+alias gp!='git push --force-with-lease'
 alias gr='git rebase'
 alias gst='git status'
 
