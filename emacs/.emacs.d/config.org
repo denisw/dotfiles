@@ -409,7 +409,10 @@ Use ~json-mode~ for JSON files instead of the built-in ~js-mode~.
 Add ~markdown-mode~ for Markdown syntax highlighting.
 
 #+BEGIN_SRC emacs-lisp
-  (use-package markdown-mode)
+  (use-package markdown-mode
+    :ensure t
+    :config
+    (setq markdown-enable-wiki-links t))
 #+END_SRC
 
 ** Org Mode
