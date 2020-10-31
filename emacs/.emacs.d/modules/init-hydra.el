@@ -1,0 +1,37 @@
+;;; init-hydra.el --- Hydra key-chord system
+
+;; https://github.com/abo-abo/hydra
+(use-package hydra
+  :ensure t)
+
+(defhydra hydra-space (:color blue :idle 1.0 :hint nil)
+  "
+_:_ → M-x            _g_ → magit
+_b_ → switch buffer  _k_ → kill buffer
+_d_ → dired          _p_ → +project
+_f_ → find file
+"
+  ("b" ivy-switch-buffer)
+  ("d" dired)
+  ("f" counsel-find-file)
+  ("g" magit)
+  ("p" hydra-project/body)
+  ("k" kill-this-buffer)
+  (":" counsel-M-x))
+
+(defhydra hydra-project (:color blue :idle 0.5 :hint nil)
+  "
++project
+_f_ → find project file
+_r_ → replace
+_R_ → replace regexp
+_s_ → search
+"
+  ("f" projectile-find-file)
+  ("r" projectile-replace)
+  ("R" projectile-replace-regexp)
+  ("s" counsel-rg))
+
+(evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body)
+
+(provide 'init-hydra)
