@@ -42,6 +42,7 @@
 (require 'init-docker)
 (require 'init-javascript)
 (require 'init-programming)
+(require 'init-rust)
 (require 'init-web)
 (require 'init-yaml)
 
