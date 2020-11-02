@@ -41,7 +41,7 @@
 ;; Languages
 (require 'init-docker)
 (require 'init-javascript)
-(require 'init-prog-mode)
+(require 'init-programming)
 (require 'init-web)
 (require 'init-yaml)
 
