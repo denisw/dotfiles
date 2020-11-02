@@ -50,17 +50,3 @@
 ;; Platform-Specific
 (when (string-equal system-type "darwin")
   (require 'init-macos))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(treemacs-magit zenburn-theme yaml-mode web-mode visual-fill-column use-package undo-tree typescript-mode treemacs-projectile treemacs-evil solarized-theme racket-mode prettier-js org-roam one-themes olivetti nlinum monokai-theme lsp-mode json-mode hlinum go-mode flycheck exec-path-from-shell evil-magit evil-leader evil-commentary evil-collection elpy doom-themes dockerfile-mode deft counsel alchemist ag add-node-modules-path)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
