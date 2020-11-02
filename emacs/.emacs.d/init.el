@@ -39,6 +39,7 @@
 (require 'init-writing)
 
 ;; Languages
+(require 'init-c)
 (require 'init-docker)
 (require 'init-javascript)
 (require 'init-programming)
