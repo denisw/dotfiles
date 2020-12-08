@@ -45,7 +45,7 @@
 ;; Set the default directory to the home directory if it is "/",
 ;; which is the case if Emacs is run as a GUI app on macOS.
 (when (equal default-directory "/")
-  (setq default-directory "~"))
+  (setq default-directory "~/"))
 
 ;; Replace all "yes or no" questions with "y or n" ones.
 (defalias 'yes-or-no-p 'y-or-n-p)
