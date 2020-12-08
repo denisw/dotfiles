@@ -27,7 +27,7 @@
 (require 'init-evil)
 
 ;; Theme
-(require 'init-theme-one)
+(require 'init-theme-dracula)
 
 ;; Utilities
 (require 'init-flycheck)
