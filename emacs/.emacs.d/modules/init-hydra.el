@@ -13,20 +13,22 @@ _f_ → find file
 "
   ("b" ivy-switch-buffer)
   ("d" dired)
-  ("f" counsel-find-file)
+  ("f" find-file)
   ("g" magit)
   ("p" hydra-project/body)
   ("k" kill-this-buffer)
-  (":" counsel-M-x))
+  (":" execute-extended-command))
 
 (defhydra hydra-project (:color blue :idle 0.5 :hint nil)
   "
 +project
+_c_ → compile project
 _f_ → find project file
 _r_ → replace
 _R_ → replace regexp
 _s_ → search
 "
+  ("c" projectile-compile-project)
   ("f" projectile-find-file)
   ("r" projectile-replace)
   ("R" projectile-replace-regexp)
