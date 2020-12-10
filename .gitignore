@@ -42,6 +42,7 @@ sublime3/Sublime Text 3/Packages
 
 # Tmux
 /tmux/.tmux/plugins
+/tmux/.tmux/resurrect
 !/tmux/.tmux/plugins/tpm
 
 # Vim
