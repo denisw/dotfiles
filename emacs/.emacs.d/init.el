@@ -32,9 +32,9 @@
 ;; Utilities
 (require 'init-flycheck)
 (require 'init-hydra)
-(require 'init-ivy)
 (require 'init-magit)
 (require 'init-projectile)
+(require 'init-selectrum)
 (require 'init-treemacs)
 (require 'init-writing)
 

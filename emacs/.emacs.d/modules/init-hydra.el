@@ -11,7 +11,7 @@ _b_ → switch buffer  _k_ → kill buffer
 _d_ → dired          _p_ → +project
 _f_ → find file
 "
-  ("b" ivy-switch-buffer)
+  ("b" switch-to-buffer)
   ("d" dired)
   ("f" find-file)
   ("g" magit)
@@ -32,7 +32,7 @@ _s_ → search
   ("f" projectile-find-file)
   ("r" projectile-replace)
   ("R" projectile-replace-regexp)
-  ("s" counsel-rg))
+  ("s" projectile-ag))
 
 (evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body)
 
