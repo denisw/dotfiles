@@ -1,7 +1,9 @@
 ;;; init-programming.el --- General programming configuration
 
 (defun my/prog-mode-hook ()
-  (display-line-numbers-mode 1))
+  (display-line-numbers-mode 1)
+  (setq display-fill-column-indicator-column 79)
+  (display-fill-column-indicator-mode 1))
 
 (add-hook 'prog-mode-hook 'my/prog-mode-hook)
 

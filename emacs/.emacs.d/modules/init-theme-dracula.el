@@ -4,6 +4,7 @@
 (use-package dracula-theme
   :ensure t
   :config
-  (load-theme 'dracula t))
+  (load-theme 'dracula t)
+  (set-face-foreground 'fill-column-indicator "#6272a4"))
 
 (provide 'init-theme-dracula)
