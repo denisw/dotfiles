@@ -3,9 +3,9 @@
 ;; https://github.com/bbatsov/projectile
 (use-package projectile
   :ensure t
-  :after ivy
+  :after selectrum
   :config
-  (setq projectile-completion-system 'ivy)
+  (setq projectile-completion-system 'default)
   (projectile-mode))
 
 (provide 'init-projectile)
