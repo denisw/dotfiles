@@ -40,6 +40,7 @@
 
 ;; Languages
 (require 'init-c)
+(require 'init-clojure)
 (require 'init-docker)
 (require 'init-javascript)
 (require 'init-programming)
