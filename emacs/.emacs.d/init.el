@@ -30,6 +30,7 @@
 (require 'init-theme-dracula)
 
 ;; Utilities
+(require 'init-company)
 (require 'init-flycheck)
 (require 'init-hydra)
 (require 'init-magit)
