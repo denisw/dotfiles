@@ -4,7 +4,8 @@
 (use-package selectrum
   :ensure t
   :config
-  (selectrum-mode 1))
+  (selectrum-mode 1)
+  (define-key selectrum-minibuffer-map (kbd "s-<backspace>") 'backward-kill-sexp))
 
 ;; https://github.com/raxod502/prescient.el
 (use-package selectrum-prescient
