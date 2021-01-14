@@ -62,6 +62,7 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -94,6 +95,11 @@ colorscheme one
 set background=dark
 
 """ Mappings """
+
+" Ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " ALE
 nnoremap <leader>jd :ALEGoToDefinition<CR>
