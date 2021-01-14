@@ -92,7 +92,7 @@ if $TERM_PROGRAM == 'iTerm.app'
 end
 
 colorscheme one
-set background=dark
+set background=light
 
 """ Mappings """
 
