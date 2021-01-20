@@ -105,6 +105,9 @@ endif
 nnoremap <leader>jd :ALEGoToDefinition<CR>
 nnoremap <leader>jr :ALEFindReferences<CR>
 
+" fugitive.vim
+nnoremap <leader>g :Gstatus<CR>
+
 " fzf
 map <C-P> :FZF<CR>
 map <C-B> :Buffers<CR>
