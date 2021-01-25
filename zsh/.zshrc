@@ -26,6 +26,10 @@ setopt share_history
 # Editor
 export EDITOR=vim
 
+# Explicitly use emacs-style zsh bindings
+# (required for tmux if EDITOR=vim is set)
+bindkey -e
+
 ### Prompt ###
 
 # Advanced prompt
