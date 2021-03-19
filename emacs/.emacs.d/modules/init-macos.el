@@ -7,4 +7,11 @@
     (setq exec-path-from-shell-check-startup-files nil)
     (exec-path-from-shell-initialize)))
 
+;; https://github.com/jwiegley/use-package
+(use-package ns-auto-titlebar
+  :if (memq window-system '(mac ns))
+  :ensure t
+  :config
+  (ns-auto-titlebar-mode))
+
 (provide 'init-macos)
