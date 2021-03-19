@@ -1,0 +1,13 @@
+# import:
+#   - /Users/denis/src/dracula-alacritty/dracula.yml
+
+font:
+  size: 14
+
+window:
+  dynamic_padding: true
+
+key_bindings:
+  - { key: B , mods: Alt, chars: "\x1bb" }
+  - { key: D , mods: Alt, chars: "\x1bd" }
+  - { key: F , mods: Alt, chars: "\x1bf" }
