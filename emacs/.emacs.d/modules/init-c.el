@@ -1,8 +1,11 @@
 ;;; init-c.el --- C/C++ programming
 
+;; Indent C++ with four spaces by default.
+(setq-default c-basic-offset 4)
+
 (defun my/c-style-hook ()
-  ;; Indent with two spaces by default.
-  (setq c-basic-offset 2)
+  ;; Use the Stroustrup style by default.
+  (c-set-style "stroustrup")
   ;; Do not indent code inside of namespace declarations.
   (c-set-offset 'innamespace 0))
 
