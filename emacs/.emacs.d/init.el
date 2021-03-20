@@ -3,10 +3,10 @@
 ;; Author: Denis Washington <denis@denisw.de>
 ;; URL: https://github.com/denisw/dotfiles
 ;;
-;; A relatively small, written-from-scratch Emacs config that makes
-;; heavy use of `use-package' for declarative package management
-;; and configuration. It configures Vim-style keybindings for as
-;; many modes as possible using Evil.
+;; A relatively small, written-from-scratch Emacs config that:
+;;
+;; - Uses `straight.el' and `use-package' for package management
+;; - Configures Vim keybindings using `evil'
 ;;
 ;; The configuration is organized into several modules that can be
 ;; found in the `modules/' sub-directory.
