@@ -36,8 +36,7 @@
 
 ;; Basics
 (require 'init-basics)
-(when (string-equal system-type "darwin")
-  (require 'init-macos))
+(require 'init-macos)
 
 ;; Evil (Vim bindings)
 (require 'init-evil)

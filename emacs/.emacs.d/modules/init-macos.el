@@ -2,7 +2,7 @@
 
 ;; https://github.com/purcell/exec-path-from-shell
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns))
+  :if (string-equal system-type "darwin")
   :straight t
   :config
   (setq exec-path-from-shell-check-startup-files nil)
