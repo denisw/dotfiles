@@ -2,7 +2,7 @@
 ;;
 ;; Author: Denis Washington <denis@denisw.de>
 ;; URL: https://github.com/denisw/dotfiles
-;;
+;
 ;; A relatively small, written-from-scratch Emacs config that:
 ;;
 ;; - Uses `straight.el' and `use-package' for package management
@@ -47,10 +47,11 @@
 ;; Utilities
 (require 'init-company)
 (require 'init-flycheck)
+(require 'init-helm)
 (require 'init-hydra)
 (require 'init-magit)
 (require 'init-projectile)
-(require 'init-selectrum)
+;; (require 'init-selectrum)
 (require 'init-treemacs)
 (require 'init-writing)
 
