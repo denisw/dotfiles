@@ -2,7 +2,7 @@
 
 ;; https://www.flycheck.org
 (use-package flycheck
-  :ensure t
+  :straight t
   :config
   (setq-default flycheck-disabled-checkers
                 '(emacs-lisp-checkdoc

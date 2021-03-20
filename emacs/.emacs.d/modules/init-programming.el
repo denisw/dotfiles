@@ -9,13 +9,13 @@
 
 ;; https://github.com/dgutov/diff-hl
 (use-package diff-hl
-  :ensure t
+  :straight t
   :config
   (global-diff-hl-mode))
 
 ;; https://github.com/jacktasia/dumb-jump
 (use-package dumb-jump
-  :ensure t
+  :straight t
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 

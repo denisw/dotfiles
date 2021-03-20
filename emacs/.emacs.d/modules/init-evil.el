@@ -3,7 +3,7 @@
 ;; Install Evil mode for Vim keybindings.
 ;; https://github.com/emacs-evil/evil
 (use-package evil
-  :ensure t
+  :straight t
   :init
   (setq evil-shift-width tab-width)
   (setq evil-want-integration t)
@@ -18,7 +18,7 @@
 ;; Use the Evil Collection to integrate Evil into many other modes.
 ;; https://github.com/emacs-evil/evil-collection
 (use-package evil-collection
-  :ensure t
+  :straight t
   :after evil
   :config
   (evil-collection-init))
@@ -26,7 +26,7 @@
 ;; Add evil-commentary for easily commenting out code.
 ;; https://github.com/linktohack/evil-commentary
 (use-package evil-commentary
-  :ensure t
+  :straight t
   :after evil
   :config
   (evil-commentary-mode))

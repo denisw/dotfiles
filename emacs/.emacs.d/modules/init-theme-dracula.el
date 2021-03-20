@@ -2,7 +2,7 @@
 
 ;; https://draculatheme.com/emacs
 (use-package dracula-theme
-  :ensure t
+  :straight t
   :config
   (load-theme 'dracula t)
   (set-face-foreground 'fill-column-indicator "#6272a4"))

@@ -10,7 +10,7 @@
 ;; https://github.com/jwiegley/use-package
 (use-package ns-auto-titlebar
   :if (memq window-system '(mac ns))
-  :ensure t
+  :straight t
   :config
   (ns-auto-titlebar-mode))
 

@@ -2,7 +2,7 @@
 
 ;; https://github.com/bbatsov/projectile
 (use-package projectile
-  :ensure t
+  :straight t
   :after selectrum
   :config
   (setq projectile-completion-system 'default)

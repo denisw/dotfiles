@@ -1,6 +1,6 @@
 ;;; init-clojure.el --- Clojure development
 
 (use-package cider
-  :ensure t)
+  :straight t)
 
 (provide 'init-clojure)

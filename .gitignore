@@ -4,17 +4,6 @@
 *~
 *.swp
 
-# Atom
-atom/.atom/.apm
-atom/.atom/.node-gyp
-atom/.atom/blob-store
-atom/.atom/compile-cache
-atom/.atom/github.cson
-atom/.atom/nohup.out
-atom/.atom/packages
-atom/.atom/recovery
-atom/.atom/storage
-
 # Emacs
 *.ec
 *.elc
@@ -30,6 +19,7 @@ emacs/.emacs.d/package-quickstart.el
 emacs/.emacs.d/projectile-bookmarks.eld
 emacs/.emacs.d/projects
 emacs/.emacs.d/recentf
+emacs/.emacs.d/straight
 emacs/.emacs.d/transient
 emacs/.emacs.d/var
 

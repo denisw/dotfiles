@@ -2,22 +2,22 @@
 
 ;; https://github.com/Alexander-Miller/treemacs
 (use-package treemacs
-  :ensure t
+  :straight t
   :defer t)
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-evil
 (use-package treemacs-evil
   :after treemacs evil
-  :ensure t)
+  :straight t)
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-projectile
 (use-package treemacs-projectile
   :after treemacs projectile
-  :ensure t)
+  :straight t)
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-magit
 ;; (use-package treemacs-magit
 ;;   :after treemacs magit
-;;   :ensure t)
+;;   :straight t)
 
 (provide 'init-treemacs)

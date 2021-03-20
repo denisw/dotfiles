@@ -12,12 +12,12 @@
 ;; Major mode for CMake build files.
 ;; https://github.com/Kitware/CMake/blob/master/Auxiliary/cmake-mode.el
 (use-package cmake-mode
-  :ensure t)
+  :straight t)
 
 ;; Major mode for Meson build files.
 ;; https://github.com/wentasah/meson-mode
 (use-package meson-mode
-  :ensure t
+  :straight t
   :after evil)
 
 (provide 'init-c)

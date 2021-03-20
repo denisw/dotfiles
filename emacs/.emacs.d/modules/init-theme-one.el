@@ -2,7 +2,7 @@
 
 ;; https://github.com/balajisivaraman/emacs-one-themes
 (use-package one-themes
-  :ensure t
+  :straight t
   :config
   (setq emacs-one-use-variable-pitch nil)
   (setq emacs-one-height-minus-1 1.0)

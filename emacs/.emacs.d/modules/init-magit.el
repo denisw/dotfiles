@@ -2,6 +2,6 @@
 
 ;; https://magit.vc
 (use-package magit
-  :ensure t)
+  :straight t)
 
 (provide 'init-magit)

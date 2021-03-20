@@ -2,7 +2,7 @@
 
 ;; https://github.com/abo-abo/hydra
 (use-package hydra
-  :ensure t)
+  :straight t)
 
 (defhydra hydra-space (:color blue :idle 1.0 :hint nil)
   "

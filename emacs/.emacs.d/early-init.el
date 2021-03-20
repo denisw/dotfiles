@@ -1,4 +1,3 @@
-;; Use the MELPA package archive.
-;; https://melpa.org/
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Disable package.el (I use straight.el instead).
+;; https://github.com/raxod502/straight.el#getting-started
+(setq package-enable-at-startup nil)
