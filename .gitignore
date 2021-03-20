@@ -16,6 +16,7 @@ emacs/.emacs.d/elpa
 emacs/.emacs.d/elpy
 emacs/.emacs.d/network-security.data
 emacs/.emacs.d/package-quickstart.el
+emacs/.emacs.d/projectile.cache
 emacs/.emacs.d/projectile-bookmarks.eld
 emacs/.emacs.d/projects
 emacs/.emacs.d/recentf
