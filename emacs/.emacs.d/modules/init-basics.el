@@ -57,4 +57,13 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Define aliases for some completion commands, allowing
+;; them to be overridden by other modules.
+(defalias 'my/find-file 'find-file)
+(defalias 'my/switch-to-buffer 'switch-to-buffer)
+(defalias 'my/M-x 'execute-extended-command)
+(global-set-key (kbd "C-x C-f") #'my/find-file)
+(global-set-key (kbd "C-x b") #'my/switch-to-buffer)
+(global-set-key (kbd "M-x") #'my/M-x)
+
 (provide 'init-basics)

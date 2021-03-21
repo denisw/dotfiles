@@ -1,15 +1,9 @@
 ;;; init-hydra.el --- Hydra key-chord system
 
-;; Define aliases for some completion commands, allowing
-;; them to be overridden by other modules.
-(defalias 'my/find-file 'find-file)
-(defalias 'my/switch-to-buffer 'switch-to-buffer)
-(defalias 'my/M-x 'execute-extended-command)
-
 ;; https://github.com/abo-abo/hydra
 (use-package hydra
   :straight t
-  :after hydra
+  :after evil
   :config
 
   (defhydra hydra-space (:color blue :idle 1.0 :hint nil)
