@@ -50,6 +50,8 @@
 (require 'init-flycheck)
 (require 'init-helm)
 (require 'init-hydra)
+(require 'init-java)
+(require 'init-lsp)
 (require 'init-magit)
 (require 'init-projectile)
 ;; (require 'init-selectrum)
