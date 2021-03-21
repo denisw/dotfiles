@@ -8,6 +8,11 @@
 ;; Show the current column number in the mode line.
 (column-number-mode 1)
 
+;; Show current time in modeline
+(setq display-time-format "%H:%M")
+(setq display-time-default-load-average nil)
+(display-time-mode 1)
+
 ;; Skip the splash screen and show the scratch buffer instead.
 (setq inhibit-splash-screen t)
 
