@@ -5,10 +5,16 @@
 *.swp
 
 # Emacs
-emacs/.emacs.d/
-!emacs/.emacs.d/init.el
-!emacs/.emacs.d/early-init.el
-!emacs/.emacs.d/modules/*.el
+emacs/.emacs.d/.cache
+emacs/.emacs.d/.lsp-session-v1
+emacs/.emacs.d/elpa
+emacs/.emacs.d/elpy
+emacs/.emacs.d/eshell
+emacs/.emacs.d/projectile-bookmarks.eld
+emacs/.emacs.d/recentf
+emacs/.emacs.d/straight
+emacs/.emacs.d/transient
+emacs/.emacs.d/var
 
 # Spacemacs
 .spacemacs.env
