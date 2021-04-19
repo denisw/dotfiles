@@ -13,7 +13,10 @@ emacs/.emacs.d/elpy
 emacs/.emacs.d/eshell
 emacs/.emacs.d/projectile-bookmarks.eld
 emacs/.emacs.d/recentf
-emacs/.emacs.d/straight
+emacs/.emacs.d/straight/build
+emacs/.emacs.d/straight/build-cache.el
+emacs/.emacs.d/straight/modified
+emacs/.emacs.d/straight/repos
 emacs/.emacs.d/transient
 emacs/.emacs.d/var
 
