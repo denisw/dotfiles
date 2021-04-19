@@ -24,6 +24,7 @@
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
+  (setq straight-check-for-modifications '(check-on-save find-when-checking))
   (load bootstrap-file nil 'nomessage))
 
 ;; Install use-package.
