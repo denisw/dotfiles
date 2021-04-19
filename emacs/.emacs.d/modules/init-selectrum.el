@@ -5,7 +5,8 @@
   :straight t
   :config
   (selectrum-mode 1)
-  (define-key selectrum-minibuffer-map (kbd "s-<backspace>") 'backward-kill-sexp))
+  (define-key selectrum-minibuffer-map (kbd "s-<backspace>") 'backward-kill-sexp)
+  (define-key selectrum-minibuffer-map (kbd "C-l") 'backward-kill-sexp))
 
 ;; https://github.com/raxod502/prescient.el
 (use-package selectrum-prescient

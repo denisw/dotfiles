@@ -5,7 +5,7 @@
   :straight t
   :after selectrum
   :config
-  (setq projectile-completion-system 'default)
+  (setq projectile-completion-system 'auto)
   (projectile-mode))
 
 (provide 'init-projectile)

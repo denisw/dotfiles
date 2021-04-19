@@ -48,13 +48,14 @@
 ;; Utilities
 (require 'init-company)
 (require 'init-flycheck)
-(require 'init-helm)
+;; (require 'init-helm)
 (require 'init-hydra)
+;; (require 'init-ivy)
 (require 'init-java)
 (require 'init-lsp)
 (require 'init-magit)
 (require 'init-projectile)
-;; (require 'init-selectrum)
+(require 'init-selectrum)
 (require 'init-treemacs)
 (require 'init-writing)
 
