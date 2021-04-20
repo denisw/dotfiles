@@ -64,6 +64,14 @@ alias gp!='git push --force-with-lease'
 alias gr='git rebase'
 alias gst='git status'
 
+### Bundles ###
+
+source "$HOME/.zsh/antigen.zsh"
+
+antigen bundle jeffreytse/zsh-vi-mode
+
+antigen apply
+
 ### Extras ###
 
 # ASDF
