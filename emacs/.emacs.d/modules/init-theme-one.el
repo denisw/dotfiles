@@ -10,7 +10,7 @@
   (setq emacs-one-height-plus-2 1.0)
   (setq emacs-one-height-plus-3 1.0)
   (setq emacs-one-height-plus-4 1.0)
-  (load-theme 'one-light t)
+  (load-theme 'one-dark t)
   (set-face-foreground 'fill-column-indicator "#EAEAEA"))
 
 (provide 'init-theme-one)
