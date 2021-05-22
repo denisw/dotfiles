@@ -27,7 +27,8 @@
 ;; https://github.com/linktohack/evil-commentary
 (use-package evil-commentary
   :straight t
-  :after evil
+  :after (evil delight)
+  :delight evil-commentary-mode
   :config
   (evil-commentary-mode))
 

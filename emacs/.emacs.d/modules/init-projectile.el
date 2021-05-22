@@ -3,7 +3,8 @@
 ;; https://github.com/bbatsov/projectile
 (use-package projectile
   :straight t
-  :after selectrum
+  :after (delight selectrum)
+  :delight projectile-mode
   :config
   (setq projectile-completion-system 'auto)
   (projectile-mode))
