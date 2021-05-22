@@ -54,6 +54,7 @@
 (require 'init-hydra)
 ;; (require 'init-ivy)
 (require 'init-java)
+(require 'init-lisp)
 (require 'init-lsp)
 (require 'init-magit)
 (require 'init-projectile)
