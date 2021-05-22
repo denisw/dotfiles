@@ -6,3 +6,5 @@
   :delight
   auto-revert-mode
   eldoc-mode)
+
+(provide 'init-delight)
