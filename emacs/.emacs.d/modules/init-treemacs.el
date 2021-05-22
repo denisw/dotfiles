@@ -3,16 +3,18 @@
 ;; https://github.com/Alexander-Miller/treemacs
 (use-package treemacs
   :straight t
-  :defer t)
+  :defer t
+  :config
+  (setq treemacs-no-png-images t))
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-evil
 (use-package treemacs-evil
-  :after treemacs evil
+  :after (treemacs evil)
   :straight t)
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-projectile
 (use-package treemacs-projectile
-  :after treemacs projectile
+  :after (treemacs projectile)
   :straight t)
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-magit
