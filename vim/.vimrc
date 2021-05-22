@@ -27,7 +27,7 @@ let mapleader = " "
 """ GUI """
 
 " Font
-set guifont=SourceCodePro-Regular:h15
+set guifont=Menlo-Regular:h14
 
 " Disable all scrollbars
 set guioptions-=l
