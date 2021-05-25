@@ -2,6 +2,7 @@
 
 ;; https://magit.vc
 (use-package magit
-  :straight t)
+  :straight t
+  :commands magit-status)
 
 (provide 'init-magit)
