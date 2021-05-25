@@ -6,6 +6,7 @@
   :straight t
   :config
   (setq exec-path-from-shell-check-startup-files nil)
+  (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize))
 
 ;; https://github.com/jwiegley/use-package
