@@ -9,10 +9,4 @@
   :straight t
   :commands lsp-ui-mode)
 
-(use-package helm-lsp
-  :commands helm-lsp-workspace-symbol)
-
-(use-package dap-mode
-  :straight t)
-
 (provide 'init-lsp)
