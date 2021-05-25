@@ -2,7 +2,8 @@
 
 ;; https://github.com/pythonic-emacs/anaconda-mode
 (use-package anaconda-mode
-  :straight t)
+  :straight t
+  :hook python-mode)
 
 ;; https://github.com/pythonic-emacs/anaconda-mode
 (use-package pipenv
