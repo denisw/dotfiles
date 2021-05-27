@@ -72,6 +72,7 @@
 (require 'init-lsp)
 (require 'init-programming)
 (require 'init-rust)
+(require 'init-shell)
 (require 'init-terraform)
 (require 'init-web)
 (require 'init-yaml)

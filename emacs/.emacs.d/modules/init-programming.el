@@ -1,8 +1,8 @@
 ;;; init-programming.el --- General programming configuration
 
+;; Display line numbers in prog-mode-derived modes.
 (defun my/prog-mode-hook ()
   (display-line-numbers-mode 1))
-
 (add-hook 'prog-mode-hook 'my/prog-mode-hook)
 
 ;; https://github.com/dgutov/diff-hl
