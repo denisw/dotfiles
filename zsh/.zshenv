@@ -1,5 +1,14 @@
-# Set PATH
+# Initialize PATH
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Read PATH additions from /etc/paths.d/
+if [[ -d "/etc/paths.d" ]]; then
+  for f in $(ls /etc/paths.d); do
+    while IFS='' read -r line || [ -n "${line}" ]; do
+      PATH="$PATH:$line"
+    done < /etc/paths.d/$f
+  done
+fi
 
 # ASDF
 if [[ -d "$HOME/.asdf/shims" ]]; then
@@ -11,9 +20,7 @@ if [[ -d "$HOME/.cargo/bin" ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# Poetry
+# Poetry (Python)
 if [[ -d "$HOME/.poetry/bin" ]]; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
-
-
