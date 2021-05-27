@@ -21,6 +21,10 @@
 ;; the whole screen.
 (setq frame-resize-pixelwise t)
 
+;; Reduce the minimum frame width (in characters) for which
+;; `split-window-sensibly' splits the frame horizontally.
+(setq split-width-threshold 144)
+
 ;; Use the Menlo font if available (i.e., on macOS). Otherwise,
 ;; try falling back to Source Code Pro.
 (let ((fonts (font-family-list)))
