@@ -30,9 +30,9 @@
 (let ((fonts (font-family-list)))
   (cond
    ((member "Menlo" fonts)
-    (set-frame-font "Menlo-14" nil t))
+    (set-frame-font "Menlo-12" nil t))
    ((member "Source Code Pro" fonts)
-    (set-frame-font "Source Code Pro-14" nil t))))
+    (set-frame-font "Source Code Pro-12" nil t))))
 
 ;; Default to two-space indentation.
 (setq-default tab-width 2)
