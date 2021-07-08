@@ -10,7 +10,13 @@
   (setq emacs-one-height-plus-2 1.0)
   (setq emacs-one-height-plus-3 1.0)
   (setq emacs-one-height-plus-4 1.0)
+
   (load-theme 'one-dark t)
-  (set-face-foreground 'fill-column-indicator "#EAEAEA"))
+
+  (set-face-foreground 'fill-column-indicator "#EAEAEA")
+
+  (with-eval-after-load "term"
+    (set-face-foreground 'term-color-blue "#61AFEF")
+    (set-face-foreground 'term-color-red "#E06C75")))
 
 (provide 'init-theme-one)

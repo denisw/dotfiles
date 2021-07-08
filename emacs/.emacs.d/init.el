@@ -43,8 +43,9 @@
 (require 'init-evil)
 
 ;; Theme
-(require 'init-theme-dracula)
-;; (require 'init-theme-one)
+;; (require 'init-theme-dracula)
+;; (require 'init-theme-nord)
+(require 'init-theme-one)
 
 ;; Utilities
 (require 'init-company)
