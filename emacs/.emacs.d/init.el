@@ -50,6 +50,7 @@
 ;; Utilities
 (require 'init-company)
 (require 'init-delight)
+(require 'init-elixir)
 (require 'init-flycheck)
 ;; (require 'init-helm)
 (require 'init-hydra)
