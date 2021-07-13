@@ -75,4 +75,7 @@
 (global-set-key (kbd "C-x b") #'my/switch-to-buffer)
 (global-set-key (kbd "M-x") #'my/M-x)
 
+;; Set first day of calendar to Monday
+(setq calendar-week-start-day 1)
+
 (provide 'init-basics)
