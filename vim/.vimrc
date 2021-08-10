@@ -75,7 +75,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
-Plug 'qpkorr/vim-bufkill'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -120,15 +119,10 @@ nnoremap <leader>g :Gstatus<CR>
 
 " fzf
 map <C-P> :FZF<CR>
-map <C-B> :Buffers<CR>
-
-" Netrw
-map <leader>d :e %:h<CR>
-map <leader>D :e .<CR>
+map <leader>b :Buffers<CR>
 
 " NERDTree
 map <C-N> :NERDTreeToggle<CR>
-
 
 """ Plugin Config """
 
