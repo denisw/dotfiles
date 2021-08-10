@@ -66,6 +66,7 @@ let g:ale_completion_enabled = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
+Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
