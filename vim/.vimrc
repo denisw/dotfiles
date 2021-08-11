@@ -115,11 +115,15 @@ nnoremap <leader>jd :ALEGoToDefinition<CR>
 nnoremap <leader>jr :ALEFindReferences<CR>
 
 " fugitive.vim
-nnoremap <leader>g :Gstatus<CR>
+nnoremap <leader>g :Git status<CR>
 
 " fzf
 map <C-P> :FZF<CR>
 map <leader>b :Buffers<CR>
+
+" vim-commentary
+nmap <D-/> gcc
+vmap <D-/> gc
 
 " NERDTree
 map <C-N> :NERDTreeToggle<CR>
