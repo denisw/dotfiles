@@ -94,10 +94,9 @@ call plug#end()
 
 """ Color Scheme """
 
-" Enable Truecolor in iTerm2
-" (Apple's Terminal.app doesn't support it currently).
-if $TERM_PROGRAM == 'iTerm.app'
-  set termguicolors
+" Disable Truecolor in Terminal.app (as it doesn't support it).
+if $TERM_PROGRAM == 'Apple_Terminal'
+  set notermguicolors
 end
 
 colorscheme one
