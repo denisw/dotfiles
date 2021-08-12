@@ -21,6 +21,9 @@ set directory^=$HOME/.vim/tmp//
 set undodir=$HOME/.vim/undo
 set undofile
 
+" Customize completion in the Ex command line
+set wildmode=longest,list
+
 " Use the space key as <leader>
 let mapleader = " "
 
