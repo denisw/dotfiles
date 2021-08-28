@@ -1,30 +1,52 @@
-""" Defaults """
+language en_US.UTF-8
 
-filetype detect
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+""" Defaults """
 
 """ Basics """
 
-set number
-set hidden
-set hlsearch
+" Disable Vi compatibility mode.
 set nocompatible
+
+" Enable file type plugins.
+filetype detect
+
+" Load Vim default configuration.
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" Enable hidden buffers.
+set hidden
+
+" Show line numbers.
+set number
+
+" Highlight search results.
+set hlsearch
+
+" Ignore case when searching, unless the search term 
+" contains at least one capital letter.
 set ignorecase
 set smartcase
+
+" Use two-space indentation by default.
 set tabstop=2 shiftwidth=2 expandtab smarttab
 
-" Move swapfiles to dedicated folder
+" Put swapfiles into a dedicated folder, rather than using
+" the same folder as the actual file.
 set directory^=$HOME/.vim/tmp//
 
-" Enable persistent undo
+" Enable persistent undo.
 set undodir=$HOME/.vim/undo
 set undofile
 
-" Customize completion in the Ex command line
+" Customize completion in the Ex command line.
 set wildmode=longest,list
 
-" Use the space key as <leader>
+" Decrease the update time (milliseconds of inactivity before 
+" updating the swap file). Also used by some plugins.
+set updatetime=500
+
+" Use the space key as <leader>.
 let mapleader = " "
 
 """ GUI """
