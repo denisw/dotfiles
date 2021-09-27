@@ -1,1 +1,1 @@
-let g:ale_linters = ['cargo', 'rustfmt']
+let b:ale_linters = ['cargo', 'rustfmt']

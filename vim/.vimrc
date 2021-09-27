@@ -1,8 +1,6 @@
 language en_US.UTF-8
 
-""" Defaults """
-
-""" Basics """
+""" Basics
 
 " Disable Vi compatibility mode.
 set nocompatible
@@ -23,7 +21,7 @@ set number
 " Highlight search results.
 set hlsearch
 
-" Ignore case when searching, unless the search term 
+" Ignore case when searching, unless the search term
 " contains at least one capital letter.
 set ignorecase
 set smartcase
@@ -42,14 +40,21 @@ set undofile
 " Customize completion in the Ex command line.
 set wildmode=longest,list
 
-" Decrease the update time (milliseconds of inactivity before 
+" Decrease the update time (milliseconds of inactivity before
 " updating the swap file). Also used by some plugins.
 set updatetime=500
+
+" Increase the height of the command line to two lines.
+" Gives more room for longer linting error messages.
+set cmdheight=2
+
+" Don't show messages from ins-completion-menu in command line.
+set shortmess+=c
 
 " Use the space key as <leader>.
 let mapleader = " "
 
-""" GUI """
+""" GUI
 
 " Font
 set guifont=Menlo-Regular:h12
@@ -60,7 +65,7 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=R
 
-""" Statusline """
+""" Statusline
 
 " Left
 set statusline=
@@ -81,12 +86,13 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-""" Plugin Pre-Configuration """
+""" Plugin Pre-Configuration
+""" (what must be set before loading the plugin)
 
-" ALE
-let g:ale_completion_enabled = 1
+" ALE: Disable LSP as that is taken care of by CoC.nvim.
+let g:ale_disable_lsp = 1
 
-""" Plugins """
+""" Plugins
 
 call plug#begin('~/.vim/plugged')
 
@@ -96,6 +102,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -117,42 +124,7 @@ Plug 'rakr/vim-one'
 
 call plug#end()
 
-""" Color Scheme """
-
-" Disable Truecolor in Terminal.app (as it doesn't support it).
-if $TERM_PROGRAM == 'Apple_Terminal'
-  set notermguicolors
-end
-
-colorscheme one
-set background=dark
-
-""" Mappings """
-
-" Ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-" ALE
-nnoremap <leader>jd :ALEGoToDefinition<CR>
-nnoremap <leader>jr :ALEFindReferences<CR>
-
-" fugitive.vim
-nnoremap <leader>g :Git status<CR>
-
-" fzf
-map <C-P> :FZF<CR>
-map <leader>b :Buffers<CR>
-
-" vim-commentary
-nmap <D-/> gcc
-vmap <D-/> gc
-
-" NERDTree
-map <C-N> :NERDTreeToggle<CR>
-
-""" Plugin Config """
+""" Plugin Configuration
 
 " ALE
 let g:ale_sign_column_always = 1
@@ -173,3 +145,50 @@ let g:prettier#exec_cmd_async = 1
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
+
+""" Color Scheme
+
+" Disable Truecolor in Terminal.app (as it doesn't support it)
+if $TERM_PROGRAM == 'Apple_Terminal'
+  set notermguicolors
+end
+
+colorscheme one
+set background=dark
+
+""" Key Mappings
+
+" Ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" CoC.nvim
+nmap <silent> <leader>jd <Plug>(coc-definition)
+nmap <silent> <leader>jt <Plug>(coc-type-definition)
+nmap <silent> <leader>ji <Plug>(coc-implementation)
+nmap <silent> <leader>jr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ff <Plug>(coc-format)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" fugitive.vim
+nnoremap <leader>gs :Git<CR>
+
+" fzf
+map <C-P> :FZF<CR>
+map <leader>b :Buffers<CR>
+
+" vim-commentary
+nmap <D-/> gcc
+vmap <D-/> gc
+
+" NERDTree
+map <C-N> :NERDTreeToggle<CR>
