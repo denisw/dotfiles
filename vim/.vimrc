@@ -96,6 +96,7 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
