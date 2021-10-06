@@ -120,7 +120,6 @@ Plug 'tpope/vim-vinegar'
 
 " Themes
 Plug 'lifepillar/vim-solarized8'
-Plug 'nightsense/snow'
 Plug 'rakr/vim-one'
 
 call plug#end()
