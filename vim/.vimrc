@@ -150,7 +150,7 @@ if $TERM_PROGRAM == 'Apple_Terminal'
 end
 
 colorscheme one
-set background=dark
+set background=light
 
 """ Key Mappings
 
