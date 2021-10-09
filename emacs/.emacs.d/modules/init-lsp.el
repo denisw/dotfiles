@@ -4,6 +4,8 @@
   :straight t
   :init
   (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-headerline-breadcrumb-enable nil)
   ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024))
