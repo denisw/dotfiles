@@ -44,10 +44,6 @@ set wildmode=longest,list
 " updating the swap file). Also used by some plugins.
 set updatetime=500
 
-" Increase the height of the command line to two lines.
-" Gives more room for longer linting error messages.
-set cmdheight=2
-
 " Don't show messages from ins-completion-menu in command line.
 set shortmess+=c
 
