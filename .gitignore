@@ -21,6 +21,9 @@ emacs/.emacs.d/straight/repos
 emacs/.emacs.d/transient
 emacs/.emacs.d/var
 
+# Neovim
+/neovim/.config/nvim/plugged
+
 # Spacemacs
 .spacemacs.env
 
