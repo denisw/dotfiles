@@ -94,6 +94,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -149,8 +150,8 @@ if $TERM_PROGRAM == 'Apple_Terminal'
   set notermguicolors
 end
 
-colorscheme one
-set background=light
+set background=dark
+colorscheme dracula
 
 """ Key Mappings
 
