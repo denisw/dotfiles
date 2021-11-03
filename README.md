@@ -5,7 +5,7 @@ Currently, it contains configurations for:
 
 * [Emacs](./emacs/.emacs.d/init.el)
 * [Git](./git/.gitconfig)
-* [Vim](./vim/.vimrc)
+* [Vim](./vim/.vimrc) and [Neovim](./neovim/.config/nvim/init.lua)
 * [Zsh](./zsh/.zshrc)
 
 Feel free to reuse the files in this repository however you like.
@@ -22,7 +22,7 @@ stow zsh
 ```
 
 To switch to my [Oh-My-Zsh][oh-my-zsh]-based configuration (I still
-haven't decided what I like better), I can run:
+haven't decided which I like better), I can run:
 
 ```sh
 stow -D zsh
