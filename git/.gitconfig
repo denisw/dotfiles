@@ -1,5 +1,6 @@
 [user]
 	name = Denis Washington
 	email = denis@denisw.de
+
 [push]
-	default = simple
+	default = current
