@@ -1,8 +1,14 @@
 ;;; init-programming.el --- General programming configuration
 
-;; Display line numbers in prog-mode-derived modes.
+;; Apply some customizations to modes deriving from prog-mode.
 (defun my/prog-mode-hook ()
-  (display-line-numbers-mode 1))
+  ;; Display line numbers.
+  (display-line-numbers-mode 1)
+  ;; Don't display keywords or names as bold.
+  (set-face-bold font-lock-keyword-face nil)
+  (set-face-bold font-lock-function-name-face nil)
+  (set-face-bold font-lock-variable-name-face nil))
+
 (add-hook 'prog-mode-hook 'my/prog-mode-hook)
 
 ;; https://github.com/dgutov/diff-hl
