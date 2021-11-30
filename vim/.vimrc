@@ -47,6 +47,10 @@ set updatetime=500
 " Don't show messages from ins-completion-menu in command line.
 set shortmess+=c
 
+" Disable line wrapping and tweak horizontal scrolling.
+set nowrap
+set sidescroll=1
+
 " Use the space key as <leader>.
 let mapleader = " "
 
