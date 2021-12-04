@@ -86,11 +86,19 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-""" Plugin Pre-Configuration
-""" (what must be set before loading the plugin)
+""" Plugin pre-configuration
+""" (variables to be set before loading plugins)
 
 " ALE: Disable LSP as that is taken care of by CoC.nvim.
 let g:ale_disable_lsp = 1
+
+" coc.nvim: Configure the extensions to install at startup.
+let g:coc_global_extensions = [
+      \ 'coc-clangd',
+      \ 'coc-pyright',
+      \ 'coc-rust-analyzer',
+      \ 'coc-tsserver',
+      \ ]
 
 """ Plugins
 
