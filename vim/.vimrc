@@ -106,7 +106,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -127,13 +126,15 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 
-" Themes
+" Color schemes
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'rakr/vim-one'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
-""" Plugin Configuration
+""" Plugin configuration
 
 " ALE
 let g:ale_sign_column_always = 1
