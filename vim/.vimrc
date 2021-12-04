@@ -173,13 +173,26 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" CoC.nvim
-nmap <silent> <leader>jd <Plug>(coc-definition)
-nmap <silent> <leader>jt <Plug>(coc-type-definition)
-nmap <silent> <leader>ji <Plug>(coc-implementation)
-nmap <silent> <leader>jr <Plug>(coc-references)
+" coc.nvim: code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc.nvim: refactoring
 nmap <leader>rn <Plug>(coc-rename)
+
+" coc.nvim: formatting
 nmap <leader>ff <Plug>(coc-format)
+command! -nargs=0 Format :call CocAction('format')
+
+" coc.nvim: auto-fix
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" coc.nvim: organize imports
+command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" coc.nvim: text objects
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -188,6 +201,8 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+" coc.nvim: show documentation
 " https://github.com/neoclide/coc.nvim#example-vim-configuration
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
