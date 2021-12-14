@@ -64,6 +64,12 @@ alias gp!='git push --force-with-lease'
 alias gr='git rebase'
 alias gst='git status'
 
+### Functions ###
+
+set-title() {
+  echo -n "\033]0;${1}\007"
+}
+
 ### Bundles ###
 
 source "$HOME/.zsh/antigen.zsh"
