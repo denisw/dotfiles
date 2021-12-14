@@ -186,8 +186,9 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ff <Plug>(coc-format)
 command! -nargs=0 Format :call CocAction('format')
 
-" coc.nvim: auto-fix
-nmap <leader>qf  <Plug>(coc-fix-current)
+" coc.nvim: code actions / auto-fix
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>qf <Plug>(coc-fix-current)
 
 " coc.nvim: organize imports
 command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
