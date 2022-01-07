@@ -65,6 +65,9 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=R
 
+" Disable GUI cursor blinking
+:set guicursor+=a:blinkon0
+
 """ Statusline
 
 " Left
