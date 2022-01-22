@@ -131,6 +131,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 
 " Color schemes
+Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'rakr/vim-one'
@@ -167,8 +168,27 @@ if $TERM_PROGRAM == 'Apple_Terminal'
   set notermguicolors
 end
 
-set background=dark
-colorscheme dracula
+function Light()
+  if &termguicolors == 1
+    let g:ayucolor="light"
+    colorscheme ayu
+  else
+    set background=light
+    colorscheme one
+  endif
+endfunction
+
+function Dark()
+  set background=dark
+  colorscheme dracula
+endfunction
+
+" Define mappings to quickly switch between light and dark mode
+command! Light :call Light()
+command! Dark :call Dark()
+
+" Choose the scheme to enable on startup
+call Light()
 
 """ Key Mappings
 
