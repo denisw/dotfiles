@@ -243,6 +243,13 @@ function! s:show_documentation()
   endif
 endfunction
 
+" coc.nvim: completion on tab
+" https://github.com/neoclide/coc.nvim#example-vim-configuration
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
 " fugitive.vim
 nnoremap <leader>gs :Git<CR>
 
