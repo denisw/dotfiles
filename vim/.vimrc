@@ -151,6 +151,9 @@ let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf
 " FZF
 let $FZF_DEFAULT_COMMAND='rg --files --follow'
 
+" NERDTree
+let NERDTreeHijackNetrw = 0
+
 " Prettier
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
