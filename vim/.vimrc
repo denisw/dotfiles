@@ -121,6 +121,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'ton/vim-alternate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
@@ -225,6 +226,9 @@ nnoremap <leader>gs :Git<CR>
 " fzf
 map <C-P> :FZF<CR>
 map <leader>b :Buffers<CR>
+
+" vim-alternate
+nmap <leader>aa :Alternate<CR>
 
 " vim-commentary
 nmap <D-/> gcc
