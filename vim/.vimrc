@@ -108,6 +108,7 @@ let g:coc_global_extensions = [
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'bkad/CamelCaseMotion'
 Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -199,6 +200,11 @@ call Light()
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" CamelCaseMotion
+map <silent> <leader>w <Plug>CamelCaseMotion_w
+map <silent> <leader>e <Plug>CamelCaseMotion_e
+map <silent> <leader>ge <Plug>CamelCaseMotion_ge
 
 " coc.nvim: code navigation
 nmap <silent> gd <Plug>(coc-definition)
