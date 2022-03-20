@@ -1,3 +1,6 @@
+# Disable autosuggestions
+set -g fish_autosuggestion_enabled 0
+
 # Git aliases
 alias ga='git add'
 alias gapa='git add --patch'
