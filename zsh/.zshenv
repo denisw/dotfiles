@@ -1,5 +1,5 @@
 # Initialize PATH
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/foo:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Read PATH additions from /etc/paths.d/
 if [[ -d "/etc/paths.d" ]]; then
@@ -8,6 +8,11 @@ if [[ -d "/etc/paths.d" ]]; then
       PATH="$PATH:$line"
     done < /etc/paths.d/$f
   done
+fi
+
+# Homebrew
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 # ASDF
@@ -23,4 +28,9 @@ fi
 # Poetry (Python)
 if [[ -d "$HOME/.poetry/bin" ]]; then
   export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
+# ~/bin
+if [[ -d "$HOME/bin" ]]; then
+  export PATH="$PATH:$HOME/bin"
 fi

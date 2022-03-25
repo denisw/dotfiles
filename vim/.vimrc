@@ -57,7 +57,7 @@ let mapleader = " "
 """ GUI
 
 " Font
-set guifont=UbuntuMono-Regular:h16,Menlo:h14
+set guifont=UbuntuMono-Regular:h16,Menlo:h13
 
 " Disable all scrollbars
 set guioptions-=l
@@ -173,13 +173,8 @@ if $TERM_PROGRAM == 'Apple_Terminal'
 end
 
 function Light()
-  if &termguicolors == 1
-    let g:ayucolor="light"
-    colorscheme ayu
-  else
-    set background=light
-    colorscheme one
-  endif
+  set background=light
+  colorscheme one
 endfunction
 
 function Dark()
@@ -192,7 +187,7 @@ command! Light :call Light()
 command! Dark :call Dark()
 
 " Choose the scheme to enable on startup
-call Light()
+call Dark()
 
 """ Key Mappings
 
