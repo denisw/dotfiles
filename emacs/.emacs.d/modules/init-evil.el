@@ -13,7 +13,9 @@
   ;; Bind C-u to scroll-up instead of repeat
   (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
   ;; Bind C-p to projectile-find-file
-  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file))
+  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+  ;; Bind - to dired-jump, similar to vim-vinegar
+  (define-key evil-normal-state-map (kbd "-") 'dired-jump))
 
 ;; Use the Evil Collection to integrate Evil into many other modes.
 ;; https://github.com/emacs-evil/evil-collection
