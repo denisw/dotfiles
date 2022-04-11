@@ -34,3 +34,7 @@ fi
 if [[ -d "$HOME/bin" ]]; then
   export PATH="$PATH:$HOME/bin"
 fi
+
+if [[ -f "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
