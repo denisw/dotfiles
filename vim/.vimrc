@@ -114,13 +114,13 @@ Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'lambdalisue/fern.vim'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
-Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'ton/vim-alternate'
 Plug 'tpope/vim-commentary'
@@ -172,12 +172,12 @@ if $TERM_PROGRAM == 'Apple_Terminal'
   set notermguicolors
 end
 
-function Light()
+function! Light()
   set background=light
   colorscheme one
 endfunction
 
-function Dark()
+function! Dark()
   set background=dark
   colorscheme dracula
 endfunction
@@ -250,6 +250,10 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+" fern.vim
+nnoremap <leader>- :Fern . -reveal=%<CR>
+nnoremap <leader>fd :Fern . -drawer -reveal=%<CR>
 
 " fugitive.vim
 nnoremap <leader>gs :Git<CR>
