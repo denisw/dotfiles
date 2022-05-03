@@ -52,7 +52,6 @@
 (require 'init-company)
 (require 'init-delight)
 (require 'init-elixir)
-(require 'init-flycheck)
 ;; (require 'init-flycheck)
 (require 'init-hydra)
 (require 'init-java)
