@@ -53,9 +53,8 @@
 (require 'init-delight)
 (require 'init-elixir)
 (require 'init-flycheck)
-;; (require 'init-helm)
+;; (require 'init-flycheck)
 (require 'init-hydra)
-;; (require 'init-ivy)
 (require 'init-java)
 (require 'init-lisp)
 (require 'init-lsp)
@@ -63,8 +62,8 @@
 (require 'init-projectile)
 (require 'init-python)
 (require 'init-rg)
-(require 'init-selectrum)
 (require 'init-treemacs)
+(require 'init-vertico)
 (require 'init-writing)
 
 ;; Languages
