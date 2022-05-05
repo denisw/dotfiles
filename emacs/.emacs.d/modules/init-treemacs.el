@@ -5,7 +5,8 @@
   :straight t
   :defer t
   :config
-  (setq treemacs-no-png-images t))
+  (setq treemacs-no-png-images t)
+  (treemacs-project-follow-mode 1))
 
 ;; https://github.com/Alexander-Miller/treemacs#treemacs-evil
 (use-package treemacs-evil
