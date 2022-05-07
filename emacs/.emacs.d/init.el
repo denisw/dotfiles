@@ -58,10 +58,10 @@
 (require 'init-lisp)
 (require 'init-lsp)
 (require 'init-magit)
+(require 'init-neotree)
 (require 'init-projectile)
 (require 'init-python)
 (require 'init-rg)
-(require 'init-treemacs)
 (require 'init-vertico)
 (require 'init-writing)
 
