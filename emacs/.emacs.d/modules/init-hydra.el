@@ -24,17 +24,17 @@ _f_ → find file
   (defhydra hydra-project (:color blue :idle 0.5 :hint nil)
     "
 +project
-_c_ → compile project
-_f_ → find project file
+_c_ → compile project    _s_ → search
+_f_ → find project file  _t_ → tree
 _r_ → replace
 _R_ → replace regexp
-_s_ → search
 "
     ("c" projectile-compile-project)
     ("f" projectile-find-file)
     ("r" projectile-replace)
     ("R" projectile-replace-regexp)
-    ("s" projectile-ag))
+    ("s" projectile-ag)
+    ("t" neotree-project-dir))
 
   (evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body))
 
