@@ -5,7 +5,8 @@
   :straight t
   :config
   (setq doom-themes-enable-bold nil)
-  (setq doom-themes-enable-italic nil))
+  (setq doom-themes-enable-italic nil)
+  (doom-themes-org-config))
 
 ;; https://github.com/hlissner/emacs-solaire-mode
 (use-package solaire-mode
