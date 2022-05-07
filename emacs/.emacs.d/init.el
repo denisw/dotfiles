@@ -44,9 +44,7 @@
 (require 'init-evil)
 
 ;; Theme
-(require 'init-theme-dracula)
-;; (require 'init-theme-nord)
-;; (require 'init-theme-one)
+(require 'init-themes)
 
 ;; Utilities
 (require 'init-company)
@@ -78,3 +76,8 @@
 (require 'init-terraform)
 (require 'init-web)
 (require 'init-yaml)
+
+;; Put custom variables into a separate file.
+(setq custom-file "~/.emacs.d/custom.el")
+(when (file-exists-p custom-file)
+  (load custom-file))
