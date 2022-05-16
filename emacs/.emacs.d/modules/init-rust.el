@@ -1,12 +1,12 @@
 ;;; init-rust.el --- Rust programming
 
-(use-package rust-mode
-  :straight t)
+(defun my-rust-hook ()
+  ;; Set tab-width as it is used by eglot-format.
+  ;; (rust-mode itself uses rust-indent-offset instead.)
+  (setq tab-width 4))
 
-(use-package flycheck-rust
+(use-package rust-mode
   :straight t
-  :config
-  (with-eval-after-load 'rust-mode
-    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
+  :hook (rust-mode . my-rust-hook))
 
 (provide 'init-rust)
