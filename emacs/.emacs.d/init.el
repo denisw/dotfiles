@@ -68,6 +68,7 @@
 (require 'init-clojure)
 (require 'init-docker)
 (require 'init-fsharp)
+(require 'init-go)
 (require 'init-javascript)
 (require 'init-lsp)
 (require 'init-programming)
