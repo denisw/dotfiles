@@ -9,7 +9,7 @@
   (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize))
 
-;; https://github.com/jwiegley/use-package
+;; https://github.com/purcell/ns-auto-titlebar
 (use-package ns-auto-titlebar
   :if (memq window-system '(mac ns))
   :straight t
