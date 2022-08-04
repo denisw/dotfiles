@@ -1,4 +1,4 @@
-;;; init-vertico.el --- Use Vertico for completion
+;;; init-completion.el --- Configuration of the completion system
 
 ;; https://github.com/minad/vertico
 (use-package vertico
@@ -23,4 +23,4 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
-(provide 'init-vertico)
+(provide 'init-completion)

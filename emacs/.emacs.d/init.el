@@ -48,19 +48,16 @@
 
 ;; Utilities
 (require 'init-company)
+(require 'init-completion)
 (require 'init-delight)
 (require 'init-elixir)
-;; (require 'init-flycheck)
 (require 'init-hydra)
-(require 'init-java)
-(require 'init-lisp)
 (require 'init-lsp)
 (require 'init-magit)
 (require 'init-neotree)
 (require 'init-projectile)
 (require 'init-python)
 (require 'init-rg)
-(require 'init-vertico)
 (require 'init-writing)
 
 ;; Languages
@@ -70,7 +67,7 @@
 (require 'init-fsharp)
 (require 'init-go)
 (require 'init-javascript)
-(require 'init-lsp)
+(require 'init-lisp)
 (require 'init-programming)
 (require 'init-rust)
 (require 'init-shell)
