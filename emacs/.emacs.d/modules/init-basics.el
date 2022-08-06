@@ -81,9 +81,12 @@
   ;; Set first day of calendar to Monday
   (setq calendar-week-start-day 1))
 
+(defun my-dired-mode-hook ()
+  (dired-hide-details-mode))
+
 (use-package dired
-  :init
-  (setq dired-kill-when-opening-new-dired-buffer t))
+  :init (setq dired-kill-when-opening-new-dired-buffer t)
+  :config (add-hook 'dired-mode-hook 'my-dired-mode-hook))
 
 (use-package eldoc
   :init
