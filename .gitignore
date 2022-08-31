@@ -14,6 +14,7 @@ emacs/.emacs.d/elpa
 emacs/.emacs.d/elpy
 emacs/.emacs.d/eshell
 emacs/.emacs.d/projectile-bookmarks.eld
+emacs/.emacs.d/projects
 emacs/.emacs.d/recentf
 emacs/.emacs.d/straight/build
 emacs/.emacs.d/straight/build-cache.el
