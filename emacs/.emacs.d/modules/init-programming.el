@@ -15,7 +15,10 @@
 (use-package diff-hl
   :straight t
   :config
-  (global-diff-hl-mode))
+  (global-diff-hl-mode)
+  ;; https://github.com/dgutov/diff-hl#magit
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 ;; https://github.com/jacktasia/dumb-jump
 (use-package dumb-jump
