@@ -5,6 +5,7 @@
 (use-package evil
   :straight t
   :init
+  (setq evil-disable-insert-state-bindings t)
   (setq evil-shift-width tab-width)
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
