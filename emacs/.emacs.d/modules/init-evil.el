@@ -6,13 +6,13 @@
   :straight t
   :init
   (setq evil-disable-insert-state-bindings t)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-d-scroll t)
   (setq evil-shift-width tab-width)
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
-  ;; Bind C-u to scroll-up instead of repeat
-  (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
   ;; Bind C-p to projectile-find-file
   (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
   ;; Bind - to dired-jump, similar to vim-vinegar
