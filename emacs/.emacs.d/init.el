@@ -55,7 +55,6 @@
 (require 'init-lsp)
 (require 'init-magit)
 (require 'init-neotree)
-(require 'init-projectile)
 (require 'init-python)
 (require 'init-rg)
 (require 'init-writing)

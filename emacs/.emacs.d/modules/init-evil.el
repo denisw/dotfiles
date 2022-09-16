@@ -14,7 +14,7 @@
   :config
   (evil-mode 1)
   ;; Bind C-p to projectile-find-file
-  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+  (define-key evil-normal-state-map (kbd "C-p") 'project-find-file)
   ;; Bind - to dired-jump, similar to vim-vinegar
   (define-key evil-normal-state-map (kbd "-") 'dired-jump))
 
