@@ -85,9 +85,6 @@
   ;; Set first day of calendar to Monday
   (setq calendar-week-start-day 1))
 
-(defun my-dired-mode-hook ()
-  (dired-hide-details-mode))
-
 (use-package eldoc
   :init
   ;; Limit echo area size to a single line.
