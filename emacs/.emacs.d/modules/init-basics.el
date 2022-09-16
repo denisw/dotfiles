@@ -69,6 +69,10 @@
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
 
+  ;; Disable the creation of interlock files (.#*).
+  ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html
+  (setq create-lockfiles nil)
+
   ;; Define aliases for some completion commands, allowing
   ;; them to be overridden by other modules.
   (defalias 'my/find-file 'find-file)
@@ -83,10 +87,6 @@
 
 (defun my-dired-mode-hook ()
   (dired-hide-details-mode))
-
-(use-package dired
-  :init (setq dired-kill-when-opening-new-dired-buffer t)
-  :config (add-hook 'dired-mode-hook 'my-dired-mode-hook))
 
 (use-package eldoc
   :init
