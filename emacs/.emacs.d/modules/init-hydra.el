@@ -25,16 +25,15 @@ _f_ → find file
     "
 +project
 _c_ → compile project    _s_ → search
-_f_ → find project file  _t_ → tree
-_r_ → replace
-_R_ → replace regexp
+_f_ → find project file  _s_ → ripgrep
+_r_ → replace            _t_ → tree
 "
     ("c" project-compile)
     ("f" project-find-file)
     ("r" project-query-replace-regexp)
     ("s" project-find-regexp)
     ("S" consult-ripgrep)
-    ("t" neotree-project-dir))
+    ("t" dired-sidebar-toggle-sidebar))
 
   (evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body))
 
