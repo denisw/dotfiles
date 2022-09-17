@@ -4,6 +4,7 @@
   :init
   (setq dired-kill-when-opening-new-dired-buffer t)
   :config
+  (evil-define-key 'normal 'global (kbd "-") 'dired-jump)
   (add-hook 'dired-mode-hook 'dired-hide-details-mode))
 
 (use-package all-the-icons

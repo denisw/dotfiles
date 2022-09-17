@@ -13,12 +13,8 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
-  ;; Bind C-p to projectile-find-file
-  (define-key evil-normal-state-map (kbd "C-p") 'project-find-file)
-  ;; Bind - to dired-jump, similar to vim-vinegar
-  (define-key evil-normal-state-map (kbd "-") 'dired-jump))
+  (evil-set-leader 'normal (kbd "SPC")))
 
-;; Use the Evil Collection to integrate Evil into many other modes.
 ;; https://github.com/emacs-evil/evil-collection
 (use-package evil-collection
   :straight t
