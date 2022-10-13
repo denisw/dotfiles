@@ -13,7 +13,11 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
-  (evil-set-leader 'normal (kbd "SPC")))
+  (evil-set-leader 'normal (kbd "SPC"))
+  ;; Make Evil's "word" text object more similar to Vim's
+  ;; (e.g., condider underscores as part of a word).
+  ;; https://evil.readthedocs.io/en/latest/faq.html#underscore-is-not-a-word-character
+  (defalias 'forward-evil-word 'forward-evil-symbol))
 
 ;; https://github.com/emacs-evil/evil-collection
 (use-package evil-collection
