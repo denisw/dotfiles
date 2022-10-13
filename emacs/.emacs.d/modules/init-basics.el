@@ -15,6 +15,9 @@
   (setq display-time-default-load-average nil)
   (display-time-mode 1)
 
+  ;; Disable cursor blinking.
+  (blink-cursor-mode 0)
+
   ;; Skip the splash screen and show the scratch buffer instead.
   (setq inhibit-splash-screen t)
 
