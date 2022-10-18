@@ -8,6 +8,16 @@
   (setq doom-themes-enable-italic nil)
   (doom-themes-org-config))
 
+;; https://protesilaos.com/emacs/modus-themes
+(use-package modus-themes
+  :init
+  (setq modus-themes-bold-constructs nil)
+  :straight t)
+
+;; https://protesilaos.com/emacs/ef-themes
+(use-package ef-themes
+  :straight t)
+
 ;; https://github.com/hlissner/emacs-solaire-mode
 (use-package solaire-mode
   :straight t
