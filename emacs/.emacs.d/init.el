@@ -55,7 +55,6 @@
 (require 'init-lsp)
 (require 'init-magit)
 (require 'init-project)
-(require 'init-python)
 (require 'init-rg)
 (require 'init-writing)
 
@@ -69,9 +68,11 @@
 (require 'init-javascript)
 (require 'init-lisp)
 (require 'init-programming)
+(require 'init-python)
 (require 'init-rust)
 (require 'init-shell)
 (require 'init-terraform)
+(require 'init-tree-sitter)
 (require 'init-web)
 (require 'init-yaml)
 

@@ -6,10 +6,10 @@
 ;; https://github.com/emacs-typescript/typescript.el
 (use-package typescript-mode
   :straight t
-  :after web-mode
-  :config
+  :init
   (setq-default typescript-indent-level 2)
-  (define-derived-mode typescript-tsx-mode web-mode "TSX")
+  :config
+  (define-derived-mode typescript-tsx-mode web-mode "Web (TSX)")
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-tsx-mode)))
 
 ;; https://github.com/codesuki/add-node-modules-path
