@@ -49,6 +49,7 @@
 ;; Utilities
 (require 'init-company)
 (require 'init-completion)
+(require 'init-crux)
 (require 'init-delight)
 (require 'init-dired)
 (require 'init-flymake)
