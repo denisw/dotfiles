@@ -54,6 +54,7 @@
 (require 'init-dired)
 (require 'init-flymake)
 (require 'init-lsp)
+;; (require 'init-lsp-eglot)
 (require 'init-magit)
 (require 'init-project)
 (require 'init-rg)

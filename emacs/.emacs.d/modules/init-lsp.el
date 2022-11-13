@@ -1,11 +1,18 @@
-;;; init-lsp.el --- Language Server Protocol integration
+;;; init-lsp.el --- Language Server Protocol integration using lsp-mode
 
-(use-package eglot
+(use-package lsp-mode
   :straight t
-  :config
-  (put 'typescript-tsx-mode 'eglot-language-id "typescriptreact")
-  (add-to-list
-   'eglot-server-programs
-   `(typescript-tsx-mode . ("typescript-language-server" "--stdio"))))
+  :init
+  (setq gc-cons-threshold 100000000)
+  (setq lsp-keymap-prefix "C-c l")
+  :hook
+  ((javascript-mode . lsp)
+   (typescript-mode . lsp)))
+
+(use-package flycheck
+  :straight t)
+
+(use-package which-key
+  :straight t)
 
 (provide 'init-lsp)
