@@ -197,10 +197,12 @@ nnoremap <leader>- :Fern . -reveal=%<CR>
 nnoremap <leader>fd :Fern . -drawer -reveal=%<CR>
 
 " fugitive.vim
+nnoremap <C-x>g :Git<CR>
 nnoremap <leader>gs :Git<CR>
 
 " fzf
 map <C-P> :FZF<CR>
+map <C-x>b :Buffers<CR>
 map <leader>b :Buffers<CR>
 
 " vim-alternate
