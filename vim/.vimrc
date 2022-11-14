@@ -95,7 +95,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'bkad/CamelCaseMotion'
-Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -103,9 +102,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'ton/vim-alternate'
 Plug 'tpope/vim-commentary'
@@ -117,6 +113,10 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+
+" ALE
+let g:ale_completion_enabled = 1
+Plug 'dense-analysis/ale'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim'
