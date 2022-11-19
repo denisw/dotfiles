@@ -5,9 +5,11 @@
   :init
   (setq gc-cons-threshold 100000000)
   (setq lsp-keymap-prefix "C-c l")
+  :commands lsp
   :hook
-  ((javascript-mode . lsp)
-   (typescript-mode . lsp)))
+  ((js-mode . lsp)
+   (typescript-mode . lsp)
+   (typescript-tsx-mode . lsp)))
 
 (use-package flycheck
   :straight t)
