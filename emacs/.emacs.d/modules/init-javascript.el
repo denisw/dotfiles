@@ -15,7 +15,9 @@
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
   :straight t
-  :hook (js-mode typescript-mode))
+  :after typescript-mode
+  :hook ((js-mode . add-node-modules-path)
+         (typescript-mode . add-node-modules-path)))
 
 ;; https://github.com/prettier/prettier-emacs
 (use-package prettier-js
