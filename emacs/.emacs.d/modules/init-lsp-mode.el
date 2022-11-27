@@ -1,4 +1,4 @@
-;;; init-lsp.el --- Language Server Protocol integration using lsp-mode
+;;; init-lsp-mode.el --- LSP integration using lsp-mode
 
 (use-package lsp-mode
   :straight t
@@ -17,4 +17,4 @@
 (use-package which-key
   :straight t)
 
-(provide 'init-lsp)
+(provide 'init-lsp-mode)
