@@ -7,6 +7,14 @@
   (evil-define-key 'normal 'global (kbd "-") 'dired-jump)
   (add-hook 'dired-mode-hook 'dired-hide-details-mode))
 
+;; Use the Emacs Lisp implementation of `ls' for Dired.
+;; It works the same on all platforms and can sort
+;; directories before files before files.
+(use-package ls-lisp
+  :config
+  (setq ls-lisp-use-insert-directory-program nil)
+  (setq ls-lisp-dirs-first t))
+
 (use-package all-the-icons
   :straight t
   :if (display-graphic-p))
