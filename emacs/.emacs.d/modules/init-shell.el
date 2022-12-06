@@ -1,5 +1,14 @@
-;;; init-shell.el --- Shell scripting configuration
+;;; init-shell.el --- Configutation for shell-mode and shell scripting
 
-(setq-default sh-basic-offset 2)
+(use-package sh-mode
+  :config
+  (setq-default sh-basic-offset 2))
+
+;; Terminal emulation in shell-mode
+;; https://elpa.gnu.org/packages/coterm.html
+(use-package coterm
+  :straight t
+  :config
+  (coterm-mode))
 
 (provide 'init-shell)
