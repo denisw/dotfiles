@@ -54,6 +54,9 @@ set sidescroll=1
 " Use the space key as <leader>.
 let mapleader = " "
 
+" Open horizontal splits below the current window rather than above.
+set splitbelow
+
 """ GUI
 
 " Font
