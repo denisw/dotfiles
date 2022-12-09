@@ -217,3 +217,22 @@ vmap <D-/> gc
 
 " NERDTree
 map <C-N> :NERDTreeToggle<CR>
+
+" Terminal
+function! Term()
+  let l:window = 1
+  let l:window_count = winnr('$')
+
+  while l:window <= window_count
+    let l:window_buffer = winbufnr(l:window)
+    if bufname(l:window_buffer) =~ '^!/'
+      execute l:window . "wincmd w"
+      return
+    endif
+    let l:window += 1
+  endwhile
+
+  :term++rows=10
+endfunction
+
+map <leader>t :call Term()<CR>
