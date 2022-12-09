@@ -5,7 +5,7 @@
 
 ;; https://github.com/emacs-typescript/typescript.el
 (use-package typescript-mode
-  :straight t
+  :ensure t
   :init
   (setq-default typescript-indent-level 2)
   :config
@@ -14,14 +14,14 @@
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
-  :straight t
+  :ensure t
   :after typescript-mode
   :hook ((js-mode . add-node-modules-path)
          (typescript-mode . add-node-modules-path)))
 
 ;; https://github.com/prettier/prettier-emacs
 (use-package prettier-js
-  :straight t
+  :ensure t
   :after add-node-modules-path
   :commands prettier-js-mode
   :hook ((js-mode . prettier-js-mode)
@@ -30,7 +30,7 @@
 
 ;; https://github.com/joshwnj/json-mode
 (use-package json-mode
-  :straight t
+  :ensure t
   :mode (("\\.json\\'" . json-mode)
           ("/\\.eslintrc\\'" . json-mode)
           ("/\\.prettierrc\\'" . json-mode)))

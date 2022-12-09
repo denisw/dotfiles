@@ -15,7 +15,7 @@
       (push c flymake-diagnostic-functions))))
 
 (use-package eglot
-  :straight t
+  :ensure t
   :after (flymake-collection typescript-mode)
   :hook
   ((eglot-managed-mode . my/eglot-managed-mode-hook))

@@ -5,32 +5,20 @@
 ;
 ;; A relatively small, written-from-scratch Emacs config that:
 ;;
-;; - Uses `straight.el' and `use-package' for package management
+;; - Uses `package.el' and `use-package' for package management
 ;; - Configures Vim keybindings using `evil'
 ;;
 ;; The configuration is organized into several modules that can be
 ;; found in the `modules/' sub-directory.
 
-;; Bootstrap straight.el for package management.
-;; https://github.com/raxod502/straight.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (setq straight-check-for-modifications '(check-on-save find-when-checking))
-  (load bootstrap-file nil 'nomessage))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
-;; Install use-package.
+;; Install use-package for package management and configuration.
 ;; https://github.com/jwiegley/use-package
-;; https://github.com/raxod502/straight.el#integration-with-use-package
-(straight-use-package 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")

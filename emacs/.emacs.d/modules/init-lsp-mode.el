@@ -1,7 +1,7 @@
 ;;; init-lsp-mode.el --- LSP integration using lsp-mode
 
 (use-package lsp-mode
-  :straight t
+  :ensure t
   :init
   (setq gc-cons-threshold 100000000)
   (setq lsp-keymap-prefix "C-c l")
@@ -12,9 +12,9 @@
    (typescript-tsx-mode . lsp)))
 
 (use-package flycheck
-  :straight t)
+  :ensure t)
 
 (use-package which-key
-  :straight t)
+  :ensure t)
 
 (provide 'init-lsp-mode)

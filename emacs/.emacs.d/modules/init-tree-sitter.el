@@ -1,10 +1,10 @@
 ;;; init-lsp.el --- Language Server Protocol integration
 
 (use-package tree-sitter
-  :straight t)
+  :ensure t)
 
 (use-package tree-sitter-langs
-  :straight t
+  :ensure t
   :after tree-sitter
   :hook ((typescript-mode . tree-sitter-hl-mode)
          (typescript-tsx-mode . tree-sitter-hl-mode))
