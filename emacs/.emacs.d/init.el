@@ -14,9 +14,26 @@
 ;; Silence warnings arising from async native compilation.
 (setq native-comp-async-report-warnings-errors 'silent)
 
+;; Initialize package.el.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; Add quelpa to be able to install packages from source.
+;; https://github.com/quelpa/quelpa
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+
+;; Add quelpa-use-package for use-package integration.
+;; https://github.com/quelpa/quelpa-use-package
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
 
 ;; Install use-package for package management and configuration.
 ;; https://github.com/jwiegley/use-package
