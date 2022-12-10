@@ -11,6 +11,9 @@
 ;; The configuration is organized into several modules that can be
 ;; found in the `modules/' sub-directory.
 
+;; Silence warnings arising from async native compilation.
+(setq native-comp-async-report-warnings-errors 'silent)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
