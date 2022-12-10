@@ -6,11 +6,12 @@
 ;; https://github.com/emacs-typescript/typescript.el
 (use-package typescript-mode
   :ensure t
+  :after tree-sitter
   :init
   (setq-default typescript-indent-level 2)
   :config
-  (define-derived-mode typescript-tsx-mode web-mode "Web (TSX)")
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-tsx-mode)))
+  (define-derived-mode typescriptreact-mode typescript-mode "TypeScript React")
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode)))
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
@@ -34,5 +35,13 @@
   :mode (("\\.json\\'" . json-mode)
           ("/\\.eslintrc\\'" . json-mode)
           ("/\\.prettierrc\\'" . json-mode)))
+
+(use-package tsi
+  :after tree-sitter
+  :quelpa (tsi :fetcher github :repo "orzechowskid/tsi.el")
+  :commands (tsi-typescript-mode tsi-json-mode tsi-css-mode)
+  :init
+  (add-hook 'typescript-mode-hook 'tsi-typescript-mode)
+  (add-hook 'typescriptreact-mode-hook 'tsi-typescript-mode))
 
 (provide 'init-javascript)
