@@ -10,6 +10,7 @@ emacs/.emacs.d/.lsp-session-v1
 emacs/.emacs.d/anaconda-mode
 emacs/.emacs.d/bookmarks
 emacs/.emacs.d/custom.el
+emacs/.emacs.d/eln-cache
 emacs/.emacs.d/elpa
 emacs/.emacs.d/elpy
 emacs/.emacs.d/eshell
@@ -21,6 +22,7 @@ emacs/.emacs.d/straight/build-cache.el
 emacs/.emacs.d/straight/modified
 emacs/.emacs.d/straight/repos
 emacs/.emacs.d/transient
+emacs/.emacs.d/url
 emacs/.emacs.d/var
 
 # Neovim
