@@ -95,6 +95,33 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" Plugin Preconfiguration (before load)
+
+" lightline.vim
+let g:lightline = {
+  \   'active': {
+  \     'left': [
+  \       [ 'mode', 'paste' ],
+  \       [ 'readonly', 'filename', 'modified' ],
+  \       [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+  \     ],
+  \   },
+  \   'component_expand': {
+  \     'linter_checking': 'lightline#ale#checking',
+  \     'linter_infos': 'lightline#ale#infos',
+  \     'linter_warnings': 'lightline#ale#warnings',
+  \     'linter_errors': 'lightline#ale#errors',
+  \     'linter_ok': 'lightline#ale#ok',
+  \   },
+  \   'component_type': {
+  \     'linter_checking': 'right',
+  \     'linter_infos': 'right',
+  \     'linter_warnings': 'warning',
+  \     'linter_errors': 'error',
+  \     'linter_ok': 'right',
+  \   },
+  \ }
+
 """ Plugins
 
 call plug#begin('~/.vim/plugged')
@@ -107,6 +134,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'lambdalisue/fern.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
