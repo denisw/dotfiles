@@ -202,6 +202,10 @@ endif
 " ALE
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> K :ALEHover<CR>
+nnoremap <leader>ci :ALEImport<CR>
+nnoremap <leader>cf :ALEFix<CR>
+nnoremap <leader>cr :ALERename<CR>
+nnoremap <leader>ca :ALECodeAction<CR>
 
 " CamelCaseMotion
 map <silent> <leader>w <Plug>CamelCaseMotion_w
