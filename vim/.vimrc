@@ -149,6 +149,15 @@ let $FZF_DEFAULT_COMMAND='rg --files --follow'
 " NERDTree
 let NERDTreeHijackNetrw = 0
 
+" PaperColor
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'allow_bold': 0
+  \     }
+  \   }
+  \ }
+
 " Prettier
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -168,12 +177,12 @@ end
 
 function! Light()
   set background=light
-  colorscheme one
+  colorscheme PaperColor
 endfunction
 
 function! Dark()
   set background=dark
-  colorscheme dracula
+  colorscheme PaperColor
 endfunction
 
 " Define mappings to quickly switch between light and dark mode
@@ -181,7 +190,7 @@ command! Light :call Light()
 command! Dark :call Dark()
 
 " Choose the scheme to enable on startup
-call Dark()
+call Light()
 
 """ Key Mappings
 
