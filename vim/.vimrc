@@ -18,6 +18,9 @@ set hidden
 " Show line numbers.
 set number
 
+" Always show the sign column.
+set signcolumn=yes
+
 " Highlight search results.
 set hlsearch
 
