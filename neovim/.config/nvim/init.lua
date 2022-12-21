@@ -139,8 +139,13 @@ null_ls.setup {
   },
 }
 
--- Mappings
--- ========
+-- Key Mappings
+-- ============
+
+-- General
+-- -------
+
+vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
 
 -- Telescope
 -- ---------
