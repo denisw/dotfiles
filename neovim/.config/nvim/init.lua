@@ -62,6 +62,26 @@ require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
+  use {
+    'tpope/vim-fugitive',
+    cmd = {
+      'G',
+      'Git',
+      'Gdiffsplit',
+      'Gread',
+      'Gwrite',
+      'Ggrep',
+      'GMove',
+      'GDelete',
+      'GBrowse',
+      'GRemove',
+      'GRename',
+      'Glgrep',
+      'Gedit',
+    },
+    ft = {'fugitive'},
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
