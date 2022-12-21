@@ -47,20 +47,40 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'neovim/nvim-lspconfig'
+  -- Colorschemes
+
   use 'rakr/vim-one'
+
+  -- Editing
+
+  use 'junegunn/goyo.vim'
   use 'tpope/vim-commentary'
-  use 'tpope/vim-vinegar'
+  use 'tpope/vim-rsi'
+  use 'tpope/vim-sleuth'
 
   use {
-    'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    'ntpeters/vim-better-whitespace',
+    setup = function()
+      vim.g.strip_whitespace_on_save = 1
+      vim.g.strip_whitespace_confirm = 0
+      vim.g.better_whitespace_filetypes_blacklist = {
+        'diff', 'gitcommit', 'unite', 'qf', 'help'
+      }
+    end
   }
+
+  -- File Management
+
+  use 'tpope/vim-vinegar'
+
+  -- Fuzzy Finding & Search
 
   use {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+
+  -- Git
 
   use {
     'tpope/vim-fugitive',
@@ -81,6 +101,20 @@ require('packer').startup(function(use)
     },
     ft = {'fugitive'},
   }
+
+  -- LSP
+
+  use 'neovim/nvim-lspconfig'
+
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
+
+  -- Misc
+
+  use 'tpope/vim-dispatch'
+  use 'tpope/vim-eunuch'
 
   if packer_bootstrap then
     require('packer').sync()
