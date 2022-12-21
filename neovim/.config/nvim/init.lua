@@ -1,3 +1,7 @@
+-- ====================================================================
+-- Core
+-- ====================================================================
+
 -- Display line numbers.
 vim.opt.number = true
 
@@ -27,8 +31,12 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.opt.termguicolors = true
 end
 
--- Packages
--- ========
+-- Add mapping to quickly open this config file.
+vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
+
+-- ====================================================================
+-- Plugins
+-- ====================================================================
 
 -- https://github.com/wbthomason/packer.nvim#bootstrapping
 local ensure_packer = function()
@@ -77,7 +85,14 @@ require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+    end
   }
 
   -- Git
@@ -104,11 +119,52 @@ require('packer').startup(function(use)
 
   -- LSP
 
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      lspconfig = require('lspconfig')
+
+      local on_attach = function(client, bufnr)
+        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+        vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
+      end
+
+      lspconfig['pyright'].setup {
+        on_attach = on_attach,
+      }
+
+      lspconfig['tsserver'].setup {
+        on_attach = on_attach,
+      }
+
+      lspconfig['rust_analyzer'].setup {
+        on_attach = on_attach,
+      }
+    end
+  }
 
   use {
     'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local null_ls = require('null-ls')
+
+      null_ls.setup {
+        sources = {
+          null_ls.builtins.code_actions.eslint,
+          null_ls.builtins.diagnostics.eslint,
+        },
+      }
+    end
   }
 
   -- Misc
@@ -121,71 +177,9 @@ require('packer').startup(function(use)
   end
 end)
 
--- Color Scheme
--- ============
+-- ====================================================================
+-- Colorscheme
+-- ====================================================================
 
 vim.opt.background = 'dark'
 vim.cmd.colorscheme 'one'
-
--- Package configuration
--- =====================
-
--- lspconfig
--- ---------
-
-lspconfig = require('lspconfig')
-
-local on_attach = function(client, bufnr)
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
-end
-
-lspconfig['pyright'].setup {
-  on_attach = on_attach,
-}
-
-lspconfig['tsserver'].setup {
-  on_attach = on_attach,
-}
-
-lspconfig['rust_analyzer'].setup {
-  on_attach = on_attach,
-}
-
--- null-ls
--- -------
-
-local null_ls = require('null-ls')
-
-null_ls.setup {
-  sources = {
-    null_ls.builtins.code_actions.eslint,
-    null_ls.builtins.diagnostics.eslint,
-  },
-}
-
--- Key Mappings
--- ============
-
--- General
--- -------
-
-vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
-
--- Telescope
--- ---------
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
