@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/denis/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/denis/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/denis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/denis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/denis/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/denis.washington@futurice.com/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/denis.washington@futurice.com/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/denis.washington@futurice.com/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/denis.washington@futurice.com/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/denis.washington@futurice.com/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -77,61 +77,66 @@ _G.packer_plugins = {
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["goyo.vim"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
-  ["null-ls.nvim"] = {
-    config = { "\27LJ\2\nï\1\0\0\6\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\a\0004\4\3\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\4=\4\b\3B\1\2\1K\0\1\0\fsources\1\0\0\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0" },
+  ["lsp-format.nvim"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
+  ["null-ls.nvim"] = {
+    config = { "\27LJ\2\nπ\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\t\0004\4\4\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\0049\5\3\0009\5\a\0059\5\b\5>\5\3\4=\4\n\3B\1\2\1K\0\1\0\fsources\1\0\0\rprettier\15formatting\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0" },
+    loaded = true,
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n@\0\0\3\0\5\0\a6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0B\0\2\1K\0\1\0\1\0\1\nasync\2\vformat\bbuf\blsp\bvimõ\5\1\2\t\0\28\0n5\2\0\0=\1\1\0026\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\6\0006\a\2\0009\a\a\a9\a\b\a9\a\t\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\n\0006\a\2\0009\a\a\a9\a\b\a9\a\v\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\f\0006\a\2\0009\a\a\a9\a\b\a9\a\r\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\14\0006\a\2\0009\a\a\a9\a\b\a9\a\15\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\16\0006\a\2\0009\a\a\a9\a\b\a9\a\17\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\18\0006\a\2\0009\a\a\a9\a\b\a9\a\19\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\20\0006\a\2\0009\a\a\a9\a\b\a9\a\21\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\22\0006\a\2\0009\a\a\a9\a\b\a9\a\23\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\24\0006\a\2\0009\a\a\a9\a\b\a9\a\25\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\26\0003\a\27\0\18\b\2\0B\3\5\1K\0\1\0\0\14<leader>F\16code_action\15<leader>ca\vrename\15<leader>cr\20type_definition\14<leader>D\19signature_help\n<C-k>\15references\agr\19implementation\agi\nhover\6K\15definition\agd\16declaration\bbuf\blsp\agD\6n\bset\vkeymap\bvim\vbuffer\1\0\2\vsilent\2\fnoremap\2≤\1\1\0\4\0\v\0\0246\0\0\0'\2\1\0B\0\2\0027\0\1\0003\0\2\0006\1\1\0009\1\3\0019\1\4\0015\3\5\0=\0\6\3B\1\2\0016\1\1\0009\1\a\0019\1\4\0015\3\b\0=\0\6\3B\1\2\0016\1\1\0009\1\t\0019\1\4\0015\3\n\0=\0\6\3B\1\2\1K\0\1\0\1\0\0\18rust_analyzer\1\0\0\rtsserver\14on_attach\1\0\0\nsetup\fpyright\0\14lspconfig\frequire\0" },
+    config = { "\27LJ\2\n@\0\0\3\0\5\0\a6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0B\0\2\1K\0\1\0\1\0\1\nasync\2\vformat\bbuf\blsp\bvimõ\5\1\2\t\0\28\0n5\2\0\0=\1\1\0026\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\6\0006\a\2\0009\a\a\a9\a\b\a9\a\t\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\n\0006\a\2\0009\a\a\a9\a\b\a9\a\v\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\f\0006\a\2\0009\a\a\a9\a\b\a9\a\r\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\14\0006\a\2\0009\a\a\a9\a\b\a9\a\15\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\16\0006\a\2\0009\a\a\a9\a\b\a9\a\17\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\18\0006\a\2\0009\a\a\a9\a\b\a9\a\19\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\20\0006\a\2\0009\a\a\a9\a\b\a9\a\21\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\22\0006\a\2\0009\a\a\a9\a\b\a9\a\23\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\24\0006\a\2\0009\a\a\a9\a\b\a9\a\25\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\26\0003\a\27\0\18\b\2\0B\3\5\1K\0\1\0\0\14<leader>F\16code_action\15<leader>ca\vrename\15<leader>cr\20type_definition\14<leader>D\19signature_help\n<C-k>\15references\agr\19implementation\agi\nhover\6K\15definition\agd\16declaration\bbuf\blsp\agD\6n\bset\vkeymap\bvim\vbuffer\1\0\2\fnoremap\2\vsilent\2B\0\2\6\1\2\0\t-\2\0\0\18\4\0\0\18\5\1\0B\2\3\0016\2\0\0009\2\1\2\18\4\0\0B\2\2\1K\0\1\0\0¿\14on_attach\15lsp_formatÒ\1\1\0\5\0\14\0\"6\0\0\0'\2\1\0B\0\2\0027\0\1\0006\0\0\0'\2\2\0B\0\2\0027\0\3\0003\0\4\0003\1\5\0006\2\3\0009\2\6\0024\4\0\0B\2\2\0016\2\1\0009\2\a\0029\2\6\0025\4\b\0=\0\t\4B\2\2\0016\2\1\0009\2\n\0029\2\6\0025\4\v\0=\1\t\4B\2\2\0016\2\1\0009\2\f\0029\2\6\0025\4\r\0=\0\t\4B\2\2\0012\0\0ÄK\0\1\0\1\0\0\18rust_analyzer\1\0\0\rtsserver\14on_attach\1\0\0\fpyright\nsetup\0\0\15lsp_format\15lsp-format\14lspconfig\frequire\0" },
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\nê\2\0\0\a\0\14\0$6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\b\0009\5\t\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\n\0009\5\v\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0004\6\0\0B\1\5\1K\0\1\0\14help_tags\15<leader>fh\fbuffers\15<leader>fb\14live_grep\15<leader>fg\15find_files\n<C-p>\6n\bset\vkeymap\bvim\22telescope.builtin\frequire\0" },
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-better-whitespace"] = {
     loaded = true,
     needs_bufread = false,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/opt/vim-better-whitespace",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/opt/vim-better-whitespace",
     url = "https://github.com/ntpeters/vim-better-whitespace"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-dispatch"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
   },
   ["vim-eunuch"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-eunuch",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-eunuch",
     url = "https://github.com/tpope/vim-eunuch"
   },
   ["vim-fugitive"] = {
@@ -139,27 +144,27 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/opt/vim-fugitive",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/opt/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-one"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-one",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-one",
     url = "https://github.com/rakr/vim-one"
   },
   ["vim-rsi"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-rsi",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-rsi",
     url = "https://github.com/tpope/vim-rsi"
   },
   ["vim-sleuth"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
   },
   ["vim-vinegar"] = {
     loaded = true,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/vim-vinegar",
+    path = "/Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/start/vim-vinegar",
     url = "https://github.com/tpope/vim-vinegar"
   }
 }
@@ -176,18 +181,18 @@ time([[packadd for vim-better-whitespace]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\5\0\a6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0B\0\2\1K\0\1\0\1\0\1\nasync\2\vformat\bbuf\blsp\bvimõ\5\1\2\t\0\28\0n5\2\0\0=\1\1\0026\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\6\0006\a\2\0009\a\a\a9\a\b\a9\a\t\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\n\0006\a\2\0009\a\a\a9\a\b\a9\a\v\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\f\0006\a\2\0009\a\a\a9\a\b\a9\a\r\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\14\0006\a\2\0009\a\a\a9\a\b\a9\a\15\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\16\0006\a\2\0009\a\a\a9\a\b\a9\a\17\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\18\0006\a\2\0009\a\a\a9\a\b\a9\a\19\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\20\0006\a\2\0009\a\a\a9\a\b\a9\a\21\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\22\0006\a\2\0009\a\a\a9\a\b\a9\a\23\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\24\0006\a\2\0009\a\a\a9\a\b\a9\a\25\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\26\0003\a\27\0\18\b\2\0B\3\5\1K\0\1\0\0\14<leader>F\16code_action\15<leader>ca\vrename\15<leader>cr\20type_definition\14<leader>D\19signature_help\n<C-k>\15references\agr\19implementation\agi\nhover\6K\15definition\agd\16declaration\bbuf\blsp\agD\6n\bset\vkeymap\bvim\vbuffer\1\0\2\vsilent\2\fnoremap\2≤\1\1\0\4\0\v\0\0246\0\0\0'\2\1\0B\0\2\0027\0\1\0003\0\2\0006\1\1\0009\1\3\0019\1\4\0015\3\5\0=\0\6\3B\1\2\0016\1\1\0009\1\a\0019\1\4\0015\3\b\0=\0\6\3B\1\2\0016\1\1\0009\1\t\0019\1\4\0015\3\n\0=\0\6\3B\1\2\1K\0\1\0\1\0\0\18rust_analyzer\1\0\0\rtsserver\14on_attach\1\0\0\nsetup\fpyright\0\14lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\nê\2\0\0\a\0\14\0$6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\b\0009\5\t\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\n\0009\5\v\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0004\6\0\0B\1\5\1K\0\1\0\14help_tags\15<leader>fh\fbuffers\15<leader>fb\14live_grep\15<leader>fg\15find_files\n<C-p>\6n\bset\vkeymap\bvim\22telescope.builtin\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\nï\1\0\0\6\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\a\0004\4\3\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\4=\4\b\3B\1\2\1K\0\1\0\fsources\1\0\0\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
+try_loadstring("\27LJ\2\nπ\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\t\0004\4\4\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\0049\5\3\0009\5\a\0059\5\b\5>\5\3\4=\4\n\3B\1\2\1K\0\1\0\fsources\1\0\0\rprettier\15formatting\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\5\0\a6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0B\0\2\1K\0\1\0\1\0\1\nasync\2\vformat\bbuf\blsp\bvimõ\5\1\2\t\0\28\0n5\2\0\0=\1\1\0026\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\6\0006\a\2\0009\a\a\a9\a\b\a9\a\t\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\n\0006\a\2\0009\a\a\a9\a\b\a9\a\v\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\f\0006\a\2\0009\a\a\a9\a\b\a9\a\r\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\14\0006\a\2\0009\a\a\a9\a\b\a9\a\15\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\16\0006\a\2\0009\a\a\a9\a\b\a9\a\17\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\18\0006\a\2\0009\a\a\a9\a\b\a9\a\19\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\20\0006\a\2\0009\a\a\a9\a\b\a9\a\21\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\22\0006\a\2\0009\a\a\a9\a\b\a9\a\23\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\24\0006\a\2\0009\a\a\a9\a\b\a9\a\25\a\18\b\2\0B\3\5\0016\3\2\0009\3\3\0039\3\4\3'\5\5\0'\6\26\0003\a\27\0\18\b\2\0B\3\5\1K\0\1\0\0\14<leader>F\16code_action\15<leader>ca\vrename\15<leader>cr\20type_definition\14<leader>D\19signature_help\n<C-k>\15references\agr\19implementation\agi\nhover\6K\15definition\agd\16declaration\bbuf\blsp\agD\6n\bset\vkeymap\bvim\vbuffer\1\0\2\fnoremap\2\vsilent\2B\0\2\6\1\2\0\t-\2\0\0\18\4\0\0\18\5\1\0B\2\3\0016\2\0\0009\2\1\2\18\4\0\0B\2\2\1K\0\1\0\0¿\14on_attach\15lsp_formatÒ\1\1\0\5\0\14\0\"6\0\0\0'\2\1\0B\0\2\0027\0\1\0006\0\0\0'\2\2\0B\0\2\0027\0\3\0003\0\4\0003\1\5\0006\2\3\0009\2\6\0024\4\0\0B\2\2\0016\2\1\0009\2\a\0029\2\6\0025\4\b\0=\0\t\4B\2\2\0016\2\1\0009\2\n\0029\2\6\0025\4\v\0=\1\t\4B\2\2\0016\2\1\0009\2\f\0029\2\6\0025\4\r\0=\0\t\4B\2\2\0012\0\0ÄK\0\1\0\1\0\0\18rust_analyzer\1\0\0\rtsserver\14on_attach\1\0\0\fpyright\nsetup\0\0\15lsp_format\15lsp-format\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -292,9 +297,9 @@ vim.cmd [[au FileType fugitive ++once lua require("packer.load")({'vim-fugitive'
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /Users/denis/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]], true)
-vim.cmd [[source /Users/denis/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]]
-time([[Sourcing ftdetect script at: /Users/denis/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]], false)
+time([[Sourcing ftdetect script at: /Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]], true)
+vim.cmd [[source /Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]]
+time([[Sourcing ftdetect script at: /Users/denis.washington@futurice.com/.local/share/nvim/site/pack/packer/opt/vim-fugitive/ftdetect/fugitive.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false

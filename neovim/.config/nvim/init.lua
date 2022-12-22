@@ -128,8 +128,10 @@ require('packer').startup(function(use)
 
   use {
     'neovim/nvim-lspconfig',
+    requires = { 'lukas-reineke/lsp-format.nvim' },
     config = function()
       lspconfig = require('lspconfig')
+      lsp_format = require('lsp-format')
 
       local on_attach = function(client, bufnr)
         local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -145,12 +147,19 @@ require('packer').startup(function(use)
         vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
       end
 
+      local on_attach_with_format_on_save = function(client, bufnr)
+        on_attach(client, bufnr)
+        lsp_format.on_attach(client)
+      end
+
+      lsp_format.setup {}
+
       lspconfig['pyright'].setup {
         on_attach = on_attach,
       }
 
       lspconfig['tsserver'].setup {
-        on_attach = on_attach,
+        on_attach = on_attach_with_format_on_save,
       }
 
       lspconfig['rust_analyzer'].setup {
@@ -169,6 +178,7 @@ require('packer').startup(function(use)
         sources = {
           null_ls.builtins.code_actions.eslint,
           null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.formatting.prettier,
         },
       }
     end
