@@ -59,6 +59,48 @@ require('packer').startup(function(use)
 
   use 'rakr/vim-one'
 
+  -- Completion
+
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    requires = 'hrsh7th/nvim-cmp'
+  }
+
+  use {
+    'hrsh7th/cmp-buffer',
+    requires = 'hrsh7th/nvim-cmp'
+  }
+
+  use {
+    'hrsh7th/cmp-path',
+    requires = 'hrsh7th/nvim-cmp'
+  }
+
+  use {
+    'hrsh7th/cmp-cmdline',
+    requires = 'hrsh7th/nvim-cmp'
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      local cmp = require('cmp')
+
+      cmp.setup {
+        mapping = cmp.mapping.preset.insert({
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' }
+        })
+      }
+    end
+  }
+
   -- Editing
 
   use 'junegunn/goyo.vim'
@@ -127,11 +169,22 @@ require('packer').startup(function(use)
   -- LSP
 
   use {
-    'neovim/nvim-lspconfig',
-    requires = { 'lukas-reineke/lsp-format.nvim' },
+    'lukas-reineke/lsp-format.nvim',
     config = function()
-      lspconfig = require('lspconfig')
-      lsp_format = require('lsp-format')
+      require('lsp-format').setup {}
+    end
+  }
+
+  use {
+    'neovim/nvim-lspconfig',
+    after = {
+      'lsp-format.nvim',
+      'nvim-cmp',
+    },
+    config = function()
+      local lspconfig = require('lspconfig')
+      local lsp_format = require('lsp-format')
+      local cmp_lsp = require('cmp_nvim_lsp')
 
       local on_attach = function(client, bufnr)
         local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -152,17 +205,20 @@ require('packer').startup(function(use)
         lsp_format.on_attach(client)
       end
 
-      lsp_format.setup {}
+      local capabilities = cmp_lsp.default_capabilities()
 
       lspconfig['pyright'].setup {
+        capabilities = capabilities,
         on_attach = on_attach,
       }
 
       lspconfig['tsserver'].setup {
+        capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
       }
 
       lspconfig['rust_analyzer'].setup {
+        capabilities = capabilities,
         on_attach = on_attach,
       }
     end
