@@ -169,21 +169,26 @@ require('packer').startup(function(use)
   -- LSP
 
   use {
-    'lukas-reineke/lsp-format.nvim',
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('lsp-format').setup {}
+      local null_ls = require('null-ls')
+
+      null_ls.setup {
+        sources = {
+          null_ls.builtins.code_actions.eslint,
+          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.formatting.prettier,
+        },
+      }
     end
   }
 
   use {
     'neovim/nvim-lspconfig',
-    after = {
-      'lsp-format.nvim',
-      'nvim-cmp',
-    },
+    after = { 'nvim-cmp' },
     config = function()
       local lspconfig = require('lspconfig')
-      local lsp_format = require('lsp-format')
       local cmp_lsp = require('cmp_nvim_lsp')
 
       local on_attach = function(client, bufnr)
@@ -200,9 +205,53 @@ require('packer').startup(function(use)
         vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
       end
 
+      -- The filetypes where null-ls shoulbd be used for formatting
+      -- insead of the main language server's formatting capabilities.
+      local null_ls_format_filetypes = {
+        'javascript',
+        'typescript',
+        'typescriptreact'
+      }
+
+      local format = function(bufnr)
+        local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+        local prefer_null_ls = false
+
+        for _, ft in ipairs(null_ls_format_filetypes) do
+          if ft == filetype then
+            prefer_null_ls = true
+          end
+        end
+
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+          filter = function(client)
+            if prefer_null_ls then
+              return client.name == "null-ls"
+            else
+              return true
+            end
+          end,
+        })
+      end
+
+      local format_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
       local on_attach_with_format_on_save = function(client, bufnr)
         on_attach(client, bufnr)
-        lsp_format.on_attach(client)
+
+        vim.api.nvim_clear_autocmds({
+          group = format_augroup,
+          buffer = bufnr
+        })
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = format_augroup,
+          buffer = bufnr,
+          callback = function()
+            format(bufnr)
+          end,
+        })
       end
 
       local capabilities = cmp_lsp.default_capabilities()
@@ -224,21 +273,6 @@ require('packer').startup(function(use)
     end
   }
 
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      local null_ls = require('null-ls')
-
-      null_ls.setup {
-        sources = {
-          null_ls.builtins.code_actions.eslint,
-          null_ls.builtins.diagnostics.eslint,
-          null_ls.builtins.formatting.prettier,
-        },
-      }
-    end
-  }
 
   -- UI
 
