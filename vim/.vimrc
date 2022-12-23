@@ -218,7 +218,7 @@ command! Light :call Light()
 command! Dark :call Dark()
 
 " Choose the scheme to enable on startup
-call Light()
+call Dark()
 
 """ Key Mappings
 
