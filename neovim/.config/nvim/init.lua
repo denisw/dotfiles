@@ -123,6 +123,29 @@ require('packer').startup(function(use)
 
   use 'tpope/vim-vinegar'
 
+  use {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require("nvim-tree").setup {
+        renderer = {
+          icons = {
+            show = {
+              file = false,
+              folder = false,
+              folder_arrow = false,
+              git = false,
+            }
+          }
+        }
+      }
+      vim.keymap.set('n', '<leader>tt', ':NvimTreeFindFileToggle<cr>', {})
+      vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<cr>', {})
+      vim.keymap.set('n', '<leader>tF', ':NvimTreeFocus<cr>', {})
+      vim.keymap.set('n', '<leader>tc', ':NvimTreeCollapse<cr>', {})
+      vim.keymap.set('n', '<leader>tr', ':NvimTreeRefresh<cr>', {})
+    end
+  }
+
   -- Fuzzy Finding & Search
 
   use {
