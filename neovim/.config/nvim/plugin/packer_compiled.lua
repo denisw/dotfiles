@@ -106,7 +106,7 @@ _G.packer_plugins = {
     url = "https://github.com/junegunn/goyo.vim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\nç\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\25component_separators\1\0\2\nright\6|\tleft\6|\1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "/Users/denis/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -134,15 +134,14 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n˙\3\0\0\6\0\24\00056\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\a\0005\4\5\0005\5\4\0=\5\6\4=\4\b\3=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\16\0'\4\17\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\18\0'\4\19\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\20\0'\4\21\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\22\0'\4\23\0004\5\0\0B\0\5\1K\0\1\0\25:NvimTreeRefresh<cr>\15<leader>tr\26:NvimTreeCollapse<cr>\15<leader>tc\23:NvimTreeFocus<cr>\15<leader>tF\26:NvimTreeFindFile<cr>\15<leader>tf :NvimTreeFindFileToggle<cr>\15<leader>tt\6n\bset\vkeymap\bvim\rrenderer\nicons\1\0\0\tshow\1\0\0\1\0\4\bgit\1\17folder_arrow\1\vfolder\1\tfile\1\1\0\1\17hijack_netrw\1\nsetup\14nvim-tree\frequire\0" },
+    config = { "\27LJ\2\n§\3\0\0\6\0\18\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\n\0'\4\v\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\f\0'\4\r\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\14\0'\4\15\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\16\0'\4\17\0004\5\0\0B\0\5\1K\0\1\0\25:NvimTreeRefresh<cr>\15<leader>tr\26:NvimTreeCollapse<cr>\15<leader>tc\23:NvimTreeFocus<cr>\15<leader>tF\26:NvimTreeFindFile<cr>\15<leader>tf :NvimTreeFindFileToggle<cr>\15<leader>tt\6n\bset\vkeymap\bvim\1\0\1\17hijack_netrw\1\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/denis/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/denis/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/Users/denis/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -220,29 +219,29 @@ time([[Setup for vim-better-whitespace]], false)
 time([[packadd for vim-better-whitespace]], true)
 vim.cmd [[packadd vim-better-whitespace]]
 time([[packadd for vim-better-whitespace]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n–\2\0\0\n\0\21\0+6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\17\0009\4\3\0009\4\4\0049\4\5\0045\6\a\0009\a\3\0009\a\6\a)\t¸ˇB\a\2\2=\a\b\0069\a\3\0009\a\6\a)\t\4\0B\a\2\2=\a\t\0069\a\3\0009\a\n\aB\a\1\2=\a\v\0069\a\3\0009\a\f\aB\a\1\2=\a\r\0069\a\3\0009\a\14\a5\t\15\0B\a\2\2=\a\16\6B\4\2\2=\4\3\0039\4\18\0009\4\19\0044\6\3\0005\a\20\0>\a\1\6B\4\2\2=\4\19\3B\1\2\1K\0\1\0\1\0\1\tname\rnvim_lsp\fsources\vconfig\1\0\0\t<CR>\1\0\1\vselect\2\fconfirm\n<C-e>\nabort\14<C-Space>\rcomplete\n<C-f>\n<C-b>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n˙\3\0\0\6\0\24\00056\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\a\0005\4\5\0005\5\4\0=\5\6\4=\4\b\3=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\16\0'\4\17\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\18\0'\4\19\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\20\0'\4\21\0004\5\0\0B\0\5\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\22\0'\4\23\0004\5\0\0B\0\5\1K\0\1\0\25:NvimTreeRefresh<cr>\15<leader>tr\26:NvimTreeCollapse<cr>\15<leader>tc\23:NvimTreeFocus<cr>\15<leader>tF\26:NvimTreeFindFile<cr>\15<leader>tf :NvimTreeFindFileToggle<cr>\15<leader>tt\6n\bset\vkeymap\bvim\rrenderer\nicons\1\0\0\tshow\1\0\0\1\0\4\bgit\1\17folder_arrow\1\vfolder\1\tfile\1\1\0\1\17hijack_netrw\1\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\nπ\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\t\0004\4\4\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\0049\5\3\0009\5\a\0059\5\b\5>\5\3\4=\4\n\3B\1\2\1K\0\1\0\fsources\1\0\0\rprettier\15formatting\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
-time([[Config for null-ls.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\nê\2\0\0\a\0\14\0$6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\b\0009\5\t\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\n\0009\5\v\0004\6\0\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0004\6\0\0B\1\5\1K\0\1\0\14help_tags\15<leader>fh\fbuffers\15<leader>fb\14live_grep\15<leader>fg\15find_files\n<C-p>\6n\bset\vkeymap\bvim\22telescope.builtin\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+try_loadstring("\27LJ\2\nπ\1\0\0\6\0\v\0\0216\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\t\0004\4\4\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\5\5>\5\2\0049\5\3\0009\5\a\0059\5\b\5>\5\3\4=\4\n\3B\1\2\1K\0\1\0\fsources\1\0\0\rprettier\15formatting\16diagnostics\veslint\17code_actions\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
+time([[Config for null-ls.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n§\3\0\0\6\0\18\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\n\0'\4\v\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\f\0'\4\r\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\14\0'\4\15\0004\5\0\0B\0\5\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\16\0'\4\17\0004\5\0\0B\0\5\1K\0\1\0\25:NvimTreeRefresh<cr>\15<leader>tr\26:NvimTreeCollapse<cr>\15<leader>tc\23:NvimTreeFocus<cr>\15<leader>tF\26:NvimTreeFindFile<cr>\15<leader>tf :NvimTreeFindFileToggle<cr>\15<leader>tt\6n\bset\vkeymap\bvim\1\0\1\17hijack_netrw\1\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n–\2\0\0\n\0\21\0+6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\17\0009\4\3\0009\4\4\0049\4\5\0045\6\a\0009\a\3\0009\a\6\a)\t¸ˇB\a\2\2=\a\b\0069\a\3\0009\a\6\a)\t\4\0B\a\2\2=\a\t\0069\a\3\0009\a\n\aB\a\1\2=\a\v\0069\a\3\0009\a\f\aB\a\1\2=\a\r\0069\a\3\0009\a\14\a5\t\15\0B\a\2\2=\a\16\6B\4\2\2=\4\3\0039\4\18\0009\4\19\0044\6\3\0005\a\20\0>\a\1\6B\4\2\2=\4\19\3B\1\2\1K\0\1\0\1\0\1\tname\rnvim_lsp\fsources\vconfig\1\0\0\t<CR>\1\0\1\vselect\2\fconfirm\n<C-e>\nabort\14<C-Space>\rcomplete\n<C-f>\n<C-b>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\nç\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\0\25component_separators\1\0\2\nright\6|\tleft\6|\1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
@@ -255,26 +254,19 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'GRename', function(cmdargs)
-          require('packer.load')({'vim-fugitive'}, { cmd = 'GRename', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-fugitive'}, { cmd = 'GRename' }, _G.packer_plugins)
-          return vim.fn.getcompletion('GRename ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Glgrep', function(cmdargs)
-          require('packer.load')({'vim-fugitive'}, { cmd = 'Glgrep', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-fugitive'}, { cmd = 'Glgrep' }, _G.packer_plugins)
-          return vim.fn.getcompletion('Glgrep ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'Gedit', function(cmdargs)
           require('packer.load')({'vim-fugitive'}, { cmd = 'Gedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-fugitive'}, { cmd = 'Gedit' }, _G.packer_plugins)
           return vim.fn.getcompletion('Gedit ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'G', function(cmdargs)
+          require('packer.load')({'vim-fugitive'}, { cmd = 'G', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-fugitive'}, { cmd = 'G' }, _G.packer_plugins)
+          return vim.fn.getcompletion('G ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'Git', function(cmdargs)
           require('packer.load')({'vim-fugitive'}, { cmd = 'Git', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -303,13 +295,6 @@ pcall(vim.api.nvim_create_user_command, 'Gwrite', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-fugitive'}, { cmd = 'Gwrite' }, _G.packer_plugins)
           return vim.fn.getcompletion('Gwrite ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'G', function(cmdargs)
-          require('packer.load')({'vim-fugitive'}, { cmd = 'G', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-fugitive'}, { cmd = 'G' }, _G.packer_plugins)
-          return vim.fn.getcompletion('G ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'Ggrep', function(cmdargs)
           require('packer.load')({'vim-fugitive'}, { cmd = 'Ggrep', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -345,6 +330,20 @@ pcall(vim.api.nvim_create_user_command, 'GRemove', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-fugitive'}, { cmd = 'GRemove' }, _G.packer_plugins)
           return vim.fn.getcompletion('GRemove ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'GRename', function(cmdargs)
+          require('packer.load')({'vim-fugitive'}, { cmd = 'GRename', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-fugitive'}, { cmd = 'GRename' }, _G.packer_plugins)
+          return vim.fn.getcompletion('GRename ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Glgrep', function(cmdargs)
+          require('packer.load')({'vim-fugitive'}, { cmd = 'Glgrep', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-fugitive'}, { cmd = 'Glgrep' }, _G.packer_plugins)
+          return vim.fn.getcompletion('Glgrep ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

@@ -1,3 +1,14 @@
+-- init.lua
+-- ========
+--
+-- My Neovim configuration. It aims to provide a lightweight IDE-like
+-- editing experience, mainly by leveraging Neovim's support for the
+-- Language Server Protocol (LSP).
+--
+-- NOTE: This configuration assumes that the terminal is configured with
+-- a NERD Font (https://www.nerdfonts.com/) so that icons and the status
+-- line are displayed correctly.
+
 -- ====================================================================
 -- Core
 -- ====================================================================
@@ -125,19 +136,10 @@ require('packer').startup(function(use)
 
   use {
     'nvim-tree/nvim-tree.lua',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
       require("nvim-tree").setup {
         hijack_netrw = false,
-        renderer = {
-          icons = {
-            show = {
-              file = false,
-              folder = false,
-              folder_arrow = false,
-              git = false,
-            }
-          }
-        }
       }
       vim.keymap.set('n', '<leader>tt', ':NvimTreeFindFileToggle<cr>', {})
       vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<cr>', {})
@@ -302,14 +304,9 @@ require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          component_separators = { left = '|', right = '|' }
-        }
-      }
+      require('lualine').setup {}
     end
   }
 
