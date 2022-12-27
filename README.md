@@ -1,4 +1,4 @@
-# Denis Wahington's Dotfiles
+# Denis Washington's Dotfiles
 
 This repository uses the configuration files of various tools I use.
 Currently, it contains configurations for:
