@@ -68,6 +68,8 @@ require('packer').startup(function(use)
 
   -- Colorschemes
 
+  use 'lifepillar/vim-solarized8'
+  use 'olimorris/onedarkpro.nvim'
   use 'rakr/vim-one'
 
   -- Completion
@@ -324,5 +326,5 @@ end)
 -- Colorscheme
 -- ====================================================================
 
-vim.opt.background = 'dark'
-vim.cmd.colorscheme 'one'
+vim.opt.background = 'light'
+vim.cmd.colorscheme 'solarized8_flat'
