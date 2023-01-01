@@ -284,17 +284,22 @@ require('packer').startup(function(use)
 
       local capabilities = cmp_lsp.default_capabilities()
 
-      lspconfig['pyright'].setup {
+      lspconfig.clangd.setup {
         capabilities = capabilities,
         on_attach = on_attach,
       }
 
-      lspconfig['tsserver'].setup {
+      lspconfig.pyright.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
+      lspconfig.tsserver.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
       }
 
-      lspconfig['rust_analyzer'].setup {
+      lspconfig.rust_analyzer.setup {
         capabilities = capabilities,
         on_attach = on_attach,
       }
