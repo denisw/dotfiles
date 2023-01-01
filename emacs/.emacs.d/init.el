@@ -19,8 +19,14 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; Install use-package for package management and configuration.
+;; https://github.com/jwiegley/use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
 ;; Add quelpa to be able to install packages from source.
 ;; https://github.com/quelpa/quelpa
+(setq quelpa-checkout-melpa-p nil)
 (unless (package-installed-p 'quelpa)
   (with-temp-buffer
     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
@@ -34,11 +40,6 @@
    :fetcher git
    :url "https://github.com/quelpa/quelpa-use-package.git"))
 (require 'quelpa-use-package)
-
-;; Install use-package for package management and configuration.
-;; https://github.com/jwiegley/use-package
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")
