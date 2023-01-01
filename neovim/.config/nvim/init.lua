@@ -294,14 +294,14 @@ require('packer').startup(function(use)
         on_attach = on_attach,
       }
 
-      lspconfig.tsserver.setup {
+      lspconfig.rust_analyzer.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
       }
 
-      lspconfig.rust_analyzer.setup {
+      lspconfig.tsserver.setup {
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = on_attach_with_format_on_save,
       }
     end
   }
