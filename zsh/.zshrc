@@ -24,7 +24,7 @@ setopt inc_append_history
 setopt share_history
 
 # Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Explicitly use emacs-style zsh bindings
 # (required for tmux if EDITOR=vim is set)
