@@ -63,7 +63,7 @@ set splitbelow
 """ GUI
 
 " Font
-set guifont=Menlo:h12,UbuntuMono-Regular:h14,Menlo:h13
+set guifont=Menlo:h13,UbuntuMono-Regular:h14
 
 " Disable all scrollbars
 set guioptions-=l
@@ -147,6 +147,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
 " ALE

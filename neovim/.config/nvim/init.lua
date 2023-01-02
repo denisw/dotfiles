@@ -72,6 +72,7 @@ require('packer').startup(function(use)
 
   -- Colorschemes
 
+  use { 'dracula/vim', as = 'dracula' }
   use 'lifepillar/vim-solarized8'
   use 'olimorris/onedarkpro.nvim'
   use 'rakr/vim-one'
@@ -335,5 +336,5 @@ end)
 -- Colorscheme
 -- ====================================================================
 
-vim.opt.background = 'light'
-vim.cmd.colorscheme 'solarized8_flat'
+vim.opt.background = 'dark'
+vim.cmd.colorscheme 'dracula'
