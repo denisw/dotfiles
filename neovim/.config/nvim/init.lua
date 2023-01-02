@@ -121,7 +121,6 @@ require('packer').startup(function(use)
 
   -- Editing
 
-  use 'junegunn/goyo.vim'
   use 'tpope/vim-commentary'
   use 'tpope/vim-rsi'
   use 'tpope/vim-sleuth'
@@ -134,6 +133,24 @@ require('packer').startup(function(use)
       vim.g.better_whitespace_filetypes_blacklist = {
         'diff', 'gitcommit', 'unite', 'qf', 'help'
       }
+    end
+  }
+
+  use {
+    'folke/zen-mode.nvim',
+    config = function()
+      require('zen-mode').setup {
+        window = {
+          backdrop = 1,
+          width = 90,
+          options = {
+            number = false,
+            cursorline = true,
+          },
+        },
+      }
+
+      vim.keymap.set('n', '<leader>bz', ':ZenMode<cr>', {})
     end
   }
 
