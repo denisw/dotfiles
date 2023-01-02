@@ -42,8 +42,12 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.opt.termguicolors = true
 end
 
--- Add mapping to quickly open this config file.
+-- Add key mapping to quickly open this config file.
 vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
+
+-- Configuration and key mappings for diagnostics.
+vim.diagnostic.config { severity_sort = true }
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, bufopts)
 
 -- ====================================================================
 -- Plugins
