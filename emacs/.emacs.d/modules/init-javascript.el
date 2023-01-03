@@ -36,12 +36,4 @@
           ("/\\.eslintrc\\'" . json-mode)
           ("/\\.prettierrc\\'" . json-mode)))
 
-(use-package tsi
-  :after tree-sitter
-  :quelpa (tsi :fetcher github :repo "orzechowskid/tsi.el")
-  :commands (tsi-typescript-mode tsi-json-mode tsi-css-mode)
-  :init
-  (add-hook 'typescript-mode-hook 'tsi-typescript-mode)
-  (add-hook 'typescriptreact-mode-hook 'tsi-typescript-mode))
-
 (provide 'init-javascript)

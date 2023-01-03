@@ -24,23 +24,6 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-;; Add quelpa to be able to install packages from source.
-;; https://github.com/quelpa/quelpa
-(setq quelpa-checkout-melpa-p nil)
-(unless (package-installed-p 'quelpa)
-  (with-temp-buffer
-    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-    (eval-buffer)
-    (quelpa-self-upgrade)))
-
-;; Add quelpa-use-package for use-package integration.
-;; https://github.com/quelpa/quelpa-use-package
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-(require 'quelpa-use-package)
-
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")
 
