@@ -47,7 +47,7 @@ vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
 
 -- Configuration and key mappings for diagnostics.
 vim.diagnostic.config { severity_sort = true }
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, bufopts)
+vim.keymap.set('n', '<leader>ee', vim.diagnostic.open_float, bufopts)
 
 -- ====================================================================
 -- Plugins
@@ -205,6 +205,8 @@ require('packer').startup(function(use)
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+      vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+      vim.keymap.set('n', '<leader>el', builtin.diagnostics, {})
     end
   }
 
@@ -268,7 +270,6 @@ require('packer').startup(function(use)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
         vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
         vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
