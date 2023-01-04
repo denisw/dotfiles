@@ -42,6 +42,12 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.opt.termguicolors = true
 end
 
+-- Add key mappings to quickly copy/paste to/from the clipboard.
+vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>p', '"+p')
+vim.keymap.set('n', '<leader>P', '"+P')
+
 -- Add key mapping to quickly open this config file.
 vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
 
