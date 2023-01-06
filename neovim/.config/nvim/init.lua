@@ -51,9 +51,28 @@ vim.keymap.set('n', '<leader>P', '"+P')
 -- Add key mapping to quickly open this config file.
 vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
 
--- Configuration and key mappings for diagnostics.
-vim.diagnostic.config { severity_sort = true }
+-- Configuration and key mappings for the diagnostic frameowrk.
+vim.diagnostic.config {
+  severity_sort = true,
+  virtual_text = {
+    severity = vim.diagnostic.severity.ERROR,
+    source = 'if_many',
+  },
+  float = {
+    format = function(diagnostic)
+      return string.format(
+        '%s [%s:%s]',
+        diagnostic.message,
+        diagnostic.source,
+        diagnostic.code
+      )
+    end,
+  },
+}
 vim.keymap.set('n', '<leader>ee', vim.diagnostic.open_float, bufopts)
+vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next, bufopts)
+vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_prev, bufopts)
+vim.keymap.set('n', '<leader>el', vim.diagnostic.setqflist, bufopts)
 
 -- ====================================================================
 -- Plugins
@@ -212,7 +231,6 @@ require('packer').startup(function(use)
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
-      vim.keymap.set('n', '<leader>el', builtin.diagnostics, {})
     end
   }
 
