@@ -354,7 +354,11 @@ require('packer').startup(function(use)
 
       lspconfig.clangd.setup {
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = function()
+          on_attach(client, bufnr)
+          local bufopts = { noremap=true, silent=true, buffer=bufnr }
+          vim.keymap.set('n', '<leader>h', ':ClangdSwitchSourceHeader<cr>', bufopts)
+        end
       }
 
       lspconfig.pyright.setup {
