@@ -1,5 +1,7 @@
 ### General ###
 
+export LANG=en_US.UTF-8
+
 # Colors
 autoload -Uz colors
 colors

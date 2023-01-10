@@ -66,7 +66,8 @@
 (require 'init-rust)
 (require 'init-shell)
 (require 'init-terraform)
-(require 'init-tree-sitter)
+;; (require 'init-tree-sitter)
+(require 'init-treesit)
 (require 'init-web)
 (require 'init-yaml)
 

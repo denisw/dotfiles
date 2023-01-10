@@ -1,10 +1,7 @@
 ;;; init-eglot.el --- LSP integration using Eglot
 
 (defun my/setup-typescript-tsx-mode ()
-  (let* ((command '("typescript-language-server" "--stdio"))
-         (association `(typescript-tsx-mode . ,command)))
-    (put 'typescript-tsx-mode 'eglot-language-id "typescriptreact")
-    (add-to-list 'eglot-server-programs association)))
+  )
 
 (defun my/eglot-managed-mode-hook ()
   ;; Add the configured flymake-collection checkers on top of
@@ -20,6 +17,15 @@
   :hook
   ((eglot-managed-mode . my/eglot-managed-mode-hook))
   :config
-  (my/setup-typescript-tsx-mode))
+  (add-to-list 'eglot-server-programs
+               '(((typescript-ts-mode :language-id "typescript")
+                  (tsx-ts-mode :language-id "typescriptreact"))
+                 .
+                 ("typescript-language-server" "--stdio"))))
+
+(use-package eldoc
+  :defer t
+  :config
+  (setq eldoc-echo-area-use-multiline-p 1))
 
 (provide 'init-eglot)
