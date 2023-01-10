@@ -397,11 +397,20 @@ require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
+
 end)
 
 -- ====================================================================
 -- Colorscheme
 -- ====================================================================
 
-vim.opt.background = 'dark'
-vim.cmd.colorscheme 'dracula'
+local function try_colorscheme(name, background)
+  return pcall(function()
+    vim.opt.background = background
+    vim.cmd.colorscheme(name)
+  end)
+end
+
+if not try_colorscheme('dracula', 'dark') then
+  try_colorscheme('quiet', 'dark')
+end
