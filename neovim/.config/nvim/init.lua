@@ -170,7 +170,12 @@ require('packer').startup(function(use)
       vim.g.strip_whitespace_on_save = 1
       vim.g.strip_whitespace_confirm = 0
       vim.g.better_whitespace_filetypes_blacklist = {
-        'diff', 'gitcommit', 'unite', 'qf', 'help'
+        'diff',
+        'gitcommit',
+        'help',
+        'qf',
+        'toggleterm',
+        'unite',
       }
     end
   }
@@ -401,10 +406,26 @@ require('packer').startup(function(use)
   use 'tpope/vim-dispatch'
   use 'tpope/vim-eunuch'
 
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = '*',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = '<C-;>',
+      }
+
+      function _G.set_terminal_keymaps()
+        local opts = {buffer = 0}
+        vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+      end
+
+      vim.cmd 'autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()'
+    end,
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
-
 end)
 
 -- ====================================================================
