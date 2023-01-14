@@ -209,6 +209,13 @@ require('packer').startup(function(use)
     end
   }
 
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  }
+
   -- File Management
 
   use 'tpope/vim-vinegar'
@@ -394,6 +401,21 @@ require('packer').startup(function(use)
     end
   }
 
+  -- Tree-Sitter
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { 'typescript', 'tsx' },
+        indent = { enable = true },
+      }
+    end
+  }
 
   -- UI
 
