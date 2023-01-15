@@ -20,6 +20,9 @@ if [[ -d /opt/homebrew/bin ]]; then
 fi
 
 # ASDF
+if [[ -d "$HOME/.asdf/bin" ]]; then
+  export PATH="$HOME/.asdf/bin:$PATH"
+fi
 if [[ -d "$HOME/.asdf/shims" ]]; then
   export PATH="$HOME/.asdf/shims:$PATH"
 fi
