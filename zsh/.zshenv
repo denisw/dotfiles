@@ -10,6 +10,10 @@ if [[ -d "/etc/paths.d" ]]; then
   done
 fi
 
+# Set $XDG_CONFIG_HOME, which some tools use as config location,
+# for parity between macOS and Linux
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Homebrew
 if [[ -d /opt/homebrew/bin ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
