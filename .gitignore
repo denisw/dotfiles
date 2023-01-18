@@ -25,6 +25,9 @@ emacs/.emacs.d/transient
 emacs/.emacs.d/url
 emacs/.emacs.d/var
 
+# Homebrew
+.Brewfile.lock.json
+
 # Neovim
 /neovim/.config/nvim/plugin/packer_compiled.lua
 
