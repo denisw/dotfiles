@@ -235,7 +235,7 @@ require('packer').startup(function(use)
     end
   }
 
-  -- Fuzzy Finding & Search
+  -- Navigation
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -254,6 +254,18 @@ require('packer').startup(function(use)
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+    end
+  }
+
+  use {
+    'tpope/vim-projectionist',
+    config = function()
+      vim.g.projectionist_heuristics = {
+        ['*.ts'] = {
+          ['*.test.ts'] = { alternate = '{}.ts' },
+          ['*.ts'] = { alternate = '{}.test.ts' },
+        },
+      }
     end
   }
 
