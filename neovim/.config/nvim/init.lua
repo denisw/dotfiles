@@ -261,11 +261,18 @@ require('packer').startup(function(use)
     'tpope/vim-projectionist',
     config = function()
       vim.g.projectionist_heuristics = {
-        ['*.ts'] = {
+        ['*.js'] = {
+          ['*.test.js'] = { alternate = '{}.js' },
+          ['*.js'] = { alternate = '{}.test.js' },
+        },
+        ['*.ts|*.tsx'] = {
           ['*.test.ts'] = { alternate = '{}.ts' },
+          ['*.test.tsx'] = { alternate = '{}.tsx' },
           ['*.ts'] = { alternate = '{}.test.ts' },
+          ['*.tsx'] = { alternate = '{}.test.tsx' },
         },
       }
+      vim.keymap.set('n', '<leader>gt', ':A<CR>', {})
     end
   }
 
