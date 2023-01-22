@@ -42,6 +42,10 @@ if vim.env.TERM_PROGRAM ~= 'Apple_Terminal' then
   vim.opt.termguicolors = true
 end
 
+-- In terminal buffers, start in insert mode and disable line numbers.
+vim.cmd 'autocmd TermOpen * startinsert'
+vim.cmd 'autocmd TermOpen * setlocal nonumber'
+
 -- Add key mappings to quickly copy/paste to/from the clipboard.
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>y', '"+y')
@@ -169,6 +173,7 @@ require('packer').startup(function(use)
     setup = function()
       vim.g.strip_whitespace_on_save = 1
       vim.g.strip_whitespace_confirm = 0
+
       vim.g.better_whitespace_filetypes_blacklist = {
         'diff',
         'gitcommit',
@@ -177,6 +182,9 @@ require('packer').startup(function(use)
         'toggleterm',
         'unite',
       }
+
+      -- Don't highlight trailing whitespace in the terminal.
+      vim.cmd 'autocmd TermOpen * DisableWhitespace'
     end
   }
 
