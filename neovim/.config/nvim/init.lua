@@ -456,12 +456,13 @@ require('packer').startup(function(use)
     tag = '*',
     config = function()
       require('toggleterm').setup {
-        open_mapping = '<C-;>',
+        open_mapping = [[<C-\><C-\>]],
+        direction = 'float',
       }
 
       function _G.set_terminal_keymaps()
         local opts = {buffer = 0}
-        vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+        vim.keymap.set('t', [[<C-\><C-\>]], ':ToggleTerm<CR>', opts)
       end
 
       vim.cmd 'autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()'
