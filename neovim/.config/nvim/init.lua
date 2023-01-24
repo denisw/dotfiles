@@ -443,7 +443,7 @@ require('packer').startup(function(use)
     end,
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'typescript', 'tsx' },
+        ensure_installed = { 'lua', 'typescript', 'tsx', 'vue' },
         indent = { enable = true },
       }
     end
