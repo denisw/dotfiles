@@ -1,8 +1,9 @@
-# Temporary files
+# Misc files
 .#*
 *#
 *~
 *.swp
+.DS_Store
 
 # Emacs
 emacs/.emacs.d/.cache
@@ -22,6 +23,7 @@ emacs/.emacs.d/straight/build-cache.el
 emacs/.emacs.d/straight/modified
 emacs/.emacs.d/straight/repos
 emacs/.emacs.d/transient
+emacs/.emacs.d/tree-sitter
 emacs/.emacs.d/url
 emacs/.emacs.d/var
 
