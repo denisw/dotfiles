@@ -18,7 +18,12 @@
   :ensure t
   :after typescript-mode
   :hook ((js-mode . add-node-modules-path)
-         (typescript-mode . add-node-modules-path)))
+         (typescript-ts-mode . add-node-modules-path)
+         (tsx-ts-mode . add-node-modules-path)
+         (typescript-mode . add-node-modules-path)
+         (typescript-ts-base-mode . add-node-modules-path))
+  :config
+  (setq add-node-modules-path-command "echo \"$(npm root)/.bin\""))
 
 ;; https://github.com/prettier/prettier-emacs
 (use-package prettier-js
