@@ -213,7 +213,7 @@ endfunction
 
 function! Dark()
   set background=dark
-  colorscheme PaperColor
+  colorscheme dracula
 endfunction
 
 " Define mappings to quickly switch between light and dark mode
