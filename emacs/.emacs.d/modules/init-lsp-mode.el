@@ -11,6 +11,8 @@
   :commands lsp
   :hook
   ((js-mode . lsp-deferred)
+   (typescript-web-mode . lsp-deferred)
+   (tsx-web-mode . lsp-deferred)
    (typescript-ts-mode . lsp-deferred)
    (tsx-ts-mode . lsp-deferred)))
 
