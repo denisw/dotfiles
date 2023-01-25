@@ -16,12 +16,14 @@
 
 ;; Initialize package.el.
 (require 'package)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; Install use-package for package management and configuration.
 ;; https://github.com/jwiegley/use-package
 (unless (package-installed-p 'use-package)
+  (setq use-package-always-pin 'melpa-stable)
   (package-install 'use-package))
 
 ;; Add my module directory to the load path.
