@@ -5,17 +5,23 @@
   :diminish lsp-mode
   :init
   (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024))
   (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-headerline-breadcrumb-enable nil)
   :commands lsp
   :hook
-  ((js-mode . lsp)
-   (typescript-mode . lsp)
-   (typescript-tsx-mode . lsp)))
+  ((js-mode . lsp-deferred)
+   (typescript-ts-mode . lsp-deferred)
+   (tsx-ts-mode . lsp-deferred)))
 
-(use-package flycheck
-  :ensure t)
+(defun my/lsp-ui-doc-mode-hook ()
+  (evil-local-set-key 'normal (kbd "K") 'lsp-ui-doc-glance))
 
-(use-package which-key
-  :ensure t)
+(use-package lsp-ui
+  :ensure t
+  :init
+  (setq lsp-ui-doc-position 'at-point)
+  :hook
+  (lsp-ui-doc-mode . my/lsp-ui-doc-mode-hook))
 
 (provide 'init-lsp-mode)

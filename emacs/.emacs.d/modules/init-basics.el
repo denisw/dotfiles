@@ -88,10 +88,4 @@
   ;; Set first day of calendar to Monday
   (setq calendar-week-start-day 1))
 
-(use-package eldoc
-  :init
-  ;; Limit echo area size to a single line.
-  ;; Prevents long eldoc strings from covering half of the window.
-  (setq max-mini-window-height 1))
-
 (provide 'init-basics)
