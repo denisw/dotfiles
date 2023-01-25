@@ -167,6 +167,8 @@ call plug#end()
 
 " ALE
 let g:ale_sign_column_always = 1
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
 
 " Better Whitespace
 let g:strip_whitespace_on_save = 1
