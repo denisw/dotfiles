@@ -2,6 +2,7 @@
 
 (use-package lsp-mode
   :ensure t
+  :diminish lsp-mode
   :init
   (setq gc-cons-threshold 100000000)
   (setq lsp-keymap-prefix "C-c l")

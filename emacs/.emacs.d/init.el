@@ -43,6 +43,7 @@
 (require 'init-completion)
 (require 'init-crux)
 (require 'init-delight)
+(require 'init-diminish)
 (require 'init-dired)
 (require 'init-flymake)
 (require 'init-eglot)
