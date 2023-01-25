@@ -250,6 +250,13 @@ require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('telescope').setup {
+        defaults = {
+          mappings = {
+            i = {
+              ['<esc>'] = 'close',
+            },
+          },
+        },
         pickers = {
           git_files = {
             show_untracked = true,
