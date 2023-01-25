@@ -237,6 +237,9 @@ nnoremap <leader>ci :ALEImport<CR>
 nnoremap <leader>cf :ALEFix<CR>
 nnoremap <leader>cr :ALERename<CR>
 nnoremap <leader>ca :ALECodeAction<CR>
+nnoremap <leader>ee :ALEDetail<CR>
+nnoremap <leader>en :ALENext<CR>
+nnoremap <leader>ep :ALEPrevious<CR>
 
 " CamelCaseMotion
 map <silent> <leader>w <Plug>CamelCaseMotion_w
