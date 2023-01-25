@@ -255,9 +255,10 @@ nnoremap <C-x>g :Git<CR>
 nnoremap <leader>gs :Git<CR>
 
 " fzf
-map <C-P> :FZF<CR>
+map <C-P> :Files<CR>
 map <C-x>b :Buffers<CR>
-map <leader>b :Buffers<CR>
+map <leader>fb :Buffers<CR>
+map <leader>fg :Rg<CR>
 
 " vim-alternate
 nmap <leader>aa :Alternate<CR>
