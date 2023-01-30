@@ -469,6 +469,7 @@ require('packer').startup(function(use)
 
   -- Misc
 
+  use 'sheerun/vim-polyglot'
   use 'tpope/vim-dispatch'
   use 'tpope/vim-eunuch'
 
