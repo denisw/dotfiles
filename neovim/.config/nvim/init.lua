@@ -52,8 +52,13 @@ vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set('n', '<leader>P', '"+P')
 
--- Add key mapping to quickly open this config file.
-vim.keymap.set('n', '<leader>v,', ':e ~/.config/nvim/init.lua<cr>')
+-- Add key mapping to quickly open and reload this config file.
+local function reload_vimrc()
+  vim.cmd 'luafile $MYVIMRC'
+  vim.cmd 'PackerCompile'
+end
+vim.keymap.set('n', '<leader>v,', ':e $MYVIMRC<cr>')
+vim.keymap.set('n', '<leader>vr', reload_vimrc)
 
 -- Configuration and key mappings for the diagnostic frameowrk.
 vim.diagnostic.config {
