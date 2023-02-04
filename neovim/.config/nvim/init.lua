@@ -333,12 +333,24 @@ require('packer').startup(function(use)
     config = function()
       local null_ls = require('null-ls')
 
+      function executable_condition(name)
+        return function(utils)
+          return vim.fn.executable(name) == 1
+        end
+      end
+
       null_ls.setup {
         sources = {
           null_ls.builtins.code_actions.eslint,
           null_ls.builtins.diagnostics.eslint,
           null_ls.builtins.diagnostics.shellcheck,
+          null_ls.builtins.diagnostics.ruff.with({
+            condition = executable_condition('ruff'),
+          }),
           null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.yapf.with({
+            condition = executable_condition('yapf'),
+          }),
         },
       }
     end
