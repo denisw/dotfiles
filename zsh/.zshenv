@@ -47,6 +47,12 @@ if [[ -d "$HOME/bin" ]]; then
   export PATH="$PATH:$HOME/bin"
 fi
 
+# ~/.local/bin
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH="$PATH:$HOME/.local/bin"
+fi
+
+
 if [[ -f "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi
