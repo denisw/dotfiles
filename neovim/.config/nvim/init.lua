@@ -446,7 +446,7 @@ require('packer').startup(function(use)
 
       lspconfig.pyright.setup {
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = on_attach_with_format_on_save,
       }
 
       lspconfig.rust_analyzer.setup {
