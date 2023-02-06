@@ -107,6 +107,7 @@ require('packer').startup(function(use)
   -- Colorschemes
 
   use { 'dracula/vim', as = 'dracula' }
+  use 'folke/tokyonight.nvim'
   use 'lifepillar/vim-solarized8'
   use 'olimorris/onedarkpro.nvim'
   use 'rakr/vim-one'
