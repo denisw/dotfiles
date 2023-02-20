@@ -2,6 +2,6 @@
 
 ;; https://github.com/spotify/dockerfile-mode
 (use-package dockerfile-mode
-  :ensure t)
+  :straight t)
 
 (provide 'init-docker)

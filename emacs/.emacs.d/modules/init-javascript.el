@@ -13,7 +13,7 @@
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
-  :ensure t
+  :straight t
   :hook ((js-mode . add-node-modules-path)
          (typescript-web-mode . add-node-modules-path)
          (tsx-web-mode . add-node-modules-path)
@@ -23,7 +23,7 @@
 
 ;; https://github.com/prettier/prettier-emacs
 (use-package prettier-js
-  :ensure t
+  :straight t
   :hook ((js-mode . prettier-js-mode)
          (typescript-web-mode . prettier-js-mode)
          (tsx-web-mode . prettier-js-mode)
@@ -32,7 +32,7 @@
 
 ;; https://github.com/joshwnj/json-mode
 (use-package json-mode
-  :ensure t
+  :straight t
   :mode (("\\.json\\'" . json-mode)
           ("/\\.eslintrc\\'" . json-mode)
           ("/\\.prettierrc\\'" . json-mode)))

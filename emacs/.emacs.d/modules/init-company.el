@@ -2,7 +2,7 @@
 
 ;; https://company-mode.github.io
 (use-package company
-  :ensure t
+  :straight t
   :after delight
   :delight company-mode
   :hook (prog-mode . company-mode))

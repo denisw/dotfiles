@@ -1,6 +1,6 @@
 ;;; init-javascript.el --- Elixir programming
 
 (use-package elixir-mode
-  :ensure t)
+  :straight t)
 
 (provide 'init-elixir)
