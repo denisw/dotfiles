@@ -510,7 +510,7 @@ require('packer').startup(function(use)
     config = function()
       require('toggleterm').setup {
         open_mapping = [[<C-\><C-\>]],
-        direction = 'float',
+        direction = 'horizontal',
       }
 
       function _G.set_terminal_keymaps()
