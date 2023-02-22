@@ -78,9 +78,14 @@ set-title() {
 source "$HOME/.zsh/antigen.zsh"
 antigen apply
 
-### Extras ###
+### Misc ###
 
 # ASDF
 if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
   . "$HOME/.asdf/asdf.sh"
+fi
+
+# rbenv
+if type -p rbenv >/dev/null; then
+  eval "$(rbenv init - zsh)"
 fi

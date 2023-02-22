@@ -28,8 +28,8 @@ if [[ -d "$HOME/.asdf/shims" ]]; then
 fi
 
 # Cargo (Rust)
-if [[ -d "$HOME/.cargo/bin" ]]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
+if [[ -f "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
 fi
 
 # Go
@@ -42,6 +42,14 @@ if [[ -d "$HOME/.poetry/bin" ]]; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+# rbenv
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+if [[ -d "$HOME/.rbenv/shims" ]]; then
+  export PATH="$HOME/.rbenv/shims:$PATH"
+fi
+
 # ~/bin
 if [[ -d "$HOME/bin" ]]; then
   export PATH="$PATH:$HOME/bin"
@@ -50,9 +58,4 @@ fi
 # ~/.local/bin
 if [[ -d "$HOME/.local/bin" ]]; then
   export PATH="$PATH:$HOME/.local/bin"
-fi
-
-
-if [[ -f "$HOME/.cargo/env" ]]; then
-  . "$HOME/.cargo/env"
 fi
