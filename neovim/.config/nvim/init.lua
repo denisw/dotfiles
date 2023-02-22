@@ -455,6 +455,11 @@ require('packer').startup(function(use)
         on_attach = on_attach_with_format_on_save,
       }
 
+      lspconfig.solargraph.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
       lspconfig.tsserver.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
