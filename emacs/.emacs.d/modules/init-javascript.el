@@ -5,6 +5,7 @@
 
 ;; Define TypeScript modes based on web-mode.
 (use-package web-mode
+  :straight t
   :init
   (define-derived-mode typescript-web-mode web-mode "TypeScript")
   (define-derived-mode tsx-web-mode web-mode "TypeScript(TSX)")
