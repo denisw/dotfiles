@@ -246,6 +246,7 @@ require('packer').startup(function(use)
       require('neo-tree').setup {
         filesystem = {
           follow_current_file = true,
+          hijack_netrw_behavior = 'disabled',
         },
       }
       vim.keymap.set('n', '<leader>tt', ':Neotree reveal<cr>')
