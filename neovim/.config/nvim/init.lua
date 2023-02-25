@@ -235,17 +235,21 @@ require('packer').startup(function(use)
   use 'tpope/vim-vinegar'
 
   use {
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    },
     config = function()
-      require("nvim-tree").setup {
-        hijack_netrw = false,
+      require('neo-tree').setup {
+        filesystem = {
+          follow_current_file = true,
+        },
       }
-      vim.keymap.set('n', '<leader>tt', ':NvimTreeFindFileToggle<cr>', {})
-      vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<cr>', {})
-      vim.keymap.set('n', '<leader>tF', ':NvimTreeFocus<cr>', {})
-      vim.keymap.set('n', '<leader>tc', ':NvimTreeCollapse<cr>', {})
-      vim.keymap.set('n', '<leader>tr', ':NvimTreeRefresh<cr>', {})
+      vim.keymap.set('n', '<leader>tt', ':Neotree reveal<cr>')
+      vim.keymap.set('n', '<leader>tc', ':Neotree close filesystem<cr>')
     end
   }
 
