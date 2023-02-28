@@ -2,6 +2,7 @@
 
 (use-package project
   :config
-  (evil-define-key 'normal 'global (kbd "C-p") 'project-find-file))
+  (evil-define-key 'normal 'global (kbd "C-p") 'project-find-file)
+  (evil-define-key 'normal 'global (kbd "s-p") 'project-find-file))
 
 (provide 'init-project)
