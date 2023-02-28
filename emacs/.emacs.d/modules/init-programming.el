@@ -4,6 +4,8 @@
 (defun my/prog-mode-hook ()
   ;; Display line numbers.
   (display-line-numbers-mode 1)
+  ;; Do not wrap lines by default.
+  (setq truncate-lines t)
   ;; Don't display keywords or names as bold.
   (set-face-bold font-lock-keyword-face nil)
   (set-face-bold font-lock-function-name-face nil)
