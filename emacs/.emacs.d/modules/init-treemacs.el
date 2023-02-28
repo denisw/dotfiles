@@ -4,17 +4,8 @@
   :straight t
   :config
   (treemacs-project-follow-mode 1)
-  (treemacs-follow-mode 1))
-
-;; (use-package all-the-icons
-;;   :straight t
-;;   :if (display-graphic-p))
-
-;; (use-package treemacs-all-the-icons
-;;   :straight t
-;;   :if (display-graphic-p)
-;;   :after (treemacs all-the-icons)
-;;   :config
-;;   (treemacs-load-theme "doom-atom"))
+  (treemacs-follow-mode 1)
+  (global-set-key (kbd "M-0") 'treemacs-select-window)
+  (global-set-key (kbd "C-x t t") 'treemacs))
 
 (provide 'init-treemacs)
