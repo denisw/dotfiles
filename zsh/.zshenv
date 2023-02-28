@@ -42,6 +42,11 @@ if [[ -d "$HOME/.poetry/bin" ]]; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+# Rancher Desktop
+if [[ -d "$HOME/.rd/bin" ]]; then
+  export PATH="$PATH:$HOME/.rd/bin"
+fi
+
 # rbenv
 if [[ -d "$HOME/.rbenv/bin" ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
