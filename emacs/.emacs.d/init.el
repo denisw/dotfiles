@@ -59,6 +59,7 @@
 (require 'init-magit)
 (require 'init-project)
 (require 'init-rg)
+(require 'init-treemacs)
 (require 'init-writing)
 
 ;; Languages

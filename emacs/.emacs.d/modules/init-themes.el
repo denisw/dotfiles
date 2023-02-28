@@ -3,10 +3,13 @@
 ;; https://github.com/doomemacs/themes
 (use-package doom-themes
   :straight t
+  :after treemacs
   :config
   (setq doom-themes-enable-bold nil)
   (setq doom-themes-enable-italic nil)
-  (doom-themes-org-config))
+  (doom-themes-org-config)
+  (doom-themes-treemacs-config)
+  (treemacs-load-theme "doom-colors"))
 
 ;; https://protesilaos.com/emacs/modus-themes
 (use-package modus-themes
