@@ -135,10 +135,10 @@ require('packer').startup(function(use)
   }
 
   use {
-    'hrsh7th/cmp-vsnip',
+    'dcampos/cmp-snippy',
     requires = {
       'hrsh7th/nvim-cmp',
-      'hrsh7th/vim-vsnip'
+      'dcampos/nvim-snippy',
     }
   }
 
@@ -150,7 +150,7 @@ require('packer').startup(function(use)
       cmp.setup {
         snippet = {
           expand = function(args)
-            vim.fn['vsnip#anonymous'](args.body)
+            require('snippy').expand_snippet(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
@@ -217,9 +217,6 @@ require('packer').startup(function(use)
     after = 'nvim-cmp',
     config = function()
       require('nvim-autopairs').setup {}
-      local cmp = require('cmp')
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end
   }
 
