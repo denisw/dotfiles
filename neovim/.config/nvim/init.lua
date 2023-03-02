@@ -162,7 +162,7 @@ require('packer').startup(function(use)
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          { name = 'vsnip' },
+          { name = 'snippy' },
         })
       }
     end
