@@ -41,6 +41,7 @@ brew "meson"
 brew "neovim"
 brew "node", link: false
 brew "node@18", link: true
+brew "postgresql@14", link: true
 brew "pyright"
 brew "python@3.10", link: true
 brew "r"
@@ -58,7 +59,10 @@ brew "zsh"
 cask "alacritty"
 cask "emacs"
 cask "font-symbols-only-nerd-font"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-ubuntu-mono"
+cask "font-ubuntu-mono-nerd-font"
 cask "gimp"
 cask "hammerspoon"
 cask "kitty"
