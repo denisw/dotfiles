@@ -54,8 +54,9 @@
 (require 'init-delight)
 (require 'init-diminish)
 (require 'init-dired)
-(require 'init-flycheck)
-(require 'init-lsp-mode)
+(require 'init-eldoc)
+(require 'init-eglot)
+(require 'init-flymake)
 (require 'init-magit)
 (require 'init-project)
 (require 'init-rg)
@@ -80,9 +81,8 @@
 (require 'init-yaml)
 
 ;; (Disabled)
-;; (require 'init-eglot)
-;; (require 'init-eldoc)
-;; (require 'init-flymake)
+;; (require 'init-flycheck)
+;; (require 'init-lsp-mode)
 ;; (require 'init-tree-sitter)
 ;; (require 'init-treesit)
 
