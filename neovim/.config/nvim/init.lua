@@ -271,10 +271,19 @@ require('packer').startup(function(use)
           },
         }
       }
+
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+      local themes = require('telescope.themes')
+
+      function with_dropdown_theme(f)
+        return function()
+          return f(themes.get_dropdown({}))
+        end
+      end
+
+      vim.keymap.set('n', '<C-p>', with_dropdown_theme(builtin.find_files), {})
+      vim.keymap.set('n', '<leader>fb', with_dropdown_theme(builtin.buffers), {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})
     end
@@ -447,6 +456,11 @@ require('packer').startup(function(use)
         end
       }
 
+      lspconfig.prismals.setup {
+        capabilities = capabilities,
+        on_attach = on_attach_with_format_on_save,
+      }
+
       lspconfig.pyright.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
@@ -523,6 +537,7 @@ require('packer').startup(function(use)
 
   -- Misc
 
+  use 'prisma/vim-prisma'
   use 'sheerun/vim-polyglot'
   use 'tpope/vim-dispatch'
   use 'tpope/vim-eunuch'
