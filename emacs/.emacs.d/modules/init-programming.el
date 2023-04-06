@@ -22,10 +22,10 @@
   (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
-;; https://github.com/jacktasia/dumb-jump
-(use-package dumb-jump
+;; https://github.com/radian-software/apheleia
+(use-package apheleia
   :ensure t
   :config
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+  (apheleia-global-mode))
 
 (provide 'init-programming)
