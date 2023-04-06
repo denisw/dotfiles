@@ -14,14 +14,7 @@
 (use-package eglot
   :ensure t
   :after (flymake-collection typescript-mode)
-  :hook
-  ((eglot-managed-mode . my/eglot-managed-mode-hook))
-  :config
-  (add-to-list 'eglot-server-programs
-               '(((typescript-ts-mode :language-id "typescript")
-                  (tsx-ts-mode :language-id "typescriptreact"))
-                 .
-                 ("typescript-language-server" "--stdio"))))
+  :hook ((eglot-managed-mode . my/eglot-managed-mode-hook)))
 
 (use-package eldoc
   :defer t
