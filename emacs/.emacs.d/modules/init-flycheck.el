@@ -1,7 +1,7 @@
 ;;; init-lsp-mode.el --- Syntax checking with Flycheck
 
 (use-package flycheck
-  :straight t
+  :ensure t
   :diminish flycheck-mode)
 
 (provide 'init-flycheck)

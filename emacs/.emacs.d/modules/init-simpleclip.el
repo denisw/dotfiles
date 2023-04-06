@@ -1,7 +1,7 @@
 ;;; init-simpleclip.el --- Separate clipboard and kill ring
 
 (use-package simpleclip
-  :straight t
+  :ensure t
   :config
   (simpleclip-mode))
 

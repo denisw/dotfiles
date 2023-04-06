@@ -2,11 +2,11 @@
 
 ;; https://github.com/magit/magit
 (use-package magit
-  :straight t
+  :ensure t
   :commands magit-status)
 
 ;; https://github.com/magit/git-modes
 (use-package git-modes
-  :straight t)
+  :ensure t)
 
 (provide 'init-magit)

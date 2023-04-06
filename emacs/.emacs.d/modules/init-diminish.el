@@ -1,6 +1,6 @@
 ;;; init-diminish.el --- Clean up modeline with diminish.el
 
 (use-package diminish
-  :straight t)
+  :ensure t)
 
 (provide 'init-diminish)

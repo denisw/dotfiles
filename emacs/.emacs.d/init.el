@@ -14,24 +14,11 @@
 ;; Silence warnings arising from async native compilation.
 (setq native-comp-async-report-warnings-errors 'silent)
 
-;; Initialize straight.el.
-;; https://github.com/radian-software/straight.el#getting-started
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-
-;; Install use-package for package management and configuration.
-;; https://github.com/jwiegley/use-package
-(straight-use-package 'use-package)
+;; Use the MELPA package repository.
+;; https://elpa.gnu.org
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")

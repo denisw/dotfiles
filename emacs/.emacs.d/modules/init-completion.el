@@ -2,13 +2,13 @@
 
 ;; https://github.com/minad/vertico
 (use-package vertico
-  :straight (:files (:defaults "extensions/*"))
+  :ensure t
   :config
   (vertico-mode))
 
 (use-package vertico-directory
   :after vertico
-  :straight nil
+  :ensure nil
   :bind (:map vertico-map
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
@@ -17,7 +17,7 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package orderless
-  :straight t
+  :ensure t
   :init
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
@@ -25,7 +25,7 @@
 
 ;; https://github.com/minad/consult
 (use-package consult
-  :straight t
+  :ensure t
   :bind
   ("C-x b" . consult-buffer)
   ("C-x 4 b" . consult-buffer-other-window)

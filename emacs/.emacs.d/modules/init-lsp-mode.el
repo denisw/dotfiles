@@ -1,12 +1,12 @@
 ;;; init-lsp-mode.el --- LSP integration using lsp-mode
 
 (use-package which-key
-  :straight t
+  :ensure t
   :config
   (which-key-mode))
 
 (use-package lsp-mode
-  :straight t
+  :ensure t
   :after which-key
   :commands lsp
   :diminish lsp-mode
@@ -29,7 +29,7 @@
   (evil-local-set-key 'normal (kbd "K") 'lsp-ui-doc-glance))
 
 (use-package lsp-ui
-  :straight t
+  :ensure t
   :init
   (setq lsp-ui-doc-position 'at-point)
   :hook (lsp-ui-doc-mode . my/lsp-ui-doc-mode-hook))

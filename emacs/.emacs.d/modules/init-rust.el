@@ -6,7 +6,7 @@
   (setq tab-width 4))
 
 (use-package rust-mode
-  :straight t
+  :ensure t
   :hook (rust-mode . my-rust-hook))
 
 (provide 'init-rust)

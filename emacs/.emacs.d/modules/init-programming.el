@@ -15,7 +15,7 @@
 
 ;; https://github.com/dgutov/diff-hl
 (use-package diff-hl
-  :straight t
+  :ensure t
   :config
   (global-diff-hl-mode)
   ;; https://github.com/dgutov/diff-hl#magit
@@ -24,7 +24,7 @@
 
 ;; https://github.com/jacktasia/dumb-jump
 (use-package dumb-jump
-  :straight t
+  :ensure t
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 

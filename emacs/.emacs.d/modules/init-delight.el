@@ -2,7 +2,7 @@
 
 ;; Use delight.el to hide modes from the modeline.
 (use-package delight
-  :straight t
+  :ensure t
   :delight
   auto-revert-mode
   eldoc-mode)

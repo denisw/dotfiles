@@ -2,7 +2,7 @@
 
 ;; https://github.com/dajva/rg.el
 (use-package rg
-  :straight t
+  :ensure t
   :config (rg-enable-default-bindings))
 
 (provide 'init-rg)

@@ -2,18 +2,18 @@
 
 ;; https://github.com/jrblevin/markdown-mode
 (use-package markdown-mode
-  :straight t
+  :ensure t
   :config
   (setq markdown-enable-wiki-links t))
 
 ;; https://github.com/joostkremers/visual-fill-column
 (use-package visual-fill-column
-  :straight t
+  :ensure t
   :config
   (add-hook 'visual-fill-column-mode-hook #'visual-line-mode))
 
 ;; https://github.com/rnkn/olivetti
 (use-package olivetti
-  :straight t)
+  :ensure t)
 
 (provide 'init-writing)
