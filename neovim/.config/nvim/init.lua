@@ -576,6 +576,18 @@ local function try_colorscheme(name, background)
   end)
 end
 
-if not try_colorscheme('dracula', 'dark') then
-  try_colorscheme('quiet', 'dark')
+local function set_colorscheme(name, background)
+  if not try_colorscheme(name, background) then
+    try_colorscheme('quiet', background)
+  end
 end
+
+local function light_theme()
+  set_colorscheme('onelight', 'light')
+end
+
+local function dark_theme()
+  set_colorscheme('onedark', 'dark')
+end
+
+light_theme()
