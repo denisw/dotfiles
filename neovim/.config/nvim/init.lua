@@ -106,6 +106,27 @@ require('packer').startup(function(use)
 
   -- Colorschemes
 
+  use {
+    'sonph/onehalf',
+    rtp = 'vim',
+    config = function()
+      local function light()
+        vim.opt.background = 'light'
+        vim.cmd.colorscheme('onehalflight')
+      end
+
+      local function dark()
+        vim.opt.background = 'light'
+        vim.cmd.colorscheme('onehalfdark')
+      end
+
+      vim.api.nvim_create_user_command('Light', light, { nargs = 0})
+      vim.api.nvim_create_user_command('Dark', dark, { nargs = 0 })
+
+      light()
+    end
+  }
+
   use { 'dracula/vim', as = 'dracula' }
   use 'folke/tokyonight.nvim'
   use 'lifepillar/vim-solarized8'
@@ -565,30 +586,3 @@ require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
--- ====================================================================
--- Colorscheme
--- ====================================================================
-
-local function try_colorscheme(name, background)
-  return pcall(function()
-    vim.opt.background = background
-    vim.cmd.colorscheme(name)
-  end)
-end
-
-local function set_colorscheme(name, background)
-  if not try_colorscheme(name, background) then
-    try_colorscheme('quiet', background)
-  end
-end
-
-local function light_theme()
-  set_colorscheme('onelight', 'light')
-end
-
-local function dark_theme()
-  set_colorscheme('onedark', 'dark')
-end
-
-light_theme()
