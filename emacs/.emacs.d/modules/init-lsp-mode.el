@@ -11,6 +11,7 @@
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-modeline-code-actions-enable nil)
   :commands lsp
   :hook
   ((js-ts-mode . lsp-deferred)
