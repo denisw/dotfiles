@@ -1,10 +1,5 @@
 ;;; init-lsp-mode.el --- LSP integration using lsp-mode
 
-(use-package which-key
-  :ensure t
-  :config
-  (which-key-mode))
-
 (use-package lsp-mode
   :ensure t
   :after which-key
@@ -13,15 +8,17 @@
   :init
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024))
+  (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-headerline-breadcrumb-enable nil)
   :commands lsp
   :hook
-  ((js-mode . lsp-deferred)
+  ((js-ts-mode . lsp-deferred)
    (ruby-mode . lsp-deferred)
    (typescript-web-mode . lsp-deferred)
    (tsx-web-mode . lsp-deferred)
    (typescript-ts-mode . lsp-deferred)
+   (rust-mode . lsp-deferred)
    (tsx-ts-mode . lsp-deferred)
    (lsp-mode . lsp-enable-which-key-integration)))
 

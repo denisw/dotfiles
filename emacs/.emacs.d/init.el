@@ -41,14 +41,14 @@
 (require 'init-delight)
 (require 'init-diminish)
 (require 'init-dired)
-(require 'init-eldoc)
-(require 'init-eglot)
-(require 'init-flymake)
+(require 'init-flycheck)
+(require 'init-lsp-mode)
 (require 'init-magit)
 (require 'init-project)
 (require 'init-rg)
 (require 'init-treemacs)
 (require 'init-writing)
+(require 'init-which-key)
 
 ;; Languages
 (require 'init-c)
@@ -70,8 +70,9 @@
 (require 'init-yaml)
 
 ;; (Disabled)
-;; (require 'init-flycheck)
-;; (require 'init-lsp-mode)
+;; (require 'init-eglot)
+;; (require 'init-eldoc)
+;; (require 'init-flymake)
 ;; (require 'init-tree-sitter)
 ;; (require 'init-treesit)
 
