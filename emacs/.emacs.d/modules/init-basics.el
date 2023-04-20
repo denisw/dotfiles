@@ -87,6 +87,11 @@
   (global-set-key (kbd "C-x b") #'my/switch-to-buffer)
   (global-set-key (kbd "M-x") #'my/M-x)
 
+  ;; Let Cmd-+/- scale all text, not just the current buffer.
+  (global-set-key (kbd "s-=") 'global-text-scale-adjust)
+  (global-set-key (kbd "s-+") 'global-text-scale-adjust)
+  (global-set-key (kbd "s--") 'global-text-scale-adjust)
+
   ;; Set first day of calendar to Monday
   (setq calendar-week-start-day 1))
 
