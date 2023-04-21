@@ -25,8 +25,7 @@
 
 (defun my/treesit-install-grammars ()
   (interactive)
-  (treesit-install-language-grammar 'typescript)
-  (treesit-install-language-grammar 'tsx))
-
+  (dolist (entry treesit-language-source-alist)
+    (treesit-install-language-grammar (car entry))))
 
 (provide 'init-treesit)
