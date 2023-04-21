@@ -1,4 +1,4 @@
-;;; init-javascript-ts.el --- JavaScript programming
+;;; init-javascript-ts.el --- JavaScript/TypeScript programming
 
 ;; Indent JavaScript with two spaces by default.
 (setq-default js-indent-level 2)
@@ -6,6 +6,12 @@
 ;; Use Tree-Sitter modes for TypeScript.
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+
+;; Use Tree-Sitter modes for JSON.
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.jsonl\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.eslintrc\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.prettierrc\\'" . json-ts-mode))
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
@@ -22,12 +28,5 @@
   :hook ((js-mode . prettier-js-mode)
          (typescript-ts-mode . prettier-js-mode)
          (tsx-ts-mode . prettier-js-mode)))
-
-;; https://github.com/joshwnj/json-mode
-(use-package json-mode
-  :ensure t
-  :mode (("\\.json\\'" . json-mode)
-          ("/\\.eslintrc\\'" . json-mode)
-          ("/\\.prettierrc\\'" . json-mode)))
 
 (provide 'init-javascript-ts)
