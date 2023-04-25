@@ -66,6 +66,8 @@
 (require 'init-rust)
 (require 'init-shell)
 (require 'init-terraform)
+(when (>= emacs-major-version 29)
+  (require 'init-treesit))
 (require 'init-web)
 (require 'init-yaml)
 
@@ -74,7 +76,6 @@
 ;; (require 'init-eldoc)
 ;; (require 'init-flymake)
 ;; (require 'init-tree-sitter)
-;; (require 'init-treesit)
 
 ;; Put custom variables into a separate file.
 (setq custom-file "~/.emacs.d/custom.el")
