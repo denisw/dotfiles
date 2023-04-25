@@ -1,5 +1,23 @@
+local wezterm = require('wezterm')
+
+function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  else
+    return 'Dark'
+  end
+end
+
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'OneHalfDark'
+  else
+    return 'OneHalfLight'
+  end
+end
+
 return {
-  color_scheme = "Dracula (Official)",
+  color_scheme = scheme_for_appearance(get_appearance()),
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
   window_padding = {
