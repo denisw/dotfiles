@@ -49,7 +49,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' formats "(%{$fg_bold[red]%}%b%{$reset_color%}) "
 
 # Prompt definition
-PROMPT='%{$fg_bold[cyan]%}%1~%{$reset_color%} ${vcs_info_msg_0_}%# '
+PROMPT='%{$fg_bold[blue]%}%1~%{$reset_color%} ${vcs_info_msg_0_}%# '
 
 ### Aliases ###
 
