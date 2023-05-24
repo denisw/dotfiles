@@ -104,32 +104,38 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  -- Colorschemes
-
   use {
-    'sonph/onehalf',
-    rtp = 'vim',
+    'catppuccin/nvim',
+    as = 'catppuccin',
     config = function()
-      local function light()
-        vim.opt.background = 'light'
-        vim.cmd.colorscheme('onehalflight')
-      end
-
-      local function dark()
-        vim.opt.background = 'light'
-        vim.cmd.colorscheme('onehalfdark')
-      end
-
-      vim.api.nvim_create_user_command('Light', light, { nargs = 0})
-      vim.api.nvim_create_user_command('Dark', dark, { nargs = 0 })
-
-      light()
+      vim.opt.background = 'light'
+      vim.cmd.colorscheme('catppuccin')
     end
   }
 
-  use { 'dracula/vim', as = 'dracula' }
   use 'folke/tokyonight.nvim'
   use 'lifepillar/vim-solarized8'
+
+  use {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        style = 'cool',
+        toggle_style_key = '<leader>vc',
+        toggle_style_list = {'light', 'cool'},
+      }
+      -- require('onedark').load()
+    end
+  }
+
+  use {
+    'dracula/vim',
+    as = 'dracula',
+    -- config = function()
+    --   vim.opt.background = 'dark'
+    --   vim.cmd.colorscheme('dracula')
+    -- end
+  }
 
   -- Completion
 
