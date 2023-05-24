@@ -573,7 +573,7 @@ require('packer').startup(function(use)
     end,
     config = function()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'lua', 'typescript', 'tsx', 'vue' },
+        ensure_installed = { 'lua', 'rust', 'typescript', 'tsx', 'vue' },
         indent = { enable = true },
       }
     end
