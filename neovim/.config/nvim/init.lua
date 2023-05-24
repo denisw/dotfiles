@@ -107,14 +107,28 @@ require('packer').startup(function(use)
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
-    config = function()
-      vim.opt.background = 'light'
-      vim.cmd.colorscheme('catppuccin')
-    end
+    -- config = function()
+    --   vim.opt.background = 'light'
+    --   vim.cmd.colorscheme('catppuccin')
+    -- end
   }
 
-  use 'folke/tokyonight.nvim'
-  use 'lifepillar/vim-solarized8'
+  use {
+    'dracula/vim',
+    as = 'dracula',
+    -- config = function()
+    --   vim.opt.background = 'dark'
+    --   vim.cmd.colorscheme('dracula')
+    -- end
+  }
+
+  use {
+    'folke/tokyonight.nvim',
+    -- config = function()
+    --   vim.opt.background = 'light'
+    --   vim.cmd.colorscheme('tokyonight-day')
+    -- end
+  }
 
   use {
     'navarasu/onedark.nvim',
@@ -129,12 +143,11 @@ require('packer').startup(function(use)
   }
 
   use {
-    'dracula/vim',
-    as = 'dracula',
-    -- config = function()
-    --   vim.opt.background = 'dark'
-    --   vim.cmd.colorscheme('dracula')
-    -- end
+    'savq/melange-nvim',
+    config = function()
+      vim.opt.background = 'light'
+      vim.cmd.colorscheme('melange')
+    end
   }
 
   -- Completion
