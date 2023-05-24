@@ -535,6 +535,15 @@ require('packer').startup(function(use)
       lspconfig.rust_analyzer.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
+        settings = {
+          ["rust-analyzer"] = {
+            imports = {
+              granularity = {
+                group = "module"
+              }
+            }
+          }
+        }
       }
 
       lspconfig.solargraph.setup {
