@@ -123,6 +123,8 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  -- Colorschemes
+
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
@@ -142,16 +144,24 @@ require('packer').startup(function(use)
   }
 
   use {
-    'folke/tokyonight.nvim',
+    'oxfist/night-owl.nvim',
     config = function()
-      if get_system_appearance() == 'light' then
-        vim.opt.background = 'light'
-        vim.cmd.colorscheme('tokyonight-day')
-      else
-        vim.opt.background = 'dark'
-        vim.cmd.colorscheme('tokyonight-night')
-      end
+      vim.opt.background = 'dark'
+      vim.cmd.colorscheme('night-owl')
     end
+  }
+
+  use {
+    'folke/tokyonight.nvim',
+    -- config = function()
+    --   if get_system_appearance() == 'light' then
+    --     vim.opt.background = 'light'
+    --     vim.cmd.colorscheme('tokyonight-day')
+    --   else
+    --     vim.opt.background = 'dark'
+    --     vim.cmd.colorscheme('tokyonight-night')
+    --   end
+    -- end
   }
 
   use {

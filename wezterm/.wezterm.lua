@@ -10,13 +10,14 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'OneHalfDark'
+    return 'NightOwl (Gogh)'
   else
-    return 'OneHalfLight'
+    return 'NightOwl (Gogh)'
   end
 end
 
 return {
+  front_end = "WebGpu",
   color_scheme = scheme_for_appearance(get_appearance()),
   font_size = 13,
   use_fancy_tab_bar = false,
