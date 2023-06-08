@@ -87,8 +87,6 @@ vim.keymap.set('n', '<leader>el', vim.diagnostic.setqflist, bufopts)
 -- Helpers
 -- ====================================================================
 
--- Returns "light" or "dark" based on the current system UI appearance.
--- Currently only works on macOS, and falls back to "dark" on other OS.
 function get_system_appearance()
   if vim.fn.has("mac") then
     local output = vim.fn.system("defaults read -g AppleInterfaceStyle")
@@ -126,6 +124,14 @@ require('packer').startup(function(use)
   -- Colorschemes
 
   use {
+    'oxfist/night-owl.nvim',
+    -- config = function()
+    --   vim.opt.background = 'dark'
+    --   vim.cmd.colorscheme('night-owl')
+    -- end
+  }
+
+  use {
     'catppuccin/nvim',
     as = 'catppuccin',
     -- config = function()
@@ -141,14 +147,6 @@ require('packer').startup(function(use)
     --   vim.opt.background = 'dark'
     --   vim.cmd.colorscheme('dracula')
     -- end
-  }
-
-  use {
-    'oxfist/night-owl.nvim',
-    config = function()
-      vim.opt.background = 'dark'
-      vim.cmd.colorscheme('night-owl')
-    end
   }
 
   use {
@@ -179,7 +177,7 @@ require('packer').startup(function(use)
   use {
     'savq/melange-nvim',
     -- config = function()
-    --   vim.opt.background = 'light'
+    --   vim.opt.background = get_system_appearance()
     --   vim.cmd.colorscheme('melange')
     -- end
   }
