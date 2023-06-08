@@ -18,6 +18,7 @@ end
 
 return {
   color_scheme = scheme_for_appearance(get_appearance()),
+  font_size = 13,
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
   window_padding = {
