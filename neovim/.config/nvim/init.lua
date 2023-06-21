@@ -124,6 +124,38 @@ require('packer').startup(function(use)
   -- Colorschemes
 
   use {
+    'EdenEast/nightfox.nvim',
+    config = function()
+      if get_system_appearance() == 'light' then
+        vim.cmd.colorscheme('dawnfox')
+      else
+        vim.cmd.colorscheme('nightfox')
+      end
+    end
+  }
+
+
+  use {
+    'rebelot/kanagawa.nvim',
+    -- config = function()
+    --   require('kanagawa').setup({
+    --     dimInactive = true,
+    --     colors = {
+    --       theme = {
+    --         all = {
+    --           ui = {
+    --             bg_gutter = 'none'
+    --           }
+    --         }
+    --       }
+    --     }
+    --   })
+    --   vim.opt.background = 'dark'
+    --   vim.cmd.colorscheme('kanagawa')
+    -- end
+  }
+
+  use {
     'oxfist/night-owl.nvim',
     -- config = function()
     --   vim.opt.background = 'dark'
