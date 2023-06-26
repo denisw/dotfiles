@@ -334,6 +334,8 @@ require('packer').startup(function(use)
     },
     config = function()
       require('neo-tree').setup {
+        enable_git_status = false,
+        enable_diagnostics = false,
         filesystem = {
           follow_current_file = true,
           hijack_netrw_behavior = 'disabled',
