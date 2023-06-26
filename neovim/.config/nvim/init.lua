@@ -134,85 +134,76 @@ require('packer').startup(function(use)
     end
   }
 
+  -- use {
+  --   'rebelot/kanagawa.nvim',
+  --   config = function()
+  --     require('kanagawa').setup({
+  --       dimInactive = true,
+  --       colors = {
+  --         theme = {
+  --           all = {
+  --             ui = {
+  --               bg_gutter = 'none'
+  --             }
+  --           }
+  --         }
+  --       }
+  --     })
+  --     vim.opt.background = 'dark'
+  --     vim.cmd.colorscheme('kanagawa')
+  --   end
+  -- }
 
-  use {
-    'rebelot/kanagawa.nvim',
-    -- config = function()
-    --   require('kanagawa').setup({
-    --     dimInactive = true,
-    --     colors = {
-    --       theme = {
-    --         all = {
-    --           ui = {
-    --             bg_gutter = 'none'
-    --           }
-    --         }
-    --       }
-    --     }
-    --   })
-    --   vim.opt.background = 'dark'
-    --   vim.cmd.colorscheme('kanagawa')
-    -- end
-  }
+  -- use {
+  --   'catppuccin/nvim',
+  --   as = 'catppuccin',
+  --   config = function()
+  --     vim.opt.background = 'light'
+  --     vim.cmd.colorscheme('catppuccin')
+  --   end
+  -- }
 
-  use {
-    'oxfist/night-owl.nvim',
-    -- config = function()
-    --   vim.opt.background = 'dark'
-    --   vim.cmd.colorscheme('night-owl')
-    -- end
-  }
+  -- use {
+  --   'dracula/vim',
+  --   as = 'dracula',
+  --   config = function()
+  --     vim.opt.background = 'dark'
+  --     vim.cmd.colorscheme('dracula')
+  --   end
+  -- }
 
-  use {
-    'catppuccin/nvim',
-    as = 'catppuccin',
-    -- config = function()
-    --   vim.opt.background = 'light'
-    --   vim.cmd.colorscheme('catppuccin')
-    -- end
-  }
+  -- use {
+  --   'folke/tokyonight.nvim',
+  --   config = function()
+  --     if get_system_appearance() == 'light' then
+  --       vim.opt.background = 'light'
+  --       vim.cmd.colorscheme('tokyonight-day')
+  --     else
+  --       vim.opt.background = 'dark'
+  --       vim.cmd.colorscheme('tokyonight-night')
+  --     end
+  --   end
+  -- }
 
-  use {
-    'dracula/vim',
-    as = 'dracula',
-    -- config = function()
-    --   vim.opt.background = 'dark'
-    --   vim.cmd.colorscheme('dracula')
-    -- end
-  }
+  -- use {
+  --   'navarasu/onedark.nvim',
+  --   config = function()
+  --     require('onedark').setup {
+  --       style = 'cool',
+  --       toggle_style_key = '<leader>vc',
+  --       toggle_style_list = {'light', 'cool'},
+  --     }
+  --     -- require('onedark').load()
+  --   end
+  -- }
 
-  use {
-    'folke/tokyonight.nvim',
-    -- config = function()
-    --   if get_system_appearance() == 'light' then
-    --     vim.opt.background = 'light'
-    --     vim.cmd.colorscheme('tokyonight-day')
-    --   else
-    --     vim.opt.background = 'dark'
-    --     vim.cmd.colorscheme('tokyonight-night')
-    --   end
-    -- end
-  }
-
-  use {
-    'navarasu/onedark.nvim',
-    config = function()
-      require('onedark').setup {
-        style = 'cool',
-        toggle_style_key = '<leader>vc',
-        toggle_style_list = {'light', 'cool'},
-      }
-      -- require('onedark').load()
-    end
-  }
-
-  use {
-    'savq/melange-nvim',
-    -- config = function()
-    --   vim.opt.background = get_system_appearance()
-    --   vim.cmd.colorscheme('melange')
-    -- end
-  }
+  -- use {
+  --   'savq/melange-nvim',
+  --   config = function()
+  --     vim.opt.background = get_system_appearance()
+  --     vim.cmd.colorscheme('melange')
+  --   end
+  -- }
 
   -- Completion
 
