@@ -361,26 +361,27 @@ require('packer').startup(function(use)
           },
         },
         pickers = {
+          buffers = {
+            theme = 'dropdown',
+          },
+          find_files = {
+            theme = 'dropdown',
+          },
           git_files = {
             show_untracked = true,
+            theme = 'dropdown',
+          },
+          lsp_definitions = {
+            theme = 'dropdown',
           },
         }
       }
 
       local builtin = require('telescope.builtin')
-      local themes = require('telescope.themes')
-
-      function with_dropdown_theme(f)
-        return function()
-          return f(themes.get_dropdown({}))
-        end
-      end
-
-      vim.keymap.set('n', '<C-p>', with_dropdown_theme(builtin.find_files), {})
-      vim.keymap.set('n', '<leader>fb', with_dropdown_theme(builtin.buffers), {})
+      vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-      vim.keymap.set('n', 'gr', builtin.lsp_references, {})
     end
   }
 
@@ -514,19 +515,20 @@ require('packer').startup(function(use)
 
   use {
     'neovim/nvim-lspconfig',
-    after = { 'nvim-cmp' },
+    after = { 'nvim-cmp', 'telescope.nvim' },
     config = function()
       local lspconfig = require('lspconfig')
       local cmp_lsp = require('cmp_nvim_lsp')
+      local telescope_builtin = require('telescope.builtin')
 
       local on_attach = function(client, bufnr)
         local bufopts = { noremap=true, silent=true, buffer=bufnr }
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, bufopts)
+        vim.keymap.set('n', 'gi', telescope_builtin.lsp_implementations, bufopts)
+        vim.keymap.set('n', 'gr', builtin.lsp_references, {})
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-        vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set('n', '<leader>D', telescope_builtin.lsp_type_definitions, bufopts)
         vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
         vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
