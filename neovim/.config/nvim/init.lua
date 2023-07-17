@@ -123,6 +123,33 @@ require('packer').startup(function(use)
 
   -- Colorschemes
 
+  use {
+    'olimorris/onedarkpro.nvim',
+    config = function()
+      require("onedarkpro").setup {
+        plugins = {
+          neo_tree = true,
+        },
+        highlights = {
+          NeoTreeNormal = { bg = "${cursorline}" },
+          NeoTreeCursorLine = { bg = "${selection}" },
+          NeoTreeNormalNC = { bg = "${cursorline}" },
+          NeoTreeCursorLine = { bg = "${selection}" },
+        },
+        options = {
+          cursorline = true,
+        },
+      }
+      if get_system_appearance() == 'light' then
+        vim.opt.background = 'light'
+        vim.cmd.colorscheme('onelight')
+      else
+        vim.opt.background = 'dark'
+        vim.cmd.colorscheme('onedark')
+      end
+    end
+  }
+
   -- use {
   --   'EdenEast/nightfox.nvim',
     -- config = function()
@@ -154,32 +181,32 @@ require('packer').startup(function(use)
   --   end
   -- }
 
-  use {
-    'catppuccin/nvim',
-    as = 'catppuccin',
-    config = function()
-      require('catppuccin').setup {
-        background = {
-          light = 'latte',
-          dark = 'mocha',
-        },
-        integrations = {
-          cmp = true,
-          lsp_trouble = true,
-          neogit = true,
-          neotree = true,
-        },
-      }
+  -- use {
+  --   'catppuccin/nvim',
+  --   as = 'catppuccin',
+  --   config = function()
+  --     require('catppuccin').setup {
+  --       background = {
+  --         light = 'latte',
+  --         dark = 'mocha',
+  --       },
+  --       integrations = {
+  --         cmp = true,
+  --         lsp_trouble = true,
+  --         neogit = true,
+  --         neotree = true,
+  --       },
+  --     }
 
-      if get_system_appearance() == 'light' then
-        vim.opt.background = 'light'
-      else
-        vim.opt.background = 'dark'
-      end
+  --     if get_system_appearance() == 'light' then
+  --       vim.opt.background = 'light'
+  --     else
+  --       vim.opt.background = 'dark'
+  --     end
 
-      vim.cmd.colorscheme('catppuccin')
-    end
-  }
+  --     vim.cmd.colorscheme('catppuccin')
+  --   end
+  -- }
 
   -- use {
   --   'dracula/vim',
@@ -211,7 +238,7 @@ require('packer').startup(function(use)
   --       toggle_style_key = '<leader>vc',
   --       toggle_style_list = {'light', 'cool'},
   --     }
-  --     -- require('onedark').load()
+  --     require('onedark').load()
   --   end
   -- }
 
@@ -704,13 +731,9 @@ require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'catppuccin', 'kyazdani42/nvim-web-devicons' },
+    requires = { 'olimorris/onedarkpro.nvim', 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'catppuccin',
-        }
-      }
+      require('lualine').setup {}
     end
   }
 

@@ -10,9 +10,9 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'Catppuccin Mocha'
+    return 'OneDark (base16)'
   else
-    return 'Catppuccin Latte'
+    return 'One Light (base16)'
   end
 end
 
