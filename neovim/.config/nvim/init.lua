@@ -123,16 +123,16 @@ require('packer').startup(function(use)
 
   -- Colorschemes
 
-  use {
-    'EdenEast/nightfox.nvim',
-    config = function()
-      if get_system_appearance() == 'light' then
-        vim.cmd.colorscheme('dawnfox')
-      else
-        vim.cmd.colorscheme('nightfox')
-      end
-    end
-  }
+  -- use {
+  --   'EdenEast/nightfox.nvim',
+    -- config = function()
+    --   if get_system_appearance() == 'light' then
+    --     vim.cmd.colorscheme('dawnfox')
+    --   else
+    --     vim.cmd.colorscheme('nightfox')
+    --   end
+    -- end
+  -- }
 
   -- use {
   --   'rebelot/kanagawa.nvim',
@@ -154,14 +154,32 @@ require('packer').startup(function(use)
   --   end
   -- }
 
-  -- use {
-  --   'catppuccin/nvim',
-  --   as = 'catppuccin',
-  --   config = function()
-  --     vim.opt.background = 'light'
-  --     vim.cmd.colorscheme('catppuccin')
-  --   end
-  -- }
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = function()
+      require('catppuccin').setup {
+        background = {
+          light = 'latte',
+          dark = 'mocha',
+        },
+        integrations = {
+          cmp = true,
+          lsp_trouble = true,
+          neogit = true,
+          neotree = true,
+        },
+      }
+
+      if get_system_appearance() == 'light' then
+        vim.opt.background = 'light'
+      else
+        vim.opt.background = 'dark'
+      end
+
+      vim.cmd.colorscheme('catppuccin')
+    end
+  }
 
   -- use {
   --   'dracula/vim',
@@ -686,9 +704,13 @@ require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    requires = { 'catppuccin', 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('lualine').setup {}
+      require('lualine').setup {
+        options = {
+          theme = 'catppuccin',
+        }
+      }
     end
   }
 

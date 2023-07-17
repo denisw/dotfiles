@@ -10,14 +10,14 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'nightfox'
+    return 'Catppuccin Mocha'
   else
-    return 'dawnfox'
+    return 'Catppuccin Latte'
   end
 end
 
 return {
-  front_end = "WebGpu",
+  front_end = 'WebGpu',
   color_scheme = scheme_for_appearance(get_appearance()),
   font_size = 13,
   use_fancy_tab_bar = false,
