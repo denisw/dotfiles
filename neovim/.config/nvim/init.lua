@@ -346,6 +346,16 @@ require('packer').startup(function(use)
     end
   }
 
+  -- Git
+
+  use {
+    'NeogitOrg/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require('neogit').setup {}
+    end
+  }
+
   -- Navigation
 
   use {
