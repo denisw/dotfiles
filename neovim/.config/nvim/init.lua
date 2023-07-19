@@ -404,6 +404,14 @@ require('packer').startup(function(use)
   -- Navigation
 
   use {
+    'Everduin94/nvim-quick-switcher',
+    config = function()
+      -- *.ts <-> *.test.ts
+      vim.keymap.set('n', '<leader>ot', '<cmd>:lua require("nvim-quick-switcher").toggle("ts", "test.ts")<CR>')
+    end
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
