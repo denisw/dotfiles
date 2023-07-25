@@ -53,8 +53,8 @@ local function reload_vimrc()
   vim.cmd "luafile $MYVIMRC"
   vim.cmd "PackerCompile"
 end
-vim.keymap.set("n", "<leader>v,", ":e $MYVIMRC<cr>")
-vim.keymap.set("n", "<leader>vr", reload_vimrc)
+vim.keymap.set("n", "<leader>v,", "<cmd>e $MYVIMRC<cr>")
+vim.keymap.set("n", "<leader>vp", "<cmd>e $XDG_CONFIG_HOME/nvim/lua/plugins<cr>")
 
 -- Configuration and key mappings for the diagnostic frameowrk.
 vim.diagnostic.config {
@@ -79,4 +79,23 @@ vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, bufopts)
 vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, bufopts)
 vim.keymap.set("n", "<leader>el", vim.diagnostic.setqflist, bufopts)
 
-require("plugins")
+-----------------------------------------------------------------------
+-- Plugins
+-----------------------------------------------------------------------
+
+-- Initialize lazy.nvim.
+-- https://github.com/folke/lazy.nvim#-installation
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins")
