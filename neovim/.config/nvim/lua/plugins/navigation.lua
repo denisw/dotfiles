@@ -2,6 +2,14 @@ return {
   "tpope/vim-vinegar",
 
   {
+    "Everduin94/nvim-quick-switcher",
+    keys = {
+      -- *.ts <-> *.test.ts
+      { "<leader>ot", "<cmd>:lua require('nvim-quick-switcher').toggle('ts', 'test.ts')<cr>" }
+    },
+  },
+
+  {
     "nvim-neo-tree/neo-tree.nvim",
     name = "neo-tree",
     branch = "v2.x",
@@ -58,25 +66,6 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-    end
-  },
-
-  {
-    "tpope/vim-projectionist",
-    config = function()
-      vim.g.projectionist_heuristics = {
-        ["*.js"] = {
-          ["*.test.js"] = { alternate = "{}.js" },
-          ["*.js"] = { alternate = "{}.test.js" },
-        },
-        ["*.ts|*.tsx"] = {
-          ["*.test.ts"] = { alternate = "{}.ts" },
-          ["*.test.tsx"] = { alternate = "{}.tsx" },
-          ["*.ts"] = { alternate = "{}.test.ts" },
-          ["*.tsx"] = { alternate = "{}.test.tsx" },
-        },
-      }
-      vim.keymap.set("n", "<leader>gt", ":A<cr>", {})
     end
   },
 }
