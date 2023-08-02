@@ -56,6 +56,9 @@ return {
             show_untracked = true,
             theme = "dropdown",
           },
+          live_grep = {
+            theme = "dropdown",
+          },
           lsp_definitions = {
             theme = "dropdown",
           },
