@@ -46,8 +46,10 @@ return {
 
   {
     "windwp/nvim-ts-autotag",
-    lazy = false,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = {},
+    lazy = false,
+    opts = {
+      enable_close_on_slash = false,
+    },
   },
 }
