@@ -44,6 +44,7 @@ return {
               ["<esc>"] = "close",
             },
           },
+          file_ignore_patterns = { "^.git/" },
         },
         pickers = {
           buffers = {
@@ -51,6 +52,7 @@ return {
           },
           find_files = {
             theme = "dropdown",
+            hidden = true,
           },
           git_files = {
             show_untracked = true,
