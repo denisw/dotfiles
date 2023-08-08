@@ -34,7 +34,10 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "folke/trouble.nvim",
+      "nvim-lua/plenary.nvim",
+    },
     lazy = false,
     config = function()
       require("telescope").setup {
@@ -42,6 +45,10 @@ return {
           mappings = {
             i = {
               ["<esc>"] = "close",
+              ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble,
+            },
+            n = {
+              ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble,
             },
           },
           file_ignore_patterns = { "^.git/" },
