@@ -14,6 +14,7 @@ end
 return {
   {
     "olimorris/onedarkpro.nvim",
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
@@ -71,4 +72,19 @@ return {
       vim.cmd.colorscheme('catppuccin')
     end
   },
+
+  {
+    "savq/melange-nvim",
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      if get_system_appearance() == "light" then
+        vim.opt.background = "light"
+      else
+        vim.opt.background = "dark"
+      end
+      vim.cmd.colorscheme("melange")
+    end
+  }
 }
