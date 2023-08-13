@@ -25,6 +25,8 @@
 (use-package solaire-mode
   :ensure t
   :config
-  (solaire-global-mode 1))
+  (solaire-global-mode 1)
+  (push '(treemacs-window-background-face . solaire-default-face) solaire-mode-remap-alist)
+  (push '(treemacs-hl-line-face . solaire-hl-line-face) solaire-mode-remap-alist))
 
 (provide 'init-themes)
