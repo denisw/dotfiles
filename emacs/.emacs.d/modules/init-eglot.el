@@ -4,6 +4,7 @@
   )
 
 (defun my/eglot-managed-mode-hook ()
+  (evil-global-set-key 'normal "K" 'eldoc-box-help-at-point)
   ;; Add the configured flymake-collection checkers on top of
   ;; eglot-flymake-backend.
   (let* ((entry (assoc major-mode flymake-collection-config))
