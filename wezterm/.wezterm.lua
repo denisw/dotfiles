@@ -10,9 +10,9 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'melange_dark'
+    return 'One Dark (Gogh)'
   else
-    return 'melange_light'
+    return 'One Light (Gogh)'
   end
 end
 
