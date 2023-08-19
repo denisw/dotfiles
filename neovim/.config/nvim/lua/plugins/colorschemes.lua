@@ -14,19 +14,19 @@ end
 return {
   {
     "olimorris/onedarkpro.nvim",
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
       require("onedarkpro").setup {
         plugins = {
-          neo_tree = true,
+          nvim_tree = true,
         },
         highlights = {
-          NeoTreeNormal = { bg = "${cursorline}" },
-          NeoTreeCursorLine = { bg = "${selection}" },
-          NeoTreeNormalNC = { bg = "${cursorline}" },
-          NeoTreeCursorLine = { bg = "${selection}" },
+          NvimTreeNormal = { bg = "${cursorline}" },
+          NvimTreeCursorLine = { bg = "${selection}" },
+          NvimTreeNormalNC = { bg = "${cursorline}" },
+          NvimTreeCursorLineNC = { bg = "${selection}" },
         },
         options = {
           cursorline = true,
@@ -75,7 +75,7 @@ return {
 
   {
     "savq/melange-nvim",
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()

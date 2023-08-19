@@ -10,26 +10,25 @@ return {
   },
 
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    name = "neo-tree",
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
+    "nvim-tree/nvim-tree.lua",
+    name = "nvim-tree",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { "<leader>tt", "<cmd>Neotree reveal<cr>" },
-      { "<leader>tc", "<cmd>Neotree close filesystem<cr>" },
+      { "<leader>tt", "<cmd>NvimTreeFocus<cr>" },
+      { "<leader>tc", "<cmd>NvimTreeClose<cr>" },
     },
     opts = {
-      enable_git_status = false,
-      enable_diagnostics = false,
-      filesystem = {
-        follow_current_file = true,
-        hijack_netrw_behavior = "disabled",
+      hijack_netrw = false,
+      view = {
+        width = 40,
       },
-    },
+      renderer = {
+        root_folder_label = ":t",
+      },
+      update_focused_file = {
+        enable = true,
+      },
+    }
   },
 
   {
