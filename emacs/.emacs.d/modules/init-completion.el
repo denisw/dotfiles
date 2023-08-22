@@ -2,13 +2,15 @@
 
 ;; https://github.com/minad/vertico
 (use-package vertico
-  :straight t
+  :straight (vertico
+             :files (:defaults "extensions/*")
+             :includes (vertico-directory))
   :config
   (vertico-mode))
 
 (use-package vertico-directory
   :after vertico
-  :ensure nil
+  :straight nil
   :bind (:map vertico-map
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
