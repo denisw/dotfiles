@@ -29,12 +29,6 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; Use the MELPA package repository.
-;; https://elpa.gnu.org
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")
 
