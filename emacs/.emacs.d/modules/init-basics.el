@@ -59,6 +59,12 @@
   ;; Automatically insert matching parentheses.
   (electric-pair-mode 1)
 
+  ;; Truncate lines instead of wrapping. However, when we _do_ wrap (e.g.,
+  ;; when `visual-line-mode' is enabled), do so on the word level.
+  (setq-default truncate-lines t)
+  (setq-default truncate-partial-width-windows nil)
+  (setq-default word-wrap t)
+
   ;; Set the default directory to the home directory if it is "/",
   ;; which is the case if Emacs is run as a GUI app on macOS.
   (when (equal default-directory "/")
