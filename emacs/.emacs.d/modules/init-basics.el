@@ -46,6 +46,9 @@
   (setq-default tab-width 2)
   (setq-default indent-tabs-mode nil)
 
+  ;; Add a final newline to a file when saving.
+  (setq require-final-newline t)
+
   ;; Delete trailing whitespace on save.
   (add-hook 'before-save-hook 'whitespace-cleanup)
 
