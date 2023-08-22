@@ -1,6 +1,6 @@
 ;;; init-go.el --- Go language support
 
 (use-package go-mode
-  :ensure t)
+  :straight t)
 
 (provide 'init-go)

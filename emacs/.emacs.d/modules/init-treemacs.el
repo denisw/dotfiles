@@ -1,7 +1,7 @@
 ;;; init-treemacs.el --- File tree
 
 (use-package treemacs
-  :ensure t
+  :straight t
   :config
   (treemacs-project-follow-mode 1)
   (treemacs-follow-mode 1)

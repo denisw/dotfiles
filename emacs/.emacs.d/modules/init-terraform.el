@@ -1,6 +1,6 @@
 ;;; init-terraform.el --- Terraform language support
 
 (use-package terraform-mode
-  :ensure t)
+  :straight t)
 
 (provide 'init-terraform)

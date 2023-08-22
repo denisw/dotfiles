@@ -3,7 +3,7 @@
 ;; https://github.com/purcell/exec-path-from-shell
 (use-package exec-path-from-shell
   :if (string-equal system-type "darwin")
-  :ensure t
+  :straight t
   :config
   (setq exec-path-from-shell-check-startup-files nil)
   (setq exec-path-from-shell-arguments '("-l"))
@@ -12,7 +12,7 @@
 ;; https://github.com/purcell/ns-auto-titlebar
 (use-package ns-auto-titlebar
   :if (memq window-system '(mac ns))
-  :ensure t
+  :straight t
   :config
   (ns-auto-titlebar-mode))
 

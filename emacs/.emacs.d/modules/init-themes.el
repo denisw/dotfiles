@@ -2,7 +2,7 @@
 
 ;; https://github.com/doomemacs/themes
 (use-package doom-themes
-  :ensure t
+  :straight t
   :after treemacs
   :config
   (setq doom-themes-enable-bold nil)
@@ -15,15 +15,15 @@
 (use-package modus-themes
   :init
   (setq modus-themes-bold-constructs nil)
-  :ensure t)
+  :straight t)
 
 ;; https://protesilaos.com/emacs/ef-themes
 (use-package ef-themes
-  :ensure t)
+  :straight t)
 
 ;; https://github.com/hlissner/emacs-solaire-mode
 (use-package solaire-mode
-  :ensure t
+  :straight t
   :config
   (solaire-global-mode 1)
   (push '(treemacs-window-background-face . solaire-default-face) solaire-mode-remap-alist)

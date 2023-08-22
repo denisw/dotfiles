@@ -2,5 +2,5 @@
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "doom/.config/emacs"]
-	path = doom/.config/emacs
+	path = doom-emacs/.config/emacs
 	url = https://github.com/doomemacs/doomemacs.git

@@ -16,14 +16,14 @@
   (setq ls-lisp-dirs-first t))
 
 (use-package all-the-icons
-  :ensure t
+  :straight t
   :if (display-graphic-p))
 
 (use-package all-the-icons-dired
-  :ensure t)
+  :straight t)
 
 (use-package dired-sidebar
-  :ensure t
+  :straight t
   :commands (dired-sidebar-toggle-sidebar)
   :config
   (setq dired-sidebar-should-follow-file t)

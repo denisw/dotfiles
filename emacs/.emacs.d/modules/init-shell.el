@@ -5,7 +5,7 @@
 ;; Terminal emulation in shell-mode
 ;; https://elpa.gnu.org/packages/coterm.html
 (use-package coterm
-  :ensure t
+  :straight t
   :config
   (coterm-mode))
 
