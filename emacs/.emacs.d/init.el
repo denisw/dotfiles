@@ -50,7 +50,6 @@
 (require 'init-delight)
 (require 'init-diminish)
 (require 'init-dired)
-(require 'init-eglot)
 (require 'init-eldoc)
 (require 'init-flycheck)
 (require 'init-magit)
@@ -71,6 +70,7 @@
   (require 'init-javascript-ts)
   (require 'init-javascript))
 (require 'init-lisp)
+(require 'init-lsp-mode)
 (require 'init-programming)
 (require 'init-python)
 (require 'init-rust)
@@ -82,8 +82,8 @@
 (require 'init-yaml)
 
 ;; (Disabled)
+;; (require 'init-eglot)
 ;; (require 'init-flymake)
-;; (require 'init-lsp-mode)
 ;; (require 'init-tree-sitter)
 
 ;; Put custom variables into a separate file.
