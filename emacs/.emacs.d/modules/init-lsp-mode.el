@@ -12,6 +12,7 @@
   (setq lsp-keymap-prefix "s-l")
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-actions-enable nil)
+  (define-key lsp-mode-map (kbd "s-l r f") 'lsp-javascript-rename-file)
   :commands lsp
   :hook
   ((js-ts-mode . lsp-deferred)
