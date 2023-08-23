@@ -35,6 +35,8 @@
   ;; try falling back to Source Code Pro.
   (let ((fonts (font-family-list)))
     (cond
+     ((member "JetBrains Mono" fonts)
+      (set-frame-font "JetBrains Mono-14" nil t))
      ((member "Hack" fonts)
       (set-frame-font "Hack-14" nil t))
      ((member "Menlo" fonts)
