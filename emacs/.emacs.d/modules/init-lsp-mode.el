@@ -9,7 +9,7 @@
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024))
   (setq lsp-enable-symbol-highlighting nil)
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "s-l")
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-actions-enable nil)
   :commands lsp
