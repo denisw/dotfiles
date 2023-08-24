@@ -1,39 +1,29 @@
 return {
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    "dense-analysis/ale",
     lazy = false,
-    config = function()
-      local null_ls = require("null-ls")
+    init = function()
+      vim.g.ale_disable_lsp = 1
+      vim.g.ale_echo_cursor = 0
+      vim.g.ale_fix_on_save = 1
+      vim.g.ale_use_neovim_diagnostics_api = 1
 
-      function executable_condition(name)
-        return function(utils)
-          return vim.fn.executable(name) == 1
-        end
-      end
-
-      null_ls.setup {
-        sources = {
-          null_ls.builtins.code_actions.eslint.with({
-            only_local = "node_modules/.bin",
-          }),
-          null_ls.builtins.diagnostics.eslint.with({
-            only_local = "node_modules/.bin",
-          }),
-          null_ls.builtins.diagnostics.shellcheck.with({
-            condition = executable_condition("shellcheck"),
-          }),
-          null_ls.builtins.diagnostics.ruff.with({
-            condition = executable_condition("ruff"),
-          }),
-          null_ls.builtins.formatting.prettier.with({
-            only_local = "node_modules/.bin",
-          }),
-          null_ls.builtins.formatting.yapf.with({
-            condition = executable_condition("yapf"),
-          }),
-        },
+      vim.g.ale_linters = {
+        javascript = { "eslint",  },
+        typescript = { "eslint",  },
+        typescriptreact = {  "eslint",  },
       }
+
+      vim.g.ale_fixers = {
+        javascript = { "prettier",  },
+        typescript = { "prettier",  },
+        typescriptreact = {  "prettier",  },
+      }
+
+      if vim.fn.executable("eslint_d") then
+        vim.g.ale_javascript_eslint_executable = "eslint_d"
+        vim.g.ale_typescript_eslint_executable = "eslint_d"
+      end
     end
   },
 
@@ -41,7 +31,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "hrsh7th/nvim-cmp",
-      "nvim-telescope/telescope.nvim"
+      "nvim-telescope/telescope.nvim",
     },
     lazy = false,
     config = function()
@@ -60,36 +50,6 @@ return {
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, bufopts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
         vim.keymap.set("n", "<leader>F", function() vim.lsp.buf.format { async = true } end, bufopts)
-      end
-
-      -- The filetypes where null-ls shoulbd be used for formatting
-      -- insead of the main language server"s formatting capabilities.
-      local null_ls_format_filetypes = {
-        "javascript",
-        "typescript",
-        "typescriptreact"
-      }
-
-      local format = function(bufnr)
-        local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
-        local prefer_null_ls = false
-
-        for _, ft in ipairs(null_ls_format_filetypes) do
-          if ft == filetype then
-            prefer_null_ls = true
-          end
-        end
-
-        vim.lsp.buf.format({
-          bufnr = bufnr,
-          filter = function(client)
-            if prefer_null_ls then
-              return client.name == "null-ls"
-            else
-              return true
-            end
-          end,
-        })
       end
 
       local format_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -129,7 +89,7 @@ return {
 
       lspconfig.pyright.setup {
         capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
+        on_attach = on_attach,
       }
 
       lspconfig.rust_analyzer.setup {
@@ -153,12 +113,12 @@ return {
 
       lspconfig.tsserver.setup {
         capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
+        on_attach = on_attach,
       }
 
       lspconfig.volar.setup {
         capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
+        on_attach = on_attach,
       }
     end
   },
