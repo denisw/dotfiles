@@ -32,12 +32,18 @@ return {
           cursorline = true,
         },
       }
-      if get_system_appearance() == "light" then
+      vim.api.nvim_create_user_command("Light", function()
         vim.opt.background = "light"
-        vim.cmd.colorscheme('onelight')
-      else
+        vim.cmd.colorscheme("onelight")
+      end, {})
+      vim.api.nvim_create_user_command("Dark", function()
         vim.opt.background = "dark"
-        vim.cmd.colorscheme('onedark')
+        vim.cmd.colorscheme("onedark")
+      end, {})
+      if get_system_appearance() == "light" then
+        vim.cmd.Light()
+      else
+        vim.cmd.Dark()
       end
     end
   },
