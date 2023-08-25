@@ -10,9 +10,9 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'One Dark (Gogh)'
+    return 'onedarkpro_onedark'
   else
-    return 'One Light (Gogh)'
+    return 'onedarkpro_onelight'
   end
 end
 
