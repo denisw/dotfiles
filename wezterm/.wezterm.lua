@@ -10,9 +10,9 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
-    return 'rose-pine'
+    return 'Rosé Pine (Gogh)'
   else
-    return 'rose-pine-dawn'
+    return 'Rosé Pine Dawn (Gogh)'
   end
 end
 
