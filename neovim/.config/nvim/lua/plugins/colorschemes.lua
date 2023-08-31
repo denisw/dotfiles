@@ -12,9 +12,61 @@ function get_system_appearance()
 end
 
 return {
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    enabled = true,
+    priority = 1000,
+    config = function()
+      vim.api.nvim_create_user_command("Light", function()
+        vim.cmd.colorscheme("rose-pine-dawn")
+      end, {})
+
+      vim.api.nvim_create_user_command("Dark", function()
+        vim.cmd.colorscheme("rose-pine-main")
+      end, {})
+
+      if get_system_appearance() == "light" then
+        vim.cmd.Light()
+      else
+        vim.cmd.Dark()
+      end
+    end
+  },
+
+  {
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+    enabled = false,
+    priority = 1000,
+    config = function()
+      require('github-theme').setup({
+        -- ...
+      })
+
+      vim.api.nvim_create_user_command("Light", function()
+        vim.opt.background = "light"
+        vim.cmd.colorscheme("github_light")
+      end, {})
+
+      vim.api.nvim_create_user_command("Dark", function()
+        vim.opt.background = "dark"
+        vim.cmd.colorscheme("github_dark")
+      end, {})
+
+      if get_system_appearance() == "light" then
+        vim.cmd.Light()
+      else
+        vim.cmd.Dark()
+      end
+    end,
+  },
+
   {
     "olimorris/onedarkpro.nvim",
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
