@@ -1,19 +1,41 @@
 return {
   {
-    "dense-analysis/ale",
+    "mhartington/formatter.nvim",
     lazy = false,
-    init = function()
-      vim.g.ale_disable_lsp = 1
-      vim.g.ale_echo_cursor = 0
-      vim.g.ale_fix_on_save = 1
-      vim.g.ale_use_neovim_diagnostics_api = 1
-
-      vim.g.ale_fixers = {
-        javascript = { "prettier",  },
-        typescript = { "prettier",  },
-        typescriptreact = {  "prettier",  },
+    config = function()
+      require("formatter").setup {
+        filetype = {
+          python = {
+            require("formatter.filetypes.python").black,
+          },
+          javascript = {
+            require("formatter.filetypes.javascript").prettier,
+          },
+          typescript = function()
+            result = require("formatter.filetypes.typescript").prettier()
+            result["exe"] = "node_modules/.bin/prettier"
+            return result
+          end,
+          typescriptreact = function()
+            result = require("formatter.filetypes.typescriptreact").prettier()
+            result["exe"] = "node_modules/.bin/prettier"
+            return result
+          end,
+        },
       }
-    end
+
+      local augroup = vim.api.nvim_create_augroup("Format", {
+        clear = true,
+      })
+
+      for _, pattern in ipairs({ "*.js", "*.ts", "*.tsx" }) do
+        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+          pattern = pattern,
+          group = augroup,
+          command = "FormatWrite"
+        })
+      end
+    end,
   },
 
   {
