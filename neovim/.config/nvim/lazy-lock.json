@@ -17,7 +17,7 @@
   "nvim-quick-switcher": { "branch": "main", "commit": "88641b91faec46b43774f82d56dc602c132b5859" },
   "nvim-snippy": { "branch": "master", "commit": "83a6ee5feac7cd08269159380c51e1de416800a5" },
   "nvim-tree": { "branch": "master", "commit": "00741206c2df9c4b538055def19b99790f0c95c8" },
-  "nvim-treesitter": { "branch": "master", "commit": "920b37260ebc720b0399bd12954fd2bf8bd18242" },
+  "nvim-treesitter": { "branch": "master", "commit": "4a9adef71061a883c81f79862ee1f4bf100a2ddd" },
   "nvim-ts-autotag": { "branch": "main", "commit": "6be1192965df35f94b8ea6d323354f7dc7a557e4" },
   "nvim-web-devicons": { "branch": "master", "commit": "cfc8824cc1db316a276b36517f093baccb8e799a" },
   "onedarkpro.nvim": { "branch": "main", "commit": "c81dff789f7623c431d1f43cf334237e52bbfd61" },
