@@ -17,12 +17,28 @@ return {
   },
 
   {
+    "williamboman/mason.nvim",
+    lazy = false,
+    opts = {},
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+    dependencies = { "williamboman/mason.nvim" },
+    opts = {
+      automatic_installation = true,
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
+    lazy = false,
     dependencies = {
       "hrsh7th/nvim-cmp",
       "nvim-telescope/telescope.nvim",
+      "williamboman/mason-lspconfig.nvim",
     },
-    lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
       local cmp_lsp = require("cmp_nvim_lsp")
