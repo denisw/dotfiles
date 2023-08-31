@@ -8,22 +8,11 @@ return {
       vim.g.ale_fix_on_save = 1
       vim.g.ale_use_neovim_diagnostics_api = 1
 
-      vim.g.ale_linters = {
-        javascript = { "eslint",  },
-        typescript = { "eslint",  },
-        typescriptreact = {  "eslint",  },
-      }
-
       vim.g.ale_fixers = {
         javascript = { "prettier",  },
         typescript = { "prettier",  },
         typescriptreact = {  "prettier",  },
       }
-
-      if vim.fn.executable("eslint_d") then
-        vim.g.ale_javascript_eslint_executable = "eslint_d"
-        vim.g.ale_typescript_eslint_executable = "eslint_d"
-      end
     end
   },
 
@@ -80,6 +69,11 @@ return {
           local bufopts = { noremap=true, silent=true, buffer=bufnr }
           vim.keymap.set("n", "<leader>h", ":ClangdSwitchSourceHeader<cr>", bufopts)
         end
+      }
+
+      lspconfig.eslint.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
       }
 
       lspconfig.prismals.setup {
