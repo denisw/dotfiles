@@ -2,6 +2,7 @@
   "ignored_packages": [
     "Vintage",
   ],
+  "font_face": "JetBrains Mono",
   "vintageous_use_ctrl_keys": true,
   "vintageous_use_super_keys": false,
   "translate_tabs_to_spaces": true,
