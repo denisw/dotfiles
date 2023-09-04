@@ -1,0 +1,13 @@
+{
+  "ignored_packages": [
+    "Vintage",
+  ],
+  "vintageous_use_ctrl_keys": true,
+  "vintageous_use_super_keys": false,
+  "translate_tabs_to_spaces": true,
+  "tab_size": 2,
+  "font_size": 13,
+  "goto_anything_exclude_gitignore": true,
+  "index_files": true,
+  "neovintageous_build_version": 13200,
+}

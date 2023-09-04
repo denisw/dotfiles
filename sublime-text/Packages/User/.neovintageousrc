@@ -1,0 +1,6 @@
+let mapleader=<space>
+
+" LSP
+noremap gd :LspSymbolDefinition<CR>
+noremap K :LspHover<CR>
+noremap <leader>cr :LspSymbolRename<CR>

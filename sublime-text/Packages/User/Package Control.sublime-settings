@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"CMake",
+		"LSP",
+		"LSP-eslint",
+		"LSP-json",
+		"LSP-typescript",
+		"NeoVintageous",
+		"Package Control",
+		"SublimeLinter",
+	],
+	"in_process_packages":
+	[
+	],
+}

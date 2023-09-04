@@ -1,0 +1,7 @@
+{
+  "cmd": ["ninja", "test"],
+  "working_dir": "$folder/build",
+  "env": {
+    "CTEST_OUTPUT_ON_FAILURE": "1"
+  }
+}
