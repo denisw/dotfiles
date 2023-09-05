@@ -49,7 +49,6 @@
 (require 'init-crux)
 (require 'init-modeline)
 (require 'init-dired)
-(require 'init-eldoc)
 (require 'init-flycheck)
 (require 'init-magit)
 (require 'init-project)
@@ -82,6 +81,7 @@
 
 ;; (Disabled)
 ;; (require 'init-eglot)
+;; (require 'init-eldoc)
 ;; (require 'init-flymake)
 ;; (require 'init-tree-sitter)
 
