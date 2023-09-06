@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"CMake",
+		"JsPrettier",
 		"LSP",
 		"LSP-eslint",
 		"LSP-json",

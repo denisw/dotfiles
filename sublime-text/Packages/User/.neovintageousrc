@@ -3,4 +3,5 @@ let mapleader=<space>
 " LSP
 noremap gd :LspSymbolDefinition<CR>
 noremap K :LspHover<CR>
+noremap <f2> :LspSymbolRename<CR>
 noremap <leader>cr :LspSymbolRename<CR>
