@@ -15,6 +15,8 @@
   (setq lsp-modeline-code-actions-enable nil)
   :config
   (define-key lsp-mode-map (kbd "s-l r f") 'lsp-javascript-rename-file)
+  (define-key lsp-mode-map (kbd "s-.") 'lsp-execute-code-action)
+  (define-key lsp-mode-map (kbd "<f2>") 'lsp-rename)
   :commands lsp
   :hook
   ((js-ts-mode . lsp-deferred)
