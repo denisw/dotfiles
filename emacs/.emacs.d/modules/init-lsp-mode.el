@@ -1,5 +1,9 @@
 ;;; init-lsp-mode.el --- LSP integration using lsp-mode
 
+(defun my/lsp-python-mode-hook ()
+  (require 'lsp-pyright)
+  (lsp-deferred))
+
 (use-package lsp-mode
   :straight t
   :after which-key
@@ -20,6 +24,7 @@
   :commands lsp
   :hook
   ((js-ts-mode . lsp-deferred)
+   (python-mode . my/lsp-python-mode-hook)
    (ruby-mode . lsp-deferred)
    (typescript-web-mode . lsp-deferred)
    (tsx-web-mode . lsp-deferred)
@@ -36,5 +41,9 @@
   :init
   (setq lsp-ui-doc-position 'at-point)
   :hook (lsp-ui-doc-mode . my/lsp-ui-doc-mode-hook))
+
+(use-package lsp-pyright
+  :straight t
+  :after lsp-mode)
 
 (provide 'init-lsp-mode)
