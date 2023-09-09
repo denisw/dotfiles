@@ -5,6 +5,13 @@
   :straight t
   :commands magit-status)
 
+;; Magit add-on for "forges" like GitHub
+;; https://github.com/magit/forge
+(use-package forge
+  :straight t
+  :after magit)
+
+;; Major modes for Git-related files like .gitignore
 ;; https://github.com/magit/git-modes
 (use-package git-modes
   :straight t)
