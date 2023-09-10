@@ -26,12 +26,4 @@
   :if (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
 
-(use-package dired-sidebar
-  :straight t
-  :commands (dired-sidebar-toggle-sidebar)
-  :config
-  (setq dired-sidebar-should-follow-file t)
-  (setq dired-sidebar-follow-file-idle-delay 0.5)
-  (setq dired-sidebar-theme 'icons))
-
 (provide 'init-dired)
