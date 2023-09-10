@@ -15,12 +15,16 @@
   (setq ls-lisp-use-insert-directory-program nil)
   (setq ls-lisp-dirs-first t))
 
+;; Display all-the-icons icons in Dired buffers.
+;; https://github.com/domtronn/all-the-icons.el
+;; https://github.com/jtbm37/all-the-icons-dired
 (use-package all-the-icons
   :straight t
   :if (display-graphic-p))
-
 (use-package all-the-icons-dired
-  :straight t)
+  :straight t
+  :if (display-graphic-p)
+  :hook (dired-mode . all-the-icons-dired-mode))
 
 (use-package dired-sidebar
   :straight t
