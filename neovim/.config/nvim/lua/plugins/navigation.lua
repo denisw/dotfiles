@@ -54,21 +54,21 @@ return {
         },
         pickers = {
           buffers = {
-            theme = "dropdown",
+            theme = "ivy",
           },
           find_files = {
-            theme = "dropdown",
+            theme = "ivy",
             hidden = true,
           },
           git_files = {
             show_untracked = true,
-            theme = "dropdown",
+            theme = "ivy",
           },
           live_grep = {
-            theme = "dropdown",
+            theme = "ivy",
           },
           lsp_definitions = {
-            theme = "dropdown",
+            theme = "cursor",
           },
         }
       }
