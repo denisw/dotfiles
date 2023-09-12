@@ -12,12 +12,22 @@ function get_system_appearance()
 end
 
 return {
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = false,
+    enabled = true,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd.colorscheme("dracula")
+    end
+  },
 
   {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = false,
-    enabled = true,
+    enabled = false,
     priority = 1000,
     config = function()
       vim.api.nvim_create_user_command("Light", function()

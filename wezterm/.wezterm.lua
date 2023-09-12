@@ -18,7 +18,7 @@ end
 
 return {
   front_end = 'WebGpu',
-  color_scheme = scheme_for_appearance(get_appearance()),
+  color_scheme = 'Dracula (Official)',
   font_size = 13,
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
