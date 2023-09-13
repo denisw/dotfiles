@@ -44,6 +44,7 @@ return {
           mappings = {
             i = {
               ["<esc>"] = "close",
+              ["<c-g>"] = "close",
               ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble,
             },
             n = {
