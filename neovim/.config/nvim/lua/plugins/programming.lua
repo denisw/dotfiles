@@ -28,7 +28,7 @@ return {
         clear = true,
       })
 
-      for _, pattern in ipairs({ "*.js", "*.ts", "*.tsx" }) do
+      for _, pattern in ipairs({ "*.js", "*.py", "*.ts", "*.tsx" }) do
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
           pattern = pattern,
           group = augroup,
