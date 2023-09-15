@@ -36,4 +36,26 @@
   (dolist (entry treesit-language-source-alist)
     (treesit-install-language-grammar (car entry))))
 
+(use-package evil-textobj-tree-sitter
+  :straight t
+  :config
+  (define-key evil-outer-text-objects-map
+              "c"
+              (evil-textobj-tree-sitter-get-textobj "comment.outer"))
+  (define-key evil-inner-text-objects-map
+              "c"
+              (evil-textobj-tree-sitter-get-textobj "comment.inner"))
+  (define-key evil-outer-text-objects-map
+              "C"
+              (evil-textobj-tree-sitter-get-textobj "class.outer"))
+  (define-key evil-inner-text-objects-map
+              "C"
+              (evil-textobj-tree-sitter-get-textobj "class.inner"))
+  (define-key evil-outer-text-objects-map
+              "f"
+              (evil-textobj-tree-sitter-get-textobj "function.outer"))
+  (define-key evil-inner-text-objects-map
+              "f"
+              (evil-textobj-tree-sitter-get-textobj "function.inner")))
+
 (provide 'init-treesit)
