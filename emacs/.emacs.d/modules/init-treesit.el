@@ -3,6 +3,17 @@
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 
+;; Use the Tree-Sitter versions for some major modes.
+(setq major-mode-remap-alist
+      '((css-mode . css-ts-mode)
+        (js-mode . js-ts-mode)
+        (js2-mode . js-ts-mode)
+        (json-mode . json-ts-mode)
+        (python-mode . python-ts-mode)
+        (typescript-mode . typescript-ts-mode)
+        (yaml-mode . yaml-ts-mode)
+        (sh-mode . bash-ts-mode)))
+
 (setq treesit-language-source-alist
       '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
         (c . ("https://github.com/tree-sitter/tree-sitter-c"))
