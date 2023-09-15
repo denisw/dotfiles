@@ -29,7 +29,8 @@
         (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
         (rust . ("https://github.com/tree-sitter/tree-sitter-rust"))
         (sql . ("https://github.com/m-novikov/tree-sitter-sql"))
-        (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))))
+        (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))
+        (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))))
 
 (defun my/treesit-install-grammars ()
   (interactive)
