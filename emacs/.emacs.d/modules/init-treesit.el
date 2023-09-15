@@ -1,8 +1,5 @@
 ;;; init-treesit.el --- Configuration of Emacs' Tree-Sitter support
 
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
-
 ;; Use the Tree-Sitter versions for some major modes.
 (setq major-mode-remap-alist
       '((css-mode . css-ts-mode)

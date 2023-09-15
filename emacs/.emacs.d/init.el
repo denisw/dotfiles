@@ -64,9 +64,7 @@
 (require 'init-elixir)
 (require 'init-fsharp)
 (require 'init-go)
-(if (>= emacs-major-version 29)
-  (require 'init-javascript-ts)
-  (require 'init-javascript))
+(require 'init-javascript)
 (require 'init-lisp)
 (require 'init-lsp-mode)
 (require 'init-programming)
@@ -74,8 +72,7 @@
 (require 'init-rust)
 (require 'init-shell)
 (require 'init-terraform)
-(when (>= emacs-major-version 29)
-  (require 'init-treesit))
+(require 'init-treesit)
 (require 'init-web)
 (require 'init-yaml)
 
@@ -83,7 +80,6 @@
 ;; (require 'init-eglot)
 ;; (require 'init-eldoc)
 ;; (require 'init-flymake)
-;; (require 'init-tree-sitter)
 
 ;; Put custom variables into a separate file.
 (setq custom-file "~/.emacs.d/custom.el")

@@ -1,24 +1,24 @@
-;;; init-javascript.el --- JavaScript programming
+;;; init-javascript.el --- JavaScript/TypeScript programming
 
 ;; Indent JavaScript with two spaces by default.
 (setq-default js-indent-level 2)
 
-;; Define TypeScript modes based on web-mode.
-(use-package web-mode
-  :straight t
-  :init
-  (define-derived-mode typescript-web-mode web-mode "TypeScript")
-  (define-derived-mode tsx-web-mode web-mode "TypeScript(TSX)")
-  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-web-mode)))
+;; Use Tree-Sitter modes for TypeScript.
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+
+;; Use Tree-Sitter modes for JSON.
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.jsonl\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.eslintrc\\'" . json-ts-mode))
+(add-to-list 'auto-mode-alist '("/\\.prettierrc\\'" . json-ts-mode))
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
   :straight t
   :hook ((js-mode . add-node-modules-path)
-         (typescript-web-mode . add-node-modules-path)
-         (tsx-web-mode . add-node-modules-path)
-         (typescript-ts-mode . add-node-modules-path))
+         (typescript-ts-mode . add-node-modules-path)
+         (tsx-ts-mode . add-node-modules-path))
   :config
   (setq add-node-modules-path-command "echo \"$(npm root)/.bin\""))
 
@@ -26,16 +26,7 @@
 (use-package prettier-js
   :straight t
   :hook ((js-mode . prettier-js-mode)
-         (typescript-web-mode . prettier-js-mode)
-         (tsx-web-mode . prettier-js-mode)
          (typescript-ts-mode . prettier-js-mode)
          (tsx-ts-mode . prettier-js-mode)))
-
-;; https://github.com/joshwnj/json-mode
-(use-package json-mode
-  :straight t
-  :mode (("\\.json\\'" . json-mode)
-          ("/\\.eslintrc\\'" . json-mode)
-          ("/\\.prettierrc\\'" . json-mode)))
 
 (provide 'init-javascript)
