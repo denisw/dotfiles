@@ -12,7 +12,7 @@
   (setq-default comint-process-echoes t))
 
 (use-package eat
-  :after evil
+  :after (evil project)
   :straight (eat :type git
                  :host codeberg
                  :repo "akib/emacs-eat"
@@ -22,6 +22,8 @@
                          ("integration" "integration/*")
                          (:exclude ".dir-locals.el" "*-tests.el")))
   :init
-  (evil-set-initial-state 'eat-mode 'emacs))
+  (evil-set-initial-state 'eat-mode 'emacs)
+  :config
+  (global-set-key (kbd "C-x p s") 'eat-project))
 
 (provide 'init-shell)
