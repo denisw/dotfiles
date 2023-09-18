@@ -26,11 +26,10 @@
   :hook
   ((js-ts-mode . lsp-deferred)
    (python-mode . my/lsp-python-mode-hook)
+   (python-ts-mode . my/lsp-python-mode-hook)
    (ruby-mode . lsp-deferred)
-   (typescript-web-mode . lsp-deferred)
-   (tsx-web-mode . lsp-deferred)
-   (typescript-ts-mode . lsp-deferred)
    (rust-mode . lsp-deferred)
+   (typescript-ts-mode . lsp-deferred)
    (tsx-ts-mode . lsp-deferred)
    (lsp-mode . lsp-enable-which-key-integration)))
 
