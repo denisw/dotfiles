@@ -14,7 +14,7 @@
   (setq read-process-output-max (* 1024 1024))
   (setq lsp-eldoc-enable-hover nil)
   (setq lsp-enable-symbol-highlighting t)
-  (setq lsp-signature-render-documentation nil)
+  (setq lsp-signature-auto-activate nil)
   (setq lsp-keymap-prefix "s-l")
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-actions-enable nil)
