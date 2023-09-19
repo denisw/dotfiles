@@ -1,3 +1,5 @@
+colorscheme = "tokyonight"
+
 function get_system_appearance()
   if vim.fn.has("mac") then
     local output = vim.fn.system("defaults read -g AppleInterfaceStyle")
@@ -13,9 +15,20 @@ end
 
 return {
   {
-    "Mofiqul/dracula.nvim",
+    "folke/tokyonight.nvim",
+    cond = string.find(colorscheme, "tokyonight") ~= nil,
     lazy = false,
-    enabled = true,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd.colorscheme("tokyonight")
+    end
+  },
+
+  {
+    "Mofiqul/dracula.nvim",
+    cond = colorscheme == "dracula",
+    lazy = false,
     priority = 1000,
     opts = {},
     config = function()
@@ -26,8 +39,8 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    cond = string.find(colorscheme, "rose-pine") ~= nil,
     lazy = false,
-    enabled = false,
     priority = 1000,
     config = function()
       vim.api.nvim_create_user_command("Light", function()
@@ -48,8 +61,8 @@ return {
 
   {
     'projekt0n/github-nvim-theme',
+    cond = string.find(colorscheme, "github") ~= nil,
     lazy = false,
-    enabled = false,
     priority = 1000,
     config = function()
       require('github-theme').setup({
@@ -76,7 +89,7 @@ return {
 
   {
     "olimorris/onedarkpro.nvim",
-    enabled = false,
+    cond = colorscheme == "onelight" or colorscheme == "onedark",
     lazy = false,
     priority = 1000,
     config = function()
@@ -112,13 +125,20 @@ return {
 
   {
     "EdenEast/nightfox.nvim",
-    enabled = false,
+    cond = colorscheme == "nightfox",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("nightfox")
+    end
   },
 
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    enabled = false,
+    cond = colorscheme == "catppucin",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("catppuccin").setup {
         background = {
@@ -143,7 +163,7 @@ return {
 
   {
     "savq/melange-nvim",
-    enabled = false,
+    cond = colorscheme == "melange",
     lazy = false,
     priority = 1000,
     config = function()
