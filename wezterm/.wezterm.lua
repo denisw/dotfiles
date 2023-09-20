@@ -16,7 +16,7 @@ return {
       background = "#1f2335",
       active_tab = {
         bg_color = "#24283b",
-        fg_color = "#c0caf5"
+        fg_color = "#ffffff"
       },
       inactive_tab = {
         bg_color = "#1f2335",
