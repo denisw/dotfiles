@@ -10,35 +10,10 @@ end
 
 return {
   front_end = 'WebGpu',
-  color_scheme = 'Tokyo Night Storm (Gogh)',
-  colors = {
-    tab_bar = {
-      background = "#1f2335",
-      active_tab = {
-        bg_color = "#24283b",
-        fg_color = "#ffffff"
-      },
-      inactive_tab = {
-        bg_color = "#1f2335",
-        fg_color = "#c0caf5"
-      },
-      inactive_tab_hover = {
-        bg_color = "#292e42",
-        fg_color = "#c0caf5",
-      },
-      new_tab = {
-        bg_color = "#1f2335",
-        fg_color = "#c0caf5"
-      },
-      new_tab_hover = {
-        bg_color = "#292e42",
-        fg_color = "#c0caf5",
-      },
-    },
-  },
+  color_scheme = 'tokyonight_storm',
   font_size = 13,
   use_fancy_tab_bar = false,
-  hide_tab_bar_if_only_one_tab = true,
+  window_decorations = 'RESIZE',
   window_padding = {
     left = 2,
     right = 2,
