@@ -4,6 +4,7 @@ return {
     lazy = false,
     config = function()
       require("formatter").setup {
+        logging = false,
         filetype = {
           python = {
             require("formatter.filetypes.python").black,
