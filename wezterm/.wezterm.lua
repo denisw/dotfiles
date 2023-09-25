@@ -11,6 +11,19 @@ end
 return {
   front_end = 'WebGpu',
   color_scheme = 'tokyonight_storm',
+  colors = {
+    tab_bar = {
+      background = "#23293a",
+      inactive_tab = {
+        bg_color = "#23293a",
+        fg_color = "#535e7c"
+      },
+      new_tab = {
+        bg_color = "#23293a",
+        fg_color = "#535e7c"
+      },
+    },
+  },
   font_size = 13,
   use_fancy_tab_bar = false,
   window_decorations = 'RESIZE',
