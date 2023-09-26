@@ -28,9 +28,9 @@ return {
   use_fancy_tab_bar = false,
   window_decorations = 'RESIZE',
   window_padding = {
-    left = 2,
-    right = 2,
-    top = 2,
-    bottom = 2,
+    left = '0.5cell',
+    right = '0.5cell',
+    top = '0.25cell',
+    bottom = '0.25cell',
   },
 }
