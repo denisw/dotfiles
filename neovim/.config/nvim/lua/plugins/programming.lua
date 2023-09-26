@@ -1,42 +1,18 @@
 return {
   {
-    "mhartington/formatter.nvim",
-    lazy = false,
-    config = function()
-      require("formatter").setup {
-        logging = false,
-        filetype = {
-          python = {
-            require("formatter.filetypes.python").black,
-          },
-          javascript = {
-            require("formatter.filetypes.javascript").prettier,
-          },
-          typescript = function()
-            result = require("formatter.filetypes.typescript").prettier()
-            result["exe"] = "node_modules/.bin/prettier"
-            return result
-          end,
-          typescriptreact = function()
-            result = require("formatter.filetypes.typescriptreact").prettier()
-            result["exe"] = "node_modules/.bin/prettier"
-            return result
-          end,
-        },
-      }
-
-      local augroup = vim.api.nvim_create_augroup("Format", {
-        clear = true,
-      })
-
-      for _, pattern in ipairs({ "*.js", "*.py", "*.ts", "*.tsx" }) do
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-          pattern = pattern,
-          group = augroup,
-          command = "FormatWrite"
-        })
-      end
-    end,
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        python = { "isort", "black" },
+        javascript = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
+      },
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = false,
+      },
+    },
   },
 
   {
