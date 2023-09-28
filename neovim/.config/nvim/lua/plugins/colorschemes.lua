@@ -1,5 +1,3 @@
-colorscheme = "tokyonight"
-
 function get_system_appearance()
   if vim.fn.has("mac") then
     local output = vim.fn.system("defaults read -g AppleInterfaceStyle")
@@ -12,6 +10,19 @@ function get_system_appearance()
     return "dark"
   end
 end
+
+local function load_shared_colorscheme()
+  local f = loadfile(os.getenv("HOME") .. "/.config/my/colorscheme.lua")
+  if f then
+    local config = f()
+    local mapping = config.mappings[config.colorscheme]
+    return mapping.neovim
+  else
+    return nil
+  end
+end
+
+colorscheme = load_shared_colorscheme() or "tokyonight"
 
 return {
   {
