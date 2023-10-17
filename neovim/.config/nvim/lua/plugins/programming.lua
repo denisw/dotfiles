@@ -70,7 +70,7 @@ return {
           group = format_augroup,
           buffer = bufnr,
           callback = function()
-            format(bufnr)
+            vim.lsp.buf.format { bufnr = bufnr }
           end,
         })
       end
