@@ -4,14 +4,17 @@
 (use-package markdown-mode
   :straight t
   :config
-  (setq markdown-enable-wiki-links t)
-  (add-hook 'markdown-mode-hook #'visual-line-mode))
+  (setq markdown-enable-wiki-links t))
 
 ;; https://codeberg.org/joostkremers/visual-fill-column
 (use-package visual-fill-column
   :straight t
-  :config
-  (add-hook 'markdown-mode-hook #'visual-fill-column-mode))
+  :hook ((markdown-mode . my/enable-visual-fill-column)))
+
+(defun my/enable-visual-fill-column ()
+  (setq fill-column 80)
+  (visual-line-mode 1)
+  (visual-fill-column-mode 1))
 
 ;; https://github.com/rnkn/olivetti
 (use-package olivetti
