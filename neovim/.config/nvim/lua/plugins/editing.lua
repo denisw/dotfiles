@@ -1,7 +1,19 @@
+-- editing.lua:
+-- Plugins that make editing more convenient and efficient.
+
 return {
+  -- Commands for commenting out code.
+  -- https://github.com/tpope/vim-commentary
   "tpope/vim-commentary",
+
+  -- Adds Readline-style key bindings to normal and command line mode.
+  -- This increases consistency with Bash, Zsh, Emacs, and other programs
+  -- which support similar key bindings.
+  -- https://github.com/tpope/vim-rsi
   "tpope/vim-rsi",
 
+  -- Highlight trailing whitespace and remove it on save.
+  -- https://github.com/ntpeters/vim-better-whitespace
   {
     "ntpeters/vim-better-whitespace",
     config = function()
@@ -20,8 +32,28 @@ return {
     end
   },
 
+  -- Auto-close pairs like "(" and ")" while writing.
+  -- https://github.com/windwp/nvim-autopairs
+  {
+    "windwp/nvim-autopairs",
+    opts = {},
+  },
+
+  -- HTML tag auto-closing based on Tree-Sitter.
+  -- https://github.com/windwp/nvim-ts-autotag
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      enable_close_on_slash = false,
+    },
+  },
+
+  -- Distraction-less writing.
+  -- https://github.com/folke/zen-mode.nvim
   {
     "folke/zen-mode.nvim",
+    cmd = "ZenMode",
     keys = {
       { "<leader>bz", "<cmd>ZenMode<cr>" },
     },
@@ -34,22 +66,6 @@ return {
           cursorline = true,
         },
       },
-    },
-  },
-
-  {
-    "windwp/nvim-autopairs",
-    dependencies = { "hrsh7th/nvim-cmp" },
-    lazy = false,
-    opts = {},
-  },
-
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = false,
-    opts = {
-      enable_close_on_slash = false,
     },
   },
 }
