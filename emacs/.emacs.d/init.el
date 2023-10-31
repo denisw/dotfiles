@@ -36,6 +36,7 @@
 (require 'init-basics)
 (require 'init-macos)
 (require 'init-simpleclip)
+(require 'init-ui)
 
 ;; Evil (Vim bindings)
 (require 'init-evil)
