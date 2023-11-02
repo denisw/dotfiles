@@ -65,6 +65,14 @@ return {
         pickers = {
           buffers = {
             theme = "ivy",
+            mappings = {
+              i = {
+                ["<c-h>"] = "delete_buffer",
+              },
+              n = {
+                ["<c-h>"] = "delete_buffer",
+              },
+            },
           },
           find_files = {
             theme = "ivy",
