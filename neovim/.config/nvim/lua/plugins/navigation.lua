@@ -1,11 +1,30 @@
 return {
+  -- Enhancements for the built-in directory browser (netrw).
+  -- https://github.com/tpope/vim-vinegar
   "tpope/vim-vinegar",
 
+  -- Commands for quickly switching between related files.
+  -- https://github.com/Everduin94/nvim-quick-switcher
   {
     "Everduin94/nvim-quick-switcher",
     keys = {
-      -- *.ts <-> *.test.ts
-      { "<leader>ot", "<cmd>:lua require('nvim-quick-switcher').toggle('ts', 'test.ts')<cr>" }
+      {
+        "<leader>ot",
+        function()
+          -- Toggle between test and non-test files.
+          -- TypeScript: *.test.ts, *.test.tsx <-> *.ts, *.tsx
+          local function toggle_test(p)
+            if p.full_suffix:match('^tsx?$') then
+              return p.path .. '/' .. p.prefix .. '.test.ts*'
+            elseif p.full_suffix:match('^test.tsx?$') then
+              return p.path .. '/' .. p.prefix .. '.ts*'
+            else
+              return p.path .. '/' .. p.file_name
+            end
+          end
+          require('nvim-quick-switcher').find_by_fn(toggle_test)
+        end
+      },
     },
   },
 
