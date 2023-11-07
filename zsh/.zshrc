@@ -33,6 +33,12 @@ export EDITOR=nvim
 # (required for tmux if EDITOR=vim is set)
 bindkey -e
 
+# Allow editing the current command-line in $EDITOR
+# with Ctrl-X Ctrl-E.
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 ### Prompt ###
 
 # Advanced prompt
