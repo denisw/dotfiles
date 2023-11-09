@@ -91,6 +91,11 @@ if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
   . "$HOME/.asdf/asdf.sh"
 fi
 
+# direnv
+if type -p direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
