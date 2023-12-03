@@ -96,6 +96,12 @@ if type -p direnv >/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# n
+if [[ -d "$HOME/.n" ]]; then
+  export N_PREFIX="$HOME/.n"
+  export PATH="$N_PREFIX/bin:$PATH"
+fi
+
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
