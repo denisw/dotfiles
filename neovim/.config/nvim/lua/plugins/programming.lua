@@ -80,9 +80,9 @@ return {
       lspconfig.clangd.setup {
         capabilities = capabilities,
         on_attach = function()
-          on_attach(client, bufnr)
+          on_attach_with_format_on_save(client, bufnr)
           local bufopts = { noremap=true, silent=true, buffer=bufnr }
-          vim.keymap.set("n", "<leader>h", ":ClangdSwitchSourceHeader<cr>", bufopts)
+          vim.keymap.set("n", "<leader>hh", ":ClangdSwitchSourceHeader<cr>", bufopts)
         end
       }
 
