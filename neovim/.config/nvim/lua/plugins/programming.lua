@@ -3,7 +3,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        python = { "isort", "black" },
+        python = { "isort", { "ruff_format", "black" } },
         javascript = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
         typescriptreact = { { "prettierd", "prettier" } },
@@ -97,6 +97,11 @@ return {
       }
 
       lspconfig.pyright.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
+      lspconfig.ruff_lsp.setup {
         capabilities = capabilities,
         on_attach = on_attach,
       }
