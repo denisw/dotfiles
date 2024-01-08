@@ -34,6 +34,9 @@ fish/.config/fish/fish_variables
 # Homebrew
 .Brewfile.lock.json
 
+# Lazygit
+/lazygit/.config/lazygit/state.yml
+
 # Neovim
 /neovim/.config/nvim/plugin/packer_compiled.lua
 
