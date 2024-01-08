@@ -1,3 +1,25 @@
+###########################################################################
+# Abbreviations
+###########################################################################
+
+# Git
+abbr -a ga git add
+abbr -a gapa git add --patch
+abbr -a gc git commit
+abbr -a gc! git commit --amend
+abbr -a gco git checkout
+abbr -a gd git diff
+abbr -a gl git pull
+abbr -a glog git log --oneline
+abbr -a gp git push
+abbr -a gp! git push --force-with-lease
+abbr -a gr git rebase
+abbr -a gst git status
+
+###########################################################################
+# PATH
+###########################################################################
+
 # Homebrew
 if test -d /opt/homebrew/bin
     fish_add_path /opt/homebrew/bin
@@ -23,6 +45,10 @@ end
 if test -d "$HOME/.local/bin"
     fish_add_path --append "$HOME/.local/bin"
 end
+
+###########################################################################
+# Misc
+###########################################################################
 
 # direnv
 if type -q direnv
