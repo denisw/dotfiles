@@ -28,6 +28,9 @@ emacs/.emacs.d/tree-sitter
 emacs/.emacs.d/url
 emacs/.emacs.d/var
 
+# Fish
+fish/.config/fish/fish_variables
+
 # Homebrew
 .Brewfile.lock.json
 
