@@ -91,6 +91,11 @@ return {
         on_attach = on_attach,
       }
 
+      lspconfig.jdtls.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
       lspconfig.prismals.setup {
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,

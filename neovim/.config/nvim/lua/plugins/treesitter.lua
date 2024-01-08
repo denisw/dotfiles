@@ -8,7 +8,8 @@ return {
     end,
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = { "lua", "rust", "typescript", "tsx", "vue" },
+        ensure_installed = { "java", "lua", "rust", "typescript", "tsx", "vue" },
+        highlight = { enable = true },
         indent = { enable = true },
       }
     end
