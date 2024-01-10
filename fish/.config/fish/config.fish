@@ -50,7 +50,18 @@ end
 # Misc
 ###########################################################################
 
+# Use Starship (https://starship.rs) as prompt if available.
+# Otherwise, use a similar, but less full-featured fallback.
+if type -q starship
+    starship init fish | source
+else
+    function fish_prompt
+        fish_prompt_fallback
+    end
+end
+
 # direnv
 if type -q direnv
     direnv hook fish | source
 end
+

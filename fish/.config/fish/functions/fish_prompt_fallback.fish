@@ -1,4 +1,5 @@
-function fish_prompt
+# The prompt used if Starship (https://starship.rs/) is not installed.
+function fish_prompt_fallback
     # Save the status of the last command.
     # It will be printed if non-zero.
     set -l last_status $status
