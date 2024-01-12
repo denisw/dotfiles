@@ -36,6 +36,11 @@ if type -q n
     fish_add_path "$N_PREFIX/bin"
 end
 
+# pip --user (Python)
+if test -d "$HOME/Library/Python/3.11/bin"
+    fish_add_path "$HOME/Library/Python/3.11/bin"
+end
+
 # ~/bin
 if test -d "$HOME/bin"
     fish_add_path --append "$HOME/bin"
