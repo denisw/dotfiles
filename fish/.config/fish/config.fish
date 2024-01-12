@@ -55,6 +55,9 @@ end
 # Misc
 ###########################################################################
 
+# Set XDG_CONFIG_HOME for those programs that expect it
+set -x XDG_CONFIG_HOME "$HOME/.config"
+
 # Use Starship (https://starship.rs) as prompt if available.
 # Otherwise, use a similar, but less full-featured fallback.
 if type -q starship
