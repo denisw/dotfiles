@@ -21,14 +21,10 @@ abbr -a gst git status
 ###########################################################################
 
 # Homebrew
-if test -d /opt/homebrew/bin
-    fish_add_path /opt/homebrew/bin
-end
+fish_add_path /opt/homebrew/bin
 
 # Cargo (Rust)
-if test -d "$HOME/.cargo/env"
-    fish_add_path "$HOME/.cargo/env"
-end
+fish_add_path "$HOME/.cargo/env"
 
 # n (Node.js)
 if type -q n
@@ -37,19 +33,14 @@ if type -q n
 end
 
 # pip --user (Python)
-if test -d "$HOME/Library/Python/3.11/bin"
-    fish_add_path "$HOME/Library/Python/3.11/bin"
-end
+fish_add_path "$HOME/Library/Python/3.11/bin"
 
 # ~/bin
-if test -d "$HOME/bin"
-    fish_add_path --append "$HOME/bin"
-end
+fish_add_path --append "$HOME/bin"
 
-# ~/.local/bin
-if test -d "$HOME/.local/bin"
-    fish_add_path --append "$HOME/.local/bin"
-end
+# ~/bin, ~/.local/bin
+fish_add_path --append "$HOME/bin"
+fish_add_path --append "$HOME/.local/bin"
 
 ###########################################################################
 # Misc
