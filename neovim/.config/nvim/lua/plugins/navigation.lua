@@ -1,7 +1,14 @@
 return {
-  -- Enhancements for the built-in directory browser (netrw).
-  -- https://github.com/tpope/vim-vinegar
-  "tpope/vim-vinegar",
+  -- A better file explorer.
+  -- https://github.com/stevearc/oil.nvim
+  {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", "<cmd>Oil<cr>" },
+    },
+    opts = {},
+  },
 
   -- Commands for quickly switching between related files.
   -- https://github.com/Everduin94/nvim-quick-switcher
