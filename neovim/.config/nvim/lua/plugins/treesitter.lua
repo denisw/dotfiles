@@ -9,7 +9,10 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup {
         ensure_installed = { "java", "lua", "rust", "typescript", "tsx", "vue" },
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          disable = { "vimdoc" },
+        },
         indent = { enable = true },
       }
     end
