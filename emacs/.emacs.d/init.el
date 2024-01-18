@@ -2,7 +2,7 @@
 ;;
 ;; Author: Denis Washington <denis@denisw.de>
 ;; URL: https://github.com/denisw/dotfiles
-;
+                                        ;
 ;; A relatively small, written-from-scratch Emacs config that:
 ;;
 ;; - Uses `straight.el' and `use-package' for package management
@@ -70,6 +70,7 @@
 (require 'init-lsp-mode)
 (require 'init-programming)
 (require 'init-python)
+(require 'init-racket)
 (require 'init-rust)
 (require 'init-shell)
 (require 'init-terraform)
