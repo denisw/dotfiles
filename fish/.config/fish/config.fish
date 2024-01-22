@@ -49,6 +49,11 @@ fish_add_path --append "$HOME/.local/bin"
 # Set XDG_CONFIG_HOME for those programs that expect it
 set -x XDG_CONFIG_HOME "$HOME/.config"
 
+# Use Neovim as $EDITOR if installed.
+if type -q nvim
+  set -x EDITOR nvim
+end
+
 # Use Starship (https://starship.rs) as prompt if available.
 # Otherwise, use a similar, but less full-featured fallback.
 if type -q starship
