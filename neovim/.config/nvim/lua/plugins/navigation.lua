@@ -18,6 +18,10 @@ return {
               return p.path .. '/' .. p.prefix .. '.test.ts*'
             elseif p.full_suffix:match('^test.tsx?$') then
               return p.path .. '/' .. p.prefix .. '.ts*'
+            elseif p.full_suffix:match('^jsx?$') then
+              return p.path .. '/' .. p.prefix .. '.test.js*'
+            elseif p.full_suffix:match('^test.jsx?$') then
+              return p.path .. '/' .. p.prefix .. '.js*'
             else
               return p.path .. '/' .. p.file_name
             end
