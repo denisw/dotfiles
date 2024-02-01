@@ -8,7 +8,19 @@ return {
     end,
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = { "java", "lua", "python", "rust", "typescript", "tsx", "vue" },
+        ensure_installed = {
+          "c",
+          "cpp",
+          "java",
+          "json",
+          "lua",
+          "python",
+          "rust",
+          "typescript",
+          "tsx",
+          "vue",
+          "yaml",
+        },
         highlight = {
           enable = true,
           disable = { "vimdoc" },
