@@ -12,6 +12,7 @@ return {
         timeout_ms = 1000,
         lsp_fallback = false,
       },
+      notify_on_error = false,
     },
   },
 
