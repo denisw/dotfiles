@@ -37,13 +37,27 @@ return {
     name = "nvim-tree",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
+      { "_", "<cmd>NvimTreeFocus<cr>" },
       { "<leader>tt", "<cmd>NvimTreeFocus<cr>" },
       { "<leader>tc", "<cmd>NvimTreeClose<cr>" },
     },
     opts = {
       hijack_netrw = false,
       view = {
-        width = 40,
+        float = {
+          enable = true,
+          open_win_config = {
+            relative = "win",
+            width = 45,
+          },
+        },
+      },
+      actions = {
+        open_file = {
+          window_picker = {
+            enable = false,
+          },
+        },
       },
       renderer = {
         root_folder_label = ":t",
