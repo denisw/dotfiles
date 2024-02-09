@@ -15,18 +15,11 @@
 
 ;; https://github.com/codesuki/add-node-modules-path
 (use-package add-node-modules-path
-  :demand t
+  :ensure t
   :hook ((js-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)
          (tsx-ts-mode . add-node-modules-path))
   :config
   (setq add-node-modules-path-command "echo \"$(npm root)/.bin\""))
-
-;; https://github.com/prettier/prettier-emacs
-(use-package prettier-js
-  :demand t
-  :hook ((js-mode . prettier-js-mode)
-         (typescript-ts-mode . prettier-js-mode)
-         (tsx-ts-mode . prettier-js-mode)))
 
 (provide 'init-javascript)

@@ -1,7 +1,8 @@
 ;;; init-ui.el --- Packages for UI tweaks
 
+;; https://github.com/emacsorphanage/popwin
 (use-package popwin
-  :demand t
+  :ensure t
   :config
   (push "*xref*" popwin:special-display-config)
   (popwin-mode))

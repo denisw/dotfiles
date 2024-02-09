@@ -1,6 +1,7 @@
 ;; init-racket.el --- Configuration for Racket development
 
 (use-package racket-mode
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-racket)

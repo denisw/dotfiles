@@ -1,6 +1,7 @@
 ;;; init-go.el --- Go language support
 
 (use-package go-mode
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-go)

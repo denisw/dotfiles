@@ -51,4 +51,4 @@
   (append (butlast (if (file-exists-p (expand-file-name "seq" elpaca-builds-directory))
                        elpaca--pre-built-steps elpaca-build-steps))
           (list '+elpaca-unload-seq 'elpaca--activate-package)))
-(use-package seq :elpaca `(seq :build ,(+elpaca-seq-build-steps)))
+(use-package seq :ensure `(seq :build ,(+elpaca-seq-build-steps)))

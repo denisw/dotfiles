@@ -38,7 +38,7 @@
     (treesit-install-language-grammar (car entry))))
 
 (use-package evil-textobj-tree-sitter
-  :demand t
+  :ensure t
   :config
   (define-key evil-outer-text-objects-map
               "c"

@@ -1,7 +1,7 @@
 ;;; init-modeline.el --- A cleaner modeline
 
 (use-package mood-line
-  :demand t
+  :ensure t
   :config
   (mood-line-mode))
 

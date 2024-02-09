@@ -6,21 +6,22 @@
 ;; Terminal emulation in shell-mode
 ;; https://elpa.gnu.org/packages/coterm.html
 (use-package coterm
-  :demand t
+  :ensure t
   :config
   (coterm-mode)
   (setq-default comint-process-echoes t))
 
 (use-package eat
+  :ensure (eat :type git
+               :host codeberg
+               :repo "akib/emacs-eat"
+               :files ("*.el" ("term" "term/*.el") "*.texi"
+                       "*.ti" ("terminfo/e" "terminfo/e/*")
+                       ("terminfo/65" "terminfo/65/*")
+                       ("integration" "integration/*")
+                       (:exclude ".dir-locals.el" "*-tests.el")))
   :after (evil project)
-  :demand (eat :type git
-                 :host codeberg
-                 :repo "akib/emacs-eat"
-                 :files ("*.el" ("term" "term/*.el") "*.texi"
-                         "*.ti" ("terminfo/e" "terminfo/e/*")
-                         ("terminfo/65" "terminfo/65/*")
-                         ("integration" "integration/*")
-                         (:exclude ".dir-locals.el" "*-tests.el")))
+  :defer t
   :init
   (evil-set-initial-state 'eat-mode 'emacs)
   :config

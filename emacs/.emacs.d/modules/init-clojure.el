@@ -1,7 +1,8 @@
 ;;; init-clojure.el --- Clojure development
 
+;; https://cider.mx/
 (use-package cider
-  :demand t
-  :commands (cider cider-jack-in))
+  :ensure t
+  :defer t)
 
 (provide 'init-clojure)

@@ -2,12 +2,12 @@
 
 ;; https://github.com/minad/vertico
 (use-package vertico
-  :elpaca (vertico :files (:defaults "extensions/*"))
+  :ensure (vertico :files (:defaults "extensions/*"))
   :config
   (vertico-mode))
 
 (use-package vertico-directory
-  :elpaca nil
+  :ensure nil
   :after vertico
   :bind (:map vertico-map
               ("RET" . vertico-directory-enter)
@@ -16,8 +16,9 @@
               ("C-l" . vertico-directory-delete-word))
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
+;; https://github.com/oantolin/orderless
 (use-package orderless
-  :demand t
+  :ensure t
   :init
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
@@ -25,7 +26,7 @@
 
 ;; https://github.com/minad/consult
 (use-package consult
-  :demand t
+  :ensure t
   :bind
   ("C-x b" . consult-buffer)
   ("C-x 4 b" . consult-buffer-other-window)

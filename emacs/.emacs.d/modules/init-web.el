@@ -5,7 +5,7 @@
 
 ;; http://web-mode.org
 (use-package web-mode
-  :demand t
+  :ensure t
   :mode (("\\.css\\'" . web-mode)
          ("\\.html\\'" . web-mode)
          ("\\.njk\\'" . web-mode))

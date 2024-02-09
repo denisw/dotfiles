@@ -1,6 +1,8 @@
 ;;; init-terraform.el --- Terraform language support
 
+;; https://github.com/hcl-emacs/terraform-mode
 (use-package terraform-mode
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-terraform)

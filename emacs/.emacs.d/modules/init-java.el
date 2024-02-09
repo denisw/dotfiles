@@ -2,6 +2,7 @@
 
 (use-package lsp-java
   :after lsp
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-java)

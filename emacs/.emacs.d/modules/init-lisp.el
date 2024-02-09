@@ -1,7 +1,8 @@
 ;; init-lisp.el --- Configuration for Common Lisp development
 
 (use-package slime
-  :demand t
+  :ensure t
+  :defer t
   :init
   (setq inferior-lisp-program "sbcl"))
 

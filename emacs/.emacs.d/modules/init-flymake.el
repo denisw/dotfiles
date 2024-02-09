@@ -5,7 +5,7 @@
         (python-mode flymake-collection-pycodestyle)))
 
 (use-package flymake-collection
-  :demand t
+  :ensure t
   :config
   (dolist (override my/flymake-collection-overrides)
     (push my/flymake-collection-overrides flymake-collection-config))
@@ -13,7 +13,7 @@
 
 ;; https://github.com/meqif/flymake-diagnostic-at-point
 (use-package flymake-diagnostic-at-point
-  :demand t
+  :ensure t
   :after flymake
   :config
   (add-hook 'flymake-mode-hook #'flymake-diagnostic-at-point-mode))

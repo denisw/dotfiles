@@ -5,9 +5,9 @@
   (lsp-deferred))
 
 (use-package lsp-mode
-  :demand t
+  :ensure t
   :after which-key
-  :commands lsp
+  :commands (lsp lsp-deferred)
   :diminish lsp-mode
   :init
   (setq gc-cons-threshold 100000000)

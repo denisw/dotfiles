@@ -1,6 +1,7 @@
 ;;; init-javascript.el --- Elixir programming
 
 (use-package elixir-mode
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-elixir)

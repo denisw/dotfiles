@@ -2,6 +2,7 @@
 
 ;; https://github.com/spotify/dockerfile-mode
 (use-package dockerfile-mode
-  :demand t)
+  :ensure t
+  :defer t)
 
 (provide 'init-docker)
