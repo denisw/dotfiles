@@ -5,7 +5,7 @@
                                         ;
 ;; A relatively small, written-from-scratch Emacs config that:
 ;;
-;; - Uses `straight.el' and `use-package' for package management
+;; - Uses `elpaca.el' and `use-package' for package management
 ;; - Configures Vim keybindings using `evil'
 ;;
 ;; The configuration is organized into several modules that can be
@@ -14,20 +14,8 @@
 ;; Silence warnings arising from async native compilation.
 (setq native-comp-async-report-warnings-errors 'silent)
 
-;; Install straight.el.
-;; https://github.com/radian-software/straight.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+;; Initialize elpaca.el
+(load-file "~/.emacs.d/elpaca-setup.el")
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")

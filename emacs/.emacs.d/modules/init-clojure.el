@@ -1,7 +1,7 @@
 ;;; init-clojure.el --- Clojure development
 
 (use-package cider
-  :straight t
+  :demand t
   :commands (cider cider-jack-in))
 
 (provide 'init-clojure)

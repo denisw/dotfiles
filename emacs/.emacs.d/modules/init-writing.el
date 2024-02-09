@@ -2,13 +2,13 @@
 
 ;; https://github.com/jrblevin/markdown-mode
 (use-package markdown-mode
-  :straight t
+  :demand t
   :config
   (setq markdown-enable-wiki-links t))
 
 ;; https://codeberg.org/joostkremers/visual-fill-column
 (use-package visual-fill-column
-  :straight t
+  :demand t
   :hook ((markdown-mode . my/enable-visual-fill-column)))
 
 (defun my/enable-visual-fill-column ()
@@ -18,7 +18,7 @@
 
 ;; https://github.com/rnkn/olivetti
 (use-package olivetti
-  :straight t
+  :demand t
   :after visual-fill-column
   :config
   ;; Disable visual-fill-column-mode while Olivetti is enabled.

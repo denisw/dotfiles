@@ -15,7 +15,7 @@
 
 ;; https://github.com/dgutov/diff-hl
 (use-package diff-hl
-  :straight t
+  :demand t
   :config
   (global-diff-hl-mode)
   ;; https://github.com/dgutov/diff-hl#magit
@@ -24,7 +24,7 @@
 
 ;; https://github.com/radian-software/apheleia
 (use-package apheleia
-  :straight t
+  :demand t
   :config
   (apheleia-global-mode))
 

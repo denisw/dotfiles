@@ -1,6 +1,8 @@
 ;;; init-dired.el --- Dired configuration and tools
 
 (use-package dired
+  :elpaca nil
+  :after evil
   :init
   (setq dired-kill-when-opening-new-dired-buffer t)
   :config
@@ -11,6 +13,7 @@
 ;; It works the same on all platforms and can sort
 ;; directories before files before files.
 (use-package ls-lisp
+  :elpaca nil
   :config
   (setq ls-lisp-use-insert-directory-program nil)
   (setq ls-lisp-dirs-first t))
@@ -19,10 +22,10 @@
 ;; https://github.com/domtronn/all-the-icons.el
 ;; https://github.com/jtbm37/all-the-icons-dired
 (use-package all-the-icons
-  :straight t
+  :demand t
   :if (display-graphic-p))
 (use-package all-the-icons-dired
-  :straight t
+  :demand t
   :if (display-graphic-p)
   :hook (dired-mode . all-the-icons-dired-mode))
 

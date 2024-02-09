@@ -13,6 +13,7 @@ emacs/.emacs.d/bookmarks
 emacs/.emacs.d/custom.el
 emacs/.emacs.d/eln-cache
 emacs/.emacs.d/elpa
+emacs/.emacs.d/elpaca
 emacs/.emacs.d/elpy
 emacs/.emacs.d/eshell
 emacs/.emacs.d/forge-database.sqlite

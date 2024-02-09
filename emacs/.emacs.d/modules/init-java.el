@@ -2,6 +2,6 @@
 
 (use-package lsp-java
   :after lsp
-  :straight t)
+  :demand t)
 
 (provide 'init-java)

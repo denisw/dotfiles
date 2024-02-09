@@ -8,7 +8,7 @@
   (setq max-mini-window-height 1))
 
 (use-package eldoc-box
-  :straight t
+  :demand t
   :after evil-collection
   :config
   (add-to-list 'evil-collection-key-blacklist "K")

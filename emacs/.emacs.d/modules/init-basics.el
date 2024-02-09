@@ -1,6 +1,7 @@
 ;;; init-basics.el --- Basic configuration
 
 (use-package emacs
+  :elpaca nil
   :init
   ;; Show the current column number in the mode line.
   (column-number-mode 1)

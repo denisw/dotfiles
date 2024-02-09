@@ -2,7 +2,7 @@
 
 ;; https://github.com/justbur/emacs-which-key
 (use-package which-key
-  :straight t
+  :demand t
   :config
   (which-key-mode))
 

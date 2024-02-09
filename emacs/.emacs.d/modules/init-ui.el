@@ -1,7 +1,7 @@
 ;;; init-ui.el --- Packages for UI tweaks
 
 (use-package popwin
-  :straight t
+  :demand t
   :config
   (push "*xref*" popwin:special-display-config)
   (popwin-mode))

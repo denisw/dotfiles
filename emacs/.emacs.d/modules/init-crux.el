@@ -2,7 +2,7 @@
 
 ;; https://github.com/bbatsov/crux
 (use-package crux
-  :straight t
+  :demand t
   :bind (("C-c o" . crux-open-with)
          ("C-c I" . crux-find-user-init-file)))
 

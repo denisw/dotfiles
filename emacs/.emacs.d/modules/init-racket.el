@@ -1,6 +1,6 @@
 ;; init-racket.el --- Configuration for Racket development
 
 (use-package racket-mode
-  :straight t)
+  :demand t)
 
 (provide 'init-racket)

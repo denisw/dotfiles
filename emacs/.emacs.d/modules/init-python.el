@@ -2,12 +2,12 @@
 
 ;; https://github.com/pythonic-emacs/anaconda-mode
 (use-package anaconda-mode
-  :straight t
+  :demand t
   :hook python-mode)
 
 ;; https://github.com/pythonic-emacs/anaconda-mode
 (use-package pipenv
-  :straight t
+  :demand t
   :hook (python-mode . pipenv-mode)
   :init
   (setq
@@ -16,6 +16,6 @@
 
 ;; https://github.com/galaunay/poetry.el
 (use-package poetry
-  :straight t)
+  :demand t)
 
 (provide 'init-python)

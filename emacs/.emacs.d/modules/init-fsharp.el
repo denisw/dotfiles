@@ -2,7 +2,7 @@
 
 ;; https://github.com/fsharp/emacs-fsharp-mode
 (use-package fsharp-mode
-  :straight t
+  :demand t
   :mode "\\.fs[iylx]?\\'")
 
 (provide 'init-fsharp)

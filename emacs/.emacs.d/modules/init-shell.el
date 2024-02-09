@@ -6,14 +6,14 @@
 ;; Terminal emulation in shell-mode
 ;; https://elpa.gnu.org/packages/coterm.html
 (use-package coterm
-  :straight t
+  :demand t
   :config
   (coterm-mode)
   (setq-default comint-process-echoes t))
 
 (use-package eat
   :after (evil project)
-  :straight (eat :type git
+  :demand (eat :type git
                  :host codeberg
                  :repo "akib/emacs-eat"
                  :files ("*.el" ("term" "term/*.el") "*.texi"

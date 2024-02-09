@@ -3,7 +3,7 @@
 ;; Install Evil mode for Vim keybindings.
 ;; https://github.com/emacs-evil/evil
 (use-package evil
-  :straight t
+  :demand t
   :init
   (setq evil-disable-insert-state-bindings t)
   (setq evil-want-C-u-scroll t)
@@ -17,7 +17,7 @@
 
 ;; https://github.com/emacs-evil/evil-collection
 (use-package evil-collection
-  :straight t
+  :demand t
   :after evil
   :diminish evil-collection-unimpaired-mode
   :config
@@ -26,7 +26,7 @@
 ;; Add evil-commentary for easily commenting out code.
 ;; https://github.com/linktohack/evil-commentary
 (use-package evil-commentary
-  :straight t
+  :demand t
   :after evil
   :config
   (evil-commentary-mode))
