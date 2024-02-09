@@ -24,7 +24,7 @@ abbr -a gst git status
 fish_add_path /opt/homebrew/bin
 
 # Cargo (Rust)
-fish_add_path "$HOME/.cargo/env"
+fish_add_path "$HOME/.cargo/bin"
 
 # n (Node.js)
 if type -q n
