@@ -1,5 +1,30 @@
 ;;; init-themes.el --- Theme configuration
 
+;; Introduce commands to switch to a default light and dark theme.
+;; Use the Modus themes for this, which are built into Emacs nowadays.
+
+(setq my/default-light-theme 'modus-operandi)
+(setq my/default-dark-theme 'modus-vivendi)
+
+(defun my/light-theme ()
+  (interactive)
+  (mapc #'disable-theme custom-enabled-themes)
+  (load-theme my/default-light-theme t))
+
+(defun my/dark-theme ()
+  (interactive)
+  (mapc #'disable-theme custom-enabled-themes)
+  (load-theme my/default-dark-theme t))
+
+;; When using emacs-plus on macOS, switch between the light and dark
+;; theme automatically based on the macOS system appearance.
+;; https://github.com/d12frosted/homebrew-emacs-plus#system-appearance-change
+(defun my/apply-theme (appearance)
+  (pcase appearance
+    ('light (my/light-theme))
+    ('dark (my/dark-theme))))
+(add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
+
 ;; https://github.com/doomemacs/themes
 (use-package doom-themes
   :ensure t
