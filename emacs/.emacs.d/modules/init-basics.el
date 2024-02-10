@@ -17,6 +17,9 @@
   ;; Skip the splash screen and show the scratch buffer instead.
   (setq inhibit-splash-screen t)
 
+  ;; Disable bell ringing sounds on error.
+  (setq ring-bell-function #'ignore)
+
   ;; Allow resizing frames based on pixels (rather than character
   ;; rows and columns) so that maximizing is guaranteed to fill
   ;; the whole screen.
