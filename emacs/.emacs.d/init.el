@@ -46,7 +46,8 @@
 (require 'init-writing)
 (require 'init-which-key)
 
-;; Languages
+;; Languages & Platforms
+(require 'init-azure)
 (require 'init-c)
 (require 'init-clojure)
 (require 'init-docker)
