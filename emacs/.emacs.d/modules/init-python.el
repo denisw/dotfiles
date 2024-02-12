@@ -3,7 +3,7 @@
 ;; https://github.com/pythonic-emacs/anaconda-mode
 (use-package anaconda-mode
   :ensure t
-  :hook python-mode)
+  :hook (python-mode python-ts-mode))
 
 (use-package pyvenv
   :ensure t)
