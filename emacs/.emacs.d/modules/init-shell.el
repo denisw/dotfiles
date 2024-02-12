@@ -3,6 +3,10 @@
 ;; Use two-space indent in shell scripts.
 (setq-default sh-basic-offset 2)
 
+;; Use sh-mode for .env files.
+(add-to-list 'auto-mode-alist '("\\.env\\'" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . sh-mode))
+
 ;; Terminal emulation in shell-mode
 ;; https://elpa.gnu.org/packages/coterm.html
 (use-package coterm
