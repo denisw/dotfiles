@@ -5,4 +5,7 @@
   :ensure t
   :hook python-mode)
 
+(use-package pyvenv
+  :ensure t)
+
 (provide 'init-python)
