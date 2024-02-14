@@ -38,4 +38,15 @@
   ("M-s L" . consult-line-multi)
   ("M-s m" . consult-multi-occur))
 
+;; https://github.com/oantolin/embark
+(use-package embark
+  :ensure t
+  :bind (("C-." . embark-act))
+  :config
+  (setq embark-quit-after-action nil)
+  (setq embark-pre-action-hooks (assoc-delete-all 'kill-buffer embark-pre-action-hooks)))
+(use-package embark-consult
+  :ensure t
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
 (provide 'init-completion)
