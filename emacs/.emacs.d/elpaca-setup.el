@@ -52,3 +52,4 @@
                        elpaca--pre-built-steps elpaca-build-steps))
           (list '+elpaca-unload-seq 'elpaca--activate-package)))
 (use-package seq :ensure `(seq :build ,(+elpaca-seq-build-steps)))
+(elpaca-wait)
