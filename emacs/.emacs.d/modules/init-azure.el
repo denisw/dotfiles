@@ -1,6 +1,6 @@
 ;;; init-azure.el --- Configuration for working with Microsoft Azure
 
-;; https://github.com/emacs-straight/bicep-ts-mode
+;; https://github.com/josteink/bicep-ts-mode
 (use-package bicep-ts-mode
   :ensure t
   :mode (("\\.bicep\\'" . bicep-ts-mode)
