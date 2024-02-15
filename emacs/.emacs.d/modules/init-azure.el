@@ -2,6 +2,8 @@
 
 ;; https://github.com/emacs-straight/bicep-ts-mode
 (use-package bicep-ts-mode
-  :ensure t)
+  :ensure t
+  :mode (("\\.bicep\\'" . bicep-ts-mode)
+         ("\\.bicepparam\\'" . bicep-ts-mode)))
 
 (provide 'init-azure)
