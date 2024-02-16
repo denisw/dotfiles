@@ -25,7 +25,6 @@
                        ("integration" "integration/*")
                        (:exclude ".dir-locals.el" "*-tests.el")))
   :after (evil project)
-  :defer t
   :init
   (evil-set-initial-state 'eat-mode 'emacs)
   :config
