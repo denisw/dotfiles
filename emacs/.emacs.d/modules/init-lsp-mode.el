@@ -8,7 +8,6 @@
   :ensure t
   :after which-key
   :commands (lsp lsp-deferred)
-  :diminish lsp-mode
   :init
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024))

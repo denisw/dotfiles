@@ -1,8 +1,6 @@
 ;;; init-lsp-mode.el --- Syntax checking with Flycheck
 
 (use-package flycheck
-  :ensure t
-  :defer t
-  :diminish flycheck-mode)
+  :ensure t)
 
 (provide 'init-flycheck)
