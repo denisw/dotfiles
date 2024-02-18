@@ -11,34 +11,34 @@ function get_system_appearance()
   end
 end
 
-local function load_shared_colorscheme()
-  local f = loadfile(os.getenv("HOME") .. "/.config/my/colorscheme.lua")
-  if f then
-    local config = f()
-    local mapping = config.mappings[config.colorscheme]
-    return mapping.neovim
-  else
-    return nil
-  end
+function get_colorscheme()
+  return "dracula"
 end
-
-colorscheme = load_shared_colorscheme() or "tokyonight"
 
 return {
   {
+    "miikanissi/modus-themes.nvim",
+    cond = string.find(get_colorscheme(), "modus_") ~= nil,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme(get_colorscheme())
+    end
+  },
+
+  {
     "folke/tokyonight.nvim",
-    cond = string.find(colorscheme, "tokyonight") ~= nil,
+    cond = string.find(get_colorscheme(), "tokyonight") ~= nil,
     lazy = false,
     priority = 1000,
     opts = {},
     config = function()
-      vim.cmd.colorscheme("tokyonight")
+      vim.cmd.colorscheme(get_colorscheme())
     end
   },
 
   {
     "Mofiqul/dracula.nvim",
-    cond = colorscheme == "dracula",
+    cond = get_colorscheme() == "dracula",
     lazy = false,
     priority = 1000,
     opts = {},
@@ -50,57 +50,27 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    cond = string.find(colorscheme, "rose-pine") ~= nil,
+    cond = string.find(get_colorscheme(), "rose-pine") ~= nil,
     lazy = false,
     priority = 1000,
     config = function()
-      vim.api.nvim_create_user_command("Light", function()
-        vim.cmd.colorscheme("rose-pine-dawn")
-      end, {})
-
-      vim.api.nvim_create_user_command("Dark", function()
-        vim.cmd.colorscheme("rose-pine-main")
-      end, {})
-
-      if get_system_appearance() == "light" then
-        vim.cmd.Light()
-      else
-        vim.cmd.Dark()
-      end
+      vim.cmd.colorscheme(get_colorscheme())
     end
   },
 
   {
-    'projekt0n/github-nvim-theme',
-    cond = string.find(colorscheme, "github") ~= nil,
+    "projekt0n/github-nvim-theme",
+    cond = string.find(get_colorscheme(), "github") ~= nil,
     lazy = false,
     priority = 1000,
     config = function()
-      require('github-theme').setup({
-        -- ...
-      })
-
-      vim.api.nvim_create_user_command("Light", function()
-        vim.opt.background = "light"
-        vim.cmd.colorscheme("github_light")
-      end, {})
-
-      vim.api.nvim_create_user_command("Dark", function()
-        vim.opt.background = "dark"
-        vim.cmd.colorscheme("github_dark")
-      end, {})
-
-      if get_system_appearance() == "light" then
-        vim.cmd.Light()
-      else
-        vim.cmd.Dark()
-      end
+      vim.cmd.colorscheme(get_colorscheme())
     end,
   },
 
   {
     "olimorris/onedarkpro.nvim",
-    cond = colorscheme == "onelight" or colorscheme == "onedark",
+    cond = get_colorscheme() == "onelight" or get_colorscheme() == "onedark",
     lazy = false,
     priority = 1000,
     config = function()
@@ -118,25 +88,13 @@ return {
           cursorline = true,
         },
       }
-      vim.api.nvim_create_user_command("Light", function()
-        vim.opt.background = "light"
-        vim.cmd.colorscheme("onelight")
-      end, {})
-      vim.api.nvim_create_user_command("Dark", function()
-        vim.opt.background = "dark"
-        vim.cmd.colorscheme("onedark")
-      end, {})
-      if get_system_appearance() == "light" then
-        vim.cmd.Light()
-      else
-        vim.cmd.Dark()
-      end
+      vim.cmd.colorscheme(get_colorscheme())
     end
   },
 
   {
     "EdenEast/nightfox.nvim",
-    cond = colorscheme == "nightfox",
+    cond = get_colorscheme() == "nightfox",
     lazy = false,
     priority = 1000,
     config = function()
@@ -147,7 +105,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    cond = colorscheme == "catppucin",
+    cond = get_colorscheme() == "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
@@ -163,26 +121,18 @@ return {
           neotree = true,
         },
       }
-      if get_system_appearance() == 'light' then
-        vim.opt.background = 'light'
-      else
-        vim.opt.background = 'dark'
-      end
-      vim.cmd.colorscheme('catppuccin')
+      vim.opt.background = get_system_appearance()
+      vim.cmd.colorscheme("catppuccin")
     end
   },
 
   {
     "savq/melange-nvim",
-    cond = colorscheme == "melange",
+    cond = get_colorscheme() == "melange",
     lazy = false,
     priority = 1000,
     config = function()
-      if get_system_appearance() == "light" then
-        vim.opt.background = "light"
-      else
-        vim.opt.background = "dark"
-      end
+      vim.opt.background = get_system_appearance()
       vim.cmd.colorscheme("melange")
     end
   }
