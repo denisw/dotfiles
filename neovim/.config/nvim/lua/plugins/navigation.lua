@@ -44,13 +44,7 @@ return {
     opts = {
       hijack_netrw = false,
       view = {
-        float = {
-          enable = true,
-          open_win_config = {
-            relative = "win",
-            width = 45,
-          },
-        },
+        width = 38,
       },
       actions = {
         open_file = {
