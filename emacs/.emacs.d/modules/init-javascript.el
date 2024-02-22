@@ -3,8 +3,13 @@
 ;; Indent JavaScript with two spaces by default.
 (setq-default js-indent-level 2)
 
+;; Use Tree-Sitter modes for JavaScript.
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-ts-mode))
+
 ;; Use Tree-Sitter modes for TypeScript.
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.mts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 
 ;; Use Tree-Sitter modes for JSON.
