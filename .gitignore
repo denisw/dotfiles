@@ -67,3 +67,6 @@ sublime3/Sublime Text 3/Packages
 # Visual Studio Code
 /vscode
 !/vscode/Library/Application Support/Code/User/settings.json
+
+# Wezterm
+/wezterm/.config/wezterm/colorscheme.lua

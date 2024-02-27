@@ -11,14 +11,19 @@ function get_system_appearance()
   end
 end
 
+function get_background()
+  -- return get_system_appearance()
+  return "dark"
+end
+
 function get_colorscheme()
-  return "dracula"
+  return "github_light"
 end
 
 return {
   {
     "miikanissi/modus-themes.nvim",
-    cond = string.find(get_colorscheme(), "modus_") ~= nil,
+    lazy = string.find(get_colorscheme(), "modus_") == nil,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme(get_colorscheme())
@@ -27,8 +32,7 @@ return {
 
   {
     "folke/tokyonight.nvim",
-    cond = string.find(get_colorscheme(), "tokyonight") ~= nil,
-    lazy = false,
+    lazy = string.find(get_colorscheme(), "tokyonight") == nil,
     priority = 1000,
     opts = {},
     config = function()
@@ -38,8 +42,7 @@ return {
 
   {
     "Mofiqul/dracula.nvim",
-    cond = get_colorscheme() == "dracula",
-    lazy = false,
+    lazy = get_colorscheme() ~= "dracula",
     priority = 1000,
     opts = {},
     config = function()
@@ -50,8 +53,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    cond = string.find(get_colorscheme(), "rose-pine") ~= nil,
-    lazy = false,
+    lazy = string.find(get_colorscheme(), "rose-pine") == nil,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme(get_colorscheme())
@@ -60,8 +62,7 @@ return {
 
   {
     "projekt0n/github-nvim-theme",
-    cond = string.find(get_colorscheme(), "github") ~= nil,
-    lazy = false,
+    lazy = string.find(get_colorscheme(), "github") == nil,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme(get_colorscheme())
@@ -70,8 +71,7 @@ return {
 
   {
     "olimorris/onedarkpro.nvim",
-    cond = get_colorscheme() == "onelight" or get_colorscheme() == "onedark",
-    lazy = false,
+    lazy = get_colorscheme() ~= "onelight" and get_colorscheme() ~= "onedark",
     priority = 1000,
     config = function()
       require("onedarkpro").setup {
@@ -94,8 +94,7 @@ return {
 
   {
     "EdenEast/nightfox.nvim",
-    cond = get_colorscheme() == "nightfox",
-    lazy = false,
+    lazy = get_colorscheme() ~= "nightfox",
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("nightfox")
@@ -105,8 +104,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    cond = get_colorscheme() == "catppuccin",
-    lazy = false,
+    lazy = string.find(get_colorscheme(), "catppuccin") == nil,
     priority = 1000,
     config = function()
       require("catppuccin").setup {
@@ -121,18 +119,17 @@ return {
           neotree = true,
         },
       }
-      vim.opt.background = get_system_appearance()
-      vim.cmd.colorscheme("catppuccin")
+      vim.opt.background = get_background()
+      vim.cmd.colorscheme("catppuccin-latte")
     end
   },
 
   {
     "savq/melange-nvim",
-    cond = get_colorscheme() == "melange",
-    lazy = false,
+    lazy = get_colorscheme() ~= "melange",
     priority = 1000,
     config = function()
-      vim.opt.background = get_system_appearance()
+      vim.opt.background = get_background()
       vim.cmd.colorscheme("melange")
     end
   }
