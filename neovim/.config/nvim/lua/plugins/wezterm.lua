@@ -7,6 +7,7 @@ local wezterm_colorschemes = {
     ["dracula"] = "Dracula (Official)",
     ["github_light"] = "Github (base16)",
     ["github_dark"] = "GitHub Dark",
+    ["github_dark_default"] = "GitHub Dark",
     ["onedark"] = "One Dark (Gogh)",
     ["onelight"] = "One Light (Gogh)",
     ["tokyonight-storm"] = "Tokyo Night Storm",
