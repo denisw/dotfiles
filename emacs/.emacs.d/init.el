@@ -36,6 +36,7 @@
 (require 'init-company)
 (require 'init-completion)
 (require 'init-crux)
+(require 'init-envrc)
 (require 'init-modeline)
 (require 'init-dired)
 (require 'init-flycheck)
