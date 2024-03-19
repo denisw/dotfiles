@@ -2,7 +2,7 @@
 
 ;; https://github.com/minad/vertico
 (use-package vertico
-  :ensure (vertico :files (:defaults "extensions/*"))
+  :ensure t
   :config
   (vertico-mode))
 

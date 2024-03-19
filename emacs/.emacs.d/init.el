@@ -2,11 +2,12 @@
 ;;
 ;; Author: Denis Washington <denis@denisw.de>
 ;; URL: https://github.com/denisw/dotfiles
-                                        ;
+;;
 ;; A relatively small, written-from-scratch Emacs config that:
 ;;
-;; - Uses `elpaca.el' and `use-package' for package management
-;; - Configures Vim keybindings using `evil'
+;; - manages packages with `use-package'
+;; - configures Vim keybindings with `evil'
+;; - uses `lsp-mode' for IDE-like programming features
 ;;
 ;; The configuration is organized into several modules that can be
 ;; found in the `modules/' sub-directory.
@@ -14,8 +15,9 @@
 ;; Silence warnings arising from async native compilation.
 (setq native-comp-async-report-warnings-errors 'silent)
 
-;; Initialize elpaca.el
-(load-file "~/.emacs.d/elpaca-setup.el")
+;; Add MELPA
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")

@@ -36,13 +36,13 @@
   (evil-local-set-key 'normal (kbd "K") 'lsp-ui-doc-glance))
 
 (use-package lsp-ui
-  :demand t
+  :ensure t
   :init
   (setq lsp-ui-doc-position 'at-point)
   :hook (lsp-ui-doc-mode . my/lsp-ui-doc-mode-hook))
 
 (use-package lsp-pyright
-  :demand t
+  :ensure t
   :after lsp-mode)
 
 (provide 'init-lsp-mode)
