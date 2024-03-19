@@ -26,6 +26,16 @@
   (setq frame-resize-pixelwise t)
   (setq window-resize-pixelwise t)
 
+  ;; Use the current buffer's project name as frame title, if any.
+  ;; Otherwise, fall back to the buffer name.
+  (setq frame-title-format
+        '((:eval
+           (let ((project (project-current)))
+             (if project
+                 (concat (project-name project) "  |  ")
+               "")))
+          "%b"))
+
   ;; Reduce the minimum frame width (in characters) for which
   ;; `split-window-sensibly' splits the frame horizontally.
   (setq split-width-threshold 144)
