@@ -5,6 +5,7 @@
 		"CMake",
 		"JsPrettier",
 		"LSP",
+		"LSP-clangd",
 		"LSP-eslint",
 		"LSP-json",
 		"LSP-typescript",
