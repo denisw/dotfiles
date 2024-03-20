@@ -17,7 +17,7 @@ function get_background()
 end
 
 function get_colorscheme()
-  return "github_light"
+  return "dracula"
 end
 
 return {
