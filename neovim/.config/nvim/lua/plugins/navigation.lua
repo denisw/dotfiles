@@ -98,7 +98,7 @@ return {
         },
         pickers = {
           buffers = {
-            theme = "ivy",
+            theme = "dropdown",
             mappings = {
               i = {
                 ["<c-h>"] = "delete_buffer",
@@ -109,7 +109,8 @@ return {
             },
           },
           find_files = {
-            theme = "ivy",
+            theme = "dropdown",
+            previewer = false,
             hidden = true,
           },
           git_files = {
