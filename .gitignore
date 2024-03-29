@@ -70,3 +70,8 @@ sublime3/Sublime Text 3/Packages
 
 # Wezterm
 /wezterm/.config/wezterm/colorscheme.lua
+
+# Zed
+zed/.config/zed/.tmp*
+zed/.config/zed/embeddings
+zed/.config/zed/embeddings
