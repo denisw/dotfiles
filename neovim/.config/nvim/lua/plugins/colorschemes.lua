@@ -23,7 +23,7 @@ end
 return {
   {
     "EdenEast/nightfox.nvim",
-    lazy = string.find(get_colorscheme(), "dawnfox") == nil,
+    lazy = string.find(get_colorscheme(), "fox") == nil,
     priority = 1000,
     config = function()
       local spec = require('nightfox.spec').load(get_colorscheme())
