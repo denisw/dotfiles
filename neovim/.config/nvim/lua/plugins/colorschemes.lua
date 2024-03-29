@@ -13,14 +13,34 @@ end
 
 function get_background()
   -- return get_system_appearance()
-  return "dark"
+  return "light"
 end
 
 function get_colorscheme()
-  return "dracula"
+  return "dawnfox"
 end
 
 return {
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = string.find(get_colorscheme(), "dawnfox") == nil,
+    priority = 1000,
+    config = function()
+      local spec = require('nightfox.spec').load(get_colorscheme())
+
+      require('nightfox').setup({
+        groups = {
+          dawnfox = {
+            NvimTreeNormal = { fg = spec.fg1, bg = spec.bg1 },
+          },
+        },
+      })
+
+      vim.o.background = get_background()
+      vim.cmd.colorscheme(get_colorscheme())
+    end,
+  },
+
   {
     "miikanissi/modus-themes.nvim",
     lazy = string.find(get_colorscheme(), "modus_") == nil,
@@ -70,35 +90,12 @@ return {
   },
 
   {
-    "olimorris/onedarkpro.nvim",
-    lazy = get_colorscheme() ~= "onelight" and get_colorscheme() ~= "onedark",
-    priority = 1000,
+    "navarasu/onedark.nvim",
+    lazy = string.find(get_colorscheme(), "onedark") == nil,
     config = function()
-      require("onedarkpro").setup {
-        plugins = {
-          nvim_tree = true,
-        },
-        highlights = {
-          NvimTreeNormal = { bg = "${cursorline}" },
-          NvimTreeCursorLine = { bg = "${selection}" },
-          NvimTreeNormalNC = { bg = "${cursorline}" },
-          NvimTreeCursorLineNC = { bg = "${selection}" },
-        },
-        options = {
-          cursorline = true,
-        },
-      }
-      vim.cmd.colorscheme(get_colorscheme())
-    end
-  },
-
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = get_colorscheme() ~= "nightfox",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("nightfox")
-    end
+      vim.o.background = get_background()
+      require('onedark').load()
+    end,
   },
 
   {
