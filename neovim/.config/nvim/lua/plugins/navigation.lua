@@ -55,6 +55,9 @@ return {
       },
       renderer = {
         root_folder_label = ":t",
+        icons = {
+          git_placement = "after",
+        }
       },
       update_focused_file = {
         enable = true,
