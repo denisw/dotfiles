@@ -85,6 +85,15 @@ return {
     lazy = string.find(get_colorscheme(), "github") == nil,
     priority = 1000,
     config = function()
+      require('github-theme').setup({
+        options = {
+          darken = {
+            sidebars = {
+              enabled = true,
+            }
+          }
+        }
+      })
       vim.cmd.colorscheme(get_colorscheme())
     end,
   },
