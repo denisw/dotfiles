@@ -5,10 +5,12 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
     ["catppuccin-latte"] = "Catppuccin Latte",
     ["catppuccin-macchiato"] = "Catppuccin Macchiato",
     ["catppuccin-mocha"] = "Catppuccin Mocha",
+    ["dawnfox"] = "dawnfox",
     ["dracula"] = "Dracula (Official)",
     ["github_light"] = "Github (base16)",
     ["github_dark"] = "GitHub Dark",
     ["github_dark_default"] = "GitHub Dark",
+    ["nightfox"] = "nightfox",
     ["onedark"] = "One Dark (Gogh)",
     ["onelight"] = "One Light (Gogh)",
     ["tokyonight-storm"] = "Tokyo Night Storm",
@@ -18,16 +20,19 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
   }
 
   local function update_wezterm_colorscheme(colorscheme)
-    local dirname = vim.fn.expand("$HOME/.config/wezterm")
-    os.execute("mkdir '" .. dirname .. "'")
-
-    local filename = vim.fn.expand(dirname .. "/colorscheme.lua")
-    local file = io.open(filename, "w+")
-
-    file:write('return "')
-    file:write(colorscheme)
-    file:write('"')
-    file:close()
+    local config_path = vim.fn.expand("$HOME/.wezterm.lua")
+    local config_file = io.open(config_path, "r+")
+    if config_file then
+      local content = config_file:read("*all")
+      local new_content = string.gsub(
+        content,
+        "color_scheme = '[^\n]+'",
+        "color_scheme = '" .. colorscheme .. "'"
+      )
+      config_file:seek("set", 0)
+      config_file:write(new_content)
+      config_file:close()
+    end
   end
 
   vim.api.nvim_create_autocmd("ColorScheme", {

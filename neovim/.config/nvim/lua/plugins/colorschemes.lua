@@ -1,3 +1,27 @@
+-----------------------------------------------------------------------
+-- Preferences
+-----------------------------------------------------------------------
+
+local primary_colorscheme = {
+  light = "dawnfox",
+  dark = "nightfox",
+}
+
+-- Set to "light" or "dark" to force light / dark colorscheme
+local override_appearance = nil
+
+-----------------------------------------------------------------------
+-- Helpers
+-----------------------------------------------------------------------
+
+function get_colorscheme()
+  return primary_colorscheme[get_appearance()] or "default"
+end
+
+function get_appearance()
+  return override_appearance or get_system_appearance()
+end
+
 function get_system_appearance()
   if vim.fn.has("mac") then
     local output = vim.fn.system("defaults read -g AppleInterfaceStyle")
@@ -11,14 +35,9 @@ function get_system_appearance()
   end
 end
 
-function get_background()
-  -- return get_system_appearance()
-  return "light"
-end
-
-function get_colorscheme()
-  return "dawnfox"
-end
+-----------------------------------------------------------------------
+-- Colorscheme Plugins
+-----------------------------------------------------------------------
 
 return {
   {
@@ -36,18 +55,8 @@ return {
         },
       })
 
-      vim.o.background = get_background()
       vim.cmd.colorscheme(get_colorscheme())
     end,
-  },
-
-  {
-    "miikanissi/modus-themes.nvim",
-    lazy = string.find(get_colorscheme(), "modus_") == nil,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme(get_colorscheme())
-    end
   },
 
   {
@@ -71,16 +80,6 @@ return {
   },
 
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = string.find(get_colorscheme(), "rose-pine") == nil,
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme(get_colorscheme())
-    end
-  },
-
-  {
     "projekt0n/github-nvim-theme",
     lazy = string.find(get_colorscheme(), "github") == nil,
     priority = 1000,
@@ -95,15 +94,6 @@ return {
         }
       })
       vim.cmd.colorscheme(get_colorscheme())
-    end,
-  },
-
-  {
-    "navarasu/onedark.nvim",
-    lazy = string.find(get_colorscheme(), "onedark") == nil,
-    config = function()
-      vim.o.background = get_background()
-      require('onedark').load()
     end,
   },
 
@@ -125,8 +115,7 @@ return {
           neotree = true,
         },
       }
-      vim.opt.background = get_background()
-      vim.cmd.colorscheme("catppuccin-latte")
+      vim.cmd.colorscheme(get_colorscheme())
     end
   },
 
@@ -135,7 +124,7 @@ return {
     lazy = get_colorscheme() ~= "melange",
     priority = 1000,
     config = function()
-      vim.opt.background = get_background()
+      vim.opt.background = get_appearance()
       vim.cmd.colorscheme("melange")
     end
   }
