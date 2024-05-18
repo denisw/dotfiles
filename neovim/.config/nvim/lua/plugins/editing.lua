@@ -2,10 +2,6 @@
 -- Plugins that make editing more convenient and efficient.
 
 return {
-  -- Commands for commenting out code.
-  -- https://github.com/tpope/vim-commentary
-  "tpope/vim-commentary",
-
   -- Adds Readline-style key bindings to normal and command line mode.
   -- This increases consistency with Bash, Zsh, Emacs, and other programs
   -- which support similar key bindings.
