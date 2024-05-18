@@ -38,6 +38,12 @@ if vim.env.TERM_PROGRAM ~= "Apple_Terminal" then
   vim.opt.termguicolors = true
 end
 
+-- On macOS, add mapping to save with <Cmd-s> on terminals that support the
+-- Kitty keyboard protocol (requires Neovim 0.10+).
+if vim.fn.has("macunix") then
+  vim.keymap.set("n", "<D-s>", '<cmd>write<cr>', { silent = true })
+end
+
 -- In terminal buffers, start in insert mode and disable line numbers.
 vim.cmd "autocmd TermOpen * startinsert"
 vim.cmd "autocmd TermOpen * setlocal nonumber"
