@@ -6,6 +6,7 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
     ["catppuccin-macchiato"] = "Catppuccin Macchiato",
     ["catppuccin-mocha"] = "Catppuccin Mocha",
     ["dawnfox"] = "dawnfox",
+    ["dayfox"] = "dayfox",
     ["dracula"] = "Dracula (Official)",
     ["github_light"] = "Github (base16)",
     ["github_dark"] = "GitHub Dark",
