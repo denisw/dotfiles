@@ -3,8 +3,8 @@
 -----------------------------------------------------------------------
 
 local primary_colorscheme = {
-  light = "dawnfox",
-  dark = "nightfox",
+  light = "catppuccin-mocha",
+  dark = "catppuccin-mocha",
 }
 
 -- Set to "light" or "dark" to force light / dark colorscheme

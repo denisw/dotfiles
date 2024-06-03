@@ -2,7 +2,7 @@
 
 return {
   front_end = 'WebGpu',
-  color_scheme = 'nightfox',
+  color_scheme = 'Catppuccin Mocha',
   font_size = 13,
   use_fancy_tab_bar = false,
   window_decorations = 'RESIZE',
