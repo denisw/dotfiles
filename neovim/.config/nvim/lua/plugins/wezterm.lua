@@ -22,15 +22,19 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
 
   local function update_wezterm_colorscheme(colorscheme)
     local config_path = vim.fn.expand("$HOME/.wezterm.lua")
-    local config_file = io.open(config_path, "r+")
+    local config_file = io.open(config_path, "r")
+
     if config_file then
       local content = config_file:read("*all")
+      config_file:close()
+
       local new_content = string.gsub(
         content,
         "color_scheme = '[^\n]+'",
         "color_scheme = '" .. colorscheme .. "'"
       )
-      config_file:seek("set", 0)
+
+      config_file = io.open(config_path, "w")
       config_file:write(new_content)
       config_file:close()
     end
