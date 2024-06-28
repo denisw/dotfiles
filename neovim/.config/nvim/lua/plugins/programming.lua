@@ -102,6 +102,11 @@ return {
         on_attach = on_attach_with_format_on_save,
       }
 
+      lspconfig.phpactor.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
       lspconfig.pyright.setup {
         capabilities = capabilities,
         on_attach = on_attach,
