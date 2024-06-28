@@ -24,7 +24,10 @@
     "enabled": false,
     "version": "1"
   },
-  "language_overrides": {
+  "terminal": {
+    "option_as_meta": true
+  },
+  "languages": {
     "JavaScript": {
       "tab_size": 2,
       "format_on_save": "on",
