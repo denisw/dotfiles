@@ -92,6 +92,11 @@ return {
         on_attach = on_attach,
       }
 
+      lspconfig.gopls.setup {
+        capabilities = capabilities,
+        on_attach = on_attach_with_format_on_save,
+      }
+
       lspconfig.jdtls.setup {
         capabilities = capabilities,
         on_attach = on_attach,
