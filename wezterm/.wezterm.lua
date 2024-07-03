@@ -12,5 +12,5 @@ return {
     top = '0.25cell',
     bottom = '0.25cell',
   },
+  enable_kitty_keyboard = true,
 }
-
