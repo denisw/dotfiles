@@ -3,6 +3,7 @@
 return {
   front_end = 'WebGpu',
   color_scheme = 'dayfox',
+  font = wezterm.font('Fira Code'),
   font_size = 13,
   use_fancy_tab_bar = false,
   window_decorations = 'RESIZE',
