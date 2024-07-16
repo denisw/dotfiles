@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------
 
 local primary_colorscheme = {
-  light = "catppuccin-mocha",
+  light = "dayfox",
   dark = "catppuccin-mocha",
 }
 
