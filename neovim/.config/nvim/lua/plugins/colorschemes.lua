@@ -108,6 +108,7 @@ return {
           light = "latte",
           dark = "mocha",
         },
+        term_colors = true,
         integrations = {
           cmp = true,
           lsp_trouble = true,
