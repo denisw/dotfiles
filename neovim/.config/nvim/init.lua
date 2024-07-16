@@ -86,7 +86,6 @@ vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, bufopts)
 vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, bufopts)
 vim.keymap.set("n", "<leader>el", vim.diagnostic.setqflist, bufopts)
 
-
 -----------------------------------------------------------------------
 -- Filetype Detection
 -----------------------------------------------------------------------
@@ -106,6 +105,23 @@ vim.filetype.add({
     },
   },
 })
+
+-----------------------------------------------------------------------
+-- Neovide (https://neovide.dev/)
+-----------------------------------------------------------------------
+
+if vim.g.neovide then
+  -- https://neovide.dev/configuration.html
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_scroll_animation_length = 0.05
+
+  -- https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
+  vim.keymap.set('v', '<D-c>', '"+y')
+  vim.keymap.set('n', '<D-v>', '"+P')
+  vim.keymap.set('v', '<D-v>', '"+P')
+  vim.keymap.set('c', '<D-v>', '<C-R>+')
+  vim.keymap.set('i', '<D-v>', '<C-R>+')
+end
 
 -----------------------------------------------------------------------
 -- Plugins
