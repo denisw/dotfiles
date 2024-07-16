@@ -26,8 +26,9 @@ vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.sidescroll = 1
 
--- Use the space key as <leader>.
+-- Use the space key as <leader> and underscore as <localleader>.
 vim.g.mapleader = " "
+vim.g.maplocalleader = "_"
 
 -- Always show the sign column.
 vim.opt.signcolumn = "yes:1"
