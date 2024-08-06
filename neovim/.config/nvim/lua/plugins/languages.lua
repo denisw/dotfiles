@@ -32,4 +32,11 @@ return {
   -- Vim port of cider-jack-in for Clojure
   -- https://github.com/clojure-vim/vim-jack-in
   "clojure-vim/vim-jack-in",
+
+  -- Open Jupyter notebooks as Python files.
+  -- https://github.com/GCBallesteros/jupytext.nvim
+  {
+    "GCBallesteros/jupytext.nvim",
+    config = true,
+  },
 }
