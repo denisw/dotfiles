@@ -76,4 +76,6 @@ return {
       "fugitive"
     },
   },
+
+ "sindrets/diffview.nvim",
 }
