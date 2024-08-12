@@ -4,3 +4,6 @@
 [submodule "doom/.config/emacs"]
 	path = doom-emacs/.config/emacs
 	url = https://github.com/doomemacs/doomemacs.git
+[submodule "alacritty/.config/alacritty/themes"]
+	path = alacritty/.config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme
