@@ -62,6 +62,7 @@ local function reload_vimrc()
 end
 vim.keymap.set("n", "<leader>v,", "<cmd>e $MYVIMRC<cr>")
 vim.keymap.set("n", "<leader>vp", "<cmd>e $XDG_CONFIG_HOME/nvim/lua/plugins<cr>")
+vim.keymap.set("n", "<leader>vf", "<cmd>e $XDG_CONFIG_HOME/nvim/ftplugin<cr>")
 
 -- Configuration and key mappings for the diagnostic frameowrk.
 vim.diagnostic.config {
