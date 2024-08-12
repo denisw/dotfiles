@@ -10,4 +10,5 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
+dynamic_padding = true
 option_as_alt = "Both"
