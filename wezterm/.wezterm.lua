@@ -5,7 +5,6 @@ return {
   color_scheme = 'Catppuccin Mocha',
   font = wezterm.font('Fira Code'),
   font_size = 13,
-  use_fancy_tab_bar = false,
   window_decorations = 'RESIZE',
   window_padding = {
     left = '0.25cell',
