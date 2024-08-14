@@ -128,5 +128,12 @@ return {
       vim.opt.background = get_appearance()
       vim.cmd.colorscheme("melange")
     end
-  }
+  },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = get_colorscheme() ~= "rose-pine",
+    priority = 1000,
+  },
 }
