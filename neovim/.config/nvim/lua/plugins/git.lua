@@ -47,35 +47,4 @@ return {
       }
     end
   },
-
-  {
-    "NeogitOrg/neogit",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = "Neogit",
-    opts = {},
-  },
-
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit",
-    },
-    ft = {
-      "fugitive"
-    },
-  },
-
- "sindrets/diffview.nvim",
 }
