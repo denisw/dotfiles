@@ -35,7 +35,9 @@ return {
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
     opts = {},
     config = function()
-      require("nvim-autopairs").setup {}
+      require("nvim-autopairs").setup {
+        check_ts = true,
+      }
 
       local cmp = require('cmp')
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
