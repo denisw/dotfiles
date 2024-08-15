@@ -19,6 +19,7 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
     ["tokyonight-moon"] = "Tokyo Night Moon",
     ["tokyonight-storm"] = "Tokyo Night Storm",
     ["rose-pine"] = "Rosé Pine (Gogh)",
+    ["rose-pine-main"] = "Rosé Pine (Gogh)",
     ["rose-pine-dawn"] = "Rosé Pine Dawn (Gogh)",
     ["rose-pine-moon"] = "Rosé Pine Moon (Gogh)",
   }
