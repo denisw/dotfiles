@@ -30,6 +30,9 @@ vim.opt.sidescroll = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = "_"
 
+-- Highlight current line.
+vim.opt.cursorline = true
+
 -- Always show the sign column.
 vim.opt.signcolumn = "yes:1"
 
