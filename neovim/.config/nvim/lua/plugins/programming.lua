@@ -3,7 +3,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { "prettier" },
         python = function(bufnr)
           if require("conform").get_formatter_info("ruff_format", bufnr).available then
             return { "ruff_format" }
@@ -11,11 +11,14 @@ return {
             return { "isort", "black" }
           end
         end,
-        typescript = { { "prettierd", "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+      },
+      default_format_opts = {
+        lsp_format = "fallback",
       },
       format_after_save = {
-        lsp_fallback = false,
+        lsp_format = "never",
       },
       notify_on_error = false,
     },
