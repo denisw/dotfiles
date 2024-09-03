@@ -28,47 +28,16 @@ return {
     end
   },
 
-  -- Auto-close pairs like "(" and ")" while writing.
-  -- https://github.com/windwp/nvim-autopairs
+  -- Automatically insert matching parentheses, braces, etc.
+  -- https://github.com/echasnovski/mini.pairs
   {
-    "windwp/nvim-autopairs",
-    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
-    opts = {},
-    config = function()
-      require("nvim-autopairs").setup {
-        check_ts = true,
-      }
-
-      local cmp = require('cmp')
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      local handlers = require('nvim-autopairs.completion.handlers')
-
-      cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done({
-          filetypes = {
-            ["*"] = {
-              ["("] = {
-                kind = {
-                  cmp.lsp.CompletionItemKind.Function,
-                  cmp.lsp.CompletionItemKind.Method,
-                },
-                handler = handlers["*"]
-              }
-            },
-          },
-        })
-      )
-    end
-  },
-
-  -- HTML tag auto-closing based on Tree-Sitter.
-  -- https://github.com/windwp/nvim-ts-autotag
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    "echasnovski/mini.pairs",
     opts = {
-      enable_close_on_slash = false,
+      modes = {
+        insert = true,
+        command = true,
+        terminal = false,
+      },
     },
   },
 
