@@ -24,6 +24,7 @@ require("lazy").setup({
     colorscheme = { "catppuccin-mocha", "habamax" },
   },
   change_detection = {
+    enabled = true,
     notify = false,
   },
 })
