@@ -112,6 +112,7 @@ return {
         integrations = {
           cmp = true,
           lsp_trouble = true,
+          mason = true,
           neogit = true,
           neotree = true,
         },
