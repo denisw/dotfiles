@@ -4,7 +4,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup {
+      require("nvim-treesitter.configs").setup({
         ensure_installed = {
           "c",
           "cpp",
@@ -21,7 +21,7 @@ return {
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
-      }
-    end
+      })
+    end,
   },
 }

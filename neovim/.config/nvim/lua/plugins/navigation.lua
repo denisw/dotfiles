@@ -14,20 +14,20 @@ return {
           -- Toggle between test and non-test files.
           -- TypeScript: *.test.ts, *.test.tsx <-> *.ts, *.tsx
           local function toggle_test(p)
-            if p.full_suffix:match('^tsx?$') then
-              return p.path .. '/' .. p.prefix .. '.test.ts*'
-            elseif p.full_suffix:match('^test.tsx?$') then
-              return p.path .. '/' .. p.prefix .. '.ts*'
-            elseif p.full_suffix:match('^jsx?$') then
-              return p.path .. '/' .. p.prefix .. '.test.js*'
-            elseif p.full_suffix:match('^test.jsx?$') then
-              return p.path .. '/' .. p.prefix .. '.js*'
+            if p.full_suffix:match("^tsx?$") then
+              return p.path .. "/" .. p.prefix .. ".test.ts*"
+            elseif p.full_suffix:match("^test.tsx?$") then
+              return p.path .. "/" .. p.prefix .. ".ts*"
+            elseif p.full_suffix:match("^jsx?$") then
+              return p.path .. "/" .. p.prefix .. ".test.js*"
+            elseif p.full_suffix:match("^test.jsx?$") then
+              return p.path .. "/" .. p.prefix .. ".js*"
             else
-              return p.path .. '/' .. p.file_name
+              return p.path .. "/" .. p.file_name
             end
           end
-          require('nvim-quick-switcher').find_by_fn(toggle_test)
-        end
+          require("nvim-quick-switcher").find_by_fn(toggle_test)
+        end,
       },
     },
   },
@@ -57,12 +57,12 @@ return {
         root_folder_label = ":t",
         icons = {
           git_placement = "after",
-        }
+        },
       },
       update_focused_file = {
         enable = true,
       },
-    }
+    },
   },
 
   {
@@ -79,7 +79,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
     cmd = "Trouble",
-     keys = {
+    keys = {
       {
         "<leader>xx",
         "<cmd>Trouble diagnostics toggle<cr>",
@@ -146,7 +146,7 @@ return {
 
       local open_with_trouble = require("trouble.sources.telescope").open
 
-      require("telescope").setup {
+      require("telescope").setup({
         defaults = {
           path_display = filename_first_path_display,
           file_ignore_patterns = { "^.git/" },
@@ -188,15 +188,15 @@ return {
           lsp_definitions = {
             theme = "cursor",
           },
-        }
-      }
+        },
+      })
 
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<C-p>", builtin.find_files, {})
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-    end
+    end,
   },
 
   {
@@ -205,6 +205,6 @@ return {
     build = "make",
     config = function()
       require("telescope").load_extension("fzf")
-    end
-  }
+    end,
+  },
 }

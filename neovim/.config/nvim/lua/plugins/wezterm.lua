@@ -32,11 +32,9 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
       local content = config_file:read("*all")
       config_file:close()
 
-      local new_content = string.gsub(
-        content,
-        "color_scheme = '[^\n]+'",
-        "color_scheme = '" .. colorscheme .. "'"
-      )
+      local search_pattern = "color_scheme = ['\"][^\n]+['\"]"
+      local replacement = "color_scheme = '" .. colorscheme .. "'"
+      local new_content = string.gsub(content, search_pattern, replacement)
 
       config_file = io.open(config_path, "w")
       config_file:write(new_content)
@@ -51,7 +49,7 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
       if colorscheme then
         update_wezterm_colorscheme(colorscheme)
       end
-    end
+    end,
   })
 end
 

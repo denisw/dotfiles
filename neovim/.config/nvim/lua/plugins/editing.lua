@@ -24,8 +24,8 @@ return {
         "unite",
       }
       -- Don"t highlight trailing whitespace in the terminal.
-      vim.cmd "autocmd TermOpen * DisableWhitespace"
-    end
+      vim.cmd("autocmd TermOpen * DisableWhitespace")
+    end,
   },
 
   -- Automatically insert matching parentheses, braces, etc.

@@ -45,9 +45,9 @@ return {
     lazy = string.find(get_colorscheme(), "fox") == nil,
     priority = 1000,
     config = function()
-      local spec = require('nightfox.spec').load(get_colorscheme())
+      local spec = require("nightfox.spec").load(get_colorscheme())
 
-      require('nightfox').setup({
+      require("nightfox").setup({
         groups = {
           dawnfox = {
             NvimTreeNormal = { fg = spec.fg1, bg = spec.bg1 },
@@ -66,7 +66,7 @@ return {
     opts = {},
     config = function()
       vim.cmd.colorscheme(get_colorscheme())
-    end
+    end,
   },
 
   {
@@ -76,7 +76,7 @@ return {
     opts = {},
     config = function()
       vim.cmd.colorscheme("dracula")
-    end
+    end,
   },
 
   {
@@ -84,14 +84,14 @@ return {
     lazy = string.find(get_colorscheme(), "github") == nil,
     priority = 1000,
     config = function()
-      require('github-theme').setup({
+      require("github-theme").setup({
         options = {
           darken = {
             sidebars = {
               enabled = true,
-            }
-          }
-        }
+            },
+          },
+        },
       })
       vim.cmd.colorscheme(get_colorscheme())
     end,
@@ -103,7 +103,7 @@ return {
     lazy = string.find(get_colorscheme(), "catppuccin") == nil,
     priority = 1000,
     config = function()
-      require("catppuccin").setup {
+      require("catppuccin").setup({
         background = {
           light = "latte",
           dark = "mocha",
@@ -116,9 +116,9 @@ return {
           neogit = true,
           neotree = true,
         },
-      }
+      })
       vim.cmd.colorscheme(get_colorscheme())
-    end
+    end,
   },
 
   {
@@ -128,7 +128,7 @@ return {
     config = function()
       vim.opt.background = get_appearance()
       vim.cmd.colorscheme("melange")
-    end
+    end,
   },
 
   {

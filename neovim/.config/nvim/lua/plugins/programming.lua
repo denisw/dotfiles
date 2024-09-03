@@ -3,6 +3,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        lua = { "stylua" },
         javascript = { "prettier" },
         python = function(bufnr)
           if require("conform").get_formatter_info("ruff_format", bufnr).available then
@@ -53,7 +54,7 @@ return {
       local telescope_builtin = require("telescope.builtin")
 
       local on_attach = function(client, bufnr)
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set("n", "gd", telescope_builtin.lsp_definitions, bufopts)
         vim.keymap.set("n", "gi", telescope_builtin.lsp_implementations, bufopts)
         vim.keymap.set("n", "gr", telescope_builtin.lsp_references, bufopts)
@@ -63,7 +64,9 @@ return {
         vim.keymap.set("n", "<leader>D", telescope_builtin.lsp_type_definitions, bufopts)
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, bufopts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-        vim.keymap.set("n", "<leader>F", function() vim.lsp.buf.format { async = true } end, bufopts)
+        vim.keymap.set("n", "<leader>F", function()
+          vim.lsp.buf.format({ async = true })
+        end, bufopts)
       end
 
       local format_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -73,87 +76,87 @@ return {
 
         vim.api.nvim_clear_autocmds({
           group = format_augroup,
-          buffer = bufnr
+          buffer = bufnr,
         })
 
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = format_augroup,
           buffer = bufnr,
           callback = function()
-            vim.lsp.buf.format { bufnr = bufnr }
+            vim.lsp.buf.format({ bufnr = bufnr })
           end,
         })
       end
 
       local capabilities = cmp_lsp.default_capabilities()
 
-      lspconfig.clangd.setup {
+      lspconfig.clangd.setup({
         capabilities = capabilities,
         on_attach = function()
           on_attach_with_format_on_save(client, bufnr)
-          local bufopts = { noremap=true, silent=true, buffer=bufnr }
+          local bufopts = { noremap = true, silent = true, buffer = bufnr }
           vim.keymap.set("n", "<leader>hh", ":ClangdSwitchSourceHeader<cr>", bufopts)
-        end
-      }
+        end,
+      })
 
-      lspconfig.eslint.setup {
+      lspconfig.eslint.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.gopls.setup {
+      lspconfig.gopls.setup({
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
-      }
+      })
 
-      lspconfig.jdtls.setup {
+      lspconfig.jdtls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.prismals.setup {
+      lspconfig.prismals.setup({
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
-      }
+      })
 
-      lspconfig.phpactor.setup {
+      lspconfig.phpactor.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.pyright.setup {
+      lspconfig.pyright.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.ruff_lsp.setup {
+      lspconfig.ruff_lsp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.rust_analyzer.setup {
+      lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
         on_attach = on_attach_with_format_on_save,
         settings = {
           ["rust-analyzer"] = {
             imports = {
               granularity = {
-                group = "module"
-              }
-            }
-          }
-        }
-      }
+                group = "module",
+              },
+            },
+          },
+        },
+      })
 
-      lspconfig.tsserver.setup {
+      lspconfig.tsserver.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
+      })
 
-      lspconfig.volar.setup {
+      lspconfig.volar.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-      }
-    end
+      })
+    end,
   },
 }

@@ -11,14 +11,16 @@ return {
       { "<leader>bd", ":lua MiniBufremove.delete()<cr>" },
     },
     config = function()
-      require('mini.bufremove').setup()
-    end
+      require("mini.bufremove").setup()
+    end,
   },
 
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
 }
