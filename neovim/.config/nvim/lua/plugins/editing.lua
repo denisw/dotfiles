@@ -41,6 +41,12 @@ return {
     },
   },
 
+  -- Auto-close HTML / XML / JSX tags
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {},
+  },
+
   -- Distraction-less writing.
   -- https://github.com/folke/zen-mode.nvim
   {
