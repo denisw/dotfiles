@@ -26,6 +26,9 @@ fish_add_path /opt/homebrew/bin
 # Cargo (Rust)
 fish_add_path "$HOME/.cargo/bin"
 
+# Go
+fish_add_path "$HOME/go/bin"
+
 # n (Node.js)
 if type -q n
     set -x N_PREFIX "$HOME/.n"
