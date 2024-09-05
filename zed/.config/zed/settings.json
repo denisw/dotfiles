@@ -23,10 +23,15 @@
   },
   "assistant": {
     "enabled": false,
-    "version": "1"
+    "version": "2"
   },
   "terminal": {
-    "option_as_meta": true
+    "option_as_meta": true,
+    "detect_venv": {
+      "on": {
+        "activate_script": "fish"
+      }
+    }
   },
   "languages": {
     "Go": {
