@@ -56,10 +56,11 @@
     },
     "Python": {
       "tab_size": 4,
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
       "formatter": {
-        "external": {
-          "command": ".venv/bin/black",
-          "arguments": ["-"]
+        "language_server": {
+          "name": "ruff"
         }
       }
     },
