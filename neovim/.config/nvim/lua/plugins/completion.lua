@@ -41,8 +41,6 @@ return {
           { name = "nvim_lsp_signature_help" },
           { name = "path" },
           { name = "snippets" },
-        }, {
-          { name = "buffer" },
         }),
       })
 
