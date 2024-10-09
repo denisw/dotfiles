@@ -1,7 +1,16 @@
 return {
-  -- Improvements for the built-in netrw file manager.
-  -- https://github.com/tpope/vim-vinegar
-  "tpope/vim-vinegar",
+  -- File explorer with support for filesystem operations through buffer edits.
+  -- https://github.com/stevearc/oil.nvim
+  {
+    "stevearc/oil.nvim",
+    dependencies = {
+      { "echasnovski/mini.icons", opts = {} },
+    },
+    keys = {
+      { "-", "<cmd>Oil<cr>" },
+    },
+    opts = {},
+  },
 
   -- Commands for quickly switching between related files.
   -- https://github.com/Everduin94/nvim-quick-switcher
