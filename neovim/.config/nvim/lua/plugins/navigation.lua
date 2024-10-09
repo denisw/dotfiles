@@ -9,7 +9,11 @@ return {
     keys = {
       { "-", "<cmd>Oil<cr>" },
     },
-    opts = {},
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
   },
 
   -- Commands for quickly switching between related files.
