@@ -9,6 +9,7 @@ return {
     keys = {
       { "-", "<cmd>Oil<cr>" },
     },
+    lazy = false,
     config = function()
       -- Show the current working directory in the winbar
       -- https://github.com/stevearc/oil.nvim/blob/master/doc/recipes.md#show-cwd-in-the-winbar
