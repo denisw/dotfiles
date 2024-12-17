@@ -10,21 +10,21 @@
 -- line are displayed correctly.
 
 -- Display line numbers.
-vim.opt.number = true
+vim.o.number = true
 
 -- Ignore case when searching, unless the search term
 -- contains at least one capital letter.
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Use two-space indentation by default.
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
 -- Disable line wrapping and tweak horizontal scrolling.
-vim.opt.wrap = false
-vim.opt.sidescroll = 1
+vim.o.wrap = false
+vim.o.sidescroll = 1
 
 -- Use the space key as <leader> and underscore as <localleader>.
 vim.g.mapleader = " "
