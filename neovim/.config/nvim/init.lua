@@ -9,6 +9,10 @@
 -- a NERD Font (https://www.nerdfonts.com/) so that icons and the status
 -- line are displayed correctly.
 
+-----------------------------------------------------------------------
+-- General Options
+-----------------------------------------------------------------------
+
 -- Display line numbers.
 vim.o.number = true
 
@@ -26,45 +30,27 @@ vim.o.expandtab = true
 vim.o.wrap = false
 vim.o.sidescroll = 1
 
--- Use the space key as <leader> and underscore as <localleader>.
-vim.g.mapleader = " "
-vim.g.maplocalleader = "_"
-
 -- Highlight current line.
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
 -- Always show the sign column.
-vim.opt.signcolumn = "yes:1"
+vim.o.signcolumn = "yes:1"
+
+-- Do not show "-- INSERT --" or "-- VISUAL --" in the message area when in
+-- insert or visual mode, respectively, because the custom statusline already
+-- contains this information.
+vim.o.showmode = false
 
 -- Enable True Color (24-bit) on all terminals
 -- except Terminal.app (which doesn"t support it properly).
 if vim.env.TERM_PROGRAM ~= "Apple_Terminal" then
-  vim.opt.termguicolors = true
+  vim.o.termguicolors = true
 end
 
--- On macOS, add mapping to save with <Cmd-s> on terminals that support the
--- Kitty keyboard protocol (requires Neovim 0.10+).
-if vim.fn.has("macunix") then
-  vim.keymap.set("n", "<D-s>", '<cmd>write<cr>', { silent = true })
-end
+-----------------------------------------------------------------------
+-- Diagnostics
+-----------------------------------------------------------------------
 
--- In terminal buffers, start in insert mode and disable line numbers.
-vim.cmd "autocmd TermOpen * startinsert"
-vim.cmd "autocmd TermOpen * setlocal nonumber"
-
--- Add key mappings to quickly copy/paste to/from the clipboard.
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>p", '"+p')
-vim.keymap.set("n", "<leader>P", '"+P')
-
--- Add key mapping to quickly open the config files
-local configpath = vim.fn.stdpath("config")
-vim.keymap.set("n", "<leader>v,", "<cmd>e " .. configpath .. "/init.lua<cr>")
-vim.keymap.set("n", "<leader>vp", "<cmd>e " .. configpath .. "/lua/plugins<cr>")
-vim.keymap.set("n", "<leader>vf", "<cmd>e " .. configpath .. "/ftplugin<cr>")
-
--- Configuration and key mappings for the diagnostic frameowrk.
 vim.diagnostic.config {
   severity_sort = true,
   virtual_text = {
@@ -82,10 +68,14 @@ vim.diagnostic.config {
     end,
   },
 }
-vim.keymap.set("n", "<leader>ee", vim.diagnostic.open_float, bufopts)
-vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, bufopts)
-vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, bufopts)
-vim.keymap.set("n", "<leader>el", vim.diagnostic.setqflist, bufopts)
+
+-----------------------------------------------------------------------
+-- Terminal
+-----------------------------------------------------------------------
+
+-- In terminal buffers, start in insert mode and disable line numbers.
+vim.cmd "autocmd TermOpen * startinsert"
+vim.cmd "autocmd TermOpen * setlocal nonumber"
 
 -----------------------------------------------------------------------
 -- Filetype Detection
@@ -106,6 +96,38 @@ vim.filetype.add({
     },
   },
 })
+
+-----------------------------------------------------------------------
+-- Key Mappings
+-----------------------------------------------------------------------
+
+-- Use the space key as <leader> and underscore as <localleader>.
+vim.g.mapleader = " "
+vim.g.maplocalleader = "_"
+
+-- Clipboard copy and paste
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>P", '"+P')
+
+-- Config files
+local configpath = vim.fn.stdpath("config")
+vim.keymap.set("n", "<leader>v,", "<cmd>e " .. configpath .. "/init.lua<cr>")
+vim.keymap.set("n", "<leader>vp", "<cmd>e " .. configpath .. "/lua/plugins<cr>")
+vim.keymap.set("n", "<leader>vf", "<cmd>e " .. configpath .. "/ftplugin<cr>")
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>ee", vim.diagnostic.open_float, bufopts)
+vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, bufopts)
+vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, bufopts)
+vim.keymap.set("n", "<leader>el", vim.diagnostic.setqflist, bufopts)
+
+-- On macOS, add mapping to save with <Cmd-s> on terminals that support the
+-- Kitty keyboard protocol (requires Neovim 0.10+).
+if vim.fn.has("macunix") then
+  vim.keymap.set("n", "<D-s>", '<cmd>write<cr>', { silent = true })
+end
 
 -----------------------------------------------------------------------
 -- Neovide (https://neovide.dev/)
