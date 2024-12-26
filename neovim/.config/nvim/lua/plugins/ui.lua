@@ -4,7 +4,13 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     config = function()
-      require("lualine").setup({})
+      require("lualine").setup({
+        sections = {
+          lualine_y = {
+            { "datetime", style = "%b %d | %H:%M" },
+          },
+        },
+      })
     end,
   },
 }
