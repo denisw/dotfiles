@@ -18,7 +18,7 @@ return {
 
       cmp.setup({
         completion = {
-          completeopt = "menu,menuone,noinsert",
+          completeopt = "menu,menuone,noselect",
         },
         snippet = {
           expand = function(args)
@@ -40,7 +40,6 @@ return {
           { name = "nvim_lsp" },
           { name = "nvim_lsp_signature_help" },
           { name = "path" },
-          { name = "snippets" },
         }),
       })
 
@@ -60,61 +59,5 @@ return {
         }),
       })
     end,
-  },
-
-  -- LSP snippets
-  -- https://github.com/garymjr/nvim-snippets
-  {
-    "garymjr/nvim-snippets",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-    },
-    opts = {
-      create_cmp_source = true,
-      friendly_snippets = true,
-    },
-    keys = {
-      {
-        "<Tab>",
-        function()
-          if vim.snippet.active({ direction = 1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(1)
-            end)
-            return
-          end
-          return "<Tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-      {
-        "<Tab>",
-        function()
-          vim.schedule(function()
-            vim.snippet.jump(1)
-          end)
-        end,
-        expr = true,
-        silent = true,
-        mode = "s",
-      },
-      {
-        "<S-Tab>",
-        function()
-          if vim.snippet.active({ direction = -1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(-1)
-            end)
-            return
-          end
-          return "<S-Tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = { "i", "s" },
-      },
-    },
   },
 }
