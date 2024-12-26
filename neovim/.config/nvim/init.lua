@@ -51,7 +51,7 @@ end
 -- Diagnostics
 -----------------------------------------------------------------------
 
-vim.diagnostic.config {
+vim.diagnostic.config({
   severity_sort = true,
   virtual_text = {
     severity = vim.diagnostic.severity.ERROR,
@@ -59,23 +59,18 @@ vim.diagnostic.config {
   },
   float = {
     format = function(diagnostic)
-      return string.format(
-        "%s [%s:%s]",
-        diagnostic.message,
-        diagnostic.source,
-        diagnostic.code
-      )
+      return string.format("%s [%s:%s]", diagnostic.message, diagnostic.source, diagnostic.code)
     end,
   },
-}
+})
 
 -----------------------------------------------------------------------
 -- Terminal
 -----------------------------------------------------------------------
 
 -- In terminal buffers, start in insert mode and disable line numbers.
-vim.cmd "autocmd TermOpen * startinsert"
-vim.cmd "autocmd TermOpen * setlocal nonumber"
+vim.cmd("autocmd TermOpen * startinsert")
+vim.cmd("autocmd TermOpen * setlocal nonumber")
 
 -----------------------------------------------------------------------
 -- Filetype Detection
@@ -86,13 +81,13 @@ vim.filetype.add({
     [".*"] = {
       priority = -math.huge,
       function(path, bufnr)
-        local content = vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] or ''
+        local content = vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] or ""
 
         -- Detect Python scripts without extension by their shebang.
         if vim.regex([[^#!.*python]]):match_str(content) ~= nil then
-          return 'python'
+          return "python"
         end
-      end
+      end,
     },
   },
 })
@@ -123,10 +118,19 @@ vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_next, bufopts)
 vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_prev, bufopts)
 vim.keymap.set("n", "<leader>el", vim.diagnostic.setqflist, bufopts)
 
+-- Snippets
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+  if vim.snippet.active({ direction = 1 }) then
+    return "<cmd>lua vim.snippet.jump(1)<cr>"
+  else
+    return "<Tab>"
+  end
+end, { expr = true })
+
 -- On macOS, add mapping to save with <Cmd-s> on terminals that support the
 -- Kitty keyboard protocol (requires Neovim 0.10+).
 if vim.fn.has("macunix") then
-  vim.keymap.set("n", "<D-s>", '<cmd>write<cr>', { silent = true })
+  vim.keymap.set("n", "<D-s>", "<cmd>write<cr>", { silent = true })
 end
 
 -----------------------------------------------------------------------
@@ -139,11 +143,11 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.05
 
   -- https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
-  vim.keymap.set('v', '<D-c>', '"+y')
-  vim.keymap.set('n', '<D-v>', '"+P')
-  vim.keymap.set('v', '<D-v>', '"+P')
-  vim.keymap.set('c', '<D-v>', '<C-R>+')
-  vim.keymap.set('i', '<D-v>', '<C-R>+')
+  vim.keymap.set("v", "<D-c>", '"+y')
+  vim.keymap.set("n", "<D-v>", '"+P')
+  vim.keymap.set("v", "<D-v>", '"+P')
+  vim.keymap.set("c", "<D-v>", "<C-R>+")
+  vim.keymap.set("i", "<D-v>", "<C-R>+")
 end
 
 -----------------------------------------------------------------------
