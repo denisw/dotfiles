@@ -23,7 +23,7 @@ function get_appearance()
 end
 
 function get_system_appearance()
-  if vim.fn.has("mac") then
+  if vim.fn.has("mac") == 1 then
     local output = vim.fn.system("defaults read -g AppleInterfaceStyle")
     if output == "Dark\n" then
       return "dark"
