@@ -167,6 +167,11 @@ return {
         },
       })
 
+      lspconfig.terraformls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach_with_format_on_save,
+      })
+
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
