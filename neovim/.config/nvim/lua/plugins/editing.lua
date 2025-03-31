@@ -41,6 +41,11 @@ return {
     },
   },
 
+  {
+    "echasnovski/mini.surround",
+    opts = {},
+  },
+
   -- Auto-close HTML / XML / JSX tags
   {
     "windwp/nvim-ts-autotag",
