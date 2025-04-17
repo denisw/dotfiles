@@ -88,7 +88,7 @@ return {
         options = {
           darken = {
             sidebars = {
-              enabled = true,
+              enable = true,
             },
           },
         },
