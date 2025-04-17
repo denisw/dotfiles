@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------
 
 local primary_colorscheme = {
-  light = "dayfox",
+  light = "github_light_default",
   dark = "catppuccin-mocha",
 }
 
