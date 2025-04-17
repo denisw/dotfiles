@@ -1,2 +1,2 @@
-theme = catppuccin-mocha
+theme = light:GitHub-Light-Default,dark:catppuccin-mocha
 macos-option-as-alt = true
