@@ -18,7 +18,7 @@
 ;; Add MELPA
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Add my module directory to the load path.
 (add-to-list 'load-path "~/.emacs.d/modules")
