@@ -44,6 +44,7 @@
 (require 'init-dired)
 (require 'init-flycheck)
 (require 'init-magit)
+(require 'init-org)
 (require 'init-project)
 (require 'init-rg)
 (require 'init-treemacs)
