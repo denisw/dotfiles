@@ -13,7 +13,11 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
-  (evil-set-leader 'normal (kbd "SPC")))
+  ;; Use <Space> as leader key, Spacemacs-style
+  (evil-set-leader 'normal (kbd "SPC"))
+  ;; Custom keybindings inspired by Neovim
+  (evil-global-set-key 'normal (kbd "]d") 'next-error)
+  (evil-global-set-key 'normal (kbd "[d") 'previous-error))
 
 ;; https://github.com/emacs-evil/evil-collection
 (use-package evil-collection
