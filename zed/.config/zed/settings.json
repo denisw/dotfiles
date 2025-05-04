@@ -22,8 +22,11 @@
     "auto_fold_dirs": true
   },
   "assistant": {
-    "enabled": false,
+    "enabled": true,
     "version": "2"
+  },
+  "edit_predictions": {
+    "mode": "subtle"
   },
   "terminal": {
     "option_as_meta": true,
