@@ -9,8 +9,8 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Rosé Pine",
-    "dark": "Rosé Pine Moon"
+    "light": "Github Light",
+    "dark": "Github Dark"
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 13,
