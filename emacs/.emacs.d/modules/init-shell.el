@@ -15,12 +15,11 @@
   (coterm-mode)
   (setq-default comint-process-echoes t))
 
-(use-package eat
-  :ensure t
-  :after (evil project)
-  :init
-  (evil-set-initial-state 'eat-mode 'emacs)
+;; Improved version of shell / comint mode
+;; https://github.com/szermatt/mistty
+(use-package mistty
+  :bind (("C-x p s" . 'mistty-in-project))
   :config
-  (global-set-key (kbd "C-x p s") 'eat-project))
+  (add-to-list 'evil-insert-state-modes 'mistty-mode))
 
 (provide 'init-shell)
