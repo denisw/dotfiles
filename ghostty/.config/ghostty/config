@@ -1,2 +1,3 @@
-theme = light:GitHub-Light-Default,dark:catppuccin-mocha
+#theme = light:GitHub-Light-Default,dark:catppuccin-mocha
+theme = light:GruvboxLightHard,dark:GruvboxDarkHard
 macos-option-as-alt = true

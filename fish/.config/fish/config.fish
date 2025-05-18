@@ -29,6 +29,9 @@ fish_add_path "$HOME/.cargo/bin"
 # Go
 fish_add_path "$HOME/go/bin"
 
+# JBang
+fish_add_path "$HOME/.jbang/bin"
+
 # n (Node.js)
 if type -q n
     set -x N_PREFIX "$HOME/.n"

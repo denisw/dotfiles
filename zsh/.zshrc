@@ -112,3 +112,7 @@ if type -p rbenv >/dev/null; then
   eval "$(rbenv init - zsh)"
 fi
 
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"

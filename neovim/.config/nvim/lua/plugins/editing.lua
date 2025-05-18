@@ -71,4 +71,11 @@ return {
       },
     },
   },
+
+  -- UI for project-wide search and replace.
+  -- https://github.com/MagicDuck/grug-far.nvim
+  -- {
+  --   "MagicDuck/grug-far.nvim",
+  --   opts = {},
+  -- },
 }

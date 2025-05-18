@@ -9,6 +9,8 @@
   "tab_size": 2,
   "font_size": 13,
   "goto_anything_exclude_gitignore": true,
-  "index_files": true,
+  "index_files": false,
   "neovintageous_build_version": 13200,
+  "theme": "Adaptive.sublime-theme",
+  "color_scheme": "Catppuccin Latte.sublime-color-scheme",
 }
