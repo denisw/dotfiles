@@ -3,8 +3,8 @@
 -----------------------------------------------------------------------
 
 local primary_colorscheme = {
-  light = "github_light_default",
-  dark = "catppuccin-mocha",
+  light = "gruvbox",
+  dark = "gruvbox",
 }
 
 -- Set to "light" or "dark" to force light / dark colorscheme
@@ -55,6 +55,15 @@ return {
         },
       })
 
+      vim.cmd.colorscheme(get_colorscheme())
+    end,
+  },
+
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({ contrast = "hard" })
       vim.cmd.colorscheme(get_colorscheme())
     end,
   },
