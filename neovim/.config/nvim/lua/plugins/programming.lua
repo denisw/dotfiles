@@ -5,13 +5,6 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         javascript = { "prettier" },
-        python = function(bufnr)
-          if require("conform").get_formatter_info("ruff_format", bufnr).available then
-            return { "ruff_format" }
-          else
-            return { "isort", "black" }
-          end
-        end,
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
       },
@@ -26,17 +19,28 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
-    lazy = false,
+    "mason-org/mason.nvim",
     opts = {},
   },
 
   {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    "mason-org/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      automatic_installation = true,
+      automatic_enable = false,
+      ensure_installed = {
+        "clangd",
+        "eslint",
+        "gopls",
+        "jdtls",
+        "lua_ls",
+        "pyright",
+        "phpactor",
+        "prismals",
+        "rust_analyzer",
+        "terraformls",
+        "ts_ls",
+      },
     },
   },
 
@@ -68,11 +72,36 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      local cmp_lsp = require("cmp_nvim_lsp")
-      local telescope_builtin = require("telescope.builtin")
+      -----------------------------------------------------------------
+      --- on_attach()
+      -----------------------------------------------------------------
 
-      local on_attach = function(client, bufnr)
+      local augroup = vim.api.nvim_create_augroup("my.lsp", { clear = false })
+      local on_attach_callbacks = { ["*"] = {} }
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = augroup,
+        callback = function(args)
+          local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+          for _, name in ipairs({ "*", client.name }) do
+            for _, callback in ipairs(on_attach_callbacks[name] or {}) do
+              callback(client, bufnr)
+            end
+          end
+        end,
+      })
+
+      local function on_attach(name, callback)
+        on_attach_callbacks[name] = on_attach_callbacks[name] or {}
+        table.insert(on_attach_callbacks[name], callback)
+      end
+
+      -----------------------------------------------------------------
+      --- Common on_attach() callbacks
+      -----------------------------------------------------------------
+
+      local function add_extra_lsp_key_mappings(client, bufnr)
+        local telescope_builtin = require("telescope.builtin")
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set("n", "gd", telescope_builtin.lsp_definitions, bufopts)
         vim.keymap.set("n", "<leader>D", telescope_builtin.lsp_type_definitions, bufopts)
@@ -81,74 +110,61 @@ return {
         end, bufopts)
       end
 
-      local format_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-      local on_attach_with_format_on_save = function(client, bufnr)
-        on_attach(client, bufnr)
-
-        vim.api.nvim_clear_autocmds({
-          group = format_augroup,
-          buffer = bufnr,
-        })
-
+      local function format_on_save(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
-          group = format_augroup,
+          group = augroup,
           buffer = bufnr,
-          callback = function()
-            vim.lsp.buf.format({ bufnr = bufnr })
+          callback = function(args)
+            vim.lsp.buf.format({
+              bufnr = bufnr,
+              id = client.id,
+              timeout_ms = 1000,
+            })
           end,
         })
       end
 
-      local capabilities = cmp_lsp.default_capabilities()
+      -----------------------------------------------------------------
+      --- Language Servers
+      -----------------------------------------------------------------
 
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
-        on_attach = function()
-          on_attach_with_format_on_save(client, bufnr)
-          local bufopts = { noremap = true, silent = true, buffer = bufnr }
-          vim.keymap.set("n", "<leader>hh", ":ClangdSwitchSourceHeader<cr>", bufopts)
-        end,
-      })
+      -- All languages
+      on_attach("*", add_extra_lsp_key_mappings)
 
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- C++ (Clang)
+      vim.lsp.enable("clangd")
+      on_attach("clangd", function(client, bufnr)
+        format_on_save(client, bufnr)
+        vim.keymap.set("n", "<leader>hh", ":LspClangdSwitchSourceHeader<cr>", bufopts)
+      end)
 
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
-      })
+      -- Go
+      vim.lsp.enable("gopls")
+      on_attach("gopls", format_on_save)
 
-      lspconfig.jdtls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- Java
+      vim.lsp.enable("jdtls")
 
-      lspconfig.prismals.setup({
-        capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
-      })
+      -- JavaScript / TypeScript
+      vim.lsp.enable("eslint")
+      vim.lsp.enable("ts_ls")
 
-      lspconfig.phpactor.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- Prisma
+      vim.lsp.enable("prismals")
+      on_attach("prismals", format_on_save)
 
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- PHP
+      vim.lsp.enable("phpactor")
 
-      lspconfig.ruff.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- Python
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("ruff")
+      on_attach("ruff", format_on_save)
 
-      lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
+      -- Rust
+      vim.lsp.enable("rust_analyzer")
+      on_attach("rust_analyzer", format_on_save)
+      vim.lsp.config("rust_analyzer", {
         settings = {
           ["rust-analyzer"] = {
             imports = {
@@ -160,20 +176,11 @@ return {
         },
       })
 
-      lspconfig.terraformls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach_with_format_on_save,
-      })
+      -- Terraform
+      vim.lsp.enable("terraformls")
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-
-      lspconfig.volar.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+      -- Vue
+      vim.lsp.enable("volar")
     end,
   },
 }
