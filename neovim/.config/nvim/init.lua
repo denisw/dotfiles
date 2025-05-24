@@ -54,6 +54,7 @@ end
 vim.diagnostic.config({
   severity_sort = true,
   virtual_text = {
+    current_line = true,
     severity = vim.diagnostic.severity.ERROR,
     source = "if_many",
   },
