@@ -11,6 +11,10 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
     ["github_light"] = "Github (base16)",
     ["github_dark"] = "GitHub Dark",
     ["github_dark_default"] = "GitHub Dark",
+    ["gruvbox"] = {
+      light = "Gruvbox light, hard (base16)",
+      dark = "Gruvbox dark, hard (base16)",
+    },
     ["nightfox"] = "nightfox",
     ["onedark"] = "One Dark (Gogh)",
     ["onelight"] = "One Light (Gogh)",
@@ -43,9 +47,14 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
   end
 
   vim.api.nvim_create_autocmd("ColorScheme", {
-    group = vim.api.nvim_create_augroup("wezterm_colorscheme", { clear = true }),
+    group = vim.api.nvim_create_augroup("my.wezterm_colorscheme", { clear = true }),
     callback = function(args)
       local colorscheme = wezterm_colorschemes[args.match]
+
+      if type(colorscheme) == "table" then
+        colorscheme = colorscheme[vim.o.background]
+      end
+
       if colorscheme then
         update_wezterm_colorscheme(colorscheme)
       end

@@ -64,6 +64,7 @@ return {
     priority = 1000,
     config = function()
       require("gruvbox").setup({ contrast = "hard" })
+      vim.opt.background = get_appearance()
       vim.cmd.colorscheme(get_colorscheme())
     end,
   },
