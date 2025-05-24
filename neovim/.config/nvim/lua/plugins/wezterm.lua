@@ -9,6 +9,7 @@ if vim.env.TERM_PROGRAM == "WezTerm" then
     ["dayfox"] = "dayfox",
     ["dracula"] = "Dracula (Official)",
     ["github_light"] = "Github (base16)",
+    ["github_light_default"] = "Github (base16)",
     ["github_dark"] = "GitHub Dark",
     ["github_dark_default"] = "GitHub Dark",
     ["gruvbox"] = {
