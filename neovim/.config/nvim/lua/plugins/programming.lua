@@ -180,7 +180,7 @@ return {
       vim.lsp.enable("terraformls")
 
       -- Vue
-      vim.lsp.enable("volar")
+      vim.lsp.enable("vue_ls")
     end,
   },
 }
