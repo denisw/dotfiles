@@ -37,6 +37,7 @@ return {
         "pyright",
         "phpactor",
         "prismals",
+        "ruby_lsp",
         "rust_analyzer",
         "terraformls",
         "ts_ls",
@@ -160,6 +161,9 @@ return {
       vim.lsp.enable("pyright")
       vim.lsp.enable("ruff")
       on_attach("ruff", format_on_save)
+
+      -- Ruby
+      vim.lsp.enable("ruby_lsp")
 
       -- Rust
       vim.lsp.enable("rust_analyzer")
