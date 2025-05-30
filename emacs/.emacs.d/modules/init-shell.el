@@ -15,11 +15,10 @@
   (coterm-mode)
   (setq-default comint-process-echoes t))
 
-;; Improved version of shell / comint mode
-;; https://github.com/szermatt/mistty
-(use-package mistty
-  :bind (("C-x p s" . 'mistty-in-project))
-  :config
-  (add-to-list 'evil-insert-state-modes 'mistty-mode))
+
+;; Fast alternative to term.el
+;; https://codeberg.org/akib/emacs-eat
+(use-package eat
+  :bind (("C-x p s" . 'eat-project)))
 
 (provide 'init-shell)
