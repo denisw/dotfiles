@@ -73,5 +73,6 @@ sublime3/Sublime Text 3/Packages
 
 # Zed
 zed/.config/zed/.tmp*
+zed/.config/zed/conversations
 zed/.config/zed/embeddings
-zed/.config/zed/embeddings
+zed/.config/zed/prompts
