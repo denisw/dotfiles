@@ -19,6 +19,12 @@
 ;; Fast alternative to term.el
 ;; https://codeberg.org/akib/emacs-eat
 (use-package eat
-  :bind (("C-x p s" . 'eat-project)))
+  :bind (("C-x p s" . 'eat-project))
+  :config
+  ;; Make Backspace work as intended on macOS.
+  ;; https://codeberg.org/akib/emacs-eat/issues/116
+  (when (eq system-type 'darwin)
+    (define-key eat-semi-char-mode-map (kbd "C-h")  #'eat-self-input)
+    (define-key eat-semi-char-mode-map (kbd "<backspace>") (kbd "C-h"))))
 
 (provide 'init-shell)
