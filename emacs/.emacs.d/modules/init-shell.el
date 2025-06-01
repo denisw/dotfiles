@@ -21,10 +21,22 @@
 (use-package eat
   :bind (("C-x p s" . 'eat-project))
   :config
+  ;; Integrate `simpleclip-paste' into Eat.
+  (define-key eat-semi-char-mode-map (kbd "s-v")  #'my/eat-simpleclip-paste)
   ;; Make Backspace work as intended on macOS.
   ;; https://codeberg.org/akib/emacs-eat/issues/116
   (when (eq system-type 'darwin)
     (define-key eat-semi-char-mode-map (kbd "C-h")  #'eat-self-input)
     (define-key eat-semi-char-mode-map (kbd "<backspace>") (kbd "C-h"))))
+
+(defun my/eat-simpleclip-paste (&optional arg)
+  "Same as `simplecli-paste', but for Eat."
+  (interactive "*P")
+  (when eat-terminal
+    (funcall eat--synchronize-scroll-function
+             (eat--synchronize-scroll-windows 'force-selected))
+    (eat-term-send-string-as-yank
+     eat-terminal
+     (simpleclip-get-contents))))
 
 (provide 'init-shell)
