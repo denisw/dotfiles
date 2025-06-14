@@ -12,8 +12,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Light",
-    "dark": "Gruvbox Dark"
+    "light": "Github Light",
+    "dark": "Github Dark"
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 12.0,
@@ -28,7 +28,7 @@
   "project_panel": {
     "auto_fold_dirs": true
   },
-  "assistant": {
+  "agent": {
     "enabled": false,
     "version": "2"
   },
