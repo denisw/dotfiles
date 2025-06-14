@@ -7,4 +7,7 @@
   (push "*xref*" popwin:special-display-config)
   (popwin-mode))
 
+(use-package ansi-color
+  :hook (compilation-filter . ansi-color-compilation-filter))
+
 (provide 'init-ui)
