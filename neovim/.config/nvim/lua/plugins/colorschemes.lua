@@ -3,8 +3,8 @@
 -----------------------------------------------------------------------
 
 local primary_colorscheme = {
-  light = "gruvbox",
-  dark = "gruvbox",
+  light = "github_light_default",
+  dark = "catppuccin-mocha",
 }
 
 -- Set to "light" or "dark" to force light / dark colorscheme
