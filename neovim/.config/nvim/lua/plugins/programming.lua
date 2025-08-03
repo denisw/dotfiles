@@ -158,7 +158,7 @@ return {
       vim.lsp.enable("phpactor")
 
       -- Python
-      vim.lsp.enable("pyright")
+      vim.lsp.enable("basedpyright")
       vim.lsp.enable("ruff")
       on_attach("ruff", format_on_save)
 
