@@ -86,7 +86,7 @@ return {
           local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
           for _, name in ipairs({ "*", client.name }) do
             for _, callback in ipairs(on_attach_callbacks[name] or {}) do
-              callback(client, bufnr)
+              callback(client, args.buf)
             end
           end
         end,
