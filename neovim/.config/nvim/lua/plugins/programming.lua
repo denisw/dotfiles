@@ -164,6 +164,7 @@ return {
 
       -- Ruby
       vim.lsp.enable("ruby_lsp")
+      on_attach("ruby_lsp", format_on_save)
 
       -- Rust
       vim.lsp.enable("rust_analyzer")
