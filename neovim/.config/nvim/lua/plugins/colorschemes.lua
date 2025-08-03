@@ -8,7 +8,7 @@ local primary_colorscheme = {
 }
 
 -- Set to "light" or "dark" to force light / dark colorscheme
-local override_appearance = nil
+local override_appearance = "dark"
 
 -----------------------------------------------------------------------
 -- Helpers
