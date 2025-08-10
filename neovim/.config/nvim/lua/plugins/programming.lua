@@ -39,6 +39,7 @@ return {
         "prismals",
         "ruby_lsp",
         "rust_analyzer",
+        "tailwindcss",
         "terraformls",
         "ts_ls",
       },
@@ -180,6 +181,9 @@ return {
           },
         },
       })
+
+      -- Tailwind CSS
+      vim.lsp.enable("tailwindcss")
 
       -- Terraform
       vim.lsp.enable("terraformls")
