@@ -29,6 +29,7 @@ return {
     opts = {
       automatic_enable = false,
       ensure_installed = {
+        "basedpyright",
         "clangd",
         "eslint",
         "gopls",
