@@ -29,16 +29,12 @@ return {
   },
 
   -- Automatically insert matching parentheses, braces, etc.
-  -- https://github.com/echasnovski/mini.pairs
+  -- https://github.com/windwp/nvim-autopairs
   {
-    "echasnovski/mini.pairs",
-    opts = {
-      modes = {
-        insert = true,
-        command = true,
-        terminal = false,
-      },
-    },
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+    opts = {},
   },
 
   {
