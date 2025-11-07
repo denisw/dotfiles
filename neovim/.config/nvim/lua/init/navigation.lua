@@ -23,3 +23,11 @@ require("oil").setup({
 })
 
 vim.keymap.set("n", "-", "<cmd>Oil<cr>")
+
+-----------------------------------------------------------------------------------------
+-- ctrlsf.vim - Directory-wide search and replace
+-----------------------------------------------------------------------------------------
+
+MiniDeps.add("dyng/ctrlsf.vim")
+
+vim.keymap.set("n", "<leader>s", ":CtrlSF ")
