@@ -63,9 +63,6 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>P", '"+P')
 
--- Allow <TAB> to be used for accepting a completion, in addtion to C-y.
-vim.keymap.set("i", "<TAB>", "<C-y>")
-
 -- Add a mapping for viewing diagnostic details.
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
 
