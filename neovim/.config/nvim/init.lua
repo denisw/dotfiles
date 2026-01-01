@@ -53,6 +53,9 @@ vim.cmd("autocmd TermOpen * startinsert")
 -- Keyboard Mappings
 -------------------------------------------------------------------------------
 
+-- Allow saving with Cmd-S on macOS.
+vim.keymap.set("n", "<D-s>", ":w<cr>")
+
 -- Use the space key as <leader> and underscore as <localleader>.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "_"
