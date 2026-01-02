@@ -60,6 +60,9 @@
         },
       },
     },
+    "HTML": {
+      "format_on_save": "off",
+    },
     "PHP": {
       "tab_size": 4,
     },
