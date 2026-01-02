@@ -30,6 +30,16 @@ vim.o.expandtab = true
 vim.o.signcolumn = "yes"
 
 -------------------------------------------------------------------------------
+-- Folding
+-------------------------------------------------------------------------------
+
+-- Open all folds by default when opening a buffer.
+vim.o.foldlevelstart = 99
+
+-- Enable folding support in Markdown buffers.
+vim.g.markdown_folding = 1
+
+-------------------------------------------------------------------------------
 -- Diagnostics
 -------------------------------------------------------------------------------
 
