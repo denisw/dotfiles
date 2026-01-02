@@ -32,11 +32,8 @@ fish_add_path "$HOME/go/bin"
 # JBang
 fish_add_path "$HOME/.jbang/bin"
 
-# n (Node.js)
-if type -q n
-    set -x N_PREFIX "$HOME/.n"
-    fish_add_path "$N_PREFIX/bin"
-end
+# Mise
+fish_add_path "$HOME/.local/share/mise/shims/"
 
 # pip --user (Python)
 fish_add_path "$HOME/Library/Python/3.11/bin"
