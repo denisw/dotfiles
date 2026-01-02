@@ -4,7 +4,12 @@
 
 MiniDeps.add("ibhagwan/fzf-lua")
 
-require("fzf-lua").setup()
+require("fzf-lua").setup({
+  files = {
+    formatter = "path.filename_first",
+    cwd_prompt = false,
+  },
+})
 
 vim.keymap.set("n", "<c-p>", "<cmd>FzfLua files<cr>")
 vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>")
