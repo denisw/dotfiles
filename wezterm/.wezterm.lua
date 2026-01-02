@@ -2,8 +2,8 @@ local wezterm = require("wezterm")
 
 return {
 	front_end = "WebGpu",
-	color_scheme = 'Catppuccin Mocha',
-	font = wezterm.font("Fira Code"),
+	color_scheme = "Catppuccin Mocha",
+	font = wezterm.font("JetBrainsMono Nerd Font"),
 	font_size = 13,
 	window_decorations = "RESIZE",
 	window_padding = {
