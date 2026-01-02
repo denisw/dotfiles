@@ -97,6 +97,9 @@
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
+    },
+    "TOML": {
+      "tab_size": 4
     }
   }
 }
