@@ -30,7 +30,6 @@
   },
   "agent": {
     "enabled": false,
-    "version": "2"
   },
   "edit_predictions": {
     "mode": "subtle"
