@@ -13,4 +13,5 @@ return {
 		bottom = "0.25cell",
 	},
 	enable_kitty_keyboard = true,
+	scrollback_lines = 10000,
 }
