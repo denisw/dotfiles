@@ -36,3 +36,20 @@ vim.keymap.set("n", "-", "<cmd>Oil<cr>")
 MiniDeps.add("dyng/ctrlsf.vim")
 
 vim.keymap.set("n", "<leader>s", ":CtrlSF ")
+
+-----------------------------------------------------------------------------------------
+-- neo-tree.nvim - File explorer
+-----------------------------------------------------------------------------------------
+
+MiniDeps.add({
+  source = "nvim-neo-tree/neo-tree.nvim",
+  checkout = "v3.x",
+  depends = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "nvim-tree/nvim-web-devicons",
+  },
+})
+
+vim.keymap.set("n", "<leader>tt", "<cmd>Neotree<cr>")
+vim.keymap.set("n", "<leader>tc", "<cmd>Neotree close<cr>")
