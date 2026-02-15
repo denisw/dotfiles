@@ -5,8 +5,12 @@
 MiniDeps.add("ibhagwan/fzf-lua")
 
 require("fzf-lua").setup({
+  winopts = {
+    width = 80,
+  },
   files = {
     formatter = "path.filename_first",
+    previewer = false,
     cwd_prompt = false,
   },
 })
