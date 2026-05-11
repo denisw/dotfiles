@@ -68,6 +68,7 @@
     },
     "Python": {
       "tab_size": 4,
+      "wrap_guides": [88],
       "format_on_save": "on",
       "language_servers": [
         "ty",
