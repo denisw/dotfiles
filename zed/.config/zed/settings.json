@@ -23,6 +23,7 @@
   "diff_view_style": "unified",
   "git_panel": {
     "dock": "left",
+    "tree_view": true,
   },
   "agent": {
     "sidebar_side": "right",
