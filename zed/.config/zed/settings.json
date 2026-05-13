@@ -20,6 +20,7 @@
   "collaboration_panel": {
     "dock": "left",
   },
+  "diff_view_style": "unified",
   "git_panel": {
     "dock": "left",
   },
