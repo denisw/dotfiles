@@ -107,6 +107,7 @@ vim.pack.add({
 
   -- Editing
   "https://github.com/tpope/vim-rsi", -- Readline-style key bindings
+  { src = "https://github.com/saghen/blink.cmp", version = "v1" }, -- Auto-completion
   "https://github.com/stevearc/conform.nvim", -- Format on save
 
   -- Language Servers
@@ -166,6 +167,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Editing ====================================================================
 
+require("blink.cmp").setup({
+  keymap = {
+    preset = "super-tab",
+    ["<C-k>"] = { "show_documentation", "hide_documentation" },
+  },
+})
+
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
@@ -212,13 +220,6 @@ local function define_custom_lsp_mappings(client, buf)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 end
 
-local function enable_lsp_completion(client, buf)
-  if client:supports_method("textDocument/completion") then
-    vim.cmd("set completeopt+=menuone,noinsert,popup")
-    vim.lsp.completion.enable(true, client.id, buf, { autotrigger = true })
-  end
-end
-
 -- Autocommands
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -237,7 +238,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- All languages
 on_attach("*", define_custom_lsp_mappings)
-on_attach("*", enable_lsp_completion)
 
 -- C++
 vim.lsp.enable("clangd")
@@ -265,8 +265,8 @@ on_attach("prismals", format_on_save)
 vim.lsp.enable("phpactor")
 
 -- Python
-vim.lsp.enable("basedpyright")
 vim.lsp.enable("ruff")
+vim.lsp.enable("basedpyright")
 on_attach("ruff", format_on_save)
 
 -- Ruby
