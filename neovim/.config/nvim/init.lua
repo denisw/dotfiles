@@ -208,6 +208,10 @@ local function format_on_save(client, bufnr)
   })
 end
 
+local function define_custom_lsp_mappings(client, buf)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+end
+
 local function enable_lsp_completion(client, buf)
   if client:supports_method("textDocument/completion") then
     vim.cmd("set completeopt+=menuone,noinsert,popup")
@@ -232,13 +236,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Server Configurations
 
 -- All languages
+on_attach("*", define_custom_lsp_mappings)
 on_attach("*", enable_lsp_completion)
 
 -- C++
 vim.lsp.enable("clangd")
 on_attach("clangd", function(client, bufnr)
   format_on_save(client, bufnr)
-  vim.keymap.set("n", "<leader>hh", ":LspClangdSwitchSourceHeader<cr>", bufopts)
+  vim.keymap.set("n", "<leader>hh", ":LspClangdSwitchSourceHeader<cr>")
 end)
 
 -- Go
