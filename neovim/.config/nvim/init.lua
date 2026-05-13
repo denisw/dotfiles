@@ -29,6 +29,9 @@ vim.o.expandtab = true
 -- Always show the signcolum.
 vim.o.signcolumn = "yes"
 
+-- Add rounded border around floating windows.
+vim.o.winborder = "rounded"
+
 -------------------------------------------------------------------------------
 -- Folding
 -------------------------------------------------------------------------------
