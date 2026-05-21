@@ -86,6 +86,10 @@
     "PHP": {
       "tab_size": 4,
     },
+    "Markdown": {
+      "preferred_line_length": 80,
+      "soft_wrap": "bounded",
+    },
     "Python": {
       "tab_size": 4,
       "wrap_guides": [88],
