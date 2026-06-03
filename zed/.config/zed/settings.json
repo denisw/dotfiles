@@ -7,12 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
   "title_bar": {
-    "show_sign_in": false
+    "show_sign_in": false,
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "outline_panel": {
     "dock": "left",
