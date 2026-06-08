@@ -266,7 +266,7 @@ vim.lsp.enable("phpactor")
 
 -- Python
 vim.lsp.enable("ruff")
-vim.lsp.enable("basedpyright")
+vim.lsp.enable("pyrefly")
 on_attach("ruff", format_on_save)
 
 -- Ruby
@@ -304,9 +304,12 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_enable = false,
   ensure_installed = {
-    "basedpyright",
     "eslint",
+    "gopls",
+    "pyrefly",
+    "ruff",
     "ts_ls",
+    "tailwindcss",
   },
 })
 
