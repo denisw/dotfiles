@@ -1,4 +1,4 @@
-;;; init-envrc.el --- Direnv (.envrc) support
+;;; init-envrc.el --- Direnv (.envrc) support  -*- lexical-binding: t; -*-
 
 ;; https://github.com/purcell/envrc
 (use-package envrc

@@ -1,4 +1,4 @@
-;;; init-macos.el --- macOS-specific configuration
+;;; init-macos.el --- macOS-specific configuration  -*- lexical-binding: t; -*-
 
 ;; https://github.com/purcell/exec-path-from-shell
 (use-package exec-path-from-shell

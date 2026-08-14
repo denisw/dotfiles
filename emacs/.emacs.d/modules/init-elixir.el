@@ -1,4 +1,4 @@
-;;; init-javascript.el --- Elixir programming
+;;; init-javascript.el --- Elixir programming  -*- lexical-binding: t; -*-
 
 (use-package elixir-mode
   :ensure t

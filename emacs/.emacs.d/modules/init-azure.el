@@ -1,4 +1,4 @@
-;;; init-azure.el --- Configuration for working with Microsoft Azure
+;;; init-azure.el --- Configuration for working with Microsoft Azure  -*- lexical-binding: t; -*-
 
 ;; https://github.com/josteink/bicep-ts-mode
 (use-package bicep-ts-mode

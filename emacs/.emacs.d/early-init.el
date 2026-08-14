@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Minimize UI clutter.
 (menu-bar-mode -1)
 (tool-bar-mode -1)

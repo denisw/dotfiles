@@ -1,4 +1,4 @@
-;;; init-magit.el --- Magit Git client and modes
+;;; init-magit.el --- Magit Git client and modes  -*- lexical-binding: t; -*-
 
 ;; https://github.com/magit/magit
 (use-package magit

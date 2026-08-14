@@ -1,4 +1,4 @@
-;;; init-treemacs.el --- File tree
+;;; init-treemacs.el --- File tree  -*- lexical-binding: t; -*-
 
 (use-package treemacs
   :ensure t

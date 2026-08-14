@@ -1,4 +1,4 @@
-;;; init-eglot.el --- LSP integration using Eglot
+;;; init-eglot.el --- LSP integration using Eglot  -*- lexical-binding: t; -*-
 
 (defun my/setup-typescript-tsx-mode ()
   )

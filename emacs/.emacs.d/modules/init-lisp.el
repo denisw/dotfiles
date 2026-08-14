@@ -1,4 +1,4 @@
-;; init-lisp.el --- Configuration for Common Lisp development
+;; init-lisp.el --- Configuration for Common Lisp development  -*- lexical-binding: t; -*-
 
 (use-package slime
   :ensure t

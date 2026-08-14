@@ -1,4 +1,4 @@
-;;; init-programming.el --- General programming configuration
+;;; init-programming.el --- General programming configuration  -*- lexical-binding: t; -*-
 
 ;; Apply some customizations to modes deriving from prog-mode.
 (defun my/prog-mode-hook ()

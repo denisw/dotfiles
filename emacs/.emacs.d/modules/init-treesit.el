@@ -1,4 +1,4 @@
-;;; init-treesit.el --- Configuration of Emacs' Tree-Sitter support
+;;; init-treesit.el --- Configuration of Emacs' Tree-Sitter support  -*- lexical-binding: t; -*-
 
 ;; Use the Tree-Sitter versions for some major modes.
 (setq major-mode-remap-alist

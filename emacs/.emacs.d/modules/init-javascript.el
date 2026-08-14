@@ -1,4 +1,4 @@
-;;; init-javascript.el --- JavaScript/TypeScript programming
+;;; init-javascript.el --- JavaScript/TypeScript programming  -*- lexical-binding: t; -*-
 
 ;; Indent JavaScript with two spaces by default.
 (setq-default js-indent-level 2)

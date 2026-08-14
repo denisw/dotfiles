@@ -1,4 +1,4 @@
-;;; init-writing.el --- Modes and configuration for prose writing
+;;; init-writing.el --- Modes and configuration for prose writing  -*- lexical-binding: t; -*-
 
 ;; https://github.com/jrblevin/markdown-mode
 (use-package markdown-mode

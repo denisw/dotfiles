@@ -1,4 +1,4 @@
-;;; init-python.el --- Python programming
+;;; init-python.el --- Python programming  -*- lexical-binding: t; -*-
 
 (use-package pyvenv
   :ensure t)

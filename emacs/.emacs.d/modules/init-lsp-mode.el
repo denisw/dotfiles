@@ -1,4 +1,4 @@
-;;; init-lsp-mode.el --- LSP integration using lsp-mode
+;;; init-lsp-mode.el --- LSP integration using lsp-mode  -*- lexical-binding: t; -*-
 
 (defun my/lsp-python-mode-hook ()
   (require 'lsp-pyright)

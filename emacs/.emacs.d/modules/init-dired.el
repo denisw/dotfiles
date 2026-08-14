@@ -1,4 +1,4 @@
-;;; init-dired.el --- Dired configuration and tools
+;;; init-dired.el --- Dired configuration and tools  -*- lexical-binding: t; -*-
 
 (use-package dired
   :ensure nil

@@ -1,4 +1,4 @@
-;;; init-eldoc.el --- Configuration for Eldoc
+;;; init-eldoc.el --- Configuration for Eldoc  -*- lexical-binding: t; -*-
 
 (use-package eldoc
   :init

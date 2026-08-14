@@ -1,4 +1,4 @@
-;;; init.el --- My Emacs configuration
+;;; init.el --- My Emacs configuration  -*- lexical-binding: t; -*-
 ;;
 ;; Author: Denis Washington <denis@denisw.de>
 ;; URL: https://github.com/denisw/dotfiles

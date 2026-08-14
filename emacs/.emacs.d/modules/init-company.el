@@ -1,4 +1,4 @@
-;;; init-company.el --- Company Mode for completion
+;;; init-company.el --- Company Mode for completion  -*- lexical-binding: t; -*-
 
 ;; https://company-mode.github.io
 (use-package company

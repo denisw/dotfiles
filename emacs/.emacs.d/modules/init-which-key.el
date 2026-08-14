@@ -1,4 +1,4 @@
-;;; init-which-key.el --- Guidance for available keybindings
+;;; init-which-key.el --- Guidance for available keybindings  -*- lexical-binding: t; -*-
 
 ;; https://github.com/justbur/emacs-which-key
 (use-package which-key

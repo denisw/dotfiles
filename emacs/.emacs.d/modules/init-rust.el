@@ -1,4 +1,4 @@
-;;; init-rust.el --- Rust programming
+;;; init-rust.el --- Rust programming  -*- lexical-binding: t; -*-
 
 (defun my-rust-hook ()
   ;; Set tab-width as it is used by eglot-format.

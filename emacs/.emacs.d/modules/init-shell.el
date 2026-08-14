@@ -1,4 +1,4 @@
-;;; init-shell.el --- Configuration for shell-mode and shell scripting
+;;; init-shell.el --- Configuration for shell-mode and shell scripting  -*- lexical-binding: t; -*-
 
 ;; Use two-space indent in shell scripts.
 (setq-default sh-basic-offset 2)

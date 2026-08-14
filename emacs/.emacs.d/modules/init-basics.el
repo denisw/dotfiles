@@ -1,4 +1,4 @@
-;;; init-basics.el --- Basic configuration
+;;; init-basics.el --- Basic configuration  -*- lexical-binding: t; -*-
 
 (use-package emacs
   :ensure nil

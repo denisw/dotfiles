@@ -1,4 +1,4 @@
-;;; init-java.el --- Java language support
+;;; init-java.el --- Java language support  -*- lexical-binding: t; -*-
 
 (use-package lsp-java
   :after lsp

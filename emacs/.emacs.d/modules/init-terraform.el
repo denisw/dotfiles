@@ -1,4 +1,4 @@
-;;; init-terraform.el --- Terraform language support
+;;; init-terraform.el --- Terraform language support  -*- lexical-binding: t; -*-
 
 ;; https://github.com/hcl-emacs/terraform-mode
 (use-package terraform-mode

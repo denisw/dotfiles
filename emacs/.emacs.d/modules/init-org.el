@@ -1,4 +1,4 @@
-;;; init-org.el --- Org Mode configuration
+;;; init-org.el --- Org Mode configuration  -*- lexical-binding: t; -*-
 
 (setopt org-directory "~/Documents/Org")
 (setopt org-default-notes-file "~/Documents/Org/inbox.org")

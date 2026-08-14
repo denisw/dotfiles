@@ -1,4 +1,4 @@
-;;; init-modeline.el --- A cleaner modeline
+;;; init-modeline.el --- A cleaner modeline  -*- lexical-binding: t; -*-
 
 (use-package mood-line
   :ensure t

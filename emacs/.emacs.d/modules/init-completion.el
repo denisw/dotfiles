@@ -1,4 +1,4 @@
-;;; init-completion.el --- Configuration of the completion system
+;;; init-completion.el --- Configuration of the completion system  -*- lexical-binding: t; -*-
 
 ;; https://github.com/minad/vertico
 (use-package vertico

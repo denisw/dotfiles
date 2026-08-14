@@ -1,4 +1,4 @@
-;;; init-themes.el --- Theme configuration
+;;; init-themes.el --- Theme configuration  -*- lexical-binding: t; -*-
 
 ;; Introduce commands to switch to a default light and dark theme.
 ;; Use the Modus themes for this, which are built into Emacs nowadays.
@@ -43,10 +43,6 @@
 ;;   :ensure nil
 ;;   :init
 ;;   (setq modus-themes-bold-constructs nil))
-
-;; https://protesilaos.com/emacs/ef-themes
-(use-package ef-themes
-  :ensure t)
 
 ;; https://github.com/hlissner/emacs-solaire-mode
 (use-package solaire-mode

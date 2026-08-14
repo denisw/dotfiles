@@ -1,4 +1,4 @@
-;;; init-c.el --- C/C++ programming
+;;; init-c.el --- C/C++ programming  -*- lexical-binding: t; -*-
 
 ;; Indent C++ with four spaces by default.
 (setq-default c-basic-offset 4)

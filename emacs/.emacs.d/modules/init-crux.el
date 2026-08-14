@@ -1,4 +1,4 @@
-;;; init-crux.el --- Useful interactive commands
+;;; init-crux.el --- Useful interactive commands  -*- lexical-binding: t; -*-
 
 ;; https://github.com/bbatsov/crux
 (use-package crux

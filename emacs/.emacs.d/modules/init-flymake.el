@@ -1,4 +1,4 @@
-;;; init-flymake.el --- Configuration for Flymake
+;;; init-flymake.el --- Configuration for Flymake  -*- lexical-binding: t; -*-
 
 (setq my/flymake-collection-overrides
       '((javascript-mode flymake-collection-eslint)

@@ -1,4 +1,4 @@
-;;; init-evil.el --- Configures Vim keybindings using Evil
+;;; init-evil.el --- Configures Vim keybindings using Evil  -*- lexical-binding: t; -*-
 
 ;; Install Evil mode for Vim keybindings.
 ;; https://github.com/emacs-evil/evil

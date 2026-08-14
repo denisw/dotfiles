@@ -1,4 +1,4 @@
-;;; init-web.el --- Web mode
+;;; init-web.el --- Web mode  -*- lexical-binding: t; -*-
 
 ;; Indent CSS with two spaces by default
 (setq-default css-indent-offset 2)

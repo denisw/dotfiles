@@ -1,4 +1,4 @@
-;;; init-ripgrep.el -- Search files with Ripgrep
+;;; init-ripgrep.el -- Search files with Ripgrep  -*- lexical-binding: t; -*-
 
 ;; https://github.com/dajva/rg.el
 (use-package rg

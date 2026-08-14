@@ -1,4 +1,4 @@
-;;; init-yaml.el --- YAML mode
+;;; init-yaml.el --- YAML mode  -*- lexical-binding: t; -*-
 
 (use-package yaml-mode
   :ensure t

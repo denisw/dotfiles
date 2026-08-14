@@ -1,4 +1,4 @@
-;;; init-clojure.el --- Clojure development
+;;; init-clojure.el --- Clojure development  -*- lexical-binding: t; -*-
 
 ;; https://cider.mx/
 (use-package cider

@@ -1,4 +1,4 @@
-;;; init-ui.el --- Packages for UI tweaks
+;;; init-ui.el --- Packages for UI tweaks  -*- lexical-binding: t; -*-
 
 ;; https://github.com/emacsorphanage/popwin
 (use-package popwin
