@@ -63,10 +63,18 @@
       },
     },
   },
+  "file_types": {
+    "Helm": [
+      "**/charts/**/templates/*.tpl",
+      "**/charts/**/templates/*.yaml",
+      "**/charts/**/templates/*.yml",
+    ],
+  },
   "languages": {
     "Go": {
       "tab_size": 4,
       "hard_tabs": true,
+      "format_on_save": "on",
     },
     "Java": {
       "tab_size": 4,
@@ -116,6 +124,9 @@
       "tab_size": 4,
       "format_on_save": "on",
       "wrap_guides": [100],
+    },
+    "Terraform": {
+      "format_on_save": "on",
     },
     "TypeScript": {
       "tab_size": 2,
