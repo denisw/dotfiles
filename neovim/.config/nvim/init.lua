@@ -343,6 +343,7 @@ require("oil").setup({
 vim.keymap.set("n", "-", "<cmd>Oil<cr>")
 
 -- ctrlsf.vim
+vim.g.ctrlsf_backend = "rg"
 vim.keymap.set("n", "<leader>s", ":CtrlSF ")
 
 -- neo-tree.nvim
