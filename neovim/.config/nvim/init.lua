@@ -32,6 +32,9 @@ vim.o.signcolumn = "yes"
 -- Add rounded border around floating windows.
 vim.o.winborder = "rounded"
 
+-- Load (trusted) directory-local .nvim.lua files.
+vim.o.exrc = true
+
 -------------------------------------------------------------------------------
 -- Folding
 -------------------------------------------------------------------------------
