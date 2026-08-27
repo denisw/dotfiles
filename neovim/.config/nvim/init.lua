@@ -112,6 +112,7 @@ vim.pack.add({
   "https://github.com/tpope/vim-rsi", -- Readline-style key bindings
   { src = "https://github.com/saghen/blink.cmp", version = "v1" }, -- Auto-completion
   "https://github.com/stevearc/conform.nvim", -- Format on save
+  "https://github.com/iamcco/markdown-preview.nvim", -- Markdown preview in browser
 
   -- Language Servers
   "https://github.com/neovim/nvim-lspconfig", -- Language server configs
