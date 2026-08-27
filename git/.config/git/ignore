@@ -1,0 +1,15 @@
+# direnv
+.envrc
+
+# macOS
+.DS_Store
+
+# JetBrains IDEs
+.idea
+
+# Neovim
+.exrc
+.nvim.lua
+
+# Zed
+.zed
