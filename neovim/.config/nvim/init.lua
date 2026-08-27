@@ -113,6 +113,7 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = "v1" }, -- Auto-completion
   "https://github.com/stevearc/conform.nvim", -- Format on save
   "https://github.com/iamcco/markdown-preview.nvim", -- Markdown preview in browser
+  "https://github.com/jake-stewart/multicursor.nvim.git", -- Multiple cursors
 
   -- Language Servers
   "https://github.com/neovim/nvim-lspconfig", -- Language server configs
@@ -171,12 +172,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Editing ====================================================================
 
+-- Blink.cmp
+
 require("blink.cmp").setup({
   keymap = {
     preset = "super-tab",
     ["<C-k>"] = { "show_documentation", "hide_documentation" },
   },
 })
+
+-- conform.nvim
 
 require("conform").setup({
   formatters_by_ft = {
@@ -193,6 +198,37 @@ require("conform").setup({
   },
   notify_on_error = false,
 })
+
+-- multicursor.nvim
+
+local mc = require("multicursor-nvim")
+mc.setup()
+
+-- Mapping: Add a new cursor at the next or previous matching word / selection.
+vim.keymap.set({ "n", "x" }, "<leader>n", function()
+  mc.matchAddCursor(1)
+end)
+vim.keymap.set({ "n", "x" }, "<leader>N", function()
+  mc.matchAddCursor(-1)
+end)
+
+mc.addKeymapLayer(function(layerSet)
+  -- Mapping: Select a different cursor as the main one.
+  layerSet({ "n", "x" }, "<left>", mc.prevCursor)
+  layerSet({ "n", "x" }, "<right>", mc.nextCursor)
+
+  -- Mapping: Delete the current main cursor.
+  layerSet({ "n", "x" }, "<leader>x", mc.deleteCursor)
+
+  -- Mapping: Enable and clear cursors using Escape.
+  layerSet("n", "<esc>", function()
+    if not mc.cursorsEnabled() then
+      mc.enableCursors()
+    else
+      mc.clearCursors()
+    end
+  end)
+end)
 
 -- Language Servers ===========================================================
 
