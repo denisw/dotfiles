@@ -1,0 +1,38 @@
+{
+  "catppuccin-frappe": {
+    "neovim": "catppuccin-frappe",
+    "wezterm": "Catppuccin Frappe"
+  },
+  "catppuccin-latte": {
+    "neovim": "catppuccin-latte",
+    "wezterm": "Catppuccin Latte"
+  },
+  "catppuccin-macchiato": {
+    "neovim": "catppuccin-macchiato",
+    "wezterm": "Catppuccin Macchiato"
+  },
+  "catppuccin-mocha": {
+    "neovim": "catppuccin-mocha",
+    "wezterm": "Catppuccin Mocha"
+  },
+  "dayfox": {
+    "neovim": "dayfox",
+    "wezterm": "dayfox"
+  },
+  "nightfox": {
+    "neovim": "nightfox",
+    "wezterm": "nightfox"
+  },
+  "rose-pine": {
+    "neovim": "rose-pine-main",
+    "wezterm": "rose-pine"
+  },
+  "rose-pine-dawn": {
+    "neovim": "rose-pine-dawn",
+    "wezterm": "rose-pine-dawn"
+  },
+  "rose-pine-moon": {
+    "neovim": "rose-pine-moon",
+    "wezterm": "rose-pine-moon"
+  }
+}
