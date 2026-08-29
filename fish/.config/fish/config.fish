@@ -16,6 +16,9 @@ abbr -a gp! git push --force-with-lease
 abbr -a gr git rebase
 abbr -a gst git status
 
+# Lazygit
+abbr -a lg lazygit
+
 ###########################################################################
 # PATH
 ###########################################################################
