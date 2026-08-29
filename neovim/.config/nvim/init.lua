@@ -104,6 +104,7 @@ vim.pack.add({
   -- Colorschemes
   "https://github.com/catppuccin/nvim",
   "https://github.com/edeneast/nightfox.nvim",
+  "https://github.com/rose-pine/neovim",
 
   -- Mini.nvim
   "https://github.com/nvim-mini/mini.nvim",
@@ -146,7 +147,92 @@ require("catppuccin").setup({
   },
 })
 
-vim.cmd.colorscheme(default_colorscheme)
+local colorscheme_dir_path = vim.fn.expand("$HOME/.config/colorscheme")
+local current_colorscheme_path = colorscheme_dir_path .. "/current"
+local colorscheme_mappings_path = colorscheme_dir_path .. "/mappings.json"
+
+local function read_current_colorscheme_from_file()
+  local file = io.open(current_colorscheme_path, "r")
+  if file then
+    local colorscheme = file:read("*l")
+    file:close()
+    return colorscheme
+  end
+end
+
+local function write_current_colorscheme_to_file(colorscheme)
+  local file = io.open(current_colorscheme_path, "w+")
+  if file then
+    file:write(colorscheme)
+    file:close()
+  end
+end
+
+local function read_colorscheme_mappings_from_file()
+  local file = io.open(colorscheme_mappings_path, "r")
+  if file then
+    local mappings_json = file:read("*a")
+    file:close()
+    return vim.json.decode(mappings_json)
+  end
+end
+
+local function determine_colorscheme()
+  local colorscheme = read_current_colorscheme_from_file()
+  if not colorscheme then
+    return default_colorscheme
+  end
+
+  local mappings = read_colorscheme_mappings_from_file()
+  if mappings then
+    local mapping = mappings[current_colorscheme]
+    if mapping then
+      colorscheme = mapping["neovim"] or colorscheme
+    end
+  end
+
+  return colorscheme
+end
+
+vim.cmd.colorscheme(determine_colorscheme())
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    local colorscheme = vim.g.colors_name
+
+    local colorscheme_in_file = read_current_colorscheme_from_file()
+    if colorscheme_in_file == colorscheme then
+      return
+    end
+
+    local mappings = read_colorscheme_mappings_from_file()
+    if mappings then
+      for name, mapping in pairs(mappings) do
+        if mapping.neovim == colorscheme then
+          write_current_colorscheme_to_file(name)
+        end
+      end
+    end
+  end,
+})
+
+local colorscheme_dir_watcher = vim.uv.new_fs_event()
+
+local function watch_colorscheme_dir()
+  colorscheme_dir_watcher:start(
+    colorscheme_dir_path,
+    {},
+    vim.schedule_wrap(function(error, filename)
+      if not error and filename == "current" then
+        vim.cmd.colorscheme(determine_colorscheme())
+        colorscheme_dir_watcher:stop()
+        watch_colorscheme_dir()
+      end
+    end)
+  )
+end
+
+watch_colorscheme_dir()
 
 -- Mini.nvim ==================================================================
 
