@@ -66,10 +66,10 @@ config.font_size = 13
 
 config.window_decorations = "RESIZE"
 config.window_padding = {
-	left = "0.25cell",
-	right = "0.25cell",
-	top = "0.25cell",
-	bottom = "0.25cell",
+	left = "0.5cell",
+	right = "0.5cell",
+	top = "0.5cell",
+	bottom = "0.5cell",
 }
 
 -------------------------------------------------------------------------------
