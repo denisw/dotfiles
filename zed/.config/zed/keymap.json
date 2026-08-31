@@ -2,7 +2,13 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-[": "vim::NormalBefore"
-    }
-  }
+      "ctrl-[": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "VimControl",
+    "bindings": {
+      "space b": "tab_switcher::OpenInActivePane",
+    },
+  },
 ]
