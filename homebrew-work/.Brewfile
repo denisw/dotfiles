@@ -1,77 +1,100 @@
-tap "1password/tap"
-tap "aws/tap"
-tap "azure/kubelogin"
-tap "derailed/k9s"
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "pulumi/tap"
+###########################################################################
+# Basics
+###########################################################################
 
-brew "awscli"
-brew "azure-cli"
-brew "azure/kubelogin/kubelogin"
-brew "bash"
-brew "bat"
+# Agents
+brew "opencode"
+cask "copilot-cli"
+
+# Containers
 brew "colima"
-brew "coreutils"
-brew "deno"
-brew "derailed/k9s/k9s"
-brew "direnv"
 brew "docker"
-brew "docker-credential-helper-ecr"
-brew "entr"
-brew "fd"
-brew "ffmpeg"
-brew "fzf"
-brew "gawk"
-brew "gcc"
-brew "gh"
-brew "git"
-brew "git-delta"
-brew "gnupg"
-brew "helm"
-brew "htop"
-brew "imagemagick"
-brew "jq"
-brew "kubernetes-cli"
-brew "libgccjit"
-brew "lima"
-brew "miller"
-brew "mongodb-atlas-cli"
-brew "neovim"
-brew "node"
-brew "node@18"
-brew "node@20"
-brew "pass"
-brew "pkg-config"
-brew "podman"
-brew "pulumi/tap/pulumi"
-brew "pyenv"
-brew "rclone"
-brew "ripgrep"
-brew "shellcheck"
-brew "starship"
-brew "stow"
-brew "terraform"
-brew "texinfo"
-brew "the_silver_searcher"
-brew "tmux"
-brew "tmuxp"
-brew "vim"
-brew "watch"
-brew "watchman"
-brew "zsh"
+brew "docker-buildx"
+brew "docker-compose"
 
-cask "1password-cli"
+# Editors
+brew "neovim"
+brew "tree-sitter-cli"
+brew "vim"
+
+# Fonts
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
-cask "font-inconsolata"
-cask "font-inconsolata-nerd-font"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
-cask "google-cloud-sdk"
-cask "iterm2-beta"
-cask "kitty"
-cask "temurin21"
-cask "wezterm"
+
+# Git
+brew "git"
+brew "lazygit"
+
+# Shells & Terminals
+brew "bash"
+brew "fish"
+brew "zsh"
+cask "ghostty"
+cask "wezterm@nightly"
+
+# Tools
+brew "direnv"
+brew "fd"
+brew "fzf"
+brew "gh"
+brew "jq"
+brew "make"
+brew "mise"
+brew "rclone"
+brew "ripgrep"
+brew "stow"
+brew "watch"
+brew "watchman"
+cask "hammerspoon"
+
+###########################################################################
+# Programming Languages
+###########################################################################
+
+# Go
+brew "go"
+
+# Java
+brew "maven"
+cask "temurin@25"
+
+# PHP
+brew "composer"
+brew "coreutils"
+brew "php"
+
+# Node.js
+brew "node"
+
+# Python
+brew "pipx"
+brew "python@3.14"
+brew "uv"
+
+# Shell
+brew "shellcheck"
+
+# Terraform / OpenTofu
+tap "hashicorp/tap"
+brew "opentofu"
+# brew "terraform"
+
+###########################################################################
+# Platforms
+###########################################################################
+
+# 1Password
+tap "1password/tap"
+cask "1password-cli"
+
+# Kubernetes
+brew "k9s"
+brew "kubernetes-cli"
+
+# PostgreSQL
+brew "postgresql"
