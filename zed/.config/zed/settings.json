@@ -28,15 +28,15 @@
     "tree_view": true,
   },
   "agent": {
-    "sidebar_side": "right",
     "dock": "right",
+    "sidebar_side": "right",
   },
   "tab_bar": {
     "show": true,
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "GitHub Light",
     "dark": "Catppuccin Mocha",
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
