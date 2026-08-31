@@ -23,6 +23,7 @@
   },
   "diff_view_style": "unified",
   "git_panel": {
+    "group_by": "staging",
     "dock": "left",
     "tree_view": true,
   },
