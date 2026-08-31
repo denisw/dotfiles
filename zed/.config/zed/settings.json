@@ -54,6 +54,7 @@
     "auto_fold_dirs": true,
   },
   "edit_predictions": {
+    "provider": "none",
     "mode": "subtle",
   },
   "terminal": {
