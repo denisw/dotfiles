@@ -16,24 +16,12 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "outline_panel": {
-    "dock": "left",
-  },
-  "collaboration_panel": {
-    "dock": "left",
-  },
   "diff_view_style": "unified",
   "git_panel": {
     "group_by": "staging",
-    "dock": "left",
     "tree_view": true,
   },
   "agent": {
-    "dock": "right",
-    "sidebar_side": "right",
-  },
-  "tab_bar": {
-    "show": true,
   },
   "theme": {
     "mode": "system",
@@ -51,7 +39,6 @@
   },
   "tab_size": 2,
   "project_panel": {
-    "dock": "left",
     "auto_fold_dirs": true,
   },
   "edit_predictions": {
