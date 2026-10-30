@@ -53,6 +53,18 @@
       },
     },
   },
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "github-theme": true,
+    "dockerfile": true,
+    "html": true,
+    "marksman": true,
+    "oxc": true,
+    "scss": true,
+    "toml": true,
+    "tsgo": true,
+    "xml": true,
+  },
   "file_types": {
     "Helm": [
       "**/charts/**/templates/*.tpl",
